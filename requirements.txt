@@ -1,0 +1,12 @@
+# ProcessNet API Documentation Extraction - Python Dependencies
+# Install: pip install -r requirements.txt
+
+# HTML Parsing
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# Fuzzy Search
+rapidfuzz>=3.0.0
+
+# Encoding Detection
+chardet>=5.0.0
