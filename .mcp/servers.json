@@ -1,0 +1,10 @@
+{
+  "playwright": {
+    "command": "npx",
+    "args": ["@ejazullah/mcp-playwright"]
+  },
+  "context7": {
+    "command": "npx",
+    "args": ["@upstash/context7-mcp"]
+  }
+}
