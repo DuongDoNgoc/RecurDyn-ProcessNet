@@ -1,0 +1,4795 @@
+This file is a merged representation of a subset of the codebase, containing files not matching ignore patterns, combined into a single document by Repomix.
+
+# File Summary
+
+## Purpose
+This file contains a packed representation of a subset of the repository's contents that is considered the most important context.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+
+## File Format
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  a. A header with the file path (## File: path/to/file)
+  b. The full contents of the file in a code block
+
+## Usage Guidelines
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+
+## Notes
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching these patterns are excluded: repomix-output.xml
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+
+# Directory Structure
+```
+docs/
+  project-overview-pdr.md
+  tech-stack.md
+plans/
+  260128-processnet-extraction/
+    plan.md
+  reports/
+    researcher-260128-2209-api-kb-json-design.md
+    researcher-260128-2209-chm-extraction-linux-wsl-tools-encoding-handling.md
+    researcher-260128-2209-sphinx-html-parsing.md
+src/
+  processnet-query-interface.py
+  recurdyn-doc-parser.py
+.gitignore
+ProcessNet_Extraction_Requirements.md
+ProcessNet_Hybrid_Verification_Workflow.md
+README.md
+requirements.txt
+```
+
+# Files
+
+## File: docs/project-overview-pdr.md
+````markdown
+# RecurDyn ProcessNet - Project Overview & Product Development Requirements
+
+**Date:** 2026-01-28
+**Version:** 1.0
+**Status:** Active Development
+
+## Executive Summary
+
+The RecurDyn ProcessNet Knowledge Base Extraction project transforms RecurDyn's proprietary HTML/CHM documentation into a structured, queryable knowledge base. This enables AI-assisted development of automation workflows for Design of Experiments (DOE), model introspection, and result post-processing.
+
+**Business Value:** Reduces automation development time from weeks to days by providing accurate API reference for AI code generation.
+
+**Technical Approach:** Python-based HTML parsing with BeautifulSoup, fuzzy search capabilities, and multiple output formats (JSON, Markdown, interactive CLI).
+
+## Problem Statement
+
+### Current Challenges
+
+1. **Proprietary Documentation Format**: RecurDyn ProcessNet API documentation exists only in CHM (compiled HTML) and scattered HTML files
+2. **No Searchable API Reference**: Developers must manually browse documentation to find methods and signatures
+3. **High Learning Curve**: Automation development requires extensive trial-and-error to discover correct API usage
+4. **Inefficient Automation Development**: Each automation script requires manual API lookup and verification
+
+### Impact on Development
+
+- **Time Loss**: 2-4 hours per automation task spent on API discovery
+- **Error-Prone**: Manual transcription of method signatures leads to bugs
+- **Limited Reusability**: Knowledge stays with individual developers
+- **Slow Iteration**: Changes require re-consulting documentation
+
+## Solution Overview
+
+### Core Offering
+
+Transform static ProcessNet documentation into:
+1. **Machine-Readable Knowledge Base** - JSON format with indexed search
+2. **Human-Readable Documentation** - Markdown reference files
+3. **Interactive Query Interface** - CLI tool for real-time API lookup
+
+### Key Capabilities
+
+| Capability | Description |
+|------------|-------------|
+| Recursive HTML Discovery | Processes ALL files in documentation directory tree |
+| Multi-Strategy Parsing | Handles definition lists, tables, heading structures |
+| Encoding Detection | Auto-detects UTF-8, Windows-1252, Latin-1 |
+| Exact Method Lookup | O(1) dictionary-based search |
+| Fuzzy Search | RapidFuzz approximate matching for typos/variations |
+| Description Search | Full-text search in method documentation |
+| Namespace Browsing | Hierarchical exploration of API structure |
+| Code Example Finder | Search and retrieve usage examples |
+
+## Product Development Requirements (PDR)
+
+### Functional Requirements
+
+#### FR-1: Documentation Extraction
+
+**Priority:** P0 (Critical)
+
+The system SHALL extract API documentation from RecurDyn HTML/CHM files:
+
+- **FR-1.1**: Recursively discover all HTML files in specified directory
+- **FR-1.2**: Extract method signatures with parameter names and types
+- **FR-1.3**: Extract class definitions with inheritance chains
+- **FR-1.4**: Extract property definitions with type information
+- **FR-1.5**: Extract code examples with language detection
+- **FR-1.6**: Detect and handle multiple file encodings
+- **FR-1.7**: Parse multiple HTML layout patterns (definition lists, tables, headings)
+- **FR-1.8**: Generate JSON knowledge base with metadata and indices
+
+**Acceptance Criteria:**
+- Processes 100% of discoverable HTML files (excluding excluded patterns)
+- Extracts method signatures with >90% accuracy
+- Captures code examples from 95% of files containing examples
+- Generates valid JSON with complete namespace hierarchy
+
+#### FR-2: Knowledge Base Structure
+
+**Priority:** P0 (Critical)
+
+The system SHALL organize extracted content into structured format:
+
+- **FR-2.1**: Namespaces as top-level containers
+- **FR-2.2**: Classes within appropriate namespaces
+- **FR-2.3**: Methods within classes or as standalone functions
+- **FR-2.4**: Parameters with name, type, and description
+- **FR-2.5**: Properties with type and read-only flag
+- **FR-2.6**: Code examples with title, code, and language
+- **FR-2.7**: Cross-references between related elements
+- **FR-2.8**: Source file tracking for traceability
+
+**Acceptance Criteria:**
+- JSON structure validates against defined schema
+- All namespaces from source docs are represented
+- Method indices enable O(1) lookup by name
+- Namespace hierarchy reflects original documentation structure
+
+#### FR-3: Query Interface
+
+**Priority:** P0 (Critical)
+
+The system SHALL provide search and query capabilities:
+
+- **FR-3.1**: Exact method lookup by name (case-insensitive)
+- **FR-3.2**: Fuzzy search with configurable similarity threshold
+- **FR-3.3**: Full-text search in method descriptions
+- **FR-3.4**: Namespace content listing
+- **FR-3.5**: Code example search by keyword
+- **FR-3.6**: Interactive CLI mode with command history
+- **FR-3.7**: JSON output format for programmatic access
+- **FR-3.8**: Statistics and metadata reporting
+
+**Acceptance Criteria:**
+- Exact lookup returns results in <100ms
+- Fuzzy search returns relevant matches for typos (80%+ similarity)
+- Description search finds methods by conceptual keywords
+- Interactive mode supports all query types
+- CLI provides help and usage instructions
+
+#### FR-4: Documentation Export
+
+**Priority:** P1 (High)
+
+The system SHALL generate human-readable documentation:
+
+- **FR-4.1**: Markdown files per namespace
+- **FR-4.2**: Table of contents for large files
+- **FR-4.3**: Cross-references between related items
+- **FR-4.4**: Code examples with syntax highlighting
+- **FR-4.5**: Method signatures in code blocks
+- **FR-4.6**: Parameter tables with types and descriptions
+- **FR-4.7**: Namespace overview with statistics
+
+**Acceptance Criteria:**
+- Markdown files render correctly in standard viewers
+- Code blocks preserve indentation and formatting
+- Internal links resolve correctly
+- Files are readable without additional processing
+
+#### FR-5: Error Handling
+
+**Priority:** P1 (High)
+
+The system SHALL handle errors gracefully:
+
+- **FR-5.1**: Log files that fail to parse with error reasons
+- **FR-5.2**: Continue processing on individual file errors
+- **FR-5.3**: Generate error summary report
+- **FR-5.4**: Validate input paths before processing
+- **FR-5.5**: Handle encoding failures with fallback chain
+- **FR-5.6**: Warn on missing expected content (methods, examples)
+- **FR-5.7**: Provide progress feedback during extraction
+
+**Acceptance Criteria:**
+- Individual file errors don't stop batch processing
+- Error log includes file path and specific error
+- Progress indicator shows current file and percentage
+- Warnings logged for suspicious conditions
+
+### Non-Functional Requirements
+
+#### NFR-1: Performance
+
+- **NFR-1.1**: Extraction speed: <5 minutes for 500 HTML files
+- **NFR-1.2**: Query response: <100ms for any lookup operation
+- **NFR-1.3**: Memory usage: <500 MB peak during extraction
+- **NFR-1.4**: Startup time: <2 seconds to load knowledge base
+
+#### NFR-2: Reliability
+
+- **NFR-2.1**: Parsing success rate: >80% of HTML files
+- **NFR-2.2**: Zero data loss: All extracted content preserved in output
+- **NFR-2.3**: Reproducible: Same input produces same output
+- **NFR-2.4**: Error recovery: Graceful degradation on malformed HTML
+
+#### NFR-3: Usability
+
+- **NFR-3.1**: CLI follows standard conventions (--help, --version)
+- **NFR-3.2**: Error messages are actionable and specific
+- **NFR-3.3**: Interactive mode provides help and examples
+- **NFR-3.4**: Output formats are documented with examples
+
+#### NFR-4: Maintainability
+
+- **NFR-4.1**: Code follows project coding standards
+- **NFR-4.2**: Functions have docstrings with examples
+- **NFR-4.3**: Type hints used for all function signatures
+- **NFR-4.4**: Modular design enables easy extension
+
+#### NFR-5: Compatibility
+
+- **NFR-5.1**: Python 3.10+ runtime
+- **NFR-5.2**: Linux/Windows/WSL compatibility
+- **NFR-5.3**: Handles Windows-style paths in input
+- **NFR-5.4**: Works with multiple HTML encoding formats
+
+## Target Use Cases
+
+### UC-1: DOE Batch Execution
+
+**Actor:** Automation Engineer
+**Goal:** Run parameter study with multiple design variations
+
+**Workflow:**
+1. Load base RecurDyn model
+2. Define parameter ranges (mass, stiffness, dimensions)
+3. Generate design variants
+4. Execute simulations in batch
+5. Collect results for analysis
+
+**Required API Methods:**
+- `Model.Load()` - Load model file
+- `Model.Clone()` - Create copy of model
+- `SetParameter()` - Modify model parameters
+- `Run()` - Execute simulation
+- `SaveAs()` - Save variant with naming convention
+
+**Success Metrics:**
+- Can generate 100+ design variants automatically
+- All simulations complete without manual intervention
+- Results organized for post-processing
+
+### UC-2: Model Introspection
+
+**Actor:** Automation Engineer
+**Goal:** Analyze and understand model structure programmatically
+
+**Workflow:**
+1. Load existing model
+2. Enumerate all entities (bodies, joints, forces)
+3. Extract entity properties and relationships
+4. Generate model structure report
+5. Create similar entities programmatically
+
+**Required API Methods:**
+- `GetAllBodies()` - List all bodies
+- `GetAllJoints()` - List all joints
+- `GetEntityByID()` - Retrieve specific entity
+- `GetID()` - Get entity identifier
+- `GetType()` - Get entity type
+- `CreateBodyLike()` - Create entity from template
+
+**Success Metrics:**
+- Can map complete model hierarchy
+- Entity properties extracted correctly
+- Can replicate model structure automatically
+
+### UC-3: Result Post-Processing
+
+**Actor:** Data Analyst / Automation Engineer
+**Goal:** Extract and analyze simulation results without GUI
+
+**Workflow:**
+1. Load result file (.rsl)
+2. Extract time series data
+3. Query entity-specific results
+4. Export to CSV/Excel for analysis
+5. Generate plots and reports
+
+**Required API Methods:**
+- `Result.Load()` - Load result file
+- `GetTimeArray()` - Extract time points
+- `GetEntityData()` - Get entity time series
+- `Export()` - Export to external format
+
+**Success Metrics:**
+- Can process results without opening RecurDyn
+- Batch processing of multiple result files
+- Data exported in standard formats
+
+## Technical Architecture
+
+### System Components
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     Documentation Source                     │
+│  (HTML files, CHM archives, RecurDyn installation)         │
+└────────────────────────┬────────────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────────────┐
+│                  ProcessNetDocParser                         │
+│  • File discovery (recursive)                               │
+│  • Encoding detection                                       │
+│  • HTML parsing (BeautifulSoup)                             │
+│  • Content extraction (methods, classes, examples)          │
+└────────────────────────┬────────────────────────────────────┘
+                         │
+                         ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    Knowledge Base                            │
+│  • JSON structure with namespaces, classes, methods         │
+│  • Method index (O(1) lookup)                               │
+│  • Class index                                              │
+│  • Interface index                                          │
+└────────────────────────┬────────────────────────────────────┘
+                         │
+            ┌────────────┼────────────┐
+            ▼            ▼            ▼
+    ┌───────────┐ ┌──────────┐ ┌──────────────┐
+    │  JSON     │ │Markdown  │ │   Query      │
+    │  Export   │ │ Export   │ │  Interface   │
+    └───────────┘ └──────────┘ └──────────────┘
+                                              │
+                                              ▼
+                                  ┌──────────────────────┐
+                                  │   Interactive CLI    │
+                                  │ • Exact search       │
+                                  │ • Fuzzy search       │
+                                  │ • Description search │
+                                  │ • Namespace browse   │
+                                  └──────────────────────┘
+```
+
+### Data Flow
+
+1. **Extraction Phase**
+   - Input: HTML/CHM files from RecurDyn installation
+   - Processing: BeautifulSoup parsing → Content extraction → Index building
+   - Output: JSON knowledge base + Markdown docs
+
+2. **Query Phase**
+   - Input: Search query (method name, keyword, description)
+   - Processing: Index lookup → Result assembly → Formatting
+   - Output: Formatted results (console/JSON)
+
+## Success Criteria
+
+### Minimum Viable Product (MVP)
+
+- [ ] Extracts API documentation from HTML files
+- [ ] Generates JSON knowledge base with namespaces and methods
+- [ ] Provides exact method lookup via CLI
+- [ ] Achieves >80% file parsing success rate
+- [ ] Extracts method signatures with >90% accuracy
+
+### Production Ready
+
+- [ ] >95% parsing success rate
+- [ ] Complete parameter type information
+- [ ] All code examples extracted and formatted
+- [ ] Cross-references preserved between elements
+- [ ] Fuzzy search with configurable threshold
+- [ ] Markdown documentation with cross-references
+- [ ] Interactive CLI with help and examples
+- [ ] Error handling with detailed logging
+- [ ] Performance targets met (<5min extraction, <100ms queries)
+
+### Complete Feature Set
+
+- [ ] All MVP and production criteria met
+- [ ] Description search (full-text in method docs)
+- [ ] Namespace browsing with hierarchy
+- [ ] Code example finder with keyword search
+- [ ] Statistics and metadata reporting
+- [ ] Validation against test cases for all 3 use cases
+- [ ] Documentation complete with examples
+- [ ] Verification workflow executed and passed
+
+## Technical Constraints
+
+### Dependencies
+
+- **Python 3.10+** - Required runtime
+- **BeautifulSoup4 4.12+** - HTML parsing
+- **lxml 5.0+** - Fast parser backend
+- **RapidFuzz 3.0+** - Fuzzy string matching
+- **chardet 5.0+** - Encoding detection
+- **libchm-bin** - CHM extraction (system package)
+
+### Limitations
+
+- **Static HTML Only**: Does not execute JavaScript or handle dynamic content
+- **Documentation Structure**: Assumes standard Sphinx/HTML documentation format
+- **Encoding Coverage**: Handles common encodings but may fail on rare ones
+- **File Size**: Large HTML files (>10MB) may cause memory issues
+
+### Assumptions
+
+- RecurDyn documentation follows predictable HTML patterns
+- CHM files can be extracted with standard tools
+- Method signatures are consistent across documentation
+- Code examples use Python/IronPython syntax
+
+## Risk Assessment
+
+### High Risk
+
+| Risk | Impact | Mitigation |
+|------|--------|------------|
+| Non-standard HTML structure | High | Multiple parsing strategies with fallbacks |
+| Encoding issues | Medium | Auto-detection with fallback chain |
+| Large file count performance | Medium | Progress tracking and optimization |
+
+### Medium Risk
+
+| Risk | Impact | Mitigation |
+|------|--------|------------|
+| CHM extraction failures | Medium | Multiple extraction tools (libchm, 7zip) |
+| Memory constraints | Low | Streaming parsing for large files |
+| API changes in future RecurDyn | Low | Version tracking in metadata |
+
+## Quality Assurance
+
+### Testing Strategy
+
+1. **Unit Tests**: Individual parsing functions
+2. **Integration Tests**: Full extraction workflow
+3. **Validation Tests**: Query interface accuracy
+4. **Use Case Tests**: All 3 target workflows
+
+### Verification Protocol
+
+See [ProcessNet_Hybrid_Verification_Workflow.md](../ProcessNet_Hybrid_Verification_Workflow.md) for complete verification protocol.
+
+### Acceptance Testing
+
+- Extract sample documentation files
+- Verify extraction accuracy with browser-based checks
+- Validate query interface returns correct results
+- Test all 3 use cases with generated knowledge base
+
+## Implementation Roadmap
+
+See [docs/project-roadmap.md](project-roadmap.md) for detailed development timeline.
+
+## Documentation
+
+- [Codebase Summary](codebase-summary.md) - Code structure overview
+- [Code Standards](code-standards.md) - Development conventions
+- [System Architecture](system-architecture.md) - Architecture details
+- [Project Roadmap](project-roadmap.md) - Development milestones
+- [Tech Stack](tech-stack.md) - Technology stack details
+
+## Related Documents
+
+- [ProcessNet_Extraction_Requirements.md](../ProcessNet_Extraction_Requirements.md) - Detailed technical requirements
+- [ProcessNet_Hybrid_Verification_Workflow.md](../ProcessNet_Hybrid_Verification_Workflow.md) - Verification workflow
+- [requirements.txt](../requirements.txt) - Python dependencies
+
+## Version History
+
+| Version | Date | Changes |
+|---------|------|---------|
+| 1.0 | 2026-01-28 | Initial PDR document |
+
+## Approval
+
+**Product Owner:** _Pending_
+**Technical Lead:** _Pending_
+**Date Approved:** _Pending_
+
+---
+
+**Document Status:** Draft
+**Next Review:** Upon MVP completion
+**Maintainer:** Development Team
+````
+
+## File: README.md
+````markdown
+# RecurDyn ProcessNet Knowledge Base Extraction
+
+**Objective:** Extract complete ProcessNet API documentation from RecurDyn installation and build structured knowledge base for automation workflows.
+
+## Overview
+
+This project extracts API documentation from RecurDyn ProcessNet HTML/CHM files and creates a queryable knowledge base for developing automation scripts. It enables Claude Code and other AI assistants to accurately reference ProcessNet APIs when writing automation code.
+
+## Quick Start
+
+### Prerequisites
+
+```bash
+# System dependencies (Ubuntu/Debian/WSL)
+sudo apt update && sudo apt install -y libchm-bin p7zip-full
+
+# Python dependencies
+pip install -r requirements.txt
+```
+
+### Basic Usage
+
+```bash
+# Extract documentation from RecurDyn installation
+python src/recurdyn-doc-parser.py \
+    --input /path/to/RecurDyn/Help/ProcessNet \
+    --output output/processnet-knowledge.json \
+    --markdown output/markdown
+
+# Query the knowledge base interactively
+python src/processnet-query-interface.py
+
+# Or search directly from command line
+python src/processnet-query-interface.py --search "CreateArc"
+python src/processnet-query-interface.py --find "GetAllBodies"
+python src/processnet-query-interface.py --examples "geometry"
+```
+
+## Project Structure
+
+```
+RecurDyn-ProcessNet/
+├── docs/                           # Project documentation
+│   ├── project-overview-pdr.md     # Product Development Requirements
+│   ├── code-standards.md           # Code standards and conventions
+│   ├── codebase-summary.md         # Codebase structure summary
+│   ├── system-architecture.md      # System architecture documentation
+│   ├── project-roadmap.md          # Development roadmap
+│   └── tech-stack.md               # Technology stack details
+├── knowledge/                      # Source documentation (CHM + HTML)
+│   ├── ProcessNetHelp.chm          # CHM file to extract
+│   ├── RecurDynHelp/               # Sphinx HTML documentation
+│   └── Tutorial/                   # Tutorial HTML files
+├── src/                            # Source code
+│   ├── recurdyn-doc-parser.py      # HTML/CHM parser (475 lines)
+│   └── processnet-query-interface.py # Query interface (581 lines)
+├── output/                         # Generated outputs
+│   ├── extracted_chm/              # Extracted CHM contents
+│   ├── processnet_knowledge.json   # Main knowledge base
+│   └── markdown/                   # Generated markdown docs
+├── plans/                          # Implementation plans
+│   └── reports/                    # Research reports
+├── requirements.txt                # Python dependencies
+├── ProcessNet_Extraction_Requirements.md  # Detailed requirements
+└── ProcessNet_Hybrid_Verification_Workflow.md  # Verification workflow
+```
+
+## Key Features
+
+### Documentation Extraction
+
+- **Recursive HTML Discovery**: Processes all files in directory tree
+- **Multiple Parsing Strategies**: Handles definition lists, tables, heading structures
+- **Content Extraction**: Methods, classes, properties, parameters, code examples
+- **Encoding Detection**: Auto-detects file encoding (UTF-8, Windows-1252, Latin-1)
+
+### Query Interface
+
+- **Exact Method Lookup**: O(1) dictionary-based lookup
+- **Fuzzy Search**: RapidFuzz-based approximate matching
+- **Description Search**: Full-text search in method descriptions
+- **Namespace Exploration**: Browse by namespace hierarchy
+- **Code Example Finder**: Search and retrieve code examples
+
+### Output Formats
+
+- **JSON Knowledge Base**: Complete API reference with indices
+- **Markdown Documentation**: Human-readable reference docs
+- **Interactive CLI**: Real-time query interface
+
+## Target Use Cases
+
+### 1. DOE Batch Execution
+
+Automate Design of Experiments with parameter variation:
+
+```python
+# Load base model
+model = ProcessNet.Model.Load("base_model.rdyn")
+
+# Create design variations
+for mass in [100, 150, 200]:
+    for stiffness in [1000, 2000, 3000]:
+        variant = model.Clone()
+        variant.SetParameter("body_mass", mass)
+        variant.SetParameter("spring_k", stiffness)
+        variant.SaveAs(f"doe_m{mass}_k{stiffness}.rdyn")
+        variant.Run()
+```
+
+### 2. Model Introspection
+
+Explore and analyze model structure:
+
+```python
+# Read model structure
+model = ProcessNet.Model.Load("existing_model.rdyn")
+
+# Map all entities
+entity_map = {
+    "bodies": [b.GetID() for b in model.GetAllBodies()],
+    "joints": [j.GetID() for j in model.GetAllJoints()],
+    "forces": [f.GetID() for f in model.GetAllForces()]
+}
+```
+
+### 3. Result Post-Processing
+
+Extract and process simulation results:
+
+```python
+# Process results without opening RecurDyn
+result = ProcessNet.Result.Load("sim_output.rsl")
+
+# Extract data
+time = result.GetTimeArray()
+force_magnitude = result.GetEntityData("Force_1", "Magnitude")
+displacement = result.GetEntityData("Body_2", "Displacement_X")
+```
+
+## Tech Stack
+
+| Component | Technology |
+|-----------|------------|
+| Python Runtime | Python 3.10+ |
+| HTML Parsing | BeautifulSoup4 + lxml |
+| Fuzzy Search | RapidFuzz |
+| Encoding Detection | chardet |
+| CHM Extraction | libchm-bin / p7zip-full |
+
+See [docs/tech-stack.md](docs/tech-stack.md) for detailed technology stack information.
+
+## Documentation
+
+- [Project Overview & PDR](docs/project-overview-pdr.md) - Product Development Requirements
+- [Codebase Summary](docs/codebase-summary.md) - Codebase structure overview
+- [Code Standards](docs/code-standards.md) - Development conventions
+- [System Architecture](docs/system-architecture.md) - Architecture design
+- [Project Roadmap](docs/project-roadmap.md) - Development milestones
+
+## Development Workflow
+
+### Extraction Phase
+
+```bash
+# Full extraction with verbose logging
+python src/recurdyn-doc-parser.py \
+    --input knowledge/RecurDynHelp \
+    --output output/processnet-knowledge.json \
+    --markdown output/markdown \
+    --verbose
+```
+
+### Query Phase
+
+```bash
+# Interactive mode
+python src/processnet-query-interface.py
+
+# Commands available:
+#   search <query>     - Fuzzy search for methods/interfaces
+#   find <method>      - Exact method lookup
+#   desc <keywords>    - Search by description
+#   list <namespace>   - List namespace contents
+#   namespaces         - List all namespaces
+#   examples [keyword] - Find code examples
+#   stats              - Show statistics
+```
+
+### Verification Workflow
+
+See [ProcessNet_Hybrid_Verification_Workflow.md](ProcessNet_Hybrid_Verification_Workflow.md) for the complete verification protocol.
+
+## Requirements
+
+See [ProcessNet_Extraction_Requirements.md](ProcessNet_Extraction_Requirements.md) for detailed requirements.
+
+## Key Classes
+
+### ProcessNetDocParser
+
+Main parser class for extracting API documentation from HTML files.
+
+**Key Methods:**
+- `discover_files()` - Recursively find all documentation files
+- `parse_html_file()` - Extract content from single HTML file
+- `build_knowledge_base()` - Process all files and build JSON knowledge base
+- `generate_markdown()` - Export markdown documentation
+
+**Data Structures:**
+- `Parameter` - Method parameter with name, type, description
+- `Method` - Method/function with signature, parameters, return type
+- `Property` - Class property with type and read-only flag
+- `ClassDef` - Class definition with inheritance, methods, properties
+- `CodeExample` - Code example with title, code, language
+- `Namespace` - Namespace container for classes and methods
+
+### ProcessNetKnowledge
+
+Query interface for searching the knowledge base.
+
+**Key Methods:**
+- `find_method()` - Exact method lookup by name
+- `search_method_fuzzy()` - Fuzzy search with similarity threshold
+- `search_by_description()` - Full-text description search
+- `list_namespace_contents()` - Browse namespace hierarchy
+- `find_examples()` - Find code examples by keyword
+- `get_statistics()` - Knowledge base statistics
+
+## Performance Targets
+
+- **Extraction Speed:** <5 minutes for 500 HTML files
+- **Memory Usage:** <500 MB peak during extraction
+- **Query Response:** <100ms for any lookup operation
+- **Output Size:** 5-50 MB JSON (depends on documentation size)
+
+## Success Criteria
+
+### Minimum Viable Output
+- At least 80% of HTML files successfully parsed
+- All major namespaces identified (ProcessNet.Model, ProcessNet.Geometry, etc.)
+- Method signatures extracted with >90% accuracy
+- Query interface returns correct results for test cases
+
+### Optimal Output
+- >95% parsing success rate
+- Complete parameter type information
+- All code examples extracted
+- Cross-references preserved
+- Markdown output is clean and readable
+
+## Contributing
+
+This project follows the code standards outlined in [docs/code-standards.md](docs/code-standards.md).
+
+## License
+
+This project is part of the RecurDyn ProcessNet automation toolkit.
+
+## Version History
+
+- **v1.0** (2026-01-28) - Initial release with extraction and query capabilities
+
+## Support
+
+For detailed requirements, see [ProcessNet_Extraction_Requirements.md](ProcessNet_Extraction_Requirements.md).
+
+For verification workflow, see [ProcessNet_Hybrid_Verification_Workflow.md](ProcessNet_Hybrid_Verification_Workflow.md).
+````
+
+## File: docs/tech-stack.md
+````markdown
+# ProcessNet Extraction - Tech Stack
+
+**Date:** 2026-01-28
+
+## Overview
+
+This document defines the technology stack for the ProcessNet API documentation extraction project.
+
+## Core Dependencies
+
+### Python Runtime
+- **Python 3.10+** - Target runtime for all scripts
+
+### CHM Extraction
+| Tool | Purpose | Install |
+|------|---------|---------|
+| `libchm-bin` | Primary CHM extraction | `apt install libchm-bin` |
+| `p7zip-full` | Fallback extraction | `apt install p7zip-full` |
+
+### HTML Parsing
+| Library | Purpose | Install |
+|---------|---------|---------|
+| `beautifulsoup4` | HTML parsing | `pip install beautifulsoup4` |
+| `lxml` | Fast parser backend | `pip install lxml` |
+
+### Search & Indexing
+| Library | Purpose | Install |
+|---------|---------|---------|
+| `rapidfuzz` | Fuzzy string matching | `pip install rapidfuzz` |
+
+### Utilities
+| Library | Purpose | Install |
+|---------|---------|---------|
+| `chardet` | Encoding detection | `pip install chardet` |
+
+## System Requirements
+
+```bash
+# System packages (Ubuntu/Debian/WSL)
+apt update && apt install -y libchm-bin p7zip-full
+
+# Python packages
+pip install beautifulsoup4 lxml rapidfuzz chardet
+```
+
+## Project Structure
+
+```
+RecurDyn-ProcessNet/
+├── docs/                    # Project documentation
+│   └── tech-stack.md        # This file
+├── knowledge/               # Source data (CHM + HTML files)
+│   ├── ProcessNetHelp.chm   # CHM file to extract
+│   ├── RecurDynHelp/        # Sphinx HTML documentation
+│   └── Tutorial/            # Tutorial HTML files
+├── output/                  # Generated outputs
+│   ├── extracted_chm/       # Extracted CHM contents
+│   ├── processnet_knowledge.json  # Main knowledge base
+│   └── markdown/            # Generated markdown docs
+├── src/                     # Source code
+│   ├── recurdyn_doc_parser.py     # HTML/CHM parser
+│   └── processnet_query.py        # Query interface
+├── plans/                   # Implementation plans
+│   └── reports/             # Research reports
+└── requirements.txt         # Python dependencies
+```
+
+## Key Design Decisions
+
+### 1. CHM Extraction Strategy
+- **Primary:** `extract_chmLib` - Simple, reliable, preserves structure
+- **Fallback:** `7zip` - Universal archive handler
+- **Encoding:** Auto-detect with chardet, fallback chain: UTF-8 → Windows-1252 → Latin-1
+
+### 2. HTML Parsing Strategy
+- Use semantic selectors (`dl`, `dt`, `dd`) over CSS classes
+- Target Sphinx/ReadTheDocs structure patterns
+- Extract definition lists for API signatures and metadata
+
+### 3. JSON Knowledge Base Design
+- **Hierarchical:** Namespaces → Classes → Methods → Parameters
+- **Indexed:** Exact match + fuzzy search indices
+- **Schema:** JSON Schema Draft 2020-12 for parameter definitions
+
+### 4. Query Interface
+- Exact match: O(1) dict lookup
+- Fuzzy search: rapidfuzz with configurable threshold
+- Full-text: Simple inverted index (no external DB needed)
+
+## File Outputs
+
+| Output | Format | Description |
+|--------|--------|-------------|
+| `processnet_knowledge.json` | JSON | Complete API knowledge base |
+| `output/markdown/*.md` | Markdown | One file per namespace |
+| Search indices | Embedded in JSON | Pre-computed for fast queries |
+````
+
+## File: plans/260128-processnet-extraction/plan.md
+````markdown
+# ProcessNet Knowledge Base Extraction - Implementation Plan
+
+**Date:** 2026-01-28
+**Status:** In Progress
+
+## Overview
+
+Extract ProcessNet API documentation from RecurDyn installation files and build a structured knowledge base for automation workflows.
+
+## Source Files
+
+| Source | Path | Type | Size |
+|--------|------|------|------|
+| CHM File | `knowledge/ProcessNetHelp.chm` | MS HtmlHelp | 31MB |
+| Sphinx HTML | `knowledge/RecurDynHelp/ProcessNet/` | 37 HTML files | ~2MB |
+| Tutorials | `knowledge/Tutorial/ProcessNet/General/` | 3 HTML files | ~500KB |
+
+## Target Outputs
+
+1. `output/processnet_knowledge.json` - Complete API knowledge base
+2. `output/markdown/` - One markdown file per namespace
+3. `src/processnet_query.py` - Query interface module
+
+---
+
+## Implementation Phases
+
+### Phase 1: Environment Setup
+**Status:** Pending
+**Files:** `requirements.txt`, `docs/tech-stack.md`
+
+- [x] Install system dependencies (libchm-bin, p7zip-full)
+- [x] Create requirements.txt with Python dependencies
+- [x] Document tech stack decisions
+
+### Phase 2: CHM Extraction
+**Status:** Pending
+**Files:** `output/extracted_chm/`
+
+Tasks:
+1. Extract CHM file using `extract_chmLib`
+2. Detect and handle encoding (UTF-8/Windows-1252)
+3. Validate extracted HTML files
+4. Log extraction statistics
+
+### Phase 3: HTML Parser Implementation
+**Status:** Pending
+**Files:** `src/recurdyn-doc-parser.py`
+
+Tasks:
+1. Implement recursive file discovery
+2. Parse Sphinx HTML structure:
+   - Definition lists (`<dl>`, `<dt>`, `<dd>`)
+   - Field lists for parameters/returns
+   - Code blocks for examples
+3. Extract:
+   - Page metadata (title, namespace)
+   - Class definitions (name, inheritance, description)
+   - Method signatures (params, return type)
+   - Properties (name, type, read-only)
+   - Code examples
+4. Build JSON knowledge base structure
+5. Generate search indices (exact match, fuzzy)
+
+### Phase 4: Query Interface Implementation
+**Status:** Pending
+**Files:** `src/processnet-query.py`
+
+Tasks:
+1. Load and validate knowledge base
+2. Implement search functions:
+   - `find_method()` - Exact method lookup
+   - `search_method_fuzzy()` - Fuzzy string matching
+   - `search_by_description()` - Keyword search
+   - `list_namespace_contents()` - Namespace exploration
+   - `find_examples()` - Example finder
+3. Output formatters (console, JSON, markdown)
+4. Optional: Interactive CLI mode
+
+### Phase 5: Markdown Export
+**Status:** Pending
+**Files:** `output/markdown/*.md`
+
+Tasks:
+1. Generate one markdown file per namespace
+2. Include:
+   - Namespace overview with statistics
+   - Class documentation
+   - Method signatures and descriptions
+   - Parameter tables
+   - Code examples
+3. Generate cross-reference links
+
+### Phase 6: Validation & Testing
+**Status:** Pending
+**Files:** `tests/test-processnet-extraction.py`
+
+Tasks:
+1. Validate parsing success rate (>80% target)
+2. Test query interface accuracy
+3. Verify use case coverage:
+   - DOE batch execution methods
+   - Model introspection methods
+   - Result processing methods
+4. Generate extraction statistics report
+
+---
+
+## File Structure
+
+```
+RecurDyn-ProcessNet/
+├── docs/
+│   └── tech-stack.md
+├── knowledge/                   # Source data (read-only)
+│   ├── ProcessNetHelp.chm
+│   ├── RecurDynHelp/ProcessNet/
+│   └── Tutorial/ProcessNet/
+├── output/
+│   ├── extracted_chm/           # Extracted CHM contents
+│   ├── processnet_knowledge.json
+│   └── markdown/
+├── plans/
+│   ├── 260128-processnet-extraction/
+│   │   └── plan.md
+│   └── reports/
+├── src/
+│   ├── recurdyn-doc-parser.py
+│   └── processnet-query.py
+├── tests/
+│   └── test-processnet-extraction.py
+├── requirements.txt
+└── extraction-log.txt
+```
+
+---
+
+## Success Criteria
+
+- [ ] >80% HTML files successfully parsed
+- [ ] All namespaces identified from documentation
+- [ ] Method signatures extracted with >90% accuracy
+- [ ] Query interface returns correct results
+- [ ] Markdown output is readable and well-formatted
+
+---
+
+## Dependencies
+
+**System:**
+- libchm-bin (CHM extraction)
+- p7zip-full (fallback extraction)
+
+**Python:**
+- beautifulsoup4 (HTML parsing)
+- lxml (parser backend)
+- rapidfuzz (fuzzy search)
+- chardet (encoding detection)
+````
+
+## File: plans/reports/researcher-260128-2209-api-kb-json-design.md
+````markdown
+# API Documentation Knowledge Base: JSON Design Best Practices
+
+## Executive Summary
+Research identifies four core strategies for structuring ProcessNet API documentation in JSON: hierarchical schema with namespaces, indexed flat-file design for query performance, structured parameter definitions following JSON Schema Draft 2020-12, and embedded code examples with language variants. Fuzzy-search capability requires pre-indexed term variations and Levenshtein-distance algorithms.
+
+---
+
+## 1. JSON Schema Design Patterns
+
+### Hierarchical Structure
+Organize API documentation in 3-4 levels:
+- **Level 1**: Namespaces (e.g., `dynamics`, `solver`, `materials`)
+- **Level 2**: Classes (e.g., `RigidBody`, `Material`)
+- **Level 3**: Methods/Properties (e.g., `set_mass()`, `color`)
+- **Level 4**: Parameters & Return types
+
+**Example structure:**
+```json
+{
+  "namespaces": [
+    {
+      "name": "dynamics",
+      "description": "Core dynamics simulation",
+      "classes": [
+        {
+          "name": "RigidBody",
+          "methods": [...],
+          "properties": [...]
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Key principle**: Flatten search indices while maintaining hierarchy for documentation navigation. Create separate "flat" index collection for queries.
+
+---
+
+## 2. Indexing for Fast Lookups
+
+### Multi-Index Strategy
+Implement 3 separate indices:
+
+1. **Exact Match Index**: Map `namespace.class.method` → document ID
+   ```json
+   {"index": {"dynamics.RigidBody.set_mass": "doc_001"}}
+   ```
+
+2. **Full-Text Index**: Pre-computed word tokens from descriptions
+   ```json
+   {"tokens": ["mass", "weight", "inertia"]}
+   ```
+
+3. **Fuzzy Index**: Pre-computed character variations (Levenshtein ≤1)
+   - Store both "color" and "colour"
+   - Cache common typos
+
+### Performance Optimization
+- **Caching**: Recent queries (reduces load ~40%)
+- **Pre-computation**: Store method aliases and synonyms
+- **Token normalization**: Lowercase, stem terms (e.g., "setting" → "set")
+
+**Recommended library**: Fuse.js (lightweight fuzzy search) or uFuzzy for efficient matching without external database.
+
+---
+
+## 3. Parameter Type Definition
+
+### JSON Schema Specification
+Follow JSON Schema Draft 2020-12 for all parameter definitions:
+
+```json
+{
+  "parameters": [
+    {
+      "name": "mass",
+      "type": "number",
+      "format": "float",
+      "minimum": 0.0,
+      "description": "Body mass in kilograms",
+      "required": true,
+      "default": null
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "enum": ["red", "blue", "green"],
+      "description": "Visual color identifier"
+    }
+  ]
+}
+```
+
+### Best Practices for Parameter Naming
+- Use **consistent names** across all methods (not `start_date` + `begin_date`)
+- Avoid redundant type information in names (`recipientEmails`, not `recipientEmailsArray`)
+- Be **concise but descriptive**: `max_iterations` not `maximum_number_of_iterations`
+- Include **format hints** for strings: `date` (ISO-8601), `uuid`, `regex`
+
+### Return Type Documentation
+```json
+{
+  "returns": {
+    "type": "object",
+    "properties": {
+      "status": {"type": "string"},
+      "result": {"type": "array", "items": {"type": "number"}}
+    }
+  }
+}
+```
+
+---
+
+## 4. Code Examples Storage
+
+### Multi-Language Example Structure
+Store examples separately from API definitions with language tagging:
+
+```json
+{
+  "examples": [
+    {
+      "id": "ex_001",
+      "method_ref": "dynamics.RigidBody.set_mass",
+      "language": "python",
+      "code": "body.set_mass(10.5)",
+      "description": "Set body mass",
+      "tags": ["basic", "initialization"]
+    },
+    {
+      "id": "ex_002",
+      "method_ref": "dynamics.RigidBody.set_mass",
+      "language": "c++",
+      "code": "body->setMass(10.5);",
+      "tags": ["basic", "initialization"]
+    }
+  ]
+}
+```
+
+### Organization Tips
+- Store examples in separate collection (don't duplicate in method definition)
+- Use `method_ref` foreign key for cross-referencing
+- Tag examples: `basic`, `advanced`, `edge_case`, `error_handling`
+- Include **output/result** for each example when applicable
+- Version examples with API version tags
+
+---
+
+## 5. Query Architecture Design
+
+### Three Query Patterns
+
+**Pattern 1: Exact Match**
+```
+Query: "dynamics.RigidBody.set_mass"
+→ Direct lookup in exact-match index
+→ O(1) performance
+```
+
+**Pattern 2: Full-Text Search**
+```
+Query: "set body mass"
+→ Tokenize: ["set", "body", "mass"]
+→ Search full-text index
+→ Rank by relevance (TF-IDF)
+```
+
+**Pattern 3: Fuzzy Search**
+```
+Query: "setmass" (typo/missing underscore)
+→ Levenshtein distance calculation
+→ Returns "set_mass" with confidence score
+```
+
+### Implementation Options
+- **Client-side**: Fuse.js (no backend needed, good for <10k docs)
+- **Server-side**: Redis + RediSearch (scales to millions)
+- **Hybrid**: SQLite FTS (full-text search) + Levenshtein UDF
+
+---
+
+## 6. ProcessNet-Specific Recommendations
+
+### Suggested JSON Structure
+```json
+{
+  "api_version": "1.0",
+  "timestamp": "2026-01-28",
+  "namespaces": [
+    {
+      "id": "ns_001",
+      "name": "dynamics",
+      "description": "...",
+      "classes": [
+        {
+          "id": "cls_001",
+          "name": "RigidBody",
+          "inherits": "DynamicBody",
+          "methods": [
+            {
+              "id": "mth_001",
+              "name": "set_mass",
+              "description": "...",
+              "parameters": [...],
+              "returns": {...},
+              "example_ids": ["ex_001", "ex_002"],
+              "tags": ["setter", "basic"]
+            }
+          ],
+          "properties": [...]
+        }
+      ]
+    }
+  ],
+  "indices": {
+    "exact_match": {},
+    "full_text": {},
+    "fuzzy": {}
+  },
+  "examples": [...]
+}
+```
+
+### Index Generation (Build-time)
+```python
+# Pseudocode
+def build_indices(api_json):
+    exact_match = {}
+    for ns in api_json["namespaces"]:
+        for cls in ns["classes"]:
+            for method in cls["methods"]:
+                key = f"{ns.name}.{cls.name}.{method.name}"
+                exact_match[key] = method.id
+
+    full_text = {}
+    for method in all_methods:
+        tokens = tokenize(method.description)
+        for token in tokens:
+            full_text.setdefault(token, []).append(method.id)
+
+    return {"exact_match": exact_match, "full_text": full_text}
+```
+
+---
+
+## 7. Performance Considerations
+
+| Query Type | Best Performance | Strategy |
+|-----------|-----------------|----------|
+| Exact match | O(1) | Hash map/dict lookup |
+| Description search | O(n) → O(log n) | Pre-computed inverted index |
+| Fuzzy search | O(n) | Pre-cache variations; limit edit distance to ≤1 |
+| Combined query | O(log n) | Two-pass: fuzzy → filter → rank |
+
+**File size estimates for 500 API items:**
+- Base JSON (hierarchy): ~300 KB
+- Exact-match index: ~50 KB
+- Full-text index: ~200 KB
+- Fuzzy variants: ~150 KB
+- **Total**: ~700 KB (in-memory, negligible)
+
+---
+
+## 8. Tools & Libraries
+
+| Task | Recommended | Notes |
+|------|-------------|-------|
+| Fuzzy search (JS/Python) | Fuse.js / rapidfuzz | Lightweight, no DB needed |
+| Full-text indexing | MiniSearch (JS) / whoosh (Python) | In-memory, good for <100k docs |
+| Schema validation | jsonschema (Python) / Ajv (JS) | Enforce structure |
+| Example storage | SQLite or JSON file + index | Simple, portable |
+
+---
+
+## Key Takeaways
+
+1. **Separate concerns**: Keep definition hierarchy separate from search indices
+2. **Indexed parameters**: Pre-compute all searchable variations at build time
+3. **Type clarity**: Use JSON Schema Draft 2020-12 for all parameters
+4. **Example versioning**: Store examples separately with language/version tags
+5. **Fuzzy + exact**: Support both perfect match and typo-tolerant search
+6. **Build-time optimization**: Generate indices once; serve pre-computed results
+
+---
+
+## Unresolved Questions
+
+- Should examples be versioned by API version or merged into single collection with version tags?
+- What edit-distance threshold for fuzzy search (≤1 or ≤2)?
+- Will ProcessNet need semantic search (description similarity) or just lexical matching?
+- Should namespace/class inheritance be explicitly tracked in schema?
+
+---
+
+## Sources
+
+- [JSON Schema Official Documentation](https://json-schema.org/)
+- [OpenAPI Basics: Crafting JSON Schemas](https://www.theneo.io/blog/openapi-basics-crafting-json-schemas-for-seamless-api-documentation)
+- [Elegant APIs with JSON Schema](https://brandur.org/elegant-apis)
+- [Redis JSON Indexing and Full-Text Search](https://redis.io/blog/index-and-query-json-docs-with-redis/)
+- [Fuse.js - Lightweight Fuzzy Search](https://www.fusejs.io/)
+- [uFuzzy - Efficient Fuzzy Matching](https://github.com/leeoniya/uFuzzy)
+- [Fuzzy Search Comprehensive Guide](https://www.meilisearch.com/blog/fuzzy-search)
+- [OpenAPI Schema Best Practices](https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/plugins-api-schema-best-practices.html)
+- [Pydantic JSON Schema](https://docs.pydantic.dev/latest/concepts/json_schema/)
+- [Documenting Python APIs - LSST Guide](https://developer.lsst.io/python/numpydoc.html)
+- [Hierarchical Knowledge Base Patterns](https://github.com/zadam/trilium/wiki/Patterns-of-personal-knowledge-base)
+````
+
+## File: plans/reports/researcher-260128-2209-chm-extraction-linux-wsl-tools-encoding-handling.md
+````markdown
+# CHM Extraction on Linux/WSL: Research Report
+
+**Date:** 2026-01-28 | **File:** ProcessNetHelp.chm (31MB)
+
+## Executive Summary
+
+Three viable approaches exist for CHM extraction on Linux/WSL, each with distinct trade-offs. **Recommended:** Extract_chmLib (simplest) for initial exploration, PyCHM (programmatic) for post-processing, 7zip (fallback) if library issues arise.
+
+---
+
+## 1. Available Tools for CHM Extraction
+
+### Primary Options
+
+| Tool | Type | Install | Best For | Notes |
+|------|------|---------|----------|-------|
+| **extract_chmLib** | CLI | `apt install libchm-bin` | Direct extraction | Zero config, bundled with chmlib |
+| **PyCHM** | Python lib | `pip install pychm` (requires chmlib) | Programmatic access | Maintenance mode, Python 3.6+ |
+| **7zip** | CLI/lib | `apt install p7zip-full` | Archive extraction | Universal, handles CHM as archive |
+| **arCHMage** | Python CLI | `pip install archmage` | Format conversion | Converts to HTML/PDF, builds on PyCHM |
+
+### Secondary Options
+- **KchmViewer / xCHM**: GUI viewers (not extraction-focused)
+- **GnoCHM**: Linux-specific viewer with basic extraction
+
+---
+
+## 2. Recommended Approach: Multi-Stage Strategy
+
+### Stage 1: Extract with extract_chmLib (Fastest)
+```bash
+apt install libchm-bin
+extract_chmLib ProcessNetHelp.chm ./output
+```
+**Pros:** Simple, no encoding conversion, preserves internal structure
+**Cons:** Extracts raw format, may include system files
+
+### Stage 2: Parse/Validate with PyCHM (Optional)
+```python
+from chm.chm import CHMFile
+
+chm = CHMFile('ProcessNetHelp.chm')
+for entry in chm.entries:
+    print(entry)  # Process metadata, encoding info
+```
+**Pros:** Programmatic access to metadata, encoding detection
+**Cons:** Requires C lib dependency, hobby-level maintenance
+
+### Stage 3: Fallback - 7zip
+```bash
+7z x ProcessNetHelp.chm -o./output
+```
+**Pros:** Universal, no external dependencies beyond p7zip
+**Cons:** Treats CHM as generic archive, may miss metadata
+
+---
+
+## 3. Handling Encoding Issues
+
+### Root Cause
+CHM files often store content as **Windows-1252 (ANSI)** instead of UTF-8, causing character corruption:
+- Legacy: MS HTML Help 1.x compiler tied to ANSI encodings
+- Mixed: Table of Contents/Index use MBCS; content pane supports UTF-8
+- Multiple encodings: URLs (MBCS), page content (UTF-8), display (page-specific)
+
+### Solutions
+
+**During Extraction:**
+1. Use PyCHM's `chm.extra` module for encoding detection:
+   ```python
+   from chm.extra import detect_encoding
+   encoding = detect_encoding(chm)
+   ```
+
+2. Post-process HTML: Inject UTF-8 meta tag or convert via iconv:
+   ```bash
+   iconv -f WINDOWS-1252 -t UTF-8 input.html > output.html
+   ```
+
+**For Parsed Content:**
+- Extract to memory, detect encoding, convert during parsing
+- Consider encoding fallback chains: UTF-8 → Windows-1252 → Latin-1
+
+### Special Cases
+- CJK files (Chinese/Japanese/Korean): Verify encoding metadata before conversion
+- Complex characters: Test with sample files before batch processing
+
+---
+
+## 4. Large File Handling (31MB)
+
+### Performance Considerations
+- **Memory:** CHM containers are compressed; full extraction safe for 31MB
+- **I/O:** extract_chmLib streams efficiently; PyCHM loads selectively
+- **Processing:** Iterate over entries rather than loading entire tree:
+  ```python
+  for entry in chm.entries:
+      content = chm.retrieve_object(entry)  # Load only accessed entries
+  ```
+
+### Recommended Workflow
+1. Extract once with `extract_chmLib` → disk cache
+2. Process in chunks: read HTML files in batches, parse with BeautifulSoup
+3. Store results incrementally (avoid in-memory aggregation)
+
+---
+
+## 5. Installation Stack (Minimal WSL Setup)
+
+```bash
+# Core dependencies
+apt update && apt install -y libchm-bin p7zip-full
+
+# Python support (optional)
+pip install pychm beautifulsoup4
+
+# Conversion tools (optional)
+pip install archmage  # Requires htmldoc, lynx/elinks for PDF
+```
+
+---
+
+## 6. Quick Reference Commands
+
+| Task | Command |
+|------|---------|
+| Extract all files | `extract_chmLib file.chm ./output` |
+| Extract with 7z | `7z x file.chm -o./output` |
+| List contents | `7z l file.chm` |
+| Convert to HTML (via archmage) | `archmage file.chm ./output_dir` |
+| Run as HTTP server | `archmage -p 8080 file.chm` |
+
+---
+
+## 7. Implementation Checklist
+
+- [ ] Install libchm-bin + p7zip-full
+- [ ] Test extraction: `extract_chmLib ProcessNetHelp.chm ./test_output`
+- [ ] Validate HTML files created (count, encoding)
+- [ ] Sample encoding detection: check for Windows-1252 vs UTF-8 content
+- [ ] Process samples with BeautifulSoup for parsing validation
+- [ ] Plan post-processing (encoding conversion if needed)
+- [ ] Implement incremental processing (avoid full in-memory load)
+
+---
+
+## Citations & Sources
+
+- [PyCHM · PyPI](https://pypi.org/project/pychm/)
+- [PyCHM GitHub](https://github.com/dottedmag/pychm)
+- [extract_chmLib Ubuntu Manual](https://manpages.ubuntu.com/manpages/bionic/man1/extract_chmLib.1.html)
+- [arCHMage GitHub](https://github.com/dottedmag/archmage)
+- [7-Zip Command Line](https://7-zip.opensource.jp/chm/cmdline/commands/extract.html)
+- [CHM Encoding Issues - DITA-OT](https://github.com/dita-ot/dita-ot/issues/2020)
+- [HelpNDoc: International Character Encoding in CHM](https://www.helpndoc.com/news-and-articles/2025-05-14-why-international-characters-break-in-chm-files-and-how-helpndoc-solves-it/)
+
+---
+
+## Unresolved Questions
+
+1. **Exact encoding of ProcessNetHelp.chm:** Requires sample inspection to determine Windows-1252 vs mixed encoding profile
+2. **Internal structure complexity:** Unknown if CHM contains custom ITSS metadata requiring special parsing
+3. **Performance baseline:** No benchmark data for 31MB CHM extraction speed (estimate: 5-30 seconds depending on disk I/O)
+````
+
+## File: plans/reports/researcher-260128-2209-sphinx-html-parsing.md
+````markdown
+# Research: Best Practices for Parsing Sphinx-Generated HTML Documentation
+
+## Executive Summary
+Sphinx HTML output uses standardized semantic structures based on Docutils conventions. Parsing targets definition lists (`<dl>`, `<dt>`, `<dd>`), field lists, and CSS classes for API documentation. BeautifulSoup is the recommended library for extraction.
+
+---
+
+## 1. Sphinx HTML Structure Patterns
+
+### Core Elements
+- **Definition Lists**: `<dl>` containers wrap API objects (classes, methods, functions)
+  - `<dt>` holds the signature/name
+  - `<dd>` contains description and metadata
+- **Field Lists**: Store structured metadata (parameters, returns, raises)
+  - Rendered as `<dl class="field-list simple">` or `<dl class="simple">`
+  - Each field: `<dt>` (field label) + `<dd>` (field value)
+- **Code Blocks**: `<pre><code>` for examples, wrapped in parent divs with `highlight` classes
+
+### CSS Classes (Theme-Dependent)
+ReadTheDocs theme and modern Sphinx themes use:
+- `.descname` / `.descclassname`: Class/method names
+- `.sig-param`: Function parameters
+- `.highlight`: Code block containers
+- `sd-*`: sphinx-design prefixed classes (modern themes)
+- `.exception`, `.class`, `.method`, `.property`: Content type indicators
+- `dl-simple`, `field-list simple`: Definition list variants
+
+---
+
+## 2. Sphinx autodoc Output Structure
+
+### API Documentation Rendering
+`sphinx.ext.autodoc` generates reStructuredText directives (`py:class`, `py:function`) which produce:
+
+```html
+<section id="module-name">
+  <dl class="py class">
+    <dt id="ClassName" class="sig">
+      <span class="sig-name">ClassName</span>
+      <span class="sig-paren">(</span>
+      <span class="sig-param">...</span>
+      <span class="sig-paren">)</span>
+    </dt>
+    <dd>
+      <p>Description text</p>
+      <dl class="field-list simple">
+        <dt class="field-odd">Parameters</dt>
+        <dd class="field-body">
+          <ul class="simple">
+            <li><strong>param_name</strong> (<em>type</em>) – description</li>
+          </ul>
+        </dd>
+        <dt class="field-even">Returns</dt>
+        <dd class="field-body">
+          <p>return description</p>
+        </dd>
+      </dl>
+    </dd>
+  </dl>
+</section>
+```
+
+---
+
+## 3. BeautifulSoup Selectors for Extraction
+
+### High-Level Approach
+```python
+from bs4 import BeautifulSoup
+
+# Parse HTML
+soup = BeautifulSoup(html_content, 'html.parser')
+
+# Extract API items
+for dl in soup.find_all('dl', class_='py'):
+    # dl.find('dt') → signature
+    # dl.find('dd') → description + metadata
+```
+
+### Targeted Selectors
+| Target | Selector | Notes |
+|--------|----------|-------|
+| Classes/functions | `dl.py class`, `dl.py function` | Use class attribute |
+| Method signatures | `dt.sig` inside `dd` parent | Contains `<span class="sig-*">` |
+| Parameters | `dl.field-list dd` with "Parameters" dt | Parse from `<ul>` or `<li>` |
+| Returns | `dd.field-body` after "Returns" dt | Text node extraction |
+| Code examples | `div.highlight pre code` | Contains literal code |
+
+### Practical Extraction Pattern
+1. Find section by ID: `soup.find('section', id=section_name)`
+2. Get definition list: `section.find('dl', class_='py')`
+3. Parse signature from `<dt>`: Extract text, spans by class
+4. Extract metadata from `<dd>` → field-list `<dl>` children
+5. Parse structured lists: Iterate `<li>` for parameters, use regex for type annotations
+
+---
+
+## 4. Definition Lists & Field Lists Parsing
+
+### HTML Structure (Docutils Standard)
+```html
+<dl class="field-list simple">
+  <dt class="field-odd">Parameters:</dt>
+  <dd class="field-body">
+    <p><strong>name</strong> (<em>str</em>) – Description</p>
+  </dd>
+  <dt class="field-even">Returns:</dt>
+  <dd class="field-body">
+    <p>ReturnType – return description</p>
+  </dd>
+</dl>
+```
+
+### Extraction Logic
+- **Field labels** (dt): Use `.get_text()` or text_content
+- **Field values** (dd): May contain multiple elements (`<p>`, `<ul>`, `<table>`)
+- **Alternating rows**: Use CSS `:nth-child(odd/even)` selectors or iterate pairs
+- **Nested lists**: Parse `<ul><li>` for parameter lists; regex for `**name** (type) – desc` pattern
+
+### Edge Cases
+- Multiple descriptions per field (multiple `<dd>` for one `<dt>`)
+- Mixed content: paragraphs + code blocks in single field
+- Type annotations: Often in `<em>` tags within parentheses
+- Cross-references: Links (`<a href>`) embedded in descriptions
+
+---
+
+## 5. Handling Cross-References & Navigation
+
+### Cross-Reference Elements
+- **Internal links**: `<a class="reference internal" href="#target">`
+- **External links**: `<a class="reference external" href="url">`
+- **Code references**: `<code class="xref py">ClassName</code>`
+
+### Navigation Elements to Skip
+- Table of contents (`<nav>`, `<ul class="nav">`)
+- Breadcrumbs (`<div class="breadcrumbs">`)
+- Sidebar toctree (typically `<div class="toctree">`)
+- "Edit on GitHub" / navigation buttons
+
+### Filtering Strategy
+```python
+# Remove navigation clutter before parsing
+for tag in ['nav', 'script', 'link']:
+    for elem in soup.find_all(tag):
+        elem.decompose()
+
+# For cross-refs, extract href while preserving text
+links = soup.find_all('a', class_=['reference internal', 'reference external'])
+```
+
+---
+
+## 6. Implementation Best Practices
+
+### Parsing Strategy (KISS)
+1. **Use theme-agnostic selectors**: Target semantic tags (`dl`, `dt`, `dd`) over CSS classes when possible
+2. **Handle theme variations**: Fallback selectors for Furo, PyData, Alabaster themes
+3. **Regex for parsing**: Use regex to extract `**name** (type) – description` patterns from text nodes
+4. **Preserve structure**: Map to intermediate dict/dataclass before final output
+
+### Common Patterns to Extract
+| Pattern | Regex / Selector |
+|---------|------------------|
+| Type in parentheses | `\(([^)]+)\)` after param name |
+| Description text | Text after " – " separator |
+| Code block | `pre > code` inside `div.highlight` |
+| Deprecation notice | `<div class="deprecated\|versionadded">` |
+
+### Libraries
+- **BeautifulSoup4**: Robust HTML parsing, flexible selectors
+- **lxml**: Faster parser backend for BeautifulSoup (optional)
+- **cssselect**: CSS selector support (built into BS4)
+- **regex**: For complex pattern extraction (not re)
+
+---
+
+## 7. Known Limitations & Workarounds
+
+| Issue | Cause | Workaround |
+|-------|-------|-----------|
+| Missing type info | Optional in docstring | Extract from inline annotations or accept null |
+| Inconsistent structure | Multiple Sphinx versions | Inspect actual HTML; provide version hint |
+| Theme-specific classes | Theme variations | Use semantic HTML + fallback selectors |
+| Cross-ref resolution | Links only in rendered HTML | Store href separately; resolve post-parse |
+| Code block escaping | HTML entities | Use `.get_text()` or `.string` (BS4 auto-decodes) |
+
+---
+
+## Sources & References
+
+- [Sphinx Documentation - Getting Started](https://www.sphinx-doc.org/en/master/usage/quickstart.html)
+- [Sphinx autodoc Extension](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html)
+- [Describing Code in Sphinx](https://www.sphinx-doc.org/en/master/tutorial/describing-code.html)
+- [Docutils Document Tree](https://docutils.sourceforge.io/docs/ref/doctree.html)
+- [BeautifulSoup 4 Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Read the Docs Sphinx Theme - API Demo](https://sphinx-rtd-theme.readthedocs.io/en/stable/demo/api.html)
+- [HTML Definition Lists Reference](https://www.w3resource.com/html/definition-lists/HTML-definition-lists-dl-dt-dd-tags-elements.php)
+- [Introduction to Sphinx - Write the Docs](https://www.writethedocs.org/guide/tools/sphinx/)
+
+---
+
+## Unresolved Questions
+
+1. How do different Sphinx themes render field-list items variably? (Recommend version pinning)
+2. Which Sphinx versions introduce HTML output changes? (Suggest testing against 4.x, 5.x, 7.x)
+3. How to extract type hints from type stubs vs. docstring annotations? (Out of scope for HTML parsing)
+````
+
+## File: src/processnet-query-interface.py
+````python
+#!/usr/bin/env python3
+"""
+ProcessNet Knowledge Base Query Interface
+
+Provides search and query functionality for the ProcessNet API knowledge base.
+
+Usage:
+    python processnet-query-interface.py [--search QUERY] [--kb PATH]
+    python processnet-query-interface.py  # Interactive mode
+"""
+
+import argparse
+import json
+import re
+import sys
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Optional
+
+try:
+    from rapidfuzz import fuzz, process
+    FUZZY_AVAILABLE = True
+except ImportError:
+    FUZZY_AVAILABLE = False
+    print("Warning: rapidfuzz not installed. Fuzzy search disabled.")
+
+
+@dataclass
+class SearchResult:
+    """Represents a search result."""
+    name: str
+    type: str  # 'method', 'class', 'interface', 'example'
+    namespace: str
+    signature: str = ""
+    description: str = ""
+    code: str = ""
+    source_file: str = ""
+    score: float = 100.0
+
+
+class ProcessNetKnowledge:
+    """Query interface for ProcessNet knowledge base."""
+
+    def __init__(self, kb_path: str = "output/processnet-knowledge.json"):
+        self.kb_path = Path(kb_path)
+        self.kb = None
+        self._method_names = []
+        self._interface_names = []
+        self._load_knowledge_base()
+
+    def _load_knowledge_base(self):
+        """Load the knowledge base from JSON file."""
+        if not self.kb_path.exists():
+            raise FileNotFoundError(f"Knowledge base not found: {self.kb_path}")
+
+        with open(self.kb_path, 'r', encoding='utf-8') as f:
+            self.kb = json.load(f)
+
+        # Build search indices
+        self._build_indices()
+
+    def _build_indices(self):
+        """Build in-memory search indices."""
+        self._method_names = list(self.kb.get('method_index', {}).keys())
+        self._interface_names = list(self.kb.get('interface_index', {}).keys())
+
+        # Extract method names from examples
+        for ns_name, ns_data in self.kb.get('namespaces', {}).items():
+            for example in ns_data.get('examples', []):
+                code = example.get('code', '')
+                # Extract method calls
+                methods = re.findall(r'\.(\w+)\s*\(', code)
+                for m in methods:
+                    m_lower = m.lower()
+                    if m_lower not in self._method_names:
+                        self._method_names.append(m_lower)
+
+    def find_method(self, method_name: str, namespace: Optional[str] = None) -> list:
+        """
+        Find method by exact name match (case-insensitive).
+
+        Args:
+            method_name: Method name to search for
+            namespace: Optional namespace filter
+
+        Returns:
+            List of matching SearchResult objects
+        """
+        results = []
+        method_lower = method_name.lower()
+
+        # Search in method index
+        if method_lower in self.kb.get('method_index', {}):
+            namespaces = self.kb['method_index'][method_lower]
+            for ns in namespaces:
+                if namespace and ns.lower() != namespace.lower():
+                    continue
+
+                # Find the method in namespace data
+                ns_data = self.kb['namespaces'].get(ns, {})
+                for method in ns_data.get('standalone_methods', []):
+                    if method['name'].lower() == method_lower:
+                        results.append(SearchResult(
+                            name=method['name'],
+                            type='method',
+                            namespace=ns,
+                            signature=method.get('signature', ''),
+                            description=method.get('description', ''),
+                            source_file=method.get('source_file', '')
+                        ))
+
+        # Search in code examples
+        for ns_name, ns_data in self.kb.get('namespaces', {}).items():
+            if namespace and ns_name.lower() != namespace.lower():
+                continue
+
+            for example in ns_data.get('examples', []):
+                code = example.get('code', '')
+                if f'.{method_name}(' in code or f' {method_name}(' in code:
+                    # Extract signature from code
+                    pattern = rf'\.{re.escape(method_name)}\s*\([^)]*\)'
+                    match = re.search(pattern, code)
+                    sig = match.group(0) if match else f".{method_name}()"
+
+                    results.append(SearchResult(
+                        name=method_name,
+                        type='example',
+                        namespace=ns_name,
+                        signature=sig,
+                        code=code[:500],
+                        source_file=example.get('source_file', '')
+                    ))
+
+        return results
+
+    def search_method_fuzzy(self, query: str, threshold: float = 60.0, limit: int = 10) -> list:
+        """
+        Search for methods using fuzzy string matching.
+
+        Args:
+            query: Search query
+            threshold: Minimum similarity score (0-100)
+            limit: Maximum results to return
+
+        Returns:
+            List of matching SearchResult objects
+        """
+        if not FUZZY_AVAILABLE:
+            # Fallback to simple substring matching
+            return self._search_substring(query, limit)
+
+        results = []
+
+        # Search in method names
+        if self._method_names:
+            matches = process.extract(
+                query.lower(),
+                self._method_names,
+                scorer=fuzz.WRatio,
+                limit=limit
+            )
+
+            for match_name, score, _ in matches:
+                if score >= threshold:
+                    # Get full method info
+                    method_results = self.find_method(match_name)
+                    for r in method_results:
+                        r.score = score
+                        results.append(r)
+
+        # Search in interface names
+        if self._interface_names:
+            matches = process.extract(
+                query.lower(),
+                self._interface_names,
+                scorer=fuzz.WRatio,
+                limit=limit
+            )
+
+            for match_name, score, _ in matches:
+                if score >= threshold:
+                    results.append(SearchResult(
+                        name=match_name,
+                        type='interface',
+                        namespace='ProcessNet',
+                        score=score
+                    ))
+
+        # Sort by score and remove duplicates
+        seen = set()
+        unique_results = []
+        for r in sorted(results, key=lambda x: x.score, reverse=True):
+            key = (r.name.lower(), r.type)
+            if key not in seen:
+                seen.add(key)
+                unique_results.append(r)
+
+        return unique_results[:limit]
+
+    def _search_substring(self, query: str, limit: int = 10) -> list:
+        """Fallback substring search when rapidfuzz is not available."""
+        results = []
+        query_lower = query.lower()
+
+        for method_name in self._method_names:
+            if query_lower in method_name:
+                method_results = self.find_method(method_name)
+                results.extend(method_results)
+
+        for iface_name in self._interface_names:
+            if query_lower in iface_name:
+                results.append(SearchResult(
+                    name=iface_name,
+                    type='interface',
+                    namespace='ProcessNet'
+                ))
+
+        return results[:limit]
+
+    def search_by_description(self, keywords: str) -> list:
+        """
+        Search in method descriptions and code examples.
+
+        Args:
+            keywords: Space-separated keywords to search for
+
+        Returns:
+            List of matching SearchResult objects
+        """
+        results = []
+        keyword_list = keywords.lower().split()
+
+        for ns_name, ns_data in self.kb.get('namespaces', {}).items():
+            # Search in methods
+            for method in ns_data.get('standalone_methods', []):
+                desc = method.get('description', '').lower()
+                if all(kw in desc for kw in keyword_list):
+                    results.append(SearchResult(
+                        name=method['name'],
+                        type='method',
+                        namespace=ns_name,
+                        signature=method.get('signature', ''),
+                        description=method.get('description', ''),
+                        source_file=method.get('source_file', '')
+                    ))
+
+            # Search in examples
+            for example in ns_data.get('examples', []):
+                code = example.get('code', '').lower()
+                if all(kw in code for kw in keyword_list):
+                    results.append(SearchResult(
+                        name='Code Example',
+                        type='example',
+                        namespace=ns_name,
+                        code=example.get('code', '')[:500],
+                        source_file=example.get('source_file', '')
+                    ))
+
+        return results
+
+    def list_namespace_contents(self, namespace: str) -> dict:
+        """
+        List all contents of a namespace.
+
+        Args:
+            namespace: Namespace name
+
+        Returns:
+            Dictionary with namespace contents
+        """
+        ns_data = self.kb.get('namespaces', {}).get(namespace, {})
+
+        return {
+            'name': namespace,
+            'full_name': ns_data.get('full_name', namespace),
+            'description': ns_data.get('description', ''),
+            'classes': [c['name'] for c in ns_data.get('classes', [])],
+            'methods': [m['name'] for m in ns_data.get('standalone_methods', [])],
+            'examples_count': len(ns_data.get('examples', [])),
+            'files': ns_data.get('files', [])
+        }
+
+    def list_namespaces(self) -> list:
+        """List all available namespaces."""
+        return list(self.kb.get('namespaces', {}).keys())
+
+    def find_examples(self, keyword: Optional[str] = None, limit: int = 10) -> list:
+        """
+        Find code examples.
+
+        Args:
+            keyword: Optional keyword filter
+            limit: Maximum results
+
+        Returns:
+            List of code examples
+        """
+        results = []
+
+        for ns_name, ns_data in self.kb.get('namespaces', {}).items():
+            for example in ns_data.get('examples', []):
+                code = example.get('code', '')
+
+                if keyword is None or keyword.lower() in code.lower():
+                    results.append({
+                        'namespace': ns_name,
+                        'code': code,
+                        'language': example.get('language', 'csharp'),
+                        'source_file': example.get('source_file', '')
+                    })
+
+                if len(results) >= limit:
+                    break
+
+        return results
+
+    def get_statistics(self) -> dict:
+        """Get knowledge base statistics."""
+        total_methods = sum(
+            len(ns.get('standalone_methods', []))
+            for ns in self.kb.get('namespaces', {}).values()
+        )
+        total_examples = sum(
+            len(ns.get('examples', []))
+            for ns in self.kb.get('namespaces', {}).values()
+        )
+        total_classes = sum(
+            len(ns.get('classes', []))
+            for ns in self.kb.get('namespaces', {}).values()
+        )
+
+        return {
+            'namespaces': len(self.kb.get('namespaces', {})),
+            'methods': total_methods,
+            'classes': total_classes,
+            'examples': total_examples,
+            'interfaces': len(self._interface_names),
+            'extraction_date': self.kb.get('metadata', {}).get('extraction_date', ''),
+            'files_processed': self.kb.get('metadata', {}).get('total_files_processed', 0)
+        }
+
+
+def format_result(result: SearchResult) -> str:
+    """Format a search result for console output."""
+    output = []
+    output.append(f"\n{'='*60}")
+    output.append(f"Name: {result.name}")
+    output.append(f"Type: {result.type}")
+    output.append(f"Namespace: {result.namespace}")
+
+    if result.signature:
+        output.append(f"Signature: {result.signature}")
+
+    if result.description:
+        output.append(f"Description: {result.description[:200]}")
+
+    if result.code:
+        output.append(f"Code Preview:")
+        output.append(f"  {result.code[:300]}...")
+
+    if result.source_file:
+        output.append(f"Source: {result.source_file}")
+
+    if result.score < 100:
+        output.append(f"Match Score: {result.score:.1f}%")
+
+    return '\n'.join(output)
+
+
+def interactive_mode(kb: ProcessNetKnowledge):
+    """Run interactive query mode."""
+    print("\n" + "="*60)
+    print("ProcessNet Knowledge Query Interface")
+    print("="*60)
+
+    stats = kb.get_statistics()
+    print(f"\nLoaded knowledge base:")
+    print(f"  Namespaces: {stats['namespaces']}")
+    print(f"  Methods: {stats['methods']}")
+    print(f"  Examples: {stats['examples']}")
+    print(f"  Interfaces: {stats['interfaces']}")
+
+    print("\nCommands:")
+    print("  search <query>     - Fuzzy search for methods/interfaces")
+    print("  find <method>      - Exact method lookup")
+    print("  desc <keywords>    - Search by description")
+    print("  list <namespace>   - List namespace contents")
+    print("  namespaces         - List all namespaces")
+    print("  examples [keyword] - Find code examples")
+    print("  stats              - Show statistics")
+    print("  help               - Show this help")
+    print("  quit               - Exit")
+
+    while True:
+        try:
+            cmd = input("\n> ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print("\nGoodbye!")
+            break
+
+        if not cmd:
+            continue
+
+        parts = cmd.split(maxsplit=1)
+        command = parts[0].lower()
+        arg = parts[1] if len(parts) > 1 else ""
+
+        if command in ('quit', 'exit', 'q'):
+            print("Goodbye!")
+            break
+
+        elif command == 'search':
+            if not arg:
+                print("Usage: search <query>")
+                continue
+            results = kb.search_method_fuzzy(arg)
+            if results:
+                for r in results:
+                    print(format_result(r))
+            else:
+                print(f"No results found for '{arg}'")
+
+        elif command == 'find':
+            if not arg:
+                print("Usage: find <method_name>")
+                continue
+            results = kb.find_method(arg)
+            if results:
+                for r in results:
+                    print(format_result(r))
+            else:
+                print(f"Method '{arg}' not found")
+
+        elif command == 'desc':
+            if not arg:
+                print("Usage: desc <keywords>")
+                continue
+            results = kb.search_by_description(arg)
+            if results:
+                for r in results[:10]:
+                    print(format_result(r))
+            else:
+                print(f"No results found for keywords '{arg}'")
+
+        elif command == 'list':
+            if not arg:
+                print("Usage: list <namespace>")
+                continue
+            contents = kb.list_namespace_contents(arg)
+            print(f"\nNamespace: {contents['name']}")
+            print(f"Full Name: {contents['full_name']}")
+            print(f"Description: {contents['description']}")
+            print(f"Methods ({len(contents['methods'])}):")
+            for m in contents['methods'][:20]:
+                print(f"  - {m}")
+            if len(contents['methods']) > 20:
+                print(f"  ... and {len(contents['methods'])-20} more")
+            print(f"Examples: {contents['examples_count']}")
+
+        elif command == 'namespaces':
+            namespaces = kb.list_namespaces()
+            print("\nAvailable Namespaces:")
+            for ns in namespaces:
+                print(f"  - {ns}")
+
+        elif command == 'examples':
+            results = kb.find_examples(arg if arg else None)
+            print(f"\nFound {len(results)} examples:")
+            for i, ex in enumerate(results[:5], 1):
+                print(f"\n--- Example {i} ({ex['source_file']}) ---")
+                print(ex['code'][:500])
+
+        elif command == 'stats':
+            stats = kb.get_statistics()
+            print("\nKnowledge Base Statistics:")
+            for key, value in stats.items():
+                print(f"  {key}: {value}")
+
+        elif command == 'help':
+            print("\nCommands:")
+            print("  search <query>     - Fuzzy search for methods/interfaces")
+            print("  find <method>      - Exact method lookup")
+            print("  desc <keywords>    - Search by description")
+            print("  list <namespace>   - List namespace contents")
+            print("  namespaces         - List all namespaces")
+            print("  examples [keyword] - Find code examples")
+            print("  stats              - Show statistics")
+            print("  quit               - Exit")
+
+        else:
+            print(f"Unknown command: {command}")
+            print("Type 'help' for available commands")
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='Query ProcessNet API knowledge base'
+    )
+    parser.add_argument(
+        '--kb', '-k',
+        type=str,
+        default='output/processnet-knowledge.json',
+        help='Path to knowledge base JSON file'
+    )
+    parser.add_argument(
+        '--search', '-s',
+        type=str,
+        help='Search query (fuzzy match)'
+    )
+    parser.add_argument(
+        '--find', '-f',
+        type=str,
+        help='Find method by exact name'
+    )
+    parser.add_argument(
+        '--examples', '-e',
+        type=str,
+        nargs='?',
+        const='',
+        help='Find code examples (optional keyword filter)'
+    )
+    parser.add_argument(
+        '--json',
+        action='store_true',
+        help='Output results as JSON'
+    )
+
+    args = parser.parse_args()
+
+    try:
+        kb = ProcessNetKnowledge(args.kb)
+    except FileNotFoundError as e:
+        print(f"Error: {e}")
+        sys.exit(1)
+
+    # Handle command-line queries
+    if args.search:
+        results = kb.search_method_fuzzy(args.search)
+        if args.json:
+            print(json.dumps([{
+                'name': r.name,
+                'type': r.type,
+                'namespace': r.namespace,
+                'signature': r.signature,
+                'score': r.score
+            } for r in results], indent=2))
+        else:
+            for r in results:
+                print(format_result(r))
+
+    elif args.find:
+        results = kb.find_method(args.find)
+        if args.json:
+            print(json.dumps([{
+                'name': r.name,
+                'type': r.type,
+                'namespace': r.namespace,
+                'signature': r.signature,
+                'description': r.description
+            } for r in results], indent=2))
+        else:
+            for r in results:
+                print(format_result(r))
+
+    elif args.examples is not None:
+        keyword = args.examples if args.examples else None
+        results = kb.find_examples(keyword)
+        if args.json:
+            print(json.dumps(results, indent=2))
+        else:
+            for i, ex in enumerate(results, 1):
+                print(f"\n--- Example {i} ({ex['source_file']}) ---")
+                print(ex['code'][:1000])
+
+    else:
+        # Interactive mode
+        interactive_mode(kb)
+
+
+if __name__ == '__main__':
+    main()
+````
+
+## File: src/recurdyn-doc-parser.py
+````python
+#!/usr/bin/env python3
+"""
+RecurDyn ProcessNet Documentation Parser
+
+Extracts API documentation from RecurDyn HTML files and builds a structured
+knowledge base for automation workflows.
+
+Usage:
+    python recurdyn-doc-parser.py [--input PATH] [--output PATH]
+"""
+
+import argparse
+import json
+import logging
+import re
+import sys
+from dataclasses import dataclass, field, asdict
+from datetime import datetime
+from pathlib import Path
+from typing import Optional
+
+from bs4 import BeautifulSoup
+import chardet
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    datefmt='%H:%M:%S'
+)
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class Parameter:
+    """Represents a method parameter."""
+    name: str
+    type: str = ""
+    description: str = ""
+    default: Optional[str] = None
+
+
+@dataclass
+class Method:
+    """Represents a class method or function."""
+    name: str
+    signature: str = ""
+    description: str = ""
+    parameters: list = field(default_factory=list)
+    returns: str = ""
+    example_code: str = ""
+    source_file: str = ""
+
+
+@dataclass
+class Property:
+    """Represents a class property."""
+    name: str
+    type: str = ""
+    description: str = ""
+    read_only: bool = False
+    source_file: str = ""
+
+
+@dataclass
+class ClassDef:
+    """Represents a class definition."""
+    name: str
+    description: str = ""
+    inheritance: str = ""
+    methods: list = field(default_factory=list)
+    properties: list = field(default_factory=list)
+    source_file: str = ""
+
+
+@dataclass
+class CodeExample:
+    """Represents a code example."""
+    title: str = ""
+    code: str = ""
+    language: str = "csharp"
+    description: str = ""
+    source_file: str = ""
+
+
+@dataclass
+class Namespace:
+    """Represents a namespace."""
+    name: str
+    full_name: str = ""
+    description: str = ""
+    classes: list = field(default_factory=list)
+    standalone_methods: list = field(default_factory=list)
+    examples: list = field(default_factory=list)
+    files: list = field(default_factory=list)
+
+
+class ProcessNetDocParser:
+    """Parser for RecurDyn ProcessNet documentation."""
+
+    # Known ProcessNet interfaces and classes
+    KNOWN_INTERFACES = [
+        'IApplication', 'IModelDocument', 'IPlotDocument', 'ISubSystem',
+        'IBody', 'IReferenceFrame', 'IMarker', 'IJoint', 'IForce',
+        'IGeometry', 'IRequest', 'IResult', 'IContact', 'IConstraint',
+        'ISpring', 'IDamper', 'IMotion', 'ISensor', 'IExpression',
+        'IRecurDynApp', 'RDApplication'
+    ]
+
+    # Patterns to exclude
+    EXCLUDE_PATTERNS = [
+        '_static', '_images', 'assets', 'css', 'js', '_sources',
+        '.git', '__pycache__', 'mathjax'
+    ]
+
+    def __init__(self, input_path: Path, output_path: Path):
+        self.input_path = Path(input_path)
+        self.output_path = Path(output_path)
+        self.knowledge_base = {
+            'metadata': {
+                'source': 'RecurDyn ProcessNet API',
+                'version': 'extracted',
+                'extraction_date': datetime.now().isoformat(),
+                'total_files_processed': 0,
+                'extraction_duration_seconds': 0
+            },
+            'namespaces': {},
+            'method_index': {},
+            'class_index': {},
+            'interface_index': {}
+        }
+        self.errors = []
+        self.stats = {
+            'files_processed': 0,
+            'files_skipped': 0,
+            'files_failed': 0,
+            'methods_extracted': 0,
+            'classes_extracted': 0,
+            'examples_extracted': 0
+        }
+
+    def discover_files(self) -> list:
+        """Discover all documentation files recursively."""
+        all_files = []
+        extensions = ['.html', '.htm']
+
+        for path in self.input_path.rglob('*'):
+            if path.suffix.lower() in extensions:
+                skip = False
+                for pattern in self.EXCLUDE_PATTERNS:
+                    if pattern in str(path):
+                        skip = True
+                        break
+                if not skip:
+                    all_files.append(path)
+
+        return sorted(all_files)
+
+    def detect_encoding(self, file_path: Path) -> str:
+        """Detect file encoding."""
+        with open(file_path, 'rb') as f:
+            raw_data = f.read(10000)
+            result = chardet.detect(raw_data)
+            return result.get('encoding', 'utf-8') or 'utf-8'
+
+    def read_html_file(self, file_path: Path) -> Optional[BeautifulSoup]:
+        """Read and parse HTML file with encoding detection."""
+        try:
+            encoding = self.detect_encoding(file_path)
+            with open(file_path, 'r', encoding=encoding, errors='replace') as f:
+                content = f.read()
+            return BeautifulSoup(content, 'lxml')
+        except Exception as e:
+            logger.error(f"Failed to read {file_path}: {e}")
+            self.errors.append({'file': str(file_path), 'error': str(e)})
+            return None
+
+    def extract_title(self, soup: BeautifulSoup) -> str:
+        """Extract page title."""
+        title_tag = soup.find('title')
+        if title_tag:
+            title = title_tag.get_text(strip=True)
+            # Remove common suffixes
+            title = re.sub(r'\s*[—–-]\s*RecurDyn.*$', '', title)
+            return title
+        h1 = soup.find('h1')
+        if h1:
+            return h1.get_text(strip=True)
+        return ""
+
+    def extract_code_blocks(self, soup: BeautifulSoup, source_file: str) -> list:
+        """Extract code examples from HTML."""
+        examples = []
+
+        # Find code blocks in highlight divs
+        for highlight in soup.find_all('div', class_='highlight'):
+            pre = highlight.find('pre')
+            if pre:
+                code = pre.get_text()
+                # Detect language from class
+                lang = 'csharp'
+                for cls in highlight.get('class', []):
+                    if 'python' in cls.lower():
+                        lang = 'python'
+                    elif 'c#' in cls.lower() or 'csharp' in cls.lower():
+                        lang = 'csharp'
+
+                # Check if code contains ProcessNet-related content
+                if any(iface in code for iface in self.KNOWN_INTERFACES) or \
+                   'FunctionBay.RecurDyn' in code or 'ProcessNet' in code:
+                    examples.append(CodeExample(
+                        code=code.strip(),
+                        language=lang,
+                        source_file=source_file
+                    ))
+
+        return examples
+
+    def extract_interfaces_from_code(self, code: str) -> list:
+        """Extract interface references from code."""
+        found = []
+        for iface in self.KNOWN_INTERFACES:
+            if iface in code:
+                found.append(iface)
+        return found
+
+    def extract_method_signatures(self, soup: BeautifulSoup) -> list:
+        """Extract method signatures from definition lists."""
+        methods = []
+
+        # Look for definition lists (common in Sphinx docs)
+        for dl in soup.find_all('dl'):
+            for dt in dl.find_all('dt', recursive=False):
+                sig_text = dt.get_text(strip=True)
+                # Check if it looks like a method signature
+                if '(' in sig_text and ')' in sig_text:
+                    dd = dt.find_next_sibling('dd')
+                    description = dd.get_text(strip=True) if dd else ""
+
+                    # Parse method name
+                    match = re.match(r'(\w+)\s*\(', sig_text)
+                    if match:
+                        method_name = match.group(1)
+                        methods.append(Method(
+                            name=method_name,
+                            signature=sig_text,
+                            description=description[:500]
+                        ))
+
+        return methods
+
+    def parse_html_file(self, file_path: Path) -> dict:
+        """Parse a single HTML file and extract content."""
+        result = {
+            'title': '',
+            'namespace': '',
+            'classes': [],
+            'methods': [],
+            'examples': [],
+            'interfaces_referenced': []
+        }
+
+        soup = self.read_html_file(file_path)
+        if not soup:
+            return result
+
+        rel_path = str(file_path.relative_to(self.input_path))
+
+        # Extract title
+        result['title'] = self.extract_title(soup)
+
+        # Extract code examples
+        result['examples'] = self.extract_code_blocks(soup, rel_path)
+
+        # Extract method signatures
+        result['methods'] = self.extract_method_signatures(soup)
+
+        # Extract interfaces from all code
+        main_content = soup.find('div', class_='document') or soup.find('main') or soup.body
+        if main_content:
+            text = main_content.get_text()
+            result['interfaces_referenced'] = self.extract_interfaces_from_code(text)
+
+        # Determine namespace from content
+        if 'ProcessNet' in result['title'] or any(ex.code for ex in result['examples']):
+            result['namespace'] = 'ProcessNet'
+
+        return result
+
+    def build_knowledge_base(self):
+        """Build the complete knowledge base from all files."""
+        start_time = datetime.now()
+
+        logger.info(f"Discovering files in {self.input_path}...")
+        files = self.discover_files()
+        logger.info(f"Found {len(files)} HTML files")
+
+        # Initialize ProcessNet namespace
+        self.knowledge_base['namespaces']['ProcessNet'] = {
+            'full_name': 'FunctionBay.RecurDyn.ProcessNet',
+            'description': 'RecurDyn ProcessNet API for automation',
+            'classes': [],
+            'standalone_methods': [],
+            'examples': [],
+            'files': []
+        }
+
+        for idx, file_path in enumerate(files, 1):
+            progress = (idx / len(files)) * 100
+            logger.info(f"[{progress:5.1f}%] ({idx}/{len(files)}) {file_path.name}")
+
+            try:
+                content = self.parse_html_file(file_path)
+
+                # Add examples to namespace
+                if content['examples']:
+                    for ex in content['examples']:
+                        ex_dict = asdict(ex)
+                        self.knowledge_base['namespaces']['ProcessNet']['examples'].append(ex_dict)
+                        self.stats['examples_extracted'] += 1
+
+                # Add methods to namespace
+                if content['methods']:
+                    for method in content['methods']:
+                        method_dict = asdict(method)
+                        method_dict['source_file'] = str(file_path.relative_to(self.input_path))
+                        self.knowledge_base['namespaces']['ProcessNet']['standalone_methods'].append(method_dict)
+
+                        # Add to method index
+                        method_lower = method.name.lower()
+                        if method_lower not in self.knowledge_base['method_index']:
+                            self.knowledge_base['method_index'][method_lower] = []
+                        self.knowledge_base['method_index'][method_lower].append('ProcessNet')
+                        self.stats['methods_extracted'] += 1
+
+                # Track interfaces
+                for iface in content['interfaces_referenced']:
+                    iface_lower = iface.lower()
+                    if iface_lower not in self.knowledge_base['interface_index']:
+                        self.knowledge_base['interface_index'][iface_lower] = []
+                    if 'ProcessNet' not in self.knowledge_base['interface_index'][iface_lower]:
+                        self.knowledge_base['interface_index'][iface_lower].append('ProcessNet')
+
+                # Add file to namespace
+                rel_path = str(file_path.relative_to(self.input_path))
+                if rel_path not in self.knowledge_base['namespaces']['ProcessNet']['files']:
+                    self.knowledge_base['namespaces']['ProcessNet']['files'].append(rel_path)
+
+                self.stats['files_processed'] += 1
+
+            except Exception as e:
+                logger.error(f"Failed to process {file_path}: {e}")
+                self.errors.append({'file': str(file_path), 'error': str(e)})
+                self.stats['files_failed'] += 1
+
+        # Update metadata
+        end_time = datetime.now()
+        duration = (end_time - start_time).total_seconds()
+        self.knowledge_base['metadata']['total_files_processed'] = self.stats['files_processed']
+        self.knowledge_base['metadata']['extraction_duration_seconds'] = duration
+
+        logger.info("=" * 60)
+        logger.info("Extraction Summary:")
+        logger.info(f"  Files processed: {self.stats['files_processed']}")
+        logger.info(f"  Files failed: {self.stats['files_failed']}")
+        logger.info(f"  Methods extracted: {self.stats['methods_extracted']}")
+        logger.info(f"  Examples extracted: {self.stats['examples_extracted']}")
+        logger.info(f"  Duration: {duration:.1f} seconds")
+
+    def save_knowledge_base(self):
+        """Save knowledge base to JSON file."""
+        self.output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        with open(self.output_path, 'w', encoding='utf-8') as f:
+            json.dump(self.knowledge_base, f, indent=2, ensure_ascii=False)
+
+        logger.info(f"Knowledge base saved to {self.output_path}")
+
+        # Save errors if any
+        if self.errors:
+            error_path = self.output_path.parent / 'extraction-errors.json'
+            with open(error_path, 'w', encoding='utf-8') as f:
+                json.dump(self.errors, f, indent=2, ensure_ascii=False)
+            logger.warning(f"Errors saved to {error_path}")
+
+    def generate_markdown(self, output_dir: Path):
+        """Generate markdown documentation from knowledge base."""
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        for ns_name, ns_data in self.knowledge_base['namespaces'].items():
+            md_path = output_dir / f"{ns_name.replace('.', '_')}.md"
+
+            with open(md_path, 'w', encoding='utf-8') as f:
+                f.write(f"# {ns_name}\n\n")
+                f.write(f"> {ns_data.get('description', '')}\n\n")
+
+                # Overview
+                f.write("## Overview\n\n")
+                f.write(f"**Full Name:** {ns_data.get('full_name', ns_name)}\n\n")
+                f.write(f"**Methods:** {len(ns_data.get('standalone_methods', []))}\n\n")
+                f.write(f"**Examples:** {len(ns_data.get('examples', []))}\n\n")
+
+                # Methods
+                if ns_data.get('standalone_methods'):
+                    f.write("## Methods\n\n")
+                    for method in ns_data['standalone_methods'][:50]:  # Limit for readability
+                        f.write(f"### {method['name']}\n\n")
+                        if method.get('signature'):
+                            f.write(f"```\n{method['signature']}\n```\n\n")
+                        if method.get('description'):
+                            f.write(f"{method['description']}\n\n")
+
+                # Examples
+                if ns_data.get('examples'):
+                    f.write("## Code Examples\n\n")
+                    for i, example in enumerate(ns_data['examples'][:20], 1):
+                        f.write(f"### Example {i}\n\n")
+                        if example.get('title'):
+                            f.write(f"**{example['title']}**\n\n")
+                        f.write(f"```{example.get('language', 'csharp')}\n")
+                        f.write(example.get('code', '')[:2000])  # Limit code length
+                        f.write("\n```\n\n")
+                        if example.get('source_file'):
+                            f.write(f"*Source: {example['source_file']}*\n\n")
+
+            logger.info(f"Generated {md_path}")
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='Extract ProcessNet API documentation from RecurDyn HTML files'
+    )
+    parser.add_argument(
+        '--input', '-i',
+        type=Path,
+        default=Path('knowledge'),
+        help='Input directory containing HTML documentation'
+    )
+    parser.add_argument(
+        '--output', '-o',
+        type=Path,
+        default=Path('output/processnet-knowledge.json'),
+        help='Output JSON file path'
+    )
+    parser.add_argument(
+        '--markdown', '-m',
+        type=Path,
+        default=Path('output/markdown'),
+        help='Output directory for markdown files'
+    )
+    parser.add_argument(
+        '--verbose', '-v',
+        action='store_true',
+        help='Enable verbose logging'
+    )
+
+    args = parser.parse_args()
+
+    if args.verbose:
+        logging.getLogger().setLevel(logging.DEBUG)
+
+    if not args.input.exists():
+        logger.error(f"Input path does not exist: {args.input}")
+        sys.exit(1)
+
+    doc_parser = ProcessNetDocParser(args.input, args.output)
+    doc_parser.build_knowledge_base()
+    doc_parser.save_knowledge_base()
+    doc_parser.generate_markdown(args.markdown)
+
+    logger.info("Extraction complete!")
+
+
+if __name__ == '__main__':
+    main()
+````
+
+## File: .gitignore
+````
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Project specific
+*.tmp
+*.bak
+
+# Source data (large files)
+knowledge/
+
+# Generated output
+output/
+````
+
+## File: ProcessNet_Extraction_Requirements.md
+````markdown
+# ProcessNet Knowledge Base Extraction - Requirements Document
+
+## Project Overview
+
+**Objective:** Extract complete ProcessNet API documentation from RecurDyn installation folder and build structured knowledge base for automation workflows.
+
+**Source:** CHM/HTML documentation files from RecurDyn installation directory  
+**Target Output:** 
+- JSON knowledge base (processnet_knowledge.json)
+- Markdown reference docs (one file per namespace)
+- Query interface module (processnet_query.py)
+
+**Estimated Time:** 5-10 minutes execution  
+**Cost:** $0 (runs locally)
+
+---
+
+## Phase 1: Environment Setup
+
+### Prerequisites
+```bash
+# Python 3.8+
+# Required libraries
+pip install beautifulsoup4 lxml
+```
+
+### Documentation Location
+```
+Typical path: C:\Program Files\FunctionBay\RecurDyn\Help\ProcessNet\
+Alternative: C:\RecurDyn\Documentation\ProcessNet\
+
+Structure expected:
+ProcessNet/
+├── index.html
+├── namespace_*.html
+├── class_*.html
+└── _static/
+```
+
+---
+
+## Phase 2: HTML Parser Implementation
+
+### Core Requirements
+
+#### Script 1: `recurdyn_doc_parser.py`
+
+**Functionality:**
+1. **Recursive HTML Discovery** (CRITICAL - Must Loop All Files)
+   
+   **Requirements:**
+   ```python
+   # Must recursively scan ALL subdirectories
+   # Process every .html, .htm, .chm file found
+   # NO files should be skipped except explicitly excluded patterns
+   ```
+   
+   **Implementation Pattern:**
+   ```python
+   from pathlib import Path
+   
+   def discover_all_documentation_files(root_path: Path) -> List[Path]:
+       """
+       Recursively find ALL documentation files in directory tree.
+       
+       Returns:
+           List of all .html, .htm, .chm files found
+       """
+       all_files = []
+       
+       # Patterns to INCLUDE
+       include_extensions = ['.html', '.htm', '.chm']
+       
+       # Patterns to EXCLUDE (only for specific folders/files)
+       exclude_patterns = [
+           '_static',    # Static assets
+           '_images',    # Image directories
+           'assets',     # Asset directories
+           'css',        # Stylesheet directories
+           'js',         # JavaScript directories
+           '_sources',   # Sphinx source files
+           '.git',       # Version control
+           '__pycache__' # Python cache
+       ]
+       
+       # Recursive walk through entire directory tree
+       for path in root_path.rglob('*'):
+           # Check if file has documentation extension
+           if path.suffix.lower() in include_extensions:
+               # Check if path contains any excluded patterns
+               skip = False
+               for pattern in exclude_patterns:
+                   if pattern in str(path):
+                       skip = True
+                       break
+               
+               if not skip:
+                   all_files.append(path)
+       
+       return sorted(all_files)  # Sort for deterministic processing
+   ```
+   
+   **CHM File Handling:**
+   ```python
+   # If CHM files are found, they must be extracted first
+   def extract_chm_file(chm_path: Path, output_dir: Path):
+       """
+       Extract CHM to HTML files before processing.
+       
+       Note: CHM is a compiled HTML help format.
+       Use library like 'pychm' or system tool 'hh.exe -decompile'
+       """
+       import subprocess
+       
+       # Windows: Use hh.exe (built-in)
+       subprocess.run([
+           'hh.exe', 
+           '-decompile', 
+           str(output_dir),
+           str(chm_path)
+       ])
+       
+       # Alternative: Use pychm library
+       # from chm.chm import CHMFile
+       # chm = CHMFile(str(chm_path))
+       # for name in chm.GetTopicsTree():
+       #     content = chm.RetrieveObject(name)
+       #     output_path = output_dir / name
+       #     output_path.parent.mkdir(parents=True, exist_ok=True)
+       #     output_path.write_bytes(content)
+   ```
+   
+   **Verification Steps:**
+   - Log total files discovered before processing
+   - Log processing progress: "Processing file X of Y"
+   - Log skipped files with reasons
+   - Final summary: "Processed X files, skipped Y files"
+   
+   **Example Output:**
+   ```
+   [INFO] Discovering documentation files...
+   [INFO] Found 347 HTML files
+   [INFO] Found 2 CHM files
+   [INFO] Extracting CHM: ProcessNet.chm -> temp/processnet_extracted/
+   [INFO] Extracting CHM: RecurDyn_API.chm -> temp/recurdyn_extracted/
+   [INFO] Total files to process: 847
+   
+   [INFO] Processing (1/847): index.html
+   [INFO] Processing (2/847): namespace_geometry.html
+   ...
+   [INFO] Processing (847/847): examples_advanced.html
+   
+   [SUCCESS] Processed 847 files
+   [WARNING] Skipped 12 files (see error_report.txt)
+   ```
+
+2. **Content Extraction per File**
+   Extract following elements:
+   
+   **A. Page Metadata**
+   - Title (from `<title>` or `<h1>`)
+   - Namespace path (pattern: `ProcessNet.Namespace.SubNamespace`)
+   - File path (relative to root)
+   
+   **B. Class Definitions**
+   - Class name
+   - Description paragraph (usually first `<p>` after class header)
+   - Inheritance chain (look for "inherits from", "derived from", "base class")
+   - Access modifiers (public, protected, private if documented)
+   
+   **C. Method Signatures**
+   - Full signature with parameters
+   - Method name extraction
+   - Parameter list with types (parse from signature or following table)
+   - Return type (from signature or "Returns:" section)
+   - Description (paragraph following method header)
+   
+   **D. Properties/Fields**
+   - Property name
+   - Data type
+   - Read-only flag (look for "read-only", "get only")
+   - Description
+   
+   **E. Code Examples**
+   - Section title ("Example:", "Usage:", "Sample Code:")
+   - Code block content (from `<pre>`, `<code>`)
+   - Language hint (assume Python/IronPython for ProcessNet)
+   
+   **F. Related References**
+   - "See also" links
+   - Cross-references to other classes/methods
+
+3. **Parsing Strategies**
+
+   **Strategy A: Definition Lists** (`<dl>`, `<dt>`, `<dd>`)
+   ```html
+   <dt>CreateArc(center, radius, start_angle, end_angle)</dt>
+   <dd>Creates a circular arc with specified parameters...</dd>
+   ```
+   
+   **Strategy B: Table-Based** (common in API docs)
+   ```html
+   <table class="methods">
+     <tr><th>Method</th><th>Description</th></tr>
+     <tr><td>CreateArc(...)</td><td>Creates arc...</td></tr>
+   </table>
+   ```
+   
+   **Strategy C: Heading + Paragraph**
+   ```html
+   <h3>CreateArc</h3>
+   <pre>CreateArc(center, radius, start_angle, end_angle)</pre>
+   <p>Creates a circular arc...</p>
+   ```
+
+4. **Special ProcessNet Patterns**
+
+   **Pattern Detection:**
+   - ProcessNet uses IronPython syntax
+   - Look for namespace declarations: `ProcessNet.*`
+   - Method signatures may include .NET type hints: `List[Body]`, `Vector3`, `bool`
+   - Properties use get/set notation: `Body.Mass { get; set; }`
+   - Events use delegate pattern: `OnSimulationStep(sender, args)`
+
+5. **Data Validation**
+   - Skip navigation elements (sidebar, header, footer)
+   - Ignore boilerplate text (copyright, license)
+   - Validate method signatures (must contain parentheses)
+   - Check for duplicate entries (same method appears in multiple pages)
+
+6. **Output Structure**
+   ```json
+   {
+     "metadata": {
+       "source": "RecurDyn ProcessNet API",
+       "version": "extracted_from_path",
+       "extraction_date": "ISO8601",
+       "total_files_processed": 0,
+       "extraction_duration_seconds": 0
+     },
+     "namespaces": {
+       "ProcessNet.Geometry": {
+         "full_name": "ProcessNet.Geometry",
+         "description": "Geometry creation and manipulation",
+         "files": ["geometry.html", "curve.html"],
+         "classes": [
+           {
+             "name": "Curve",
+             "description": "Represents a curve entity",
+             "inheritance": "GeometricEntity",
+             "methods": [...],
+             "properties": [...],
+             "source_file": "curve.html"
+           }
+         ],
+         "standalone_methods": [
+           {
+             "name": "CreateArc",
+             "signature": "CreateArc(center, radius, start_angle, end_angle)",
+             "parameters": [
+               {
+                 "name": "center",
+                 "type": "Vector3",
+                 "description": "Arc center point"
+               }
+             ],
+             "returns": "CurveID",
+             "description": "Creates circular arc",
+             "example_code": "arc = CreateArc([0,0,0], 50, 0, 90)",
+             "source_file": "geometry.html"
+           }
+         ],
+         "examples": [
+           {
+             "title": "Creating Basic Curves",
+             "code": "...",
+             "language": "python",
+             "source_file": "examples.html"
+           }
+         ]
+       }
+     },
+     "method_index": {
+       "createarc": ["ProcessNet.Geometry"],
+       "getallbodies": ["ProcessNet.Model"]
+     },
+     "class_index": {
+       "curve": ["ProcessNet.Geometry"],
+       "body": ["ProcessNet.Model", "ProcessNet.Subsystem"]
+     }
+   }
+   ```
+
+7. **Error Handling**
+   - Log files that fail to parse (with error reason)
+   - Continue processing on individual file errors
+   - Generate warnings for:
+     - Methods without descriptions
+     - Parameters without type hints
+     - Missing examples in core namespaces
+   - Output error summary at end
+
+8. **Performance Optimization**
+   - Use streaming parsing for large files
+   - Cache parsed content to avoid re-processing
+   - Parallel processing if >100 files (use multiprocessing)
+
+---
+
+## Phase 3: Query Interface Implementation
+
+### Script 2: `processnet_query.py`
+
+**Requirements:**
+
+1. **Load Knowledge Base**
+   - Read JSON file
+   - Build in-memory search indices:
+     - Method name → namespace mapping
+     - Class name → namespace mapping
+     - Keyword → method/class mapping
+   - Validate structure integrity
+
+2. **Search Functions**
+
+   **A. Exact Method Lookup**
+   ```python
+   def find_method(method_name: str, namespace: Optional[str] = None) -> List[MethodInfo]
+   ```
+   - Case-insensitive exact match
+   - Optional namespace filter
+   - Return all overloads if exist
+
+   **B. Fuzzy Method Search**
+   ```python
+   def search_method_fuzzy(query: str, threshold: float = 0.6) -> List[MethodInfo]
+   ```
+   - Use difflib for similarity matching
+   - Return top 5 matches above threshold
+   - Sort by similarity score
+
+   **C. Description Search**
+   ```python
+   def search_by_description(keywords: str) -> List[MethodInfo]
+   ```
+   - Search in method descriptions
+   - Support multiple keywords (AND logic)
+   - Highlight matching keywords in results
+
+   **D. Namespace Exploration**
+   ```python
+   def list_namespace_contents(namespace: str) -> Dict
+   ```
+   - Return all classes and methods in namespace
+   - Include count statistics
+   - Sort alphabetically
+
+   **E. Example Finder**
+   ```python
+   def find_examples(keyword: Optional[str] = None) -> List[Dict]
+   ```
+   - Find code examples
+   - Filter by keyword in code or title
+   - Return with context (namespace, related methods)
+
+3. **Output Formats**
+
+   **Console Format:**
+   ```
+   Method: CreateArc
+   Namespace: ProcessNet.Geometry
+   Signature: CreateArc(center: Vector3, radius: float, start_angle: float, end_angle: float) -> CurveID
+   Description: Creates a circular arc with specified parameters
+   
+   Parameters:
+     - center (Vector3): Arc center point in 3D space
+     - radius (float): Arc radius in model units
+     - start_angle (float): Start angle in degrees
+     - end_angle (float): End angle in degrees
+   
+   Returns: CurveID - Identifier for created arc
+   
+   Example:
+     arc = CreateArc([0,0,0], 50, 0, 90)
+   ```
+
+   **JSON Format:**
+   ```json
+   {
+     "name": "CreateArc",
+     "namespace": "ProcessNet.Geometry",
+     "signature": "...",
+     "parameters": [...],
+     "returns": {...},
+     "examples": [...]
+   }
+   ```
+
+   **Markdown Format:** (for Skills)
+   ```markdown
+   ## CreateArc
+   
+   **Namespace:** ProcessNet.Geometry
+   
+   **Signature:** `CreateArc(center, radius, start_angle, end_angle)`
+   
+   Creates a circular arc with specified parameters.
+   
+   ### Parameters
+   - `center` (Vector3): Arc center point
+   - `radius` (float): Arc radius
+   
+   ### Returns
+   `CurveID` - Identifier for created arc
+   
+   ### Example
+   ```python
+   arc = CreateArc([0,0,0], 50, 0, 90)
+   ```
+   ```
+
+4. **Interactive CLI Mode**
+   ```bash
+   $ python processnet_query.py
+   ProcessNet Knowledge Query Interface
+   
+   Commands:
+     search <method_name>       - Find method by name
+     describe <method_name>     - Show detailed method info
+     list <namespace>           - List namespace contents
+     example <keyword>          - Find examples
+     export <namespace> <file>  - Export namespace to markdown
+     help                       - Show this help
+     quit                       - Exit
+   
+   > search CreateArc
+   Found 2 matches:
+     1. ProcessNet.Geometry.CreateArc
+     2. ProcessNet.Curve.CreateArc
+   
+   > describe 1
+   [detailed output]
+   ```
+
+5. **Integration Helpers**
+
+   **Claude Code Import Function:**
+   ```python
+   def load_processnet_knowledge(kb_path: str = "processnet_knowledge.json") -> ProcessNetKnowledge:
+       """
+       Load knowledge base for Claude Code integration.
+       
+       Usage in Claude Code:
+           from processnet_query import load_processnet_knowledge
+           kb = load_processnet_knowledge()
+           methods = kb.find_method("CreateArc")
+           print(methods[0].signature)
+       """
+   ```
+
+   **Auto-completion Data Export:**
+   ```python
+   def export_autocomplete_data(output_file: str):
+       """
+       Export method signatures for IDE autocomplete.
+       Format: JSON with all signatures for IntelliSense.
+       """
+   ```
+
+---
+
+## Phase 4: Markdown Export Implementation
+
+### Script 3: Integrated in `recurdyn_doc_parser.py`
+
+**Requirements:**
+
+1. **Generate Namespace Files**
+   - One .md file per namespace
+   - Filename: `ProcessNet_Namespace_SubNamespace.md`
+   - Clean, readable structure
+
+2. **Markdown Template**
+   ```markdown
+   # ProcessNet.Namespace
+   
+   > [Brief namespace description]
+   
+   ## Overview
+   
+   **Total Classes:** X
+   **Total Methods:** Y
+   **Total Examples:** Z
+   
+   ## Classes
+   
+   ### ClassName
+   
+   [Class description]
+   
+   **Inherits from:** BaseClass
+   
+   #### Methods
+   
+   ##### `MethodSignature(params)`
+   
+   [Method description]
+   
+   **Parameters:**
+   - `param1` (type) - Description
+   
+   **Returns:** ReturnType - Description
+   
+   **Example:**
+   ```python
+   [code]
+   ```
+   
+   ## Standalone Methods
+   
+   [Same structure as class methods]
+   
+   ## Examples
+   
+   ### Example Title
+   
+   ```python
+   [code]
+   ```
+   
+   ## See Also
+   
+   - Related namespace links
+   ```
+
+3. **Cross-References**
+   - Link to related classes: `[ClassName](#classname)`
+   - Link to methods: `[MethodName](#methodname)`
+   - External links to original HTML if preserved
+
+4. **Table of Contents**
+   - Auto-generate TOC for files >500 lines
+   - Nested structure following namespace hierarchy
+
+---
+
+## Phase 5: Validation & Testing
+
+### Test Cases
+
+**Test 1: Sample File Parsing**
+```python
+# Test on single HTML file
+test_file = "C:/RecurDyn/Help/ProcessNet/geometry.html"
+content = parser.parse_html_file(test_file)
+
+assert content['namespace'] is not None
+assert len(content['methods']) > 0
+print(f"Extracted {len(content['methods'])} methods")
+```
+
+**Test 2: Full Extraction**
+```python
+# Run on full documentation
+kb = parser.parse_all_docs()
+
+print(f"Namespaces: {len(kb['namespaces'])}")
+for ns, data in kb['namespaces'].items():
+    print(f"  {ns}: {len(data['methods'])} methods, {len(data['classes'])} classes")
+```
+
+**Test 3: Query Interface**
+```python
+# Test search functionality
+kb_query = ProcessNetKnowledge("processnet_knowledge.json")
+
+# Test exact match
+results = kb_query.find_method("CreateArc")
+assert len(results) > 0
+
+# Test fuzzy match
+results = kb_query.search_method_fuzzy("createark")  # Typo
+assert len(results) > 0
+
+# Test description search
+results = kb_query.search_by_description("circular arc")
+assert len(results) > 0
+```
+
+**Test 4: Use Case Validation**
+
+For each of the 3 target automation workflows:
+
+**Use Case 1: DOE Batch Execution**
+```python
+# Verify methods exist:
+assert kb_query.find_method("Model.Load")
+assert kb_query.find_method("Model.Clone")
+assert kb_query.find_method("SetParameter")
+assert kb_query.find_method("Run")
+```
+
+**Use Case 2: Model Introspection**
+```python
+# Verify navigation methods:
+assert kb_query.find_method("GetAllBodies")
+assert kb_query.find_method("GetAllJoints")
+assert kb_query.find_method("GetEntityByID")
+assert kb_query.find_method("GetID")
+```
+
+**Use Case 3: Result Processing**
+```python
+# Verify result handling:
+assert kb_query.find_method("Result.Load")
+assert kb_query.find_method("GetTimeArray")
+assert kb_query.find_method("GetEntityData")
+```
+
+---
+
+## Phase 6: Deliverables Checklist
+
+### Required Outputs
+
+- [ ] `recurdyn_doc_parser.py` - Main extraction script
+- [ ] `processnet_query.py` - Query interface module
+- [ ] `processnet_knowledge.json` - Full knowledge base
+- [ ] `processnet_docs_md/` - Markdown reference files (one per namespace)
+- [ ] `extraction_log.txt` - Processing log with statistics
+- [ ] `error_report.txt` - Files that failed to parse (if any)
+- [ ] `README.md` - Usage instructions
+
+### Statistics to Report
+
+```
+Extraction Summary:
+==================
+Total HTML files processed: X
+Successful: Y
+Failed: Z
+
+Namespaces discovered: N
+Total classes: C
+Total methods: M
+Total properties: P
+Total examples: E
+
+Top 5 largest namespaces:
+  1. ProcessNet.Namespace1: M1 methods
+  2. ProcessNet.Namespace2: M2 methods
+  ...
+
+Extraction duration: X seconds
+Output file size: Y MB
+```
+
+---
+
+## Phase 7: Claude Code Integration Guide
+
+### Usage in Claude Code
+
+**Step 1: Load Knowledge Base**
+```python
+# At start of Claude Code session
+from processnet_query import load_processnet_knowledge
+
+kb = load_processnet_knowledge("path/to/processnet_knowledge.json")
+print(f"Loaded {len(kb.list_namespaces())} namespaces")
+```
+
+**Step 2: Query During Coding**
+```python
+# When writing automation script:
+
+# Find method
+methods = kb.find_method("CreateArc", namespace="Geometry")
+print(methods[0].signature)
+print(methods[0].description)
+
+# Get all methods in namespace
+geom_methods = kb.get_namespace_methods("ProcessNet.Geometry")
+for m in geom_methods:
+    print(f"  - {m.name}")
+
+# Search by description
+doe_methods = kb.search_by_description("design of experiments")
+```
+
+**Step 3: Generate Code with Context**
+```python
+# Example: Generate DOE script with method lookup
+
+# Query relevant methods
+model_methods = kb.find_method("Model.Load")
+param_methods = kb.search_by_description("set parameter")
+
+# Use signatures to generate correct code
+# (Claude Code can now autocomplete based on actual API)
+```
+
+---
+
+## Expected Command Line Usage
+
+### Extraction Phase
+```bash
+# Basic extraction
+python recurdyn_doc_parser.py "C:\RecurDyn\Help\ProcessNet"
+
+# With all outputs
+python recurdyn_doc_parser.py "C:\RecurDyn\Help\ProcessNet" \
+    --output processnet_knowledge.json \
+    --markdown ./processnet_docs_md \
+    --log extraction_log.txt
+
+# Verbose mode
+python recurdyn_doc_parser.py "C:\RecurDyn\Help\ProcessNet" \
+    --output processnet_knowledge.json \
+    --verbose \
+    --validate
+```
+
+### Query Phase
+```bash
+# Interactive mode
+python processnet_query.py
+
+# Direct query
+python processnet_query.py --search "CreateArc"
+
+# Export namespace
+python processnet_query.py --export "ProcessNet.Geometry" --format markdown
+```
+
+---
+
+## Error Handling Requirements
+
+### Critical Errors (Stop Execution)
+- Documentation path not found
+- No HTML files in directory
+- Cannot create output directory
+- Insufficient disk space for output
+
+### Warnings (Continue with Logging)
+- Individual file parsing failures
+- Malformed HTML structure
+- Missing expected sections (methods, examples)
+- Encoding issues
+
+### Validation Warnings
+- Methods without descriptions
+- Parameters without type information
+- Classes without examples
+- Duplicate method names across namespaces
+
+---
+
+## Performance Targets
+
+- **Extraction Speed:** <5 minutes for 500 HTML files
+- **Memory Usage:** <500 MB peak during extraction
+- **Output Size:** Expect 5-50 MB JSON depending on documentation size
+- **Query Response:** <100ms for any lookup operation
+
+---
+
+## Success Criteria
+
+### Minimum Viable Output
+- ✅ At least 80% of HTML files successfully parsed
+- ✅ All major namespaces identified (ProcessNet.Model, ProcessNet.Geometry, etc.)
+- ✅ Method signatures extracted with >90% accuracy
+- ✅ Query interface returns correct results for test cases
+
+### Optimal Output
+- ✅ >95% parsing success rate
+- ✅ Complete parameter type information
+- ✅ All code examples extracted
+- ✅ Cross-references preserved
+- ✅ Markdown output is clean and readable
+
+---
+
+## Post-Extraction Next Steps
+
+After successful extraction, use knowledge base for:
+
+1. **Create Claude Code Skills** for common ProcessNet workflows
+2. **Build automation templates** for 3 target use cases
+3. **Generate API cheat sheets** for quick reference
+4. **Develop testing framework** for RecurDyn automation scripts
+
+---
+
+## Target Use Cases (For Validation)
+
+### Use Case 1: DOE Batch Execution
+**Required Methods:**
+- Model loading/saving
+- Parameter manipulation
+- Model cloning
+- Batch simulation execution
+- File naming/organization
+
+**Example Workflow:**
+```python
+# Load base model
+model = ProcessNet.Model.Load("base_model.rdyn")
+
+# Create design variations
+for mass in [100, 150, 200]:
+    for stiffness in [1000, 2000, 3000]:
+        variant = model.Clone()
+        variant.SetParameter("body_mass", mass)
+        variant.SetParameter("spring_k", stiffness)
+        variant.SaveAs(f"doe_m{mass}_k{stiffness}.rdyn")
+        variant.Run()
+```
+
+### Use Case 2: Model Introspection
+**Required Methods:**
+- Entity enumeration (bodies, joints, forces)
+- ID retrieval
+- Property inspection
+- Hierarchy navigation
+- Entity creation from templates
+
+**Example Workflow:**
+```python
+# Read model structure
+model = ProcessNet.Model.Load("existing_model.rdyn")
+
+# Map all entities
+entity_map = {
+    "bodies": [b.GetID() for b in model.GetAllBodies()],
+    "joints": [j.GetID() for j in model.GetAllJoints()],
+    "forces": [f.GetID() for f in model.GetAllForces()]
+}
+
+# Create similar entities
+for body_id in entity_map["bodies"]:
+    body = model.GetEntityByID(body_id)
+    if body.GetType() == "RigidBody":
+        # Create duplicate with offset
+        new_body = model.CreateBodyLike(body)
+        new_body.SetPosition(body.GetPosition() + offset)
+```
+
+### Use Case 3: Result Post-Processing
+**Required Methods:**
+- Result file loading (without opening GUI)
+- Time series data extraction
+- Entity-specific data retrieval
+- Data export formats
+- Batch result processing
+
+**Example Workflow:**
+```python
+# Process results without opening RecurDyn
+result = ProcessNet.Result.Load("sim_output.rsl")
+
+# Extract data
+time = result.GetTimeArray()
+force_magnitude = result.GetEntityData("Force_1", "Magnitude")
+displacement = result.GetEntityData("Body_2", "Displacement_X")
+
+# Export for analysis
+import pandas as pd
+df = pd.DataFrame({
+    "Time": time,
+    "Force": force_magnitude,
+    "Displacement": displacement
+})
+df.to_csv("processed_results.csv")
+```
+
+---
+
+## Notes for Claude Code
+
+- Prioritize extraction accuracy over speed
+- Log verbosely to aid debugging
+- Use type hints for all functions
+- Include docstrings with examples
+- Handle edge cases gracefully (malformed HTML, missing sections)
+- Provide progress feedback during long operations
+- Make scripts modular for easy customization
+
+**If documentation structure is different than expected, adapt parser heuristics rather than failing hard.**
+
+**Critical:** The scripts should be production-ready with proper error handling, logging, and user feedback. This is a foundational tool that will be used repeatedly for automation development.
+
+---
+
+## File Structure After Completion
+
+```
+project/
+├── recurdyn_doc_parser.py       # Main extraction script
+├── processnet_query.py          # Query interface
+├── processnet_knowledge.json    # Full knowledge base
+├── extraction_log.txt           # Processing log
+├── error_report.txt             # Errors encountered
+├── README.md                    # Usage guide
+├── processnet_docs_md/          # Markdown exports
+│   ├── ProcessNet_Geometry.md
+│   ├── ProcessNet_Model.md
+│   ├── ProcessNet_Analysis.md
+│   └── ...
+└── test_extraction.py           # Validation tests
+```
+
+---
+
+## Quality Checklist
+
+Before considering extraction complete, verify:
+
+- [ ] All namespaces from documentation are represented
+- [ ] Method signatures are syntactically valid
+- [ ] Parameter names and types are extracted (where available)
+- [ ] Code examples are properly formatted
+- [ ] Cross-references between classes are preserved
+- [ ] Query interface returns accurate results
+- [ ] Markdown output is readable and well-formatted
+- [ ] No critical parsing errors in log
+- [ ] JSON structure validates against schema
+- [ ] Test cases pass for all 3 use cases
+
+---
+
+## Appendix A: File Discovery Verification Protocol
+
+### CRITICAL: Ensuring Complete Coverage
+
+**Problem Statement:** Documentation may be scattered across:
+- Root HTML files
+- Subdirectory hierarchies (namespace folders)
+- Multiple CHM archives
+- Mixed encoding files
+
+**Solution: Multi-Stage Discovery Process**
+
+#### Stage 1: Initial Scan
+```python
+def verify_complete_discovery(root_path: Path):
+    """
+    Verify all documentation files are discovered.
+    """
+    print(f"Scanning: {root_path}")
+    
+    # Stage 1a: Count all potential files
+    html_files = list(root_path.rglob('*.html'))
+    htm_files = list(root_path.rglob('*.htm'))
+    chm_files = list(root_path.rglob('*.chm'))
+    
+    print(f"  HTML files (.html): {len(html_files)}")
+    print(f"  HTM files (.htm): {len(htm_files)}")
+    print(f"  CHM files (.chm): {len(chm_files)}")
+    
+    # Stage 1b: Show directory structure depth
+    max_depth = max(len(f.relative_to(root_path).parts) for f in html_files + htm_files)
+    print(f"  Maximum directory depth: {max_depth}")
+    
+    # Stage 1c: List all unique subdirectories containing docs
+    unique_dirs = set(f.parent for f in html_files + htm_files)
+    print(f"  Unique directories: {len(unique_dirs)}")
+    for d in sorted(unique_dirs)[:10]:  # Show first 10
+        print(f"    - {d.relative_to(root_path)}")
+    if len(unique_dirs) > 10:
+        print(f"    ... and {len(unique_dirs) - 10} more")
+    
+    return html_files + htm_files, chm_files
+```
+
+#### Stage 2: Pre-Processing Checklist
+```python
+# Before starting extraction, verify:
+checklist = {
+    "Total files discovered": len(all_files),
+    "Root-level files": len([f for f in all_files if f.parent == root_path]),
+    "Nested files": len([f for f in all_files if f.parent != root_path]),
+    "CHM files to extract": len(chm_files),
+    "Estimated extraction time": f"{len(all_files) * 0.5} seconds"
+}
+
+for item, value in checklist.items():
+    print(f"✓ {item}: {value}")
+
+# User confirmation
+response = input("\nProceed with extraction? (yes/no): ")
+if response.lower() != 'yes':
+    print("Aborted by user")
+    exit(0)
+```
+
+#### Stage 3: Processing Loop with Progress
+```python
+def process_all_files_with_progress(file_list: List[Path]):
+    """
+    Process ALL files with detailed progress tracking.
+    """
+    total = len(file_list)
+    successful = 0
+    failed = 0
+    skipped = 0
+    
+    print(f"\nProcessing {total} files...")
+    print("=" * 60)
+    
+    for idx, file_path in enumerate(file_list, start=1):
+        # Progress indicator
+        percent = (idx / total) * 100
+        print(f"[{percent:5.1f}%] ({idx:4d}/{total:4d}) {file_path.name}", end='')
+        
+        try:
+            content = parse_html_file(file_path)
+            
+            # Validate extraction
+            if content['methods'] or content['classes']:
+                successful += 1
+                print(" ✓")
+            else:
+                skipped += 1
+                print(" ⚠ (no content)")
+                
+        except Exception as e:
+            failed += 1
+            print(f" ✗ ({str(e)[:30]}...)")
+            log_error(file_path, e)
+    
+    print("=" * 60)
+    print(f"Summary: {successful} successful, {skipped} skipped, {failed} failed")
+    
+    # Alert if too many failures
+    if failed > total * 0.1:  # >10% failure rate
+        print("\n⚠ WARNING: High failure rate detected!")
+        print("  Check error_report.txt for details")
+```
+
+#### Stage 4: Post-Processing Verification
+```python
+def verify_extraction_completeness(knowledge_base: Dict, original_file_count: int):
+    """
+    Verify extraction captured all expected content.
+    """
+    print("\nExtraction Verification:")
+    print("-" * 60)
+    
+    # Count processed files
+    total_processed = sum(
+        len(ns['files']) 
+        for ns in knowledge_base['namespaces'].values()
+    )
+    
+    # Check coverage
+    coverage = (total_processed / original_file_count) * 100
+    print(f"File coverage: {total_processed}/{original_file_count} ({coverage:.1f}%)")
+    
+    if coverage < 90:
+        print("⚠ WARNING: Coverage below 90%")
+        print("  Some files may not have been processed correctly")
+    else:
+        print("✓ Good coverage achieved")
+    
+    # Verify namespace distribution
+    print("\nNamespace Distribution:")
+    for ns_name, ns_data in knowledge_base['namespaces'].items():
+        method_count = len(ns_data.get('methods', []))
+        class_count = len(ns_data.get('classes', []))
+        print(f"  {ns_name}:")
+        print(f"    Classes: {class_count}")
+        print(f"    Methods: {method_count}")
+        
+        if method_count == 0 and class_count == 0:
+            print(f"    ⚠ WARNING: Empty namespace - check parsing")
+    
+    # Verify expected namespaces exist
+    expected_namespaces = [
+        'ProcessNet.Model',
+        'ProcessNet.Geometry',
+        'ProcessNet.Analysis',
+        'ProcessNet.Control',
+        'ProcessNet.Result'
+    ]
+    
+    print("\nExpected Namespace Check:")
+    for expected in expected_namespaces:
+        found = any(expected in ns for ns in knowledge_base['namespaces'].keys())
+        status = "✓" if found else "✗ MISSING"
+        print(f"  {status} {expected}")
+```
+
+### VERIFICATION CHECKLIST FOR USER
+
+After running extraction, manually verify:
+
+- [ ] Total processed files matches discovered file count (±5%)
+- [ ] All major subdirectories appear in namespace list
+- [ ] No empty namespaces (unless expected)
+- [ ] Method count seems reasonable (>10 methods per major namespace)
+- [ ] Example code blocks were extracted (check JSON)
+- [ ] error_report.txt has <10% of total files
+- [ ] Generated markdown files are readable
+- [ ] Query interface can find known methods (e.g., "CreateArc")
+
+### TROUBLESHOOTING
+
+**If coverage is low (<80%):**
+1. Check file encoding (try utf-8, cp1252, latin-1)
+2. Inspect sample files manually - are they actual documentation?
+3. Check for JavaScript-rendered content (may need browser-based extraction)
+4. Verify CHM files were extracted successfully
+
+**If namespaces are missing:**
+1. Check namespace detection regex patterns
+2. Look for alternative namespace naming conventions
+3. Manually grep for "ProcessNet." in HTML files
+
+**If methods are not extracted:**
+1. Inspect HTML structure of sample file
+2. Adjust parsing strategies (add new patterns)
+3. Check for table-based vs list-based layouts
+
+---
+
+**End of Requirements Document**
+
+**Version:** 1.0  
+**Date:** 2026-01-28  
+**Author:** Dương (with Claude assistance)  
+**Purpose:** Claude Code instruction set for ProcessNet knowledge extraction
+````
+
+## File: ProcessNet_Hybrid_Verification_Workflow.md
+````markdown
+# ProcessNet Hybrid Verification Workflow
+
+## Strategy Overview
+
+**Objective:** Validate Python extraction logic (Option 2) using browser-based spot-checks (Option 1) before committing to full extraction.
+
+**Benefits:**
+- ✅ Catch parser errors early with <5 sample files
+- ✅ Verify extraction accuracy interactively
+- ✅ Adjust parser logic based on actual HTML structure
+- ✅ Total cost: ~$1-2 for verification vs $18-36 for full browser extraction
+
+**Process Flow:**
+```
+Step 1: Sample Extraction (Python) → 3-5 representative files
+Step 2: Browser Validation (Claude in Chrome) → Compare extracted vs actual
+Step 3: Parser Adjustment → Fix issues found
+Step 4: Full Extraction (Python) → Process all files
+Step 5: Spot-Check Validation (Browser) → Verify 5-10 random results
+```
+
+---
+
+## Phase 1: Smart Sampling Strategy
+
+### Step 1.1: Identify Representative Files
+
+**Goal:** Pick 3-5 files that represent different documentation patterns.
+
+**Selection Criteria:**
+```python
+# Sample file selection strategy
+representative_samples = {
+    "index": "index.html",                    # Overview/table of contents
+    "namespace": "ProcessNet.Geometry.html",  # Namespace-level doc
+    "class": "class_Body.html",               # Class definition
+    "methods": "methods_create.html",         # Method reference
+    "examples": "examples_tutorial.html"      # Code examples
+}
+```
+
+**Manual Selection Process:**
+1. Open documentation folder in File Explorer
+2. Sort by file size → pick small (index), medium (namespace), large (method reference)
+3. Look for different HTML templates (some docs have multiple layouts)
+4. Note any special files: tutorial.html, quickstart.html, api_reference.html
+
+**Output for Verification:**
+```bash
+# Create sample list file
+echo "C:\RecurDyn\Help\ProcessNet\index.html" > sample_files.txt
+echo "C:\RecurDyn\Help\ProcessNet\namespace_geometry.html" >> sample_files.txt
+echo "C:\RecurDyn\Help\ProcessNet\class_Body.html" >> sample_files.txt
+echo "C:\RecurDyn\Help\ProcessNet\method_CreateArc.html" >> sample_files.txt
+echo "C:\RecurDyn\Help\ProcessNet\examples.html" >> sample_files.txt
+```
+
+### Step 1.2: Run Sample Extraction (Python)
+
+**Create test script:**
+```python
+# test_sample_extraction.py
+"""
+Test extraction on sample files only.
+"""
+from pathlib import Path
+from recurdyn_doc_parser import ProcessNetDocParser
+import json
+
+def test_sample_extraction():
+    # Read sample file list
+    sample_files = Path('sample_files.txt').read_text().splitlines()
+    
+    parser = ProcessNetDocParser(Path(sample_files[0]).parent)
+    
+    results = {}
+    for sample_path in sample_files:
+        print(f"\n{'='*60}")
+        print(f"Processing: {Path(sample_path).name}")
+        print('='*60)
+        
+        try:
+            content = parser.parse_html_file(Path(sample_path))
+            
+            # Show extraction results
+            print(f"Title: {content['title']}")
+            print(f"Namespace: {content['namespace']}")
+            print(f"Classes found: {len(content['classes'])}")
+            print(f"Methods found: {len(content['methods'])}")
+            print(f"Properties found: {len(content['properties'])}")
+            print(f"Examples found: {len(content['examples'])}")
+            
+            # Show sample methods
+            if content['methods']:
+                print("\nSample Methods:")
+                for method in content['methods'][:3]:
+                    print(f"  - {method['signature']}")
+            
+            # Show sample classes
+            if content['classes']:
+                print("\nSample Classes:")
+                for cls in content['classes'][:3]:
+                    print(f"  - {cls['name']}")
+            
+            results[Path(sample_path).name] = content
+            
+        except Exception as e:
+            print(f"ERROR: {e}")
+            results[Path(sample_path).name] = {"error": str(e)}
+    
+    # Save results for comparison
+    output_path = Path('sample_extraction_results.json')
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
+    
+    print(f"\n\nResults saved to: {output_path}")
+    print("\nReady for browser validation!")
+
+if __name__ == '__main__':
+    test_sample_extraction()
+```
+
+**Run test:**
+```bash
+python test_sample_extraction.py
+```
+
+**Expected Output:**
+```
+============================================================
+Processing: index.html
+============================================================
+Title: ProcessNet API Reference
+Namespace: ProcessNet
+Classes found: 0
+Methods found: 12
+Properties found: 0
+Examples found: 2
+
+Sample Methods:
+  - GetVersion()
+  - Initialize(config)
+  - Shutdown()
+
+============================================================
+Processing: class_Body.html
+============================================================
+Title: Body Class
+Namespace: ProcessNet.Model
+Classes found: 1
+Methods found: 15
+Properties found: 8
+Examples found: 3
+
+Sample Methods:
+  - GetMass()
+  - SetMass(value)
+  - GetPosition()
+
+Results saved to: sample_extraction_results.json
+Ready for browser validation!
+```
+
+---
+
+## Phase 2: Browser-Based Verification
+
+### Step 2.1: Prepare Verification Checklist
+
+**Create verification document:**
+```markdown
+# Verification Checklist
+
+## File: index.html
+**Python extracted:**
+- Title: ProcessNet API Reference
+- Namespace: ProcessNet
+- Methods: 12
+- Examples: 2
+
+**Browser validation questions:**
+1. Does page title match "ProcessNet API Reference"?
+2. Count visible methods in page - is it ~12?
+3. Are there code example blocks - count them?
+4. Are methods listed as:
+   - GetVersion()
+   - Initialize(config)
+   - Shutdown()
+
+---
+
+## File: class_Body.html
+**Python extracted:**
+- Title: Body Class
+- Methods: 15 (GetMass, SetMass, GetPosition...)
+- Properties: 8
+- Examples: 3
+
+**Browser validation questions:**
+1. Does page show "Body" as class name?
+2. Count method signatures - approximately 15?
+3. Count property listings - approximately 8?
+4. Count code example sections - exactly 3?
+5. Verify method signatures match:
+   - GetMass()
+   - SetMass(value)
+   - GetPosition()
+
+---
+
+[Continue for each sample file]
+```
+
+### Step 2.2: Claude in Chrome Verification Session
+
+**Instructions for Claude in Chrome:**
+
+```
+I need you to verify Python extraction results against actual HTML documentation.
+
+Context:
+- I've extracted API documentation using a Python script
+- Need to verify the extraction accuracy before processing 500+ files
+- You'll compare Python results vs what you see in browser
+
+Process:
+1. I'll give you the Python extraction results (JSON)
+2. Open each sample HTML file in browser
+3. Verify counts match (methods, classes, examples)
+4. Check if extracted signatures are correct
+5. Report discrepancies
+
+Sample files to verify:
+1. file:///C:/RecurDyn/Help/ProcessNet/index.html
+2. file:///C:/RecurDyn/Help/ProcessNet/class_Body.html
+3. [... other samples]
+
+Python extraction results:
+[paste sample_extraction_results.json]
+
+Please verify each file systematically.
+```
+
+**Verification Template for Claude:**
+
+For each file, Claude should report:
+```
+File: index.html
+Status: ✓ PASS / ✗ FAIL
+
+Verification Results:
+- Title match: ✓ (Both show "ProcessNet API Reference")
+- Method count: ✓ (Python: 12, Browser: 12 visible methods)
+- Example count: ✗ (Python: 2, Browser: 3 code blocks found)
+  → Issue: Parser may be missing one example section
+
+Method Signature Verification:
+- GetVersion(): ✓ Found in browser
+- Initialize(config): ✓ Found in browser
+- Shutdown(): ✓ Found in browser
+
+Discrepancies:
+1. Example count mismatch - check if one example is in different HTML structure
+2. [any other issues]
+
+Recommended Parser Adjustments:
+- Check for example sections in <div class="example"> vs <section class="code-sample">
+```
+
+### Step 2.3: Interactive Verification Script
+
+**For systematic verification:**
+
+```markdown
+## Verification Protocol
+
+### File 1: index.html
+
+**Step 1:** Open file in browser
+```
+Action: Navigate to file:///C:/RecurDyn/Help/ProcessNet/index.html
+```
+
+**Step 2:** Verify title
+```
+Python says: "ProcessNet API Reference"
+Browser shows: [Claude reports what it sees]
+Match: ✓/✗
+```
+
+**Step 3:** Count methods
+```
+Python says: 12 methods
+Action: Find all method signatures on page
+Browser count: [Claude counts and reports]
+Match: ✓/✗
+```
+
+**Step 4:** Inspect first method
+```
+Python extracted: GetVersion()
+Action: Find GetVersion in browser
+Browser shows: [Claude reports exact text/signature]
+Match: ✓/✗
+```
+
+**Step 5:** Count examples
+```
+Python says: 2 examples
+Action: Find all code blocks with <pre> or <code>
+Browser count: [Claude counts]
+Match: ✓/✗
+```
+
+[Repeat for each file]
+```
+
+---
+
+## Phase 3: Parser Adjustment Based on Findings
+
+### Step 3.1: Analyze Discrepancies
+
+**Common discrepancy patterns:**
+
+**Pattern 1: Count Mismatches**
+```
+Python: 12 methods
+Browser: 15 methods
+
+Root Cause Analysis:
+- Parser might be missing methods in tables vs lists
+- Some methods might be in collapsed sections
+- Method overloads might be counted differently
+
+Fix:
+- Add table-based method extraction
+- Check for expandable sections (<details>, <summary>)
+- Update method counting logic
+```
+
+**Pattern 2: Signature Format Differences**
+```
+Python extracted: CreateArc(center, radius, angle)
+Browser shows: CreateArc(center: Vector3, radius: float, startAngle: float, endAngle: float)
+
+Root Cause:
+- Parser not capturing full parameter details
+- Type hints are in separate elements
+
+Fix:
+- Extract parameter types from adjacent <span> or <td> elements
+- Parse parameter tables if method signature is incomplete
+```
+
+**Pattern 3: Missing Content**
+```
+Python: 0 examples
+Browser: 3 examples visible
+
+Root Cause:
+- Examples might be in <div class="highlight"> instead of <pre>
+- Code might be syntax-highlighted with complex HTML
+
+Fix:
+- Add extraction for <div class="highlight"> blocks
+- Handle syntax-highlighted code (multiple <span> elements)
+```
+
+### Step 3.2: Update Parser Logic
+
+**Create adjustment script:**
+```python
+# parser_adjustments.py
+"""
+Apply fixes based on verification findings.
+"""
+
+def add_table_method_extraction(soup):
+    """
+    Fix: Extract methods from table layouts
+    """
+    methods = []
+    
+    # New pattern: table-based method documentation
+    method_tables = soup.find_all('table', class_=['methods', 'api-table'])
+    
+    for table in method_tables:
+        for row in table.find_all('tr')[1:]:  # Skip header
+            cells = row.find_all('td')
+            if len(cells) >= 2:
+                signature = cells[0].get_text(strip=True)
+                description = cells[1].get_text(strip=True)
+                
+                methods.append({
+                    'signature': signature,
+                    'description': description
+                })
+    
+    return methods
+
+
+def extract_highlighted_examples(soup):
+    """
+    Fix: Extract syntax-highlighted code examples
+    """
+    examples = []
+    
+    # Original pattern: <pre><code>
+    for pre in soup.find_all('pre'):
+        code = pre.find('code')
+        if code:
+            examples.append(code.get_text())
+    
+    # New pattern: <div class="highlight">
+    for div in soup.find_all('div', class_='highlight'):
+        code_text = div.get_text(strip=True)
+        if code_text:
+            examples.append(code_text)
+    
+    return examples
+
+
+# Test adjusted parser on same samples
+def test_adjusted_parser():
+    # Re-run extraction with fixes
+    # Compare new results with browser verification
+    pass
+```
+
+### Step 3.3: Re-test on Samples
+
+```bash
+# Apply fixes to parser
+# Re-run sample extraction
+python test_sample_extraction.py
+
+# Compare new results
+# Should now match browser verification
+```
+
+---
+
+## Phase 4: Full Extraction with Confidence
+
+### Step 4.1: Pre-Flight Checklist
+
+Before running full extraction:
+
+- [ ] Sample extraction matches browser verification (±5%)
+- [ ] All 5 sample files parse successfully
+- [ ] Parser adjustments tested and working
+- [ ] Extraction logic handles:
+  - [ ] Multiple HTML layout patterns
+  - [ ] Table-based method docs
+  - [ ] Syntax-highlighted code
+  - [ ] Nested namespace structures
+- [ ] Error handling tested with malformed file
+
+### Step 4.2: Run Full Extraction
+
+```bash
+# Full extraction with verified parser
+python recurdyn_doc_parser.py "C:\RecurDyn\Help\ProcessNet" \
+    --output processnet_knowledge.json \
+    --markdown ./processnet_docs_md \
+    --log extraction_log.txt \
+    --verbose
+```
+
+### Step 4.3: Monitor Progress
+
+**Look for:**
+- Consistent success rate across files
+- No sudden drop in extraction counts
+- Similar patterns in namespace distribution
+
+**Red flags:**
+- Success rate drops below 85%
+- Large namespaces have 0 methods
+- Extraction speed suddenly slows (malformed HTML)
+
+---
+
+## Phase 5: Post-Extraction Spot Checks
+
+### Step 5.1: Random Sampling Strategy
+
+**After full extraction, verify 5-10 random files:**
+
+```python
+# random_validation_samples.py
+import random
+from pathlib import Path
+
+def select_random_samples(knowledge_base, n=10):
+    """
+    Select random files from extraction for spot-check validation.
+    """
+    all_files = []
+    
+    for ns_data in knowledge_base['namespaces'].values():
+        all_files.extend(ns_data['files'])
+    
+    # Stratified sampling: pick from different namespaces
+    samples_per_ns = {}
+    for ns_name, ns_data in knowledge_base['namespaces'].items():
+        if ns_data['files']:
+            sample = random.choice(ns_data['files'])
+            samples_per_ns[ns_name] = sample
+    
+    # Random samples from remaining
+    remaining = [f for f in all_files if f not in samples_per_ns.values()]
+    additional = random.sample(remaining, min(n - len(samples_per_ns), len(remaining)))
+    
+    all_samples = list(samples_per_ns.values()) + additional
+    
+    return all_samples[:n]
+```
+
+### Step 5.2: Quick Browser Spot-Check
+
+**For each random sample:**
+
+```markdown
+File: [random_file.html]
+
+Quick Checks:
+1. ✓/✗ Title exists in JSON
+2. ✓/✗ Method count approximately correct (±20%)
+3. ✓/✗ At least one method signature matches exactly
+4. ✓/✗ Class name (if any) matches
+
+If all ✓ → Extraction validated
+If 2+ ✗ → Investigate specific namespace/pattern
+```
+
+**Browser verification command:**
+```
+Claude, quick spot-check for these 5 files:
+1. Open file in browser
+2. Count methods (rough count, ±2 is OK)
+3. Verify first method signature matches JSON
+4. Report any obvious discrepancies
+
+Files to check:
+- file:///C:/RecurDyn/Help/ProcessNet/[file1.html]
+- file:///C:/RecurDyn/Help/ProcessNet/[file2.html]
+...
+
+JSON data for comparison:
+[paste relevant excerpts from processnet_knowledge.json]
+```
+
+---
+
+## Phase 6: Validation Metrics & Sign-Off
+
+### Success Criteria
+
+**Extraction Quality Metrics:**
+```
+Sample Verification (Phase 2):
+- Accuracy: 5/5 files match browser (100%)
+- Method signatures: 45/45 correct (100%)
+- Example extraction: 12/13 (92%) - acceptable
+
+Full Extraction (Phase 4):
+- Files processed: 847/847 (100%)
+- Parsing success: 835/847 (98.6%)
+- Average methods per namespace: 85 (reasonable)
+
+Random Spot-Check (Phase 5):
+- Sample validation: 9/10 correct (90%)
+- Critical namespaces verified: ProcessNet.Model ✓, ProcessNet.Geometry ✓
+
+Overall Assessment: ✅ PASS - Ready for production use
+```
+
+### Sign-Off Checklist
+
+- [ ] Sample verification: ≥90% accuracy
+- [ ] Full extraction: ≥95% success rate
+- [ ] Random spot-check: ≥85% accuracy
+- [ ] Critical namespaces extracted completely
+- [ ] Query interface returns expected results
+- [ ] Use case validation: All 3 target workflows have required methods
+
+**When all checked → Knowledge base is production-ready**
+
+---
+
+## Cost & Time Breakdown
+
+### Hybrid Approach Costs
+
+**Phase 1-3 (Sample + Verification + Adjustment):**
+- Python extraction: 5 files × 2 sec = 10 seconds (FREE)
+- Browser verification: 5 files × 10 tool calls × $0.01 = **$0.50**
+- Parser adjustment: LOCAL (FREE)
+- Re-test: LOCAL (FREE)
+
+**Phase 4 (Full Extraction):**
+- Python extraction: 847 files × 0.5 sec = ~7 minutes (FREE)
+
+**Phase 5 (Spot-Check Validation):**
+- Browser spot-check: 10 files × 5 tool calls × $0.01 = **$0.50**
+
+**Total Cost: ~$1.00**  
+**Total Time: ~20 minutes (including browser sessions)**
+
+**Compare to:**
+- Pure Option 1 (Browser-only): $18-36, 60 minutes
+- Pure Option 2 (Python-only, no validation): $0, but unknown accuracy
+
+**Hybrid = Best value: $1, 20 minutes, validated accuracy**
+
+---
+
+## Troubleshooting Guide
+
+### Issue: Browser verification shows 0 methods but Python found 12
+
+**Diagnosis:**
+- Check if browser page is fully loaded (JavaScript rendering?)
+- Verify file path is correct
+- Try opening in different browser
+
+**Resolution:**
+- If JavaScript-rendered: Original HTML may not have methods, they're loaded dynamically
+- Solution: Parser is correct, browser sees rendered page (ignore discrepancy)
+
+### Issue: Python extraction is too slow (>10 sec per file)
+
+**Diagnosis:**
+- Large HTML files with complex structure
+- BeautifulSoup parsing overhead
+
+**Resolution:**
+- Use `lxml` parser instead of `html.parser`: `BeautifulSoup(html, 'lxml')`
+- Add caching for repeated elements
+
+### Issue: Browser verification impossible (can't open local files)
+
+**Diagnosis:**
+- Browser security settings block file:/// URLs
+- Files are in network location
+
+**Resolution:**
+- Start local HTTP server: `python -m http.server 8000`
+- Access via: `http://localhost:8000/path/to/file.html`
+- Or adjust browser settings to allow local files
+
+---
+
+## Template: Verification Report
+
+**After completing all phases, generate report:**
+
+```markdown
+# ProcessNet Extraction Verification Report
+
+**Date:** 2026-01-28
+**Extraction Method:** Hybrid (Python + Browser validation)
+
+## Phase 1: Sample Extraction
+- Files tested: 5
+- Success rate: 5/5 (100%)
+- Issues found: Example extraction missed 1 case
+
+## Phase 2: Browser Verification
+- Verification method: Claude in Chrome
+- Accuracy: 95% (47/50 checks passed)
+- Discrepancies: Example count in 3 files
+- Cost: $0.50
+
+## Phase 3: Parser Adjustments
+- Adjustments made: 2
+  1. Added <div class="highlight"> example extraction
+  2. Enhanced table-based method parsing
+- Re-test results: 100% match with browser
+
+## Phase 4: Full Extraction
+- Total files: 847
+- Processed: 847
+- Success: 835 (98.6%)
+- Failed: 12 (1.4%) - see error_report.txt
+- Duration: 7 minutes
+
+## Phase 5: Random Spot-Check
+- Files verified: 10
+- Match rate: 9/10 (90%)
+- Critical namespaces: All verified ✓
+- Cost: $0.50
+
+## Validation Metrics
+- Method extraction accuracy: 98%
+- Class extraction accuracy: 97%
+- Example extraction accuracy: 92%
+- Overall confidence: HIGH
+
+## Use Case Validation
+✅ DOE automation: All required methods present
+✅ Model introspection: Navigation methods found
+✅ Result processing: Result.* namespace complete
+
+## Sign-Off
+- Extraction quality: PASS
+- Ready for production: YES
+- Total cost: $1.00
+- Total time: 23 minutes
+
+**Approved for use in Claude Code automation development.**
+```
+
+---
+
+## Quick Reference: Verification Commands
+
+### Phase 2: Browser Verification
+```bash
+# In Claude chat (claude.ai)
+"I need to verify Python extraction results for ProcessNet documentation.
+Files: 5 samples in C:\RecurDyn\Help\ProcessNet\
+Python results: [paste JSON]
+Please open each file in browser and verify extraction accuracy."
+```
+
+### Phase 5: Spot-Check
+```bash
+# In Claude chat
+"Quick spot-check for 10 random files from full extraction.
+For each file: rough method count + verify one signature.
+Files: [list]
+JSON excerpts: [paste]"
+```
+
+---
+
+**End of Hybrid Verification Workflow**
+````
+
+## File: requirements.txt
+````
+# ProcessNet API Documentation Extraction - Python Dependencies
+# Install: pip install -r requirements.txt
+
+# HTML Parsing
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# Fuzzy Search
+rapidfuzz>=3.0.0
+
+# Encoding Detection
+chardet>=5.0.0
+````
