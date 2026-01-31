@@ -1,0 +1,201 @@
+﻿
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>AutoDesign_Parameter Method</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+	<link rel="shortcut icon" href="../icons/favicon.ico" />
+    <link rel="stylesheet" href="../../../styles/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../styles/fb.css" type="text/css" />
+	<meta name="Language" content="en-us" /> 
+  </head><body>
+
+
+  <div class="header" role="banner">
+	<h1 class="heading">
+	  <span>RecurDyn 2024 ProcessNet documentation</span></h1>
+	<h2 class="heading"><span>AutoDesign_Parameter Method (python)</span></h2>
+  </div>
+  <div class="content" role="main">
+	
+	
+  <section id="autodesign-parameter-method">
+<h1>AutoDesign_Parameter Method<a class="headerlink" href="#autodesign-parameter-method" title="Permalink to this heading">¶</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="recurdynexample.AutoDesignExample.AutoDesignExample.AutoDesign_Parameter">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">AutoDesignExample.</span></span><span class="sig-name descname"><span class="pre">AutoDesign_Parameter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#recurdynexample.AutoDesignExample.AutoDesignExample.AutoDesign_Parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">AutoDesign_Parameter</span><span class="p">():</span>
+    <span class="kn">from</span> <span class="nn">recurdyn</span> <span class="kn">import</span> <span class="n">FFlex</span>
+    <span class="kn">from</span> <span class="nn">recurdyn</span> <span class="kn">import</span> <span class="n">AutoDesign</span>
+    <span class="k">global</span> <span class="n">model_document</span>
+    <span class="k">global</span> <span class="n">model</span>
+    <span class="k">global</span> <span class="n">ref_frame_1</span>
+
+    <span class="n">model_document</span> <span class="o">=</span> <span class="n">IModelDocument</span><span class="p">(</span><span class="n">application</span><span class="o">.</span><span class="n">ActiveModelDocument</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">model_document</span><span class="o">.</span><span class="n">Model</span>
+    <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">ISubSystem</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+    <span class="n">ref_frame_1</span> <span class="o">=</span> <span class="n">model_document</span><span class="o">.</span><span class="n">CreateReferenceFrame</span><span class="p">()</span>
+    <span class="n">ref_frame_1</span><span class="o">.</span><span class="n">SetOrigin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">body1</span> <span class="o">=</span> <span class="n">IBody</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">CreateBodyGeneral</span><span class="p">(</span><span class="s2">&quot;Body1&quot;</span><span class="p">))</span>
+    <span class="n">box1</span> <span class="o">=</span> <span class="n">IGeometryBox</span><span class="p">(</span><span class="n">body1</span><span class="o">.</span><span class="n">CreateBoxGeometry</span><span class="p">(</span><span class="s2">&quot;Box1&quot;</span><span class="p">,</span> <span class="n">ref_frame_1</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+
+    <span class="n">fflexToolkit</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">FFlexToolkit</span>
+    <span class="k">if</span> <span class="n">fflexToolkit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fflexToolkit</span> <span class="o">=</span> <span class="n">FFlex</span><span class="o">.</span><span class="n">IFFlexToolkit</span><span class="p">(</span><span class="n">fflexToolkit</span><span class="p">)</span>
+
+    <span class="n">meshMode</span> <span class="o">=</span> <span class="n">fflexToolkit</span><span class="o">.</span><span class="n">MeshMode</span>
+    <span class="k">if</span> <span class="n">meshMode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">meshMode</span> <span class="o">=</span> <span class="n">FFlex</span><span class="o">.</span><span class="n">IMeshMode</span><span class="p">(</span><span class="n">meshMode</span><span class="p">)</span>
+
+    <span class="n">meshMode</span><span class="o">.</span><span class="n">Start</span><span class="p">(</span><span class="n">body1</span><span class="p">)</span>
+    <span class="n">meshOption</span> <span class="o">=</span> <span class="n">FFlex</span><span class="o">.</span><span class="n">IMesherMeshOption</span><span class="p">(</span><span class="n">meshMode</span><span class="o">.</span><span class="n">MeshOption</span><span class="p">(</span><span class="n">box1</span><span class="p">))</span>
+    <span class="n">meshOption</span><span class="o">.</span><span class="n">MeshType</span> <span class="o">=</span> <span class="n">FFlex</span><span class="o">.</span><span class="n">MeshType</span><span class="o">.</span><span class="n">MeshType_Shell3</span>
+    <span class="n">meshOption</span><span class="o">.</span><span class="n">FFlexProperty</span> <span class="o">=</span> <span class="n">meshOption</span><span class="o">.</span><span class="n">PropertyCollection</span><span class="p">(</span><span class="s2">&quot;PShell1&quot;</span><span class="p">)</span>
+    <span class="n">meshOption</span><span class="o">.</span><span class="n">MaxElementSize</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">meshOption</span><span class="o">.</span><span class="n">MinElementSize</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">meshOption</span><span class="o">.</span><span class="n">UseStructuredOutput</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">meshOption</span><span class="o">.</span><span class="n">StructuredOutput</span> <span class="o">=</span> <span class="n">FFlex</span><span class="o">.</span><span class="n">StructuredOutputType</span><span class="o">.</span><span class="n">StructuredOutputType_SimplePattern</span>
+    <span class="n">meshOption</span><span class="o">.</span><span class="n">UseCloseGaps</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">meshOption</span><span class="o">.</span><span class="n">UseIncludeAssistModeling</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">meshOption</span><span class="o">.</span><span class="n">ChordalErrorType</span> <span class="o">=</span> <span class="n">FFlex</span><span class="o">.</span><span class="n">ChordalErrorType</span><span class="o">.</span><span class="n">ChordalError_Relative</span>
+    <span class="n">meshOption</span><span class="o">.</span><span class="n">ChordalError</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">meshOption</span><span class="o">.</span><span class="n">GradationFactor</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">meshOption</span><span class="o">.</span><span class="n">UseQuadElementOnly</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">meshMode</span><span class="o">.</span><span class="n">Mesh</span><span class="p">()</span>
+
+    <span class="n">fflexBody1</span> <span class="o">=</span> <span class="n">FFlex</span><span class="o">.</span><span class="n">IFFlexBody</span><span class="p">(</span><span class="n">meshMode</span><span class="o">.</span><span class="n">End</span><span class="p">())</span>
+    <span class="n">nodeset01</span> <span class="o">=</span> <span class="n">FFlex</span><span class="o">.</span><span class="n">IFFlexNodeSet</span><span class="p">(</span><span class="n">fflexBody1</span><span class="o">.</span><span class="n">CreateNodeSet</span><span class="p">(</span><span class="s2">&quot;nodeset1&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">50076</span><span class="p">,</span> <span class="mi">50045</span><span class="p">]))</span>
+    <span class="n">marker01</span> <span class="o">=</span> <span class="n">fflexBody1</span><span class="o">.</span><span class="n">CreateMarker</span><span class="p">(</span><span class="s2">&quot;Marker1&quot;</span><span class="p">,</span> <span class="n">ref_frame_1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">marker01</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">marker01</span> <span class="o">=</span> <span class="n">IMarker</span><span class="p">(</span><span class="n">marker01</span><span class="p">)</span>
+
+    <span class="n">pv1</span> <span class="o">=</span> <span class="n">IParametricValue</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">CreateParametricValue</span><span class="p">(</span><span class="s2">&quot;PV1&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+    <span class="n">ex1</span> <span class="o">=</span> <span class="n">IExpression</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">CreateExpression</span><span class="p">(</span><span class="s2">&quot;ex1&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">))</span>
+
+    <span class="n">autoDesign</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">AutoDesignToolkit</span>
+    <span class="k">if</span> <span class="n">autoDesign</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">autoDesign</span> <span class="o">=</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">IAutoDesignToolkit</span><span class="p">(</span><span class="n">autoDesign</span><span class="p">)</span>
+    <span class="n">paraDirect01</span> <span class="o">=</span> <span class="n">autoDesign</span><span class="o">.</span><span class="n">CreateDesignParamter</span><span class="p">(</span><span class="s2">&quot;PD1&quot;</span><span class="p">,</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">DesignParameterType</span><span class="o">.</span><span class="n">DesignParameter_Direct</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">paraDirect01</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">paraDirect01</span> <span class="o">=</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">IADDesignParameterDirect</span><span class="p">(</span><span class="n">paraDirect01</span><span class="p">)</span>
+
+    <span class="n">paraDirect01</span><span class="o">.</span><span class="n">ParametricValue</span> <span class="o">=</span> <span class="n">pv1</span>
+    <span class="n">paraDirect01</span><span class="o">.</span><span class="n">UB</span> <span class="o">=</span> <span class="mi">110</span>
+    <span class="n">paraDirect01</span><span class="o">.</span><span class="n">LB</span> <span class="o">=</span> <span class="mi">50</span>
+    <span class="n">paraDirect01</span><span class="o">.</span><span class="n">Description</span> <span class="o">=</span> <span class="s2">&quot;Test&quot;</span>
+    <span class="n">paraDirect01</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;PV01_01&quot;</span>
+    <span class="n">paraDirect01</span><span class="o">.</span><span class="n">Use</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">paraTrans01</span> <span class="o">=</span> <span class="n">autoDesign</span><span class="o">.</span><span class="n">CreateDesignParamter</span><span class="p">(</span><span class="s2">&quot;PD2&quot;</span><span class="p">,</span>
+                                                  <span class="n">AutoDesign</span><span class="o">.</span><span class="n">DesignParameterType</span><span class="o">.</span><span class="n">DesignParameter_Translational</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">paraTrans01</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">paraTrans01</span> <span class="o">=</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">IADDesignParameterTranslational</span><span class="p">(</span><span class="n">paraTrans01</span><span class="p">)</span>
+
+    <span class="n">paraTrans01</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;PD02_01&quot;</span>
+    <span class="n">paraTrans01</span><span class="o">.</span><span class="n">NodeSet</span> <span class="o">=</span> <span class="n">nodeset01</span>
+    <span class="n">paraTrans01</span><span class="o">.</span><span class="n">ConfigurationDesignType</span> <span class="o">=</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">ConfigurationDesignType</span><span class="o">.</span><span class="n">ConfigurationDesign_ON</span>
+    <span class="n">paraTrans01</span><span class="o">.</span><span class="n">RefMarker</span> <span class="o">=</span> <span class="n">marker01</span>
+
+    <span class="n">paraTrans01</span><span class="o">.</span><span class="n">DirectionalUnitVector</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">paraTrans01</span><span class="o">.</span><span class="n">DirectionalUnitVector</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">paraTrans01</span><span class="o">.</span><span class="n">DirectionalUnitVector</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">paraTrans01</span><span class="o">.</span><span class="n">LB</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">paraTrans01</span><span class="o">.</span><span class="n">UB</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">paraTrans01</span><span class="o">.</span><span class="n">Description</span> <span class="o">=</span> <span class="s2">&quot;test 2&quot;</span>
+    <span class="n">paraTrans01</span><span class="o">.</span><span class="n">Use</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">paraCylinder01</span> <span class="o">=</span> <span class="n">autoDesign</span><span class="o">.</span><span class="n">CreateDesignParamter</span><span class="p">(</span><span class="s2">&quot;DP3&quot;</span><span class="p">,</span>
+                                                     <span class="n">AutoDesign</span><span class="o">.</span><span class="n">DesignParameterType</span><span class="o">.</span><span class="n">DesignParameter_Cylindrical</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">paraCylinder01</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">paraCylinder01</span> <span class="o">=</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">IADDesignParameterCylindrical</span><span class="p">(</span><span class="n">paraCylinder01</span><span class="p">)</span>
+
+    <span class="n">paraCylinder01</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;PD03_01&quot;</span>
+    <span class="n">paraCylinder01</span><span class="o">.</span><span class="n">NodeSet</span> <span class="o">=</span> <span class="n">nodeset01</span>
+    <span class="n">paraCylinder01</span><span class="o">.</span><span class="n">CenterRefMarker</span> <span class="o">=</span> <span class="n">marker01</span>
+    <span class="n">paraCylinder01</span><span class="o">.</span><span class="n">ConfigurationDesignType</span> <span class="o">=</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">ConfigurationDesignType</span><span class="o">.</span><span class="n">ConfigurationDesign_ON</span>
+
+    <span class="n">paraCylinder01</span><span class="o">.</span><span class="n">CenterAxisUnitVector</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">paraCylinder01</span><span class="o">.</span><span class="n">CenterAxisUnitVector</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">paraCylinder01</span><span class="o">.</span><span class="n">CenterAxisUnitVector</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">paraCylinder01</span><span class="o">.</span><span class="n">LB</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">paraCylinder01</span><span class="o">.</span><span class="n">UB</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">paraCylinder01</span><span class="o">.</span><span class="n">Description</span> <span class="o">=</span> <span class="s2">&quot;test3&quot;</span>
+    <span class="n">paraCylinder01</span><span class="o">.</span><span class="n">Use</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">paraSpherical01</span> <span class="o">=</span> <span class="n">autoDesign</span><span class="o">.</span><span class="n">CreateDesignParamter</span><span class="p">(</span><span class="s2">&quot;DP4&quot;</span><span class="p">,</span>
+                                                      <span class="n">AutoDesign</span><span class="o">.</span><span class="n">DesignParameterType</span><span class="o">.</span><span class="n">DesignParameter_Spherical</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">paraSpherical01</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">paraSpherical01</span> <span class="o">=</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">IADDesignParameterSpherical</span><span class="p">(</span><span class="n">paraSpherical01</span><span class="p">)</span>
+
+    <span class="n">paraSpherical01</span><span class="o">.</span><span class="n">ConfigurationDesignType</span> <span class="o">=</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">ConfigurationDesignType</span><span class="o">.</span><span class="n">ConfigurationDesign_ON</span>
+
+    <span class="n">paraSpherical01</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;PD04_01&quot;</span>
+    <span class="n">paraSpherical01</span><span class="o">.</span><span class="n">NodeSet</span> <span class="o">=</span> <span class="n">nodeset01</span>
+    <span class="n">paraSpherical01</span><span class="o">.</span><span class="n">CenterRefMarker</span> <span class="o">=</span> <span class="n">marker01</span>
+    <span class="n">paraSpherical01</span><span class="o">.</span><span class="n">LB</span> <span class="o">=</span> <span class="mf">0.3</span>
+    <span class="n">paraSpherical01</span><span class="o">.</span><span class="n">UB</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">paraSpherical01</span><span class="o">.</span><span class="n">Description</span> <span class="o">=</span> <span class="s2">&quot;test4&quot;</span>
+    <span class="n">paraSpherical01</span><span class="o">.</span><span class="n">Use</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">paraAngular01</span> <span class="o">=</span> <span class="n">autoDesign</span><span class="o">.</span><span class="n">CreateDesignParamter</span><span class="p">(</span><span class="s2">&quot;DP5&quot;</span><span class="p">,</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">DesignParameterType</span><span class="o">.</span><span class="n">DesignParameter_Angular</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">paraAngular01</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">paraAngular01</span> <span class="o">=</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">IADDesignParameterAngular</span><span class="p">(</span><span class="n">paraAngular01</span><span class="p">)</span>
+
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">ConfigurationDesignType</span> <span class="o">=</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">ConfigurationDesignType</span><span class="o">.</span><span class="n">ConfigurationDesign_ON</span>
+
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">Name</span> <span class="o">=</span> <span class="s2">&quot;PD05_01&quot;</span>
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">NodeSet</span> <span class="o">=</span> <span class="n">nodeset01</span>
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">RefMarker</span> <span class="o">=</span> <span class="n">marker01</span>
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">LB</span> <span class="o">=</span> <span class="mf">0.6</span>
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">UB</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">Use</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">ReferencePoint</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">ReferencePoint</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">ReferencePoint</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">RotationAxisUnitVector</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">RotationAxisUnitVector</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">RotationAxisUnitVector</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">paraAngular01</span><span class="o">.</span><span class="n">Description</span> <span class="o">=</span> <span class="s2">&quot;test5&quot;</span>
+
+    <span class="n">paraCollection01</span> <span class="o">=</span> <span class="n">autoDesign</span><span class="o">.</span><span class="n">DesignParameterCollection</span>
+    <span class="k">if</span> <span class="n">paraCollection01</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">paraCollection01</span> <span class="o">=</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">IADDesignParameterCollection</span><span class="p">(</span><span class="n">paraCollection01</span><span class="p">)</span>
+
+    <span class="n">para01</span> <span class="o">=</span> <span class="n">paraCollection01</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">para01</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">para01</span> <span class="o">=</span> <span class="n">AutoDesign</span><span class="o">.</span><span class="n">IADDesignParameter</span><span class="p">(</span><span class="n">para01</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+  </div>
+
+    <div class="footer" role="contentinfo">
+        <a href="http://www.FunctionBay.com" target="_blank">&#169; Copyright 2024 FunctionBay, inc. All Righsts Reserved</a>
+    </div>
+  </body>
+</html>

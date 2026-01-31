@@ -34,7 +34,7 @@ Target state:
 | Phase | Status | Description |
 |-------|--------|-------------|
 | [Phase 01](phase-01-chm-extraction.md) | **done** (2026-01-31) | Extract CHM on Windows using 7-Zip |
-| [Phase 02](phase-02-file-transfer.md) | pending | Transfer extracted files to WSL |
+| [Phase 02](phase-02-file-transfer.md) | **done** (2026-01-31) | Transfer extracted files to WSL |
 | [Phase 03](phase-03-parser-analysis.md) | pending | Analyze HTML structure from extracted files |
 | [Phase 04](phase-04-parser-enhancement.md) | pending | Update parser for API doc patterns |
 | [Phase 05](phase-05-re-extraction.md) | pending | Run enhanced parser on API documentation |
