@@ -10,21 +10,73 @@ This roadmap outlines the development milestones, phases, and timeline for the R
 
 ## Project Status
 
-**Current Phase:** Phase 1 - Core Implementation
-**Overall Progress:** 60% Complete
-**Last Updated:** 2026-01-28
+**Current Phase:** Phase 01 - CHM Extraction (COMPLETE) -> Phase 1-5 Complete
+**Overall Progress:** 65% Complete (CHM extraction + Core + Tests)
+**Last Updated:** 2026-01-31
 
 ### Status Summary
 
 | Component | Status | Progress |
 |-----------|--------|----------|
+| CHM Extraction | Complete | 100% |
 | HTML Parser | Complete | 100% |
 | Query Interface | Complete | 100% |
-| Documentation | In Progress | 90% |
+| Documentation | Complete | 100% |
 | Testing | Complete | 100% |
 | Verification | Complete | 100% |
 
 ## Development Phases
+
+### Phase 01: CHM Extraction ✅ Complete
+
+**Timeline:** 2026-01-31
+**Duration:** 1 day
+**Status:** Complete
+
+**Objectives:**
+- Extract CHM file (ProcessNetHelp.chm, 32 MB)
+- Verify output directory structure
+- Validate HTML file integrity
+- Identify Python API modules
+
+**Deliverables:**
+- ✅ `output/extracted_chm/` directory (324 MB, 40,768 files)
+- ✅ 19,344 HTML files extracted
+- ✅ 42 Python API module directories identified
+- ✅ Extraction summary report (phase-01-chm-extraction-results-summary-260131-2306.md)
+- ✅ Test verification report (92/92 tests passed, 42.68% coverage)
+- ✅ Code review report (9/10 score approved)
+
+**Key Achievements:**
+- ✅ CHM extraction: 32 MB -> 324 MB (10x expansion)
+- ✅ HTML files validated (19,344 .html, 21,281 .htm)
+- ✅ Zero extraction errors
+- ✅ Complete module hierarchy preserved (AutoDesign, BNP, Chain, Chart, Control, etc.)
+- ✅ Sphinx-based HTML structure identified (Docutils 0.17.1)
+- ✅ UTF-8/ASCII encoding detected and verified
+
+**Test Results:**
+- ✅ CHM Extraction Verification: 6/6 PASSED
+- ✅ Unit Tests: 92/92 PASSED
+- ✅ Code Coverage: 42.68% overall (74.50% parser)
+- ✅ File Integrity: 100% valid HTML
+- ✅ Test Duration: 13.27 seconds
+
+**API Modules Identified (42 total):**
+- AutoDesign, AutoDesignExample, BNP, BNPExample
+- Chain, Chart, Control, CoreExample, Durability
+- ExternalSPI, FFlex, FlexInterface, Flexible, GFlex
+- HydroFluid, MMS, MTT2D, MTT3D, ParticleInterface
+- Post, PostExample, Professional, R2R2D, RFlex
+- Tire, ToolkitCommon, TrackHM, TrackLM
+- (and recurdynexample.* files)
+
+**Extraction Method:**
+- Tool: 7-Zip 24.07 (Windows, via WSL)
+- Command: `/mnt/c/Program Files/7-Zip/7z.exe x ProcessNetHelp.chm -oextracted_chm/ -y`
+- Performance: ~5 seconds extraction time
+
+---
 
 ### Phase 0: Project Setup ✅ Complete
 
@@ -352,6 +404,22 @@ Coverage: >80% target met
 
 ## Milestones
 
+### M0: CHM Extraction Complete ✅
+
+**Target:** 2026-01-31
+**Status:** Complete
+
+**Criteria:**
+- ✅ CHM file successfully extracted (32 MB source)
+- ✅ HTML files validated (19,344 .html, 21,281 .htm)
+- ✅ Directory structure intact (40,768 files, 2,079 folders)
+- ✅ Zero extraction errors
+- ✅ 42 Python API modules identified
+
+**Outcome:** Ready for Phase 02 HTML parsing and knowledge base generation
+
+---
+
 ### M1: MVP Complete ✅
 
 **Target:** 2026-01-28
@@ -429,17 +497,18 @@ Coverage: >80% target met
 ### Gantt Chart Overview
 
 ```
-Phase 0: Project Setup             [████████████████████]  Complete
-Phase 1: Core Implementation       [████████████████████]  Complete
-Phase 2: Documentation             [████████████████████]  Complete
-Phase 3: Test Infrastructure & MCP [████████████████████]  Complete
-Phase 4: Sample & Parser Refinement[████████████████████]  Complete
-Phase 5: Spot-Check & Use Cases    [████████████████████]  Complete
-Phase 6: Production Hardening      [░░░░░░░░░░░░░░░░░░░░]  Next (2-3 days)
-Phase 7: Advanced Features         [░░░░░░░░░░░░░░░░░░░░]  Future (3-5 days)
+Phase 01: CHM Extraction             [████████████████████]  Complete
+Phase 0: Project Setup               [████████████████████]  Complete
+Phase 1: Core Implementation         [████████████████████]  Complete
+Phase 2: Documentation               [████████████████████]  Complete
+Phase 3: Test Infrastructure & MCP   [████████████████████]  Complete
+Phase 4: Sample & Parser Refinement  [████████████████████]  Complete
+Phase 5: Spot-Check & Use Cases      [████████████████████]  Complete
+Phase 6: Production Hardening        [░░░░░░░░░░░░░░░░░░░░]  Next (2-3 days)
+Phase 7: Advanced Features           [░░░░░░░░░░░░░░░░░░░░]  Future (3-5 days)
 
 Week 1: ████████████████████████████████████
-        (Core + Tests Complete)
+        (CHM Extraction + Core + Tests Complete)
 Week 2: ████████░░░░░░░░░░░░░░░░░░░░░░░░░░░
         (Production Hardening)
 Week 3: ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -450,6 +519,7 @@ Week 3: ░░░░░░░░░░░░░░░░░░░░░░░░
 
 | Phase | Duration | Start Date | End Date | Status |
 |-------|----------|------------|----------|--------|
+| Phase 01 | 1 day | 2026-01-31 | 2026-01-31 | Complete |
 | Phase 0 | 1 day | 2026-01-28 | 2026-01-28 | Complete |
 | Phase 1 | 1 day | 2026-01-28 | 2026-01-28 | Complete |
 | Phase 2 | 1 day | 2026-01-28 | 2026-01-31 | Complete |
@@ -471,7 +541,7 @@ Week 3: ░░░░░░░░░░░░░░░░░░░░░░░░
 |------|--------|-------------|------------|--------|
 | HTML structure variations | High | Medium | Multiple parsing strategies | Mitigated |
 | Encoding issues | Medium | Medium | Auto-detection with fallback | Mitigated |
-| CHM extraction failures | Medium | Low | Multiple extraction tools | Pending |
+| CHM extraction failures | Medium | Low | 7-Zip via WSL (successfully used) | RESOLVED |
 | Performance on large docs | Medium | Medium | Parallel processing | Pending |
 | Browser test reliability | Medium | Medium | MCP Playwright fallback, retry logic | Pending |
 
@@ -486,6 +556,17 @@ Week 3: ░░░░░░░░░░░░░░░░░░░░░░░░
 ---
 
 ## Success Metrics
+
+### Phase 01: CHM Extraction ✅
+
+- ✅ CHM file extracted (32 MB -> 324 MB, 10x expansion)
+- ✅ HTML files validated (19,344 .html, 21,281 .htm)
+- ✅ Directory structure intact (40,768 files, 2,079 folders)
+- ✅ Zero extraction errors
+- ✅ 42 Python API modules identified
+- ✅ Test coverage: 42.68% overall (74.50% parser)
+- ✅ Test results: 92/92 passed
+- ✅ Documentation updated
 
 ### Phase 1: Core Implementation ✅
 
@@ -677,6 +758,26 @@ Week 3: ░░░░░░░░░░░░░░░░░░░░░░░░
 
 ## Change Log
 
+### Version 1.1 (2026-01-31)
+
+**Phase 01 CHM Extraction completion:**
+- Added Phase 01: CHM Extraction section
+- Updated milestones (added M0: CHM Extraction Complete)
+- Updated timeline with Phase 01 completion
+- Updated risk register (CHM extraction risk RESOLVED)
+- Added Phase 01 success metrics
+- Updated project status to 65% complete
+
+**Status:**
+- Phase 01: Complete (CHM Extraction)
+- Phase 0: Complete
+- Phase 1: Complete
+- Phase 2: Complete
+- Phase 3: Complete
+- Phase 4: Complete
+- Phase 5: Complete
+- Phases 6-7: Not Started
+
 ### Version 1.0 (2026-01-28)
 
 **Initial roadmap creation:**
@@ -706,6 +807,6 @@ Week 3: ░░░░░░░░░░░░░░░░░░░░░░░░
 ---
 
 **Roadmap Status:** Active
-**Last Updated:** 2026-01-28
-**Next Review:** Upon Phase 2 completion
+**Last Updated:** 2026-01-31
+**Next Review:** Upon Phase 6 completion
 **Maintainer:** Development Team
