@@ -10,14 +10,16 @@ import sys
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
 
-# Import using exec to handle kebab-case module name
+# Import using exec to handle kebab-case module names
 import importlib.util
-spec = importlib.util.spec_from_file_location(
+
+# Load parser module
+spec_parser = importlib.util.spec_from_file_location(
     "recurdyn_doc_parser",
     Path(__file__).parent.parent / "src" / "recurdyn-doc-parser.py"
 )
-parser_module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(parser_module)
+parser_module = importlib.util.module_from_spec(spec_parser)
+spec_parser.loader.exec_module(parser_module)
 
 ProcessNetDocParser = parser_module.ProcessNetDocParser
 Method = parser_module.Method
@@ -25,6 +27,18 @@ ClassDef = parser_module.ClassDef
 Namespace = parser_module.Namespace
 CodeExample = parser_module.CodeExample
 Property = parser_module.Property
+
+# Load query interface module
+spec_qi = importlib.util.spec_from_file_location(
+    "processnet_query_interface",
+    Path(__file__).parent.parent / "src" / "processnet-query-interface.py"
+)
+qi_module = importlib.util.module_from_spec(spec_qi)
+spec_qi.loader.exec_module(qi_module)
+
+ProcessNetKnowledge = qi_module.ProcessNetKnowledge
+SearchResult = qi_module.SearchResult
+FUZZY_AVAILABLE = qi_module.FUZZY_AVAILABLE
 
 
 @pytest.fixture(scope="session")
