@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Body Class - ProcessNet.Model</title>
+</head>
+<body>
+    <div class="document">
+        <dl class="class">
+            <dt class="sig sig-object" id="ProcessNet.Model.Body">
+                <em class="property">class </em><span class="sig-prename descclassname">ProcessNet.Model.</span><span class="sig-name descname">Body</span>
+            </dt>
+            <dd>
+                <p>Represents a rigid body in the multibody system.</p>
+
+                <div class="section" id="methods">
+                    <h2>Methods</h2>
+                    <dl class="method">
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">GetMass</span><span class="sig-paren">(</span><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Returns the mass of the body.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">SetMass</span><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Sets the mass of the body.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">GetInertia</span><span class="sig-paren">(</span><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Returns the inertia tensor.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">SetInertia</span><span class="sig-paren">(</span><em class="sig-param">ixx</em>, <em class="sig-param">iyy</em>, <em class="sig-param">izz</em><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Sets the inertia tensor components.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">GetPosition</span><span class="sig-paren">(</span><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Gets the current position of the body center of mass.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">SetPosition</span><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">z</em><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Sets the position of the body center of mass.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">GetVelocity</span><span class="sig-paren">(</span><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Returns the linear velocity vector.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">GetAngularVelocity</span><span class="sig-paren">(</span><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Returns the angular velocity vector.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">AddMarker</span><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">position</em><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Adds a marker to the body at the specified position.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">GetMarkers</span><span class="sig-paren">(</span><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Returns list of all markers attached to this body.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">GetID</span><span class="sig-paren">(</span><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Gets the unique identifier of the body.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">GetName</span><span class="sig-paren">(</span><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Gets the name of the body.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">SetName</span><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Sets the name of the body.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">GetType</span><span class="sig-paren">(</span><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Returns the type of the body (Rigid, Flexible, Ground).</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">Delete</span><span class="sig-paren">(</span><span class="sig-paren">)</span>
+                        </dt>
+                        <dd><p>Deletes the body from the model.</p></dd>
+                    </dl>
+                </div>
+
+                <div class="section" id="properties">
+                    <h2>Properties</h2>
+                    <dl class="attribute">
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">Mass</span>
+                        </dt>
+                        <dd><p>Gets or sets the mass value.</p></dd>
+
+                        <dt class="sig sig-object">
+                            <span class="sig-name descname">IsGround</span>
+                        </dt>
+                        <dd><p>Read-only property indicating if this is the ground body.</p></dd>
+                    </dl>
+                </div>
+            </dd>
+        </dl>
+    </div>
+</body>
+</html>

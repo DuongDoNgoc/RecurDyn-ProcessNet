@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ProcessNet Examples and Tutorials</title>
+</head>
+<body>
+    <div class="document">
+        <h1>ProcessNet Examples and Tutorials</h1>
+        <p>Learn ProcessNet through practical examples.</p>
+
+        <div class="section" id="basic-model-creation">
+            <h2>Example 1: Basic Model Creation</h2>
+            <p>This example demonstrates creating a simple two-body pendulum.</p>
+
+            <div class="highlight-csharp">
+                <div class="highlight">
+                    <pre><span class="k">using</span> <span class="nn">ProcessNet</span><span class="p">;</span>
+
+<span class="c1">// Create application instance</span>
+<span class="n">var</span> <span class="n">app</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Application</span><span class="p">();</span>
+
+<span class="c1">// Create new model</span>
+<span class="n">var</span> <span class="n">model</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="n">CreateModel</span><span class="p">(</span><span class="s">"Pendulum"</span><span class="p">);</span>
+
+<span class="c1">// Create ground body</span>
+<span class="n">var</span> <span class="n">ground</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">GetGround</span><span class="p">();</span>
+
+<span class="c1">// Create pendulum body</span>
+<span class="n">var</span> <span class="n">pendulum</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">CreateBody</span><span class="p">(</span><span class="s">"Pendulum"</span><span class="p">,</span> <span class="m">1.0</span><span class="p">);</span>
+<span class="n">pendulum</span><span class="p">.</span><span class="n">SetPosition</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="o">-</span><span class="m">100</span><span class="p">);</span>
+
+<span class="c1">// Create revolute joint</span>
+<span class="n">var</span> <span class="n">joint</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">CreateJoint</span><span class="p">(</span><span class="s">"Revolute"</span><span class="p">,</span> <span class="n">ground</span><span class="p">,</span> <span class="n">pendulum</span><span class="p">);</span>
+
+<span class="c1">// Run simulation</span>
+<span class="n">model</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="n">endTime</span><span class="p">:</span> <span class="m">10.0</span><span class="p">);</span>
+</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="doe-batch-execution">
+            <h2>Example 2: DOE Batch Execution</h2>
+            <p>Demonstrates running design of experiments with parameter variations.</p>
+
+            <div class="highlight-csharp">
+                <div class="highlight">
+                    <pre><span class="k">using</span> <span class="nn">ProcessNet</span><span class="p">;</span>
+
+<span class="c1">// Load base model</span>
+<span class="n">var</span> <span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="s">"base_model.rdyn"</span><span class="p">);</span>
+
+<span class="c1">// Parameter sweep</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">stiffness</span> <span class="o">=</span> <span class="m">1000</span><span class="p">;</span> <span class="n">stiffness</span> <span class="o">&lt;=</span> <span class="m">5000</span><span class="p">;</span> <span class="n">stiffness</span> <span class="o">+=</span> <span class="m">1000</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Clone model for this run</span>
+    <span class="n">var</span> <span class="n">clone</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">Clone</span><span class="p">();</span>
+
+    <span class="c1">// Set parameter</span>
+    <span class="n">var</span> <span class="n">spring</span> <span class="o">=</span> <span class="n">clone</span><span class="p">.</span><span class="n">GetEntityByID</span><span class="p">(</span><span class="s">"Spring_1"</span><span class="p">);</span>
+    <span class="n">spring</span><span class="p">.</span><span class="n">SetParameter</span><span class="p">(</span><span class="s">"Stiffness"</span><span class="p">,</span> <span class="n">stiffness</span><span class="p">);</span>
+
+    <span class="c1">// Run simulation</span>
+    <span class="n">clone</span><span class="p">.</span><span class="n">Run</span><span class="p">();</span>
+
+    <span class="c1">// Save results</span>
+    <span class="n">clone</span><span class="p">.</span><span class="n">SaveAs</span><span class="p">(</span><span class="s">$"run_k{stiffness}.rdyn"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="result-processing">
+            <h2>Example 3: Result Post-Processing</h2>
+            <p>Extract and process simulation results.</p>
+
+            <div class="highlight-csharp">
+                <div class="highlight">
+                    <pre><span class="k">using</span> <span class="nn">ProcessNet</span><span class="p">.</span><span class="nn">Result</span><span class="p">;</span>
+
+<span class="c1">// Load result file</span>
+<span class="n">var</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Result</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="s">"simulation.res"</span><span class="p">);</span>
+
+<span class="c1">// Get time array</span>
+<span class="kt">double</span><span class="p">[]</span> <span class="n">time</span> <span class="o">=</span> <span class="n">result</span><span class="p">.</span><span class="n">GetTimeArray</span><span class="p">();</span>
+
+<span class="c1">// Get displacement data</span>
+<span class="kt">double</span><span class="p">[]</span> <span class="n">displacement</span> <span class="o">=</span> <span class="n">result</span><span class="p">.</span><span class="n">GetEntityData</span><span class="p">(</span><span class="s">"Body_1"</span><span class="p">,</span> <span class="s">"CM_Position_X"</span><span class="p">);</span>
+
+<span class="c1">// Export to CSV</span>
+<span class="n">result</span><span class="p">.</span><span class="n">Export</span><span class="p">(</span><span class="s">"output.csv"</span><span class="p">,</span> <span class="n">format</span><span class="p">:</span> <span class="s">"CSV"</span><span class="p">);</span>
+</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="model-introspection">
+            <h2>Example 4: Model Introspection</h2>
+            <p>Query and inspect model entities.</p>
+
+            <div class="highlight-python">
+                <div class="highlight">
+                    <pre><span class="kn">from</span> <span class="nn">processnet</span> <span class="kn">import</span> <span class="n">Model</span>
+
+<span class="c1"># Load model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"complex_model.rdyn"</span><span class="p">)</span>
+
+<span class="c1"># Get all bodies</span>
+<span class="n">bodies</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetAllBodies</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">body</span> <span class="ow">in</span> <span class="n">bodies</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Body: </span><span class="si">{</span><span class="n">body</span><span class="o">.</span><span class="n">GetName</span><span class="p">()</span><span class="si">}</span><span class="s2">, Mass: </span><span class="si">{</span><span class="n">body</span><span class="o">.</span><span class="n">GetMass</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Get all joints</span>
+<span class="n">joints</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">GetAllJoints</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">joint</span> <span class="ow">in</span> <span class="n">joints</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Joint: </span><span class="si">{</span><span class="n">joint</span><span class="o">.</span><span class="n">GetID</span><span class="p">()</span><span class="si">}</span><span class="s2">, Type: </span><span class="si">{</span><span class="n">joint</span><span class="o">.</span><span class="n">GetType</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

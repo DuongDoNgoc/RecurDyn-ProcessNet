@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Methods - ProcessNet</title>
+</head>
+<body>
+    <div class="document">
+        <h1>Creation Methods</h1>
+        <p>Methods for creating entities in RecurDyn models.</p>
+
+        <div class="section" id="methods">
+            <h2>Method Reference</h2>
+
+            <table class="methods">
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>CreateBody(name, mass)</code></td>
+                        <td>Creates a new rigid body with specified name and mass.</td>
+                    </tr>
+                    <tr>
+                        <td><code>CreateJoint(type, body1, body2)</code></td>
+                        <td>Creates a joint connection between two bodies.</td>
+                    </tr>
+                    <tr>
+                        <td><code>CreateMarker(name, body, position)</code></td>
+                        <td>Creates a marker at specified position on a body.</td>
+                    </tr>
+                    <tr>
+                        <td><code>CreateForce(type, marker1, marker2)</code></td>
+                        <td>Creates a force element between two markers.</td>
+                    </tr>
+                    <tr>
+                        <td><code>CreateArc(center, radius, startAngle, endAngle)</code></td>
+                        <td>Creates an arc geometry.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <dl class="method">
+                <dt class="sig sig-object" id="CreateBody">
+                    <span class="sig-name descname">CreateBody</span><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">mass</em><span class="sig-paren">)</span>
+                </dt>
+                <dd>
+                    <p>Creates a new rigid body in the model.</p>
+                    <dl class="field-list simple">
+                        <dt class="field-odd">Parameters</dt>
+                        <dd class="field-odd">
+                            <ul class="simple">
+                                <li><strong>name</strong> (<em>str</em>) – The name of the body</li>
+                                <li><strong>mass</strong> (<em>float</em>) – Mass value in kg</li>
+                            </ul>
+                        </dd>
+                        <dt class="field-even">Returns</dt>
+                        <dd class="field-even"><p>The created Body object</p></dd>
+                    </dl>
+                </dd>
+
+                <dt class="sig sig-object" id="CreateJoint">
+                    <span class="sig-name descname">CreateJoint</span><span class="sig-paren">(</span><em class="sig-param">type</em>, <em class="sig-param">body1</em>, <em class="sig-param">body2</em><span class="sig-paren">)</span>
+                </dt>
+                <dd><p>Creates a joint connecting two bodies.</p></dd>
+
+                <dt class="sig sig-object" id="CreateMarker">
+                    <span class="sig-name descname">CreateMarker</span><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">body</em>, <em class="sig-param">position</em><span class="sig-paren">)</span>
+                </dt>
+                <dd><p>Creates a marker on a body at the specified position.</p></dd>
+
+                <dt class="sig sig-object" id="CreateForce">
+                    <span class="sig-name descname">CreateForce</span><span class="sig-paren">(</span><em class="sig-param">type</em>, <em class="sig-param">marker1</em>, <em class="sig-param">marker2</em><span class="sig-paren">)</span>
+                </dt>
+                <dd><p>Creates a force element between two markers.</p></dd>
+
+                <dt class="sig sig-object" id="CreateArc">
+                    <span class="sig-name descname">CreateArc</span><span class="sig-paren">(</span><em class="sig-param">center</em>, <em class="sig-param">radius</em>, <em class="sig-param">startAngle</em>, <em class="sig-param">endAngle</em><span class="sig-paren">)</span>
+                </dt>
+                <dd><p>Creates an arc geometry for curves.</p></dd>
+
+                <dt class="sig sig-object" id="CreateSpring">
+                    <span class="sig-name descname">CreateSpring</span><span class="sig-paren">(</span><em class="sig-param">marker1</em>, <em class="sig-param">marker2</em>, <em class="sig-param">stiffness</em><span class="sig-paren">)</span>
+                </dt>
+                <dd><p>Creates a spring element with specified stiffness.</p></dd>
+
+                <dt class="sig sig-object" id="CreateDamper">
+                    <span class="sig-name descname">CreateDamper</span><span class="sig-paren">(</span><em class="sig-param">marker1</em>, <em class="sig-param">marker2</em>, <em class="sig-param">coefficient</em><span class="sig-paren">)</span>
+                </dt>
+                <dd><p>Creates a damper element with specified damping coefficient.</p></dd>
+
+                <dt class="sig sig-object" id="CreateContact">
+                    <span class="sig-name descname">CreateContact</span><span class="sig-paren">(</span><em class="sig-param">geometry1</em>, <em class="sig-param">geometry2</em><span class="sig-paren">)</span>
+                </dt>
+                <dd><p>Creates contact between two geometries.</p></dd>
+
+                <dt class="sig sig-object" id="CreateMotion">
+                    <span class="sig-name descname">CreateMotion</span><span class="sig-paren">(</span><em class="sig-param">joint</em>, <em class="sig-param">expression</em><span class="sig-paren">)</span>
+                </dt>
+                <dd><p>Creates a motion on a joint with specified expression.</p></dd>
+
+                <dt class="sig sig-object" id="CreateRequest">
+                    <span class="sig-name descname">CreateRequest</span><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">type</em>, <em class="sig-param">entity</em><span class="sig-paren">)</span>
+                </dt>
+                <dd><p>Creates a request to output simulation results.</p></dd>
+            </dl>
+        </div>
+    </div>
+</body>
+</html>
