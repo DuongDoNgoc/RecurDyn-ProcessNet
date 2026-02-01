@@ -47,7 +47,7 @@ ProcessNetKnowledge = _qi_module.ProcessNetKnowledge
 
 class APIConfig:
     """API server configuration."""
-    DEFAULT_KB_PATH = "output/processnet-knowledge-v4.json"
+    DEFAULT_KB_PATH = "output/processnet-knowledge-v5.json"
     DEFAULT_HOST = "127.0.0.1"
     DEFAULT_PORT = 8000
 
@@ -360,7 +360,7 @@ def main():
     parser.add_argument(
         '--kb', '-k',
         type=str,
-        default='output/processnet-knowledge-v4.json',
+        default='output/processnet-knowledge-v5.json',
         help='Path to knowledge base JSON file'
     )
     parser.add_argument(

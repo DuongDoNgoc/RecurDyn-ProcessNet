@@ -432,8 +432,8 @@ class ProcessNetDocParser:
                             if 'Return' in dt_text or 'rtype' in dt_text:
                                 # Full return description
                                 full_text = dd.get_text(strip=True)
-                                # Extract first word/type as return type
-                                type_match = re.match(r'^([a-zA-Z_][a-zA-Z0-9_<>,\s]*)', full_text)
+                                # Extract first word/type as return type (include generics like list[float])
+                                type_match = re.match(r'^([a-zA-Z_][a-zA-Z0-9_<>,\s\[\]\.\-]*)', full_text)
                                 if type_match:
                                     return_type = return_type or type_match.group(1).strip()
                                     return_desc = full_text[:500]
