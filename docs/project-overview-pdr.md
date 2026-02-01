@@ -543,7 +543,7 @@ See [docs/project-roadmap.md](project-roadmap.md) for detailed development timel
 
 - [Codebase Summary](codebase-summary.md) - Code structure overview
 - [Code Standards](code-standards.md) - Development conventions
-- [System Architecture](system-architecture.md) - Architecture details
+- [System Architecture](system-architecture/index.md) - Architecture details
 - [Project Roadmap](project-roadmap.md) - Development milestones
 - [Tech Stack](tech-stack.md) - Technology stack details
 

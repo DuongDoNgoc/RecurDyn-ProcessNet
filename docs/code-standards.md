@@ -1,7 +1,7 @@
 # RecurDyn ProcessNet - Code Standards and Conventions
 
-**Date:** 2026-01-28
-**Version:** 1.0
+**Date:** 2026-02-01
+**Version:** 2.0
 **Status:** Active
 
 ## Overview
@@ -23,6 +23,251 @@ This document defines the coding standards and conventions for the RecurDyn Proc
 - **Testability**: Easy to test individual components
 - **Performance**: Meet defined performance targets
 - **Reliability**: Handle errors gracefully
+
+## REST API Standards
+
+### API Endpoint Design
+
+**Naming Convention:** RESTful resource-based naming
+
+```
+✓ GOOD:
+GET  /api/health
+GET  /api/stats
+GET  /api/namespaces
+GET  /api/namespaces/{name}
+GET  /api/search?q={query}
+GET  /api/find/{name}
+GET  /api/examples?keyword={kw}
+
+✗ BAD:
+GET  /getNamespaces
+POST /searchMethod
+GET  /method-details
+```
+
+**HTTP Methods:**
+- `GET` - Retrieve resources (no side effects)
+- `POST` - Create resources (not used in current API)
+- `PUT` - Update resources (not used in current API)
+- `DELETE` - Delete resources (not used in current API)
+
+### Response Format
+
+**Success Responses:**
+- `200 OK` - Successful GET request
+- `201 Created` - Successful POST (when implemented)
+
+**Error Responses:**
+- `404 Not Found` - Resource not found
+- `422 Unprocessable Entity` - Validation error
+- `500 Internal Server Error` - Server error
+
+**Response Structure:**
+```python
+# GOOD - Consistent response structure
+{
+    "count": 5,
+    "results": [
+        {
+            "name": "CreateArc",
+            "type": "method",
+            "namespace": "ProcessNet.Geometry",
+            "signature": "CreateArc(center, radius, start_angle, end_angle)",
+            "description": "Creates circular arc",
+            "score": 95.0
+        }
+    ]
+}
+
+# GOOD - Error response
+{
+    "detail": "Method 'NonExistent' not found in knowledge base"
+}
+```
+
+### Async/Await Patterns
+
+**Requirement:** Use async/await for all route handlers
+
+```python
+# GOOD - Async route handler
+from fastapi import FastAPI, HTTPException
+
+@app.get("/api/find/{name}")
+async def find_method(name: str, namespace: Optional[str] = None):
+    """Find method by exact name match."""
+    try:
+        results = app.state.kb.find_method(name, namespace)
+        if not results:
+            raise HTTPException(status_code=404, detail=f"Method '{name}' not found")
+        return {"count": len(results), "results": [asdict(r) for r in results]}
+    except Exception as e:
+        logger.error(f"Error finding method '{name}': {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+# BAD - Synchronous handler (works but not recommended)
+@app.get("/api/find/{name}")
+def find_method(name: str):
+    # This works but doesn't leverage FastAPI's async capabilities
+    results = app.state.kb.find_method(name)
+    return results
+```
+
+### Pydantic Models
+
+**Requirement:** Use Pydantic for request/response validation
+
+```python
+# GOOD - Pydantic models
+from pydantic import BaseModel, Field
+
+class MethodResponse(BaseModel):
+    """Method response model."""
+    name: str = Field(..., description="Method name")
+    type: str = Field(..., description="Type: method, class, or example")
+    namespace: str = Field(..., description="Namespace containing the method")
+    signature: str = Field(default="", description="Method signature")
+    description: str = Field(default="", description="Method description")
+    score: float = Field(default=100.0, description="Fuzzy match score")
+
+class SearchResponse(BaseModel):
+    """Search response model."""
+    count: int = Field(..., description="Number of results")
+    query: str = Field(..., description="Search query")
+    results: list[MethodResponse] = Field(default_factory=list)
+
+# Use in endpoint
+@app.get("/api/search", response_model=SearchResponse)
+async def search_methods(q: str = Query(..., min_length=1), limit: int = Query(10, ge=1, le=100)):
+    """Search for methods using fuzzy matching."""
+    results = kb.search_method_fuzzy(q, limit=limit)
+    return SearchResponse(count=len(results), query=q, results=results)
+```
+
+### CORS Configuration
+
+**Best Practice:** Configure CORS for appropriate origins
+
+```python
+# GOOD - Configured CORS
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # In production, specify allowed origins
+    allow_credentials=True,
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
+```
+
+### Error Handling
+
+**Pattern:** Use HTTPException for API errors
+
+```python
+# GOOD - HTTPException with status codes
+from fastapi import HTTPException
+
+@app.get("/api/namespaces/{name}")
+async def get_namespace(name: str):
+    """Get namespace details."""
+    ns_data = app.state.kb.list_namespace_contents(name)
+    if not ns_data:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Namespace '{name}' not found"
+        )
+    return ns_data
+
+# GOOD - Try-except with logging
+@app.get("/api/search")
+async def search(q: str):
+    try:
+        results = app.state.kb.search_method_fuzzy(q)
+        return {"results": results}
+    except Exception as e:
+        logger.error(f"Search error for '{q}': {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+```
+
+### API Documentation
+
+**Automatic Docs:** FastAPI provides automatic OpenAPI docs
+
+```python
+# GOOD - Descriptive docstrings
+@app.get("/api/stats", response_model=StatsResponse)
+async def get_statistics():
+    """
+    Get knowledge base statistics.
+
+    Returns counts of namespaces, classes, methods, properties,
+    and extraction metadata.
+    """
+    stats = app.state.kb.get_statistics()
+    return stats
+
+# Access docs at:
+# - http://localhost:8000/docs (Swagger UI)
+# - http://localhost:8000/redoc (ReDoc)
+```
+
+### Server Lifecycle
+
+**Best Practice:** Use lifespan context manager for startup/shutdown
+
+```python
+# GOOD - Lifespan management
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Manage server lifecycle with singleton KB."""
+    # Startup: Load knowledge base
+    logger.info("Starting API server...")
+    kb_instance = ProcessNetKnowledge(args.kb_path)
+    app.state.kb = kb_instance
+    logger.info("Knowledge base loaded successfully")
+    yield
+    # Shutdown: Cleanup
+    logger.info("Shutting down API server...")
+
+app = FastAPI(
+    title="ProcessNet Knowledge Base API",
+    description="REST API for querying RecurDyn ProcessNet API documentation",
+    version="1.0.0",
+    lifespan=lifespan
+)
+```
+
+### Integration Testing
+
+**Pattern:** Use httpx for async API testing
+
+```python
+# GOOD - Async test with httpx
+import pytest
+from httpx import AsyncClient
+
+@pytest.mark.asyncio
+async def test_search_endpoint():
+    """Test search endpoint returns results."""
+    async with AsyncClient(app=app, base_url="http://test") as client:
+        response = await client.get("/api/search", params={"q": "save"})
+        assert response.status_code == 200
+        data = response.json()
+        assert "results" in data
+        assert len(data["results"]) > 0
+
+@pytest.mark.asyncio
+async def test_find_not_found():
+    """Test find endpoint returns 404 for non-existent method."""
+    async with AsyncClient(app=app, base_url="http://test") as client:
+        response = await client.get("/api/find/NonExistentMethod")
+        assert response.status_code == 404
+```
 
 ## Python Code Standards
 
@@ -1033,7 +1278,7 @@ refactor/parser-class
 - docs/project-overview-pdr.md - Product requirements
 - docs/code-standards.md - This file
 - docs/codebase-summary.md - Code structure
-- docs/system-architecture.md - Architecture details
+- docs/system-architecture/index.md - Architecture details
 - docs/project-roadmap.md - Development timeline
 
 ### API Documentation
@@ -1147,7 +1392,7 @@ rapidfuzz
 - [README.md](../README.md) - Project overview
 - [docs/project-overview-pdr.md](project-overview-pdr.md) - Product requirements
 - [docs/codebase-summary.md](codebase-summary.md) - Code structure
-- [docs/system-architecture.md](system-architecture.md) - Architecture details
+- [docs/system-architecture/index.md](system-architecture/index.md) - Architecture details
 
 ## Version History
 

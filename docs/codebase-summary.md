@@ -48,7 +48,7 @@ RecurDyn-ProcessNet/
 │   ├── project-overview-pdr.md              # Product Development Requirements
 │   ├── code-standards.md                    # Code standards and conventions
 │   ├── codebase-summary.md                  # This file
-│   ├── system-architecture.md               # Architecture documentation
+│   ├── system-architecture/index.md               # Architecture documentation
 │   ├── project-roadmap.md                   # Development roadmap (999 lines)
 │   └── tech-stack.md                        # Technology stack (97 lines)
 │
@@ -669,7 +669,7 @@ Test all 3 target workflows:
 - [README.md](../README.md) - Project overview
 - [docs/project-overview-pdr.md](project-overview-pdr.md) - Product Development Requirements
 - [docs/code-standards.md](code-standards.md) - Code standards
-- [docs/system-architecture.md](system-architecture.md) - Architecture details
+- [docs/system-architecture/index.md](system-architecture/index.md) - Architecture details
 - [docs/tech-stack.md](tech-stack.md) - Technology stack
 - [ProcessNet_Extraction_Requirements.md](../ProcessNet_Extraction_Requirements.md) - Technical requirements
 
