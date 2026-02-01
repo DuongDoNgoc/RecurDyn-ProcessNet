@@ -43,7 +43,7 @@ APIConfig = api_module.APIConfig
 # ============================================================================
 
 API_BASE_URL = "http://testserver/api"
-KB_PATH = "output/processnet-knowledge.json"
+KB_PATH = "output/processnet-knowledge-v5.json"
 
 
 @pytest.fixture(scope="module")

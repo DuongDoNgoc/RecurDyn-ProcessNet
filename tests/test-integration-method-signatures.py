@@ -35,7 +35,7 @@ create_validation_targets = helpers_module.create_validation_targets
 # Test Configuration
 # ============================================================================
 
-KB_PATH = "output/processnet-knowledge-v4.json"
+KB_PATH = "output/processnet-knowledge-v5.json"
 TARGETS_PATH = "tests/fixtures/validation-targets.json"
 
 

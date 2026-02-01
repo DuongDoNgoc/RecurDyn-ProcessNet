@@ -34,7 +34,7 @@ ProcessNetValidator = helpers_module.ProcessNetValidator
 # Test Configuration
 # ============================================================================
 
-KB_PATH = "output/processnet-knowledge-v4.json"
+KB_PATH = "output/processnet-knowledge-v5.json"
 
 
 @pytest.fixture(scope="module")

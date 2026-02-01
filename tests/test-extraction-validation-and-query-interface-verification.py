@@ -29,7 +29,7 @@ ProcessNetDocParser = recurdyn_doc_parser.ProcessNetDocParser
 ProcessNetKnowledge = processnet_query_interface.ProcessNetKnowledge
 
 
-KB_PATH = Path('output/processnet-knowledge.json')
+KB_PATH = Path('output/processnet-knowledge-v5.json')
 EXTRACTED_DIR = Path('output/extracted_chm')
 
 
