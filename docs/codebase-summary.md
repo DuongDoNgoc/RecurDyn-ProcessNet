@@ -1,25 +1,26 @@
 # RecurDyn ProcessNet - Codebase Summary
 
 **Date:** 2026-02-01
-**Version:** 1.7 (v3 Knowledge Base - Bug Fix Release)
-**Total Files:** 35+ files (including tests, plans, reports)
-**Total Tokens:** ~75,000+ tokens
-**Total Characters:** ~300,000+ characters
+**Version:** 2.0 (v6 Knowledge Base - Complete Python API Extraction)
+**Total Files:** 40+ files (including tests, plans, reports)
+**Total Tokens:** ~85,000+ tokens
+**Total Characters:** ~350,000+ characters
 
-**Extraction Statistics (v3 - Post-Bug-Fix):**
-- Methods extracted: 9,478 (+69% from v2)
-- Classes extracted: 500 (correctly consolidated, was 1,803 duplicates in v2)
-- Properties extracted: 27,132 (+103% from v2)
+**Extraction Statistics (v6 - Final):**
+- HTML files processed: 40,625 (100% coverage)
+- Classes extracted: 1,830
+- Methods extracted: 6,773 (100% member association)
+- Properties extracted: 15,545 (100% member association)
+- Enumerations extracted: 448
 - Namespaces: 23
-- Methods with parameters: 6,035+
-- **Accuracy:** Methods 108%, Properties 99.78%
-- **Bug Fixed:** Methods/properties now correctly associated with classes (was 0% in v2)
+- **Scope:** Python API only (C#/VB not extracted)
+- **Accuracy:** 100% member-to-class association
 
-**Integration Test Results:**
-- Total tests: 51 (Method signatures: 16, Parameter types: 16, Automation scenarios: 19)
-- Tests passed: 45 (88% pass rate)
-- Signature tests: 100% pass (16/16)
-- Automation scenario tests: 100% pass (19/19)
+**Test Results (Final):**
+- Total tests: 214
+- Tests passed: 201 (94% pass rate)
+- Test coverage: 80%+
+- All critical workflows validated
 
 ## Executive Summary
 

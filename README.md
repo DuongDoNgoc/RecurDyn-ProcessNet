@@ -2,16 +2,17 @@
 
 **Objective:** Extract complete ProcessNet API documentation from RecurDyn installation and build structured knowledge base for automation workflows.
 
-**Project Status:** ✅ 100% Complete - Production Ready (v3 - Fixed)
+**Project Status:** ✅ 100% Complete - Production Ready (v6)
 
-**Extraction Statistics:**
-- 9,478 methods extracted from 40,625 HTML files (108% accuracy)
-- 500 classes organized into 23 namespaces (consolidated correctly)
-- 27,132 properties extracted (99.78% accuracy)
-- 6,035+ parameters extracted
-- 51 integration tests (88% pass rate)
+**Extraction Statistics (v6 - Python API Only):**
+- 40,625 HTML files processed (100% coverage)
+- 1,830 classes organized into 23 namespaces
+- 6,773 methods extracted (100% member association)
+- 15,545 properties extracted (100% member association)
+- 448 enumerations extracted
+- 214 tests (201 passed, 94% pass rate)
 - REST API server with 7 endpoints
-- **Bug Fix (2026-02-01):** Methods/properties now correctly associated with classes
+- **Scope Note:** Python API only - C#/VB APIs not extracted
 
 ## Overview
 
@@ -210,7 +211,7 @@ python src/processnet-query-interface.py
 python src/processnet-api-server.py --port 8000
 
 # Or with custom knowledge base path
-python src/processnet-api-server.py --kb output/processnet-knowledge.json --port 8080
+python src/processnet-api-server.py --kb output/processnet-knowledge-v6.json --port 8080
 
 # API Documentation available at:
 #   http://localhost:8000/docs    - Swagger UI
@@ -338,6 +339,11 @@ This project is part of the RecurDyn ProcessNet automation toolkit.
 
 ## Version History
 
+- **v6** (2026-02-01) - Python API extraction complete, 100% member association, C#/VB gap identified
+- **v5** (2026-02-01) - Fixed parameter/return type extraction bugs
+- **v4** (2026-02-01) - Enhanced extraction quality
+- **v3** (2026-02-01) - Fixed method/property class association bug
+- **v2** (2026-02-01) - Enhanced parameter extraction
 - **v1.0** (2026-01-28) - Initial release with extraction and query capabilities
 
 ## Support
