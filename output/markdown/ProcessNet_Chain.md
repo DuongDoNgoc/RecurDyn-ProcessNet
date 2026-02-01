@@ -15,7 +15,7 @@
 ### classChainAssemblyBushingType
 
 ```
-classChainAssemblyBushingType(value)¶
+classChainAssemblyBushingType(value)
 ```
 
 Bases:IntEnumChainAssemblyBushingType enumeration.MembersChainAssemblyBushingType_DoubleConstant value is 1.ChainAssemblyBushingType_SingleConstant value is 0.
@@ -23,7 +23,7 @@ Bases:IntEnumChainAssemblyBushingType enumeration.MembersChainAssemblyBushingTyp
 ### classChainContactSearchType
 
 ```
-classChainContactSearchType(value)¶
+classChainContactSearchType(value)
 ```
 
 Bases:IntEnumChainContactSearchType enumeration.MembersChainContactSearchType_FullSearchConstant value is 0.ChainContactSearchType_PartialSearchConstant value is 1.
@@ -31,7 +31,7 @@ Bases:IntEnumChainContactSearchType enumeration.MembersChainContactSearchType_Fu
 ### classChainFrictionType
 
 ```
-classChainFrictionType(value)¶
+classChainFrictionType(value)
 ```
 
 Bases:IntEnumChainFrictionType enumeration.MembersChainFrictionType_DynamicFrictionCoefficientConstant value is 0.ChainFrictionType_FrictionCoefficientSplineConstant value is 2.ChainFrictionType_FrictionForceSplineConstant value is 1.
@@ -39,7 +39,7 @@ Bases:IntEnumChainFrictionType enumeration.MembersChainFrictionType_DynamicFrict
 ### classChainGuardInactiveType
 
 ```
-classChainGuardInactiveType(value)¶
+classChainGuardInactiveType(value)
 ```
 
 Bases:IntEnumChainGuardInactiveType enumeration.MembersChainGuardInactiveType_Left_InactiveConstant value is 1.ChainGuardInactiveType_NoneConstant value is 0.ChainGuardInactiveType_Right_InactiveConstant value is 2.
@@ -47,7 +47,7 @@ Bases:IntEnumChainGuardInactiveType enumeration.MembersChainGuardInactiveType_Le
 ### classChainGuidePointsType
 
 ```
-classChainGuidePointsType(value)¶
+classChainGuidePointsType(value)
 ```
 
 Bases:IntEnumChainGuidePointsType enumeration.MembersChainGuidePointsType_CenterPointsAndArcAngleConstant value is 2.ChainGuidePointsType_CenterPointsAndRadiusConstant value is 1.ChainGuidePointsType_PassingPointsConstant value is 0.
@@ -55,7 +55,7 @@ Bases:IntEnumChainGuidePointsType enumeration.MembersChainGuidePointsType_Center
 ### classChainInOutType
 
 ```
-classChainInOutType(value)¶
+classChainInOutType(value)
 ```
 
 Bases:IntEnumChainInOutType enumeration.MembersChainInOutType_InConstant value is 0.ChainInOutType_NoneConstant value is 2.ChainInOutType_OutConstant value is 1.
@@ -63,7 +63,7 @@ Bases:IntEnumChainInOutType enumeration.MembersChainInOutType_InConstant value i
 ### classChainLinkPlateShapeType
 
 ```
-classChainLinkPlateShapeType(value)¶
+classChainLinkPlateShapeType(value)
 ```
 
 Bases:IntEnumChainLinkPlateShapeType enumeration.MembersChainLinkPlateShapeType_BoxConstant value is 1.ChainLinkPlateShapeType_CircleConstant value is 0.
@@ -71,7 +71,7 @@ Bases:IntEnumChainLinkPlateShapeType enumeration.MembersChainLinkPlateShapeType_
 ### classChainLinkType
 
 ```
-classChainLinkType(value)¶
+classChainLinkType(value)
 ```
 
 Bases:IntEnumChainLinkType enumeration.MembersChainLinkType_GeneralRollerLinkConstant value is 0.ChainLinkType_ISO606_05BConstant value is 1.ChainLinkType_ISO606_06BConstant value is 2.ChainLinkType_ISO606_081Constant value is 5.ChainLinkType_ISO606_083Constant value is 6.ChainLinkType_ISO606_084Constant value is 7.ChainLinkType_ISO606_085Constant value is 8.ChainLinkType_ISO606_08AConstant value is 3.ChainLinkType_ISO606_08BConstant value is 4.ChainLinkType_ISO606_10AConstant value is 9.ChainLi
@@ -79,7 +79,7 @@ Bases:IntEnumChainLinkType enumeration.MembersChainLinkType_GeneralRollerLinkCon
 ### classChainNormalDirectionType
 
 ```
-classChainNormalDirectionType(value)¶
+classChainNormalDirectionType(value)
 ```
 
 Bases:IntEnumChainNormalDirectionType enumeration.MembersChainNormalDirectionType_DownConstant value is 1.ChainNormalDirectionType_UpConstant value is 0.
@@ -87,7 +87,7 @@ Bases:IntEnumChainNormalDirectionType enumeration.MembersChainNormalDirectionTyp
 ### classChainSprocketType
 
 ```
-classChainSprocketType(value)¶
+classChainSprocketType(value)
 ```
 
 Bases:IntEnumChainSprocketType enumeration.MembersChainSprocketType_GeneralConstant value is 0.ChainSprocketType_ISO606LibraryConstant value is 1.ChainSprocketType_ParametersConstant value is 2.
@@ -95,7 +95,7 @@ Bases:IntEnumChainSprocketType enumeration.MembersChainSprocketType_GeneralConst
 ### AddAllOutputLink
 
 ```
-IChainAssembly.AddAllOutputLink()¶
+IChainAssembly.AddAllOutputLink()
 ```
 
 Add all the link body to output list
@@ -103,7 +103,7 @@ Add all the link body to output list
 ### AddOutputLink
 
 ```
-IChainAssembly.AddOutputLink(strFileName)¶
+IChainAssembly.AddOutputLink(strFileName)
 ```
 
 Add a link body to output list
@@ -111,7 +111,7 @@ Add a link body to output list
 ### AddPassingBody
 
 ```
-IChainAssembly.AddPassingBody(pVal)¶
+IChainAssembly.AddPassingBody(pVal)
 ```
 
 Add a Passing Body
@@ -119,7 +119,7 @@ Add a Passing Body
 ### DeletePassingBody
 
 ```
-IChainAssembly.DeletePassingBody(pVal)¶
+IChainAssembly.DeletePassingBody(pVal)
 ```
 
 Delete a Passing Body
@@ -127,7 +127,7 @@ Delete a Passing Body
 ### GetOutputLinkList
 
 ```
-IChainAssembly.GetOutputLinkList()¶
+IChainAssembly.GetOutputLinkList()
 ```
 
 Chain assembly output list
@@ -135,7 +135,7 @@ Chain assembly output list
 ### RemoveAllOutputLink
 
 ```
-IChainAssembly.RemoveAllOutputLink()¶
+IChainAssembly.RemoveAllOutputLink()
 ```
 
 Remove all the link body from output list
@@ -143,7 +143,7 @@ Remove all the link body from output list
 ### RemoveOutputLink
 
 ```
-IChainAssembly.RemoveOutputLink(strFileName)¶
+IChainAssembly.RemoveOutputLink(strFileName)
 ```
 
 Remove a link body from output list
@@ -151,7 +151,7 @@ Remove a link body from output list
 ### UpdateLinkInitialVelocityXAxis
 
 ```
-IChainAssembly.UpdateLinkInitialVelocityXAxis()¶
+IChainAssembly.UpdateLinkInitialVelocityXAxis()
 ```
 
 Update Link Initial Velocity X-Axis Value
@@ -159,7 +159,7 @@ Update Link Initial Velocity X-Axis Value
 ### classIChainAssembly
 
 ```
-classIChainAssembly(oobj=None)¶
+classIChainAssembly(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain AssemblyPropertiesBushingForceParameterBushing Force ParameterChainBodyLinkCollectionGet the Chain Body Link CollectionCommentCommentForceDisplayForce displayFullNameFullName such asBody1.Marker1@Model1LinkInitialVelocityXAxisLink Initial Velocity X-AxisLinkNumbersLink NumbersLinkPlateShapeTypeLink Plate Shape TypeNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOw
@@ -167,7 +167,7 @@ Bases:DispatchBaseClassChain AssemblyPropertiesBushingForceParameterBushing Forc
 ### Export
 
 ```
-IChainAssemblyBushingForceParameter.Export(strName,val)¶
+IChainAssemblyBushingForceParameter.Export(strName,val)
 ```
 
 Export bushing force parameter
@@ -175,7 +175,7 @@ Export bushing force parameter
 ### Import
 
 ```
-IChainAssemblyBushingForceParameter.Import(strName)¶
+IChainAssemblyBushingForceParameter.Import(strName)
 ```
 
 Import bushing force parameter
@@ -183,7 +183,7 @@ Import bushing force parameter
 ### classIChainAssemblyBushingForceParameter
 
 ```
-classIChainAssemblyBushingForceParameter(oobj=None)¶
+classIChainAssemblyBushingForceParameter(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain AssemblyPropertiesFrictionFriction ParameterRotationDampingCoefficientXRotation damping coefficient XRotationDampingCoefficientYRotation damping coefficient YRotationDampingCoefficientZRotation damping coefficient ZRotationDampingExponentXRotation damping exponent XRotationDampingExponentYRotation damping exponent YRotationDampingExponentZRotation damping exponent ZRotationDampingSplineXRotation damping spline XRotationDampingSplineYRotation damping spline YRotationD
@@ -191,7 +191,7 @@ Bases:DispatchBaseClassChain AssemblyPropertiesFrictionFriction ParameterRotatio
 ### Item
 
 ```
-IChainAssemblyCollection.Item(var)¶
+IChainAssemblyCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -199,7 +199,7 @@ Returns a specific item.
 ### classIChainAssemblyCollection
 
 ```
-classIChainAssemblyCollection(oobj=None)¶
+classIChainAssemblyCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -207,7 +207,7 @@ Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collect
 ### classIChainAssemblyContactFriction
 
 ```
-classIChainAssemblyContactFriction(oobj=None)¶
+classIChainAssemblyContactFriction(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain Contact FrictionPropertiesDynamicFrictionCoefficientDynamic Friction CoefficientDynamicThresholdVelocityDynamic Threshold VelocityPinDiameterPin DiameterStaticFrictionCoefficientStatic Friction CoefficientStaticThresholdVelocityStatic Threshold Velocity
@@ -215,7 +215,7 @@ Bases:DispatchBaseClassChain Contact FrictionPropertiesDynamicFrictionCoefficien
 ### classIChainBody
 
 ```
-classIChainBody(oobj=None)¶
+classIChainBody(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain bodyPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -223,7 +223,7 @@ Bases:DispatchBaseClassChain bodyPropertiesCommentCommentFullNameFullName such a
 ### Item
 
 ```
-IChainBodyCollection.Item(var)¶
+IChainBodyCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -231,7 +231,7 @@ Returns a specific item.
 ### classIChainBodyCollection
 
 ```
-classIChainBodyCollection(oobj=None)¶
+classIChainBodyCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -239,7 +239,7 @@ Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collect
 ### classIChainBodyGuardLateral
 
 ```
-classIChainBodyGuardLateral(oobj=None)¶
+classIChainBodyGuardLateral(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain guidePropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -247,7 +247,7 @@ Bases:DispatchBaseClassChain guidePropertiesCommentCommentContactPropertyContact
 ### UpdateGeometry
 
 ```
-IChainBodyGuide.UpdateGeometry()¶
+IChainBodyGuide.UpdateGeometry()
 ```
 
 Update geometry
@@ -255,7 +255,7 @@ Update geometry
 ### classIChainBodyGuide
 
 ```
-classIChainBodyGuide(oobj=None)¶
+classIChainBodyGuide(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain guidePropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeForceDisplayForce displayFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameNormalDirectionNormal DirectionOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied dataMethodsUpda
@@ -263,7 +263,7 @@ Bases:DispatchBaseClassChain guidePropertiesCommentCommentContactPropertyContact
 ### classIChainBodyLink
 
 ```
-classIChainBodyLink(oobj=None)¶
+classIChainBodyLink(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain Body LinkPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGraphicGraphicNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUseBodyGraphicUse graphic of clone boyUserDataUser supplied data
@@ -271,7 +271,7 @@ Bases:DispatchBaseClassChain Body LinkPropertiesCommentCommentFullNameFullName s
 ### Item
 
 ```
-IChainBodyLinkCollection.Item(var)¶
+IChainBodyLinkCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -279,7 +279,7 @@ Returns a specific item.
 ### classIChainBodyLinkCollection
 
 ```
-classIChainBodyLinkCollection(oobj=None)¶
+classIChainBodyLinkCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -287,7 +287,7 @@ Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collect
 ### classIChainBodyLinkMultiplexOffset
 
 ```
-classIChainBodyLinkMultiplexOffset(oobj=None)¶
+classIChainBodyLinkMultiplexOffset(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain Body Link Offset MultiplexPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGraphicGraphicNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUseBodyGraphicUse graphic of clone boyUserDataUser supplied data
@@ -295,7 +295,7 @@ Bases:DispatchBaseClassChain Body Link Offset MultiplexPropertiesCommentCommentF
 ### UpdateGeometry
 
 ```
-IChainBodyLinkMultiplexPin.UpdateGeometry()¶
+IChainBodyLinkMultiplexPin.UpdateGeometry()
 ```
 
 Update geometry
@@ -303,7 +303,7 @@ Update geometry
 ### classIChainBodyLinkMultiplexPin
 
 ```
-classIChainBodyLinkMultiplexPin(oobj=None)¶
+classIChainBodyLinkMultiplexPin(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain Body Link Pin MultiplexPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryGraphicGraphicNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUseBodyGraphicUse graphic of clone boyUserDataUser supplied dataMethodsUpdateGeometryUpdate geometry
@@ -311,7 +311,7 @@ Bases:DispatchBaseClassChain Body Link Pin MultiplexPropertiesCommentCommentFull
 ### UpdateGeometry
 
 ```
-IChainBodyLinkMultiplexRoller.UpdateGeometry()¶
+IChainBodyLinkMultiplexRoller.UpdateGeometry()
 ```
 
 Update geometry
@@ -319,7 +319,7 @@ Update geometry
 ### classIChainBodyLinkMultiplexRoller
 
 ```
-classIChainBodyLinkMultiplexRoller(oobj=None)¶
+classIChainBodyLinkMultiplexRoller(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain Body Link Roller MultiplexPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryGraphicGraphicNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUseBodyGraphicUse graphic of clone boyUserDataUser supplied dataMethodsUpdateGeometryUpdate geometry
@@ -327,7 +327,7 @@ Bases:DispatchBaseClassChain Body Link Roller MultiplexPropertiesCommentCommentF
 ### classIChainBodyLinkOffset
 
 ```
-classIChainBodyLinkOffset(oobj=None)¶
+classIChainBodyLinkOffset(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain Body Link OffsetPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGraphicGraphicNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUseBodyGraphicUse graphic of clone boyUserDataUser supplied data
@@ -335,7 +335,7 @@ Bases:DispatchBaseClassChain Body Link OffsetPropertiesCommentCommentFullNameFul
 ### UpdateGeometry
 
 ```
-IChainBodyLinkPin.UpdateGeometry()¶
+IChainBodyLinkPin.UpdateGeometry()
 ```
 
 Update geometry
@@ -343,7 +343,7 @@ Update geometry
 ### classIChainBodyLinkPin
 
 ```
-classIChainBodyLinkPin(oobj=None)¶
+classIChainBodyLinkPin(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain Body Link PinPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryGraphicGraphicNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUseBodyGraphicUse graphic of clone boyUserDataUser supplied dataMethodsUpdateGeometryUpdate geometry
@@ -351,7 +351,7 @@ Bases:DispatchBaseClassChain Body Link PinPropertiesCommentCommentFullNameFullNa
 ### UpdateGeometry
 
 ```
-IChainBodyLinkRoller.UpdateGeometry()¶
+IChainBodyLinkRoller.UpdateGeometry()
 ```
 
 Update geometry
@@ -359,7 +359,7 @@ Update geometry
 ### classIChainBodyLinkRoller
 
 ```
-classIChainBodyLinkRoller(oobj=None)¶
+classIChainBodyLinkRoller(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain Body Link RollerPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryGraphicGraphicNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUseBodyGraphicUse graphic of clone boyUserDataUser supplied dataMethodsUpdateGeometryUpdate geometry
@@ -367,7 +367,7 @@ Bases:DispatchBaseClassChain Body Link RollerPropertiesCommentCommentFullNameFul
 ### UpdateGeometry
 
 ```
-IChainBodyLinkSilentInner.UpdateGeometry()¶
+IChainBodyLinkSilentInner.UpdateGeometry()
 ```
 
 Update geometry
@@ -375,7 +375,7 @@ Update geometry
 ### classIChainBodyLinkSilentInner
 
 ```
-classIChainBodyLinkSilentInner(oobj=None)¶
+classIChainBodyLinkSilentInner(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain Body Link Silent OuterPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryGraphicGraphicNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceProfileProfile of Link SilentUseBodyGraphicUse graphic of clone boyUserDataUser supplied dataMethodsUpdateGeometryUpdate ge
@@ -383,7 +383,7 @@ Bases:DispatchBaseClassChain Body Link Silent OuterPropertiesCommentCommentFullN
 ### UpdateGeometry
 
 ```
-IChainBodyLinkSilentOuter.UpdateGeometry()¶
+IChainBodyLinkSilentOuter.UpdateGeometry()
 ```
 
 Update geometry
@@ -391,7 +391,7 @@ Update geometry
 ### classIChainBodyLinkSilentOuter
 
 ```
-classIChainBodyLinkSilentOuter(oobj=None)¶
+classIChainBodyLinkSilentOuter(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain Body Link Silent OuterPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryGraphicGraphicNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceProfileProfile of Link SilentUseBodyGraphicUse graphic of clone boyUserDataUser supplied dataMethodsUpdateGeometryUpdate ge
@@ -399,7 +399,7 @@ Bases:DispatchBaseClassChain Body Link Silent OuterPropertiesCommentCommentFullN
 ### classIChainBodyRoller
 
 ```
-classIChainBodyRoller(oobj=None)¶
+classIChainBodyRoller(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain Roller RollerPropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -407,7 +407,7 @@ Bases:DispatchBaseClassChain Roller RollerPropertiesCommentCommentContactPropert
 ### classIChainBodySprocketMultiplex
 
 ```
-classIChainBodySprocketMultiplex(oobj=None)¶
+classIChainBodySprocketMultiplex(oobj=None)
 ```
 
 Bases:DispatchBaseClassChain Sprocket MultiplexPropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceSideContactPropertySide Contact PropertyUserDataUser supplied data

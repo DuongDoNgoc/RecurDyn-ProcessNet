@@ -15,7 +15,7 @@
 ### CreateMassCenter
 
 ```
-IExternalSPIToolkit.CreateMassCenter(Name)¶
+IExternalSPIToolkit.CreateMassCenter(Name)
 ```
 
 Creates a MassCenter
@@ -23,7 +23,7 @@ Creates a MassCenter
 ### CreateParticleSensorBox
 
 ```
-IExternalSPIToolkit.CreateParticleSensorBox(Name,referenceBody)¶
+IExternalSPIToolkit.CreateParticleSensorBox(Name,referenceBody)
 ```
 
 Creates a box ParticleSensor
@@ -31,7 +31,7 @@ Creates a box ParticleSensor
 ### CreateParticleSensorSphere
 
 ```
-IExternalSPIToolkit.CreateParticleSensorSphere(Name,referenceBody)¶
+IExternalSPIToolkit.CreateParticleSensorSphere(Name,referenceBody)
 ```
 
 Creates a sphere ParticleSensor
@@ -39,7 +39,7 @@ Creates a sphere ParticleSensor
 ### CreateProfile2D
 
 ```
-IExternalSPIToolkit.CreateProfile2D(Name,referenceBody)¶
+IExternalSPIToolkit.CreateProfile2D(Name,referenceBody)
 ```
 
 Creates a 2D profile
@@ -47,7 +47,7 @@ Creates a 2D profile
 ### CreateTrace
 
 ```
-IExternalSPIToolkit.CreateTrace(Name)¶
+IExternalSPIToolkit.CreateTrace(Name)
 ```
 
 Creates a Trace
@@ -55,7 +55,7 @@ Creates a Trace
 ### CreateWall
 
 ```
-IExternalSPIToolkit.CreateWall(Name,entity)¶
+IExternalSPIToolkit.CreateWall(Name,entity)
 ```
 
 Creates a wall
@@ -63,7 +63,7 @@ Creates a wall
 ### ExportParticlePostData
 
 ```
-IExternalSPIToolkit.ExportParticlePostData(path,titles,groupSequences)¶
+IExternalSPIToolkit.ExportParticlePostData(path,titles,groupSequences)
 ```
 
 Export Particle Post Data
@@ -71,7 +71,7 @@ Export Particle Post Data
 ### ExportWallFile
 
 ```
-IExternalSPIToolkit.ExportWallFile(folderName)¶
+IExternalSPIToolkit.ExportWallFile(folderName)
 ```
 
 Export wall file with target folder
@@ -79,7 +79,7 @@ Export wall file with target folder
 ### ExportWallPostData
 
 ```
-IExternalSPIToolkit.ExportWallPostData(path,titles,wallSequences)¶
+IExternalSPIToolkit.ExportWallPostData(path,titles,wallSequences)
 ```
 
 Export Wall Post Data
@@ -87,7 +87,7 @@ Export Wall Post Data
 ### FluidDisplay
 
 ```
-IExternalSPIToolkit.FluidDisplay(GroupSequence)¶
+IExternalSPIToolkit.FluidDisplay(GroupSequence)
 ```
 
 Fluid Display
@@ -95,7 +95,7 @@ Fluid Display
 ### GetClipMinMaxValue
 
 ```
-IExternalSPIToolkit.GetClipMinMaxValue(GroupSequence,particleDataTitle)¶
+IExternalSPIToolkit.GetClipMinMaxValue(GroupSequence,particleDataTitle)
 ```
 
 Get Clip Min Max Value of target Data name
@@ -103,7 +103,7 @@ Get Clip Min Max Value of target Data name
 ### SetClipMinMaxValue
 
 ```
-IExternalSPIToolkit.SetClipMinMaxValue(GroupSequence,particleDataTitle,minValue,maxValue,fUse)¶
+IExternalSPIToolkit.SetClipMinMaxValue(GroupSequence,particleDataTitle,minValue,maxValue,fUse)
 ```
 
 Set Clip Min Max Value of target Data name
@@ -111,7 +111,7 @@ Set Clip Min Max Value of target Data name
 ### UpdatePostData
 
 ```
-IExternalSPIToolkit.UpdatePostData()¶
+IExternalSPIToolkit.UpdatePostData()
 ```
 
 Update post data
@@ -119,7 +119,7 @@ Update post data
 ### classIExternalSPIToolkit
 
 ```
-classIExternalSPIToolkit(oobj=None)¶
+classIExternalSPIToolkit(oobj=None)
 ```
 
 Bases:DispatchBaseClassExternalSPI ToolkitPropertiesCommentCommentConnectCurrent program's Switch of Co-SimulationContourParticleContourWallFullNameFullName such asBody1.Marker1@Model1HideParticleSetsIf true, RecurDyn hide all particle sets.MassCenterCollectionMassCenter CollectionNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceParticlePost
@@ -127,7 +127,7 @@ Bases:DispatchBaseClassExternalSPI ToolkitPropertiesCommentCommentConnectCurrent
 ### Item
 
 ```
-IMassCenterCollection.Item(var)¶
+IMassCenterCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -135,7 +135,7 @@ Returns a specific item.
 ### classIMassCenterCollection
 
 ```
-classIMassCenterCollection(oobj=None)¶
+classIMassCenterCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassMass Center CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -143,7 +143,7 @@ Bases:DispatchBaseClassMass Center CollectionPropertiesCountReturns the number o
 ### AddParticleSet
 
 ```
-IMassCenterExternal.AddParticleSet(GroupSequence,density)¶
+IMassCenterExternal.AddParticleSet(GroupSequence,density)
 ```
 
 Add a particle set and define its density
@@ -151,7 +151,7 @@ Add a particle set and define its density
 ### classIMassCenterExternal
 
 ```
-classIMassCenterExternal(oobj=None)¶
+classIMassCenterExternal(oobj=None)
 ```
 
 Bases:DispatchBaseClassMass CenterPropertiesColorColor of the Mass CenterCommentCommentFullNameFullName such asBody1.Marker1@Model1NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied dataVisibleVisible Flag of the Mass CenterWidthWidth of the Mass CenterMethodsAddParticleSetAdd a particle set and define its density
@@ -159,7 +159,7 @@ Bases:DispatchBaseClassMass CenterPropertiesColorColor of the Mass CenterComment
 ### Create
 
 ```
-IParticleFluidDisplay.Create()¶
+IParticleFluidDisplay.Create()
 ```
 
 Create Fluid Data
@@ -167,7 +167,7 @@ Create Fluid Data
 ### Import
 
 ```
-IParticleFluidDisplay.Import()¶
+IParticleFluidDisplay.Import()
 ```
 
 Import Fluid Data
@@ -175,7 +175,7 @@ Import Fluid Data
 ### classIParticleFluidDisplay
 
 ```
-classIParticleFluidDisplay(oobj=None)¶
+classIParticleFluidDisplay(oobj=None)
 ```
 
 Bases:DispatchBaseClassFluid DisplayPropertiesAlphaAlpah ParameterCellSizeCell sizeDirectoryDirectoryDrawLineDraw LineEndFrameEnd FrameShowShow Fulid DisplySmoothRenderingVertex NormalStartFrameStart FrameThresholdThreshold ValueUseDirectoryUse DirectoryMethodsCreateCreate Fluid DataImportImport Fluid Data
@@ -183,7 +183,7 @@ Bases:DispatchBaseClassFluid DisplayPropertiesAlphaAlpah ParameterCellSizeCell s
 ### Item
 
 ```
-IParticleSensorCollection.Item(var)¶
+IParticleSensorCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -191,7 +191,7 @@ Returns a specific item.
 ### classIParticleSensorCollection
 
 ```
-classIParticleSensorCollection(oobj=None)¶
+classIParticleSensorCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassParticle Sensor CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -199,7 +199,7 @@ Bases:DispatchBaseClassParticle Sensor CollectionPropertiesCountReturns the numb
 ### HidePlotDialog
 
 ```
-IParticleSensorExternal.HidePlotDialog()¶
+IParticleSensorExternal.HidePlotDialog()
 ```
 
 Hide the plot dialog
@@ -207,7 +207,7 @@ Hide the plot dialog
 ### ShowPlotDialog
 
 ```
-IParticleSensorExternal.ShowPlotDialog()¶
+IParticleSensorExternal.ShowPlotDialog()
 ```
 
 Show the plot dialog
@@ -215,7 +215,7 @@ Show the plot dialog
 ### classIParticleSensorExternal
 
 ```
-classIParticleSensorExternal(oobj=None)¶
+classIParticleSensorExternal(oobj=None)
 ```
 
 Bases:DispatchBaseClassParticle SensorPropertiesColorColorCommentCommentFullNameFullName such asBody1.Marker1@Model1GroupSequenceSequence of the Particle GroupNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfacePositionSensor PositionReferenceBodyReference BodyUserDataUser supplied dataVisibleVisible FlagMethodsHidePlotDialogHide the plot dialo
@@ -223,7 +223,7 @@ Bases:DispatchBaseClassParticle SensorPropertiesColorColorCommentCommentFullName
 ### HidePlotDialog
 
 ```
-IParticleSensorExternalBox.HidePlotDialog()¶
+IParticleSensorExternalBox.HidePlotDialog()
 ```
 
 Hide the plot dialog
@@ -231,7 +231,7 @@ Hide the plot dialog
 ### ShowPlotDialog
 
 ```
-IParticleSensorExternalBox.ShowPlotDialog()¶
+IParticleSensorExternalBox.ShowPlotDialog()
 ```
 
 Show the plot dialog
@@ -239,7 +239,7 @@ Show the plot dialog
 ### classIParticleSensorExternalBox
 
 ```
-classIParticleSensorExternalBox(oobj=None)¶
+classIParticleSensorExternalBox(oobj=None)
 ```
 
 Bases:DispatchBaseClassParticle SensorPropertiesColorColorCommentCommentDepthDepth of box sensorFullNameFullName such asBody1.Marker1@Model1GroupSequenceSequence of the Particle GroupHeightHeight of box sensorNameNameNormalDirectionSensor Normal DirectionOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfacePositionSensor PositionReferenceBodyReference B
@@ -247,7 +247,7 @@ Bases:DispatchBaseClassParticle SensorPropertiesColorColorCommentCommentDepthDep
 ### HidePlotDialog
 
 ```
-IParticleSensorExternalSphere.HidePlotDialog()¶
+IParticleSensorExternalSphere.HidePlotDialog()
 ```
 
 Hide the plot dialog
@@ -255,7 +255,7 @@ Hide the plot dialog
 ### ShowPlotDialog
 
 ```
-IParticleSensorExternalSphere.ShowPlotDialog()¶
+IParticleSensorExternalSphere.ShowPlotDialog()
 ```
 
 Show the plot dialog
@@ -263,7 +263,7 @@ Show the plot dialog
 ### classIParticleSensorExternalSphere
 
 ```
-classIParticleSensorExternalSphere(oobj=None)¶
+classIParticleSensorExternalSphere(oobj=None)
 ```
 
 Bases:DispatchBaseClassParticle SensorPropertiesColorColorCommentCommentFullNameFullName such asBody1.Marker1@Model1GroupSequenceSequence of the Particle GroupNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfacePositionSensor PositionRadiusRadius of sphere sensorReferenceBodyReference BodyUserDataUser supplied dataVisibleVisible FlagMethodsHide
@@ -271,7 +271,7 @@ Bases:DispatchBaseClassParticle SensorPropertiesColorColorCommentCommentFullName
 ### classIParticleSetExternal
 
 ```
-classIParticleSetExternal(oobj=None)¶
+classIParticleSetExternal(oobj=None)
 ```
 
 Bases:DispatchBaseClassParticleSetExternalPropertiesGraphicMaterialGraphic MaterialNameName
@@ -279,7 +279,7 @@ Bases:DispatchBaseClassParticleSetExternalPropertiesGraphicMaterialGraphic Mater
 ### Item
 
 ```
-IParticleSetExternalCollection.Item(var)¶
+IParticleSetExternalCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -287,7 +287,7 @@ Returns a specific item.
 ### classIParticleSetExternalCollection
 
 ```
-classIParticleSetExternalCollection(oobj=None)¶
+classIParticleSetExternalCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassParticleSetExternal CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -295,7 +295,7 @@ Bases:DispatchBaseClassParticleSetExternal CollectionPropertiesCountReturns the 
 ### Item
 
 ```
-IProfile2DCollection.Item(var)¶
+IProfile2DCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -303,7 +303,7 @@ Returns a specific item.
 ### classIProfile2DCollection
 
 ```
-classIProfile2DCollection(oobj=None)¶
+classIProfile2DCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClass2D Profile CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -311,7 +311,7 @@ Bases:DispatchBaseClass2D Profile CollectionPropertiesCountReturns the number of
 ### HidePlotDialog
 
 ```
-IProfile2DExternal.HidePlotDialog()¶
+IProfile2DExternal.HidePlotDialog()
 ```
 
 Hide the plot dialog
@@ -319,7 +319,7 @@ Hide the plot dialog
 ### ShowPlotDialog
 
 ```
-IProfile2DExternal.ShowPlotDialog()¶
+IProfile2DExternal.ShowPlotDialog()
 ```
 
 Show the plot dialog
@@ -327,7 +327,7 @@ Show the plot dialog
 ### classIProfile2DExternal
 
 ```
-classIProfile2DExternal(oobj=None)¶
+classIProfile2DExternal(oobj=None)
 ```
 
 Bases:DispatchBaseClass2D ProfilePropertiesColorColorCommentCommentDivisionDivision of the 2D ProfileFullNameFullName such asBody1.Marker1@Model1GroupSequenceSequence of the Particle GroupHalfdepthHalfdepth of the 2D ProfileLengthReference length of the 2D ProfileNameNameNormalDirectionNormal direction of the 2D profileOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISub
@@ -335,7 +335,7 @@ Bases:DispatchBaseClass2D ProfilePropertiesColorColorCommentCommentDivisionDivis
 ### Item
 
 ```
-ITraceCollection.Item(var)¶
+ITraceCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -343,7 +343,7 @@ Returns a specific item.
 ### classITraceCollection
 
 ```
-classITraceCollection(oobj=None)¶
+classITraceCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrace CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -351,7 +351,7 @@ Bases:DispatchBaseClassTrace CollectionPropertiesCountReturns the number of item
 ### classITraceExternal
 
 ```
-classITraceExternal(oobj=None)¶
+classITraceExternal(oobj=None)
 ```
 
 Bases:DispatchBaseClassTracePropertiesColorColor of the Trace LineCommentCommentFullNameFullName such asBody1.Marker1@Model1GroupSequenceSequence of the Particle SetNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceParticleIDID of the ParticleUserDataUser supplied dataVisibleVisible Flag of the Trace LineWidthWidth of the Trace Line
@@ -359,7 +359,7 @@ Bases:DispatchBaseClassTracePropertiesColorColor of the Trace LineCommentComment
 ### Item
 
 ```
-IWallCollection.Item(var)¶
+IWallCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -367,7 +367,7 @@ Returns a specific item.
 ### classIWallCollection
 
 ```
-classIWallCollection(oobj=None)¶
+classIWallCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassWall CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.

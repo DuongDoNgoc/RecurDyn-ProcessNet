@@ -15,7 +15,7 @@
 ### SetLayerNumber
 
 ```
-ITire.SetLayerNumber(iVal)¶
+ITire.SetLayerNumber(iVal)
 ```
 
 Set layer Number
@@ -23,7 +23,7 @@ Set layer Number
 ### UpdateActiveFlagOfAllEntities
 
 ```
-ITire.UpdateActiveFlagOfAllEntities(Val)¶
+ITire.UpdateActiveFlagOfAllEntities(Val)
 ```
 
 Update active flag of all entities
@@ -31,7 +31,7 @@ Update active flag of all entities
 ### UpdateAllProperties
 
 ```
-ITire.UpdateAllProperties()¶
+ITire.UpdateAllProperties()
 ```
 
 Update all properties
@@ -39,7 +39,7 @@ Update all properties
 ### classITire
 
 ```
-classITire(oobj=None)¶
+classITire(oobj=None)
 ```
 
 Bases:DispatchBaseClassTirePropertiesActiveActiveCommentCommentEachRenderModeRendering modeFullNameFullName such asBody1.Marker1@Model1LayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceTireBodyGet Tire BodyUserDataUser supplied dataMethodsSetLayerNumberSet layer NumberUpdateActiveFlagOfAllEntitiesUpdate active flag of a
@@ -47,7 +47,7 @@ Bases:DispatchBaseClassTirePropertiesActiveActiveCommentCommentEachRenderModeRen
 ### GetBoundingBox
 
 ```
-ITireGeometryRim.GetBoundingBox()¶
+ITireGeometryRim.GetBoundingBox()
 ```
 
 Get bounding box, internal use only
@@ -55,7 +55,7 @@ Get bounding box, internal use only
 ### GetBoundingBoxWithRefFrame
 
 ```
-ITireGeometryRim.GetBoundingBoxWithRefFrame(RefFrame)¶
+ITireGeometryRim.GetBoundingBoxWithRefFrame(RefFrame)
 ```
 
 Get bounding box with reference frame
@@ -63,7 +63,7 @@ Get bounding box with reference frame
 ### classITireGeometryRim
 
 ```
-classITireGeometryRim(oobj=None)¶
+classITireGeometryRim(oobj=None)
 ```
 
 Bases:DispatchBaseClassTire RIM GeometryPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GraphicGraphicNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceRefFrameReference frameRimDiameterRim DiameterRimDiameterUnitInchRim DiameterRimWidthRim WidthRimWidthUnitMMRim WidthUserDataUser supplied dataVertexCollectionMethodsGetBou
@@ -71,7 +71,7 @@ Bases:DispatchBaseClassTire RIM GeometryPropertiesCommentCommentFullNameFullName
 ### GetBoundingBox
 
 ```
-ITireGeometryRimGeneric.GetBoundingBox()¶
+ITireGeometryRimGeneric.GetBoundingBox()
 ```
 
 Get bounding box, internal use only
@@ -79,7 +79,7 @@ Get bounding box, internal use only
 ### GetBoundingBoxWithRefFrame
 
 ```
-ITireGeometryRimGeneric.GetBoundingBoxWithRefFrame(RefFrame)¶
+ITireGeometryRimGeneric.GetBoundingBoxWithRefFrame(RefFrame)
 ```
 
 Get bounding box with reference frame
@@ -87,7 +87,7 @@ Get bounding box with reference frame
 ### classITireGeometryRimGeneric
 
 ```
-classITireGeometryRimGeneric(oobj=None)¶
+classITireGeometryRimGeneric(oobj=None)
 ```
 
 Bases:DispatchBaseClassTire RIM Geometry for genericPropertiesAngleOfRimHoleAngle of RimHoleCommentCommentFullNameFullName such asBody1.Marker1@Model1GraphicGraphicNameNameNumberOfLeadsNumber of LeadsOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceRefFrameReference frameRimDiameterRim DiameterRimDiameterUnitInchRim DiameterRimInnerDiameterRim Inner
@@ -95,7 +95,7 @@ Bases:DispatchBaseClassTire RIM Geometry for genericPropertiesAngleOfRimHoleAngl
 ### GetBoundingBox
 
 ```
-ITireGeometryTire.GetBoundingBox()¶
+ITireGeometryTire.GetBoundingBox()
 ```
 
 Get bounding box, internal use only
@@ -103,7 +103,7 @@ Get bounding box, internal use only
 ### GetBoundingBoxWithRefFrame
 
 ```
-ITireGeometryTire.GetBoundingBoxWithRefFrame(RefFrame)¶
+ITireGeometryTire.GetBoundingBoxWithRefFrame(RefFrame)
 ```
 
 Get bounding box with reference frame
@@ -111,7 +111,7 @@ Get bounding box with reference frame
 ### UpdateTireRadius
 
 ```
-ITireGeometryTire.UpdateTireRadius()¶
+ITireGeometryTire.UpdateTireRadius()
 ```
 
 Update Tire Radius
@@ -119,7 +119,7 @@ Update Tire Radius
 ### classITireGeometryTire
 
 ```
-classITireGeometryTire(oobj=None)¶
+classITireGeometryTire(oobj=None)
 ```
 
 Bases:DispatchBaseClassTire GeometryPropertiesAspectRatioAspect RatioCommentCommentFullNameFullName such asBody1.Marker1@Model1GraphicGraphicNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceRefFrameReference frameRimDiameterRim DiameterRimDiameterUnitInchRim DiameterSectionWidthSection WidthSectionWidthUnitMMSection WidthUserDataUser supplie
@@ -127,7 +127,7 @@ Bases:DispatchBaseClassTire GeometryPropertiesAspectRatioAspect RatioCommentComm
 ### SetLayerNumber
 
 ```
-ITireGroup.SetLayerNumber(iVal)¶
+ITireGroup.SetLayerNumber(iVal)
 ```
 
 Set layer Number
@@ -135,7 +135,7 @@ Set layer Number
 ### UpdateActiveFlagOfAllEntities
 
 ```
-ITireGroup.UpdateActiveFlagOfAllEntities(Val)¶
+ITireGroup.UpdateActiveFlagOfAllEntities(Val)
 ```
 
 Update active flag of all entities
@@ -143,7 +143,7 @@ Update active flag of all entities
 ### UpdateAllProperties
 
 ```
-ITireGroup.UpdateAllProperties()¶
+ITireGroup.UpdateAllProperties()
 ```
 
 Update all properties
@@ -151,7 +151,7 @@ Update all properties
 ### classITireGroup
 
 ```
-classITireGroup(oobj=None)¶
+classITireGroup(oobj=None)
 ```
 
 Bases:DispatchBaseClassTire GroupPropertiesActiveActiveCommentCommentEachRenderModeRendering modeFullNameFullName such asBody1.Marker1@Model1LayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceTireBodyGet Tire BodyTireForceGet Tire ForceUserDataUser supplied dataMethodsSetLayerNumberSet layer NumberUpdateActiveFlagOfAllEn
@@ -159,7 +159,7 @@ Bases:DispatchBaseClassTire GroupPropertiesActiveActiveCommentCommentEachRenderM
 ### SetLayerNumber
 
 ```
-ITireGroupGeneric.SetLayerNumber(iVal)¶
+ITireGroupGeneric.SetLayerNumber(iVal)
 ```
 
 Set layer Number
@@ -167,7 +167,7 @@ Set layer Number
 ### UpdateActiveFlagOfAllEntities
 
 ```
-ITireGroupGeneric.UpdateActiveFlagOfAllEntities(Val)¶
+ITireGroupGeneric.UpdateActiveFlagOfAllEntities(Val)
 ```
 
 Update active flag of all entities
@@ -175,7 +175,7 @@ Update active flag of all entities
 ### UpdateAllProperties
 
 ```
-ITireGroupGeneric.UpdateAllProperties()¶
+ITireGroupGeneric.UpdateAllProperties()
 ```
 
 Update all properties
@@ -183,7 +183,7 @@ Update all properties
 ### classITireGroupGeneric
 
 ```
-classITireGroupGeneric(oobj=None)¶
+classITireGroupGeneric(oobj=None)
 ```
 
 Bases:DispatchBaseClassGeneric Tire GroupPropertiesActiveActiveAspectRatioAspect RatioCommentCommentEachRenderModeRendering modeFullNameFullName such asBody1.Marker1@Model1LayerNumberLayer numberLongitudinalVelocityLongitudinalVelocityNameNameOrientationXOrientation XOrientationYOrientation YOrientationZOrientation ZOriginOriginOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns ow
@@ -191,7 +191,7 @@ Bases:DispatchBaseClassGeneric Tire GroupPropertiesActiveActiveAspectRatioAspect
 ### SetLayerNumber
 
 ```
-ITireGroupMF.SetLayerNumber(iVal)¶
+ITireGroupMF.SetLayerNumber(iVal)
 ```
 
 Set layer Number
@@ -199,7 +199,7 @@ Set layer Number
 ### UpdateActiveFlagOfAllEntities
 
 ```
-ITireGroupMF.UpdateActiveFlagOfAllEntities(Val)¶
+ITireGroupMF.UpdateActiveFlagOfAllEntities(Val)
 ```
 
 Update active flag of all entities
@@ -207,7 +207,7 @@ Update active flag of all entities
 ### UpdateAllProperties
 
 ```
-ITireGroupMF.UpdateAllProperties()¶
+ITireGroupMF.UpdateAllProperties()
 ```
 
 Update all properties
@@ -215,7 +215,7 @@ Update all properties
 ### classITireGroupMF
 
 ```
-classITireGroupMF(oobj=None)¶
+classITireGroupMF(oobj=None)
 ```
 
 Bases:DispatchBaseClassMF Tire GroupPropertiesActiveActiveCommentCommentEachRenderModeRendering modeFullNameFullName such asBody1.Marker1@Model1LayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceTireBodyGet Tire BodyTireForceGet MF Tire ForceUserDataUser supplied dataMethodsSetLayerNumberSet layer NumberUpdateActiveFlagO
@@ -223,7 +223,7 @@ Bases:DispatchBaseClassMF Tire GroupPropertiesActiveActiveCommentCommentEachRend
 ### SetLayerNumber
 
 ```
-ITireGroupSoil.SetLayerNumber(iVal)¶
+ITireGroupSoil.SetLayerNumber(iVal)
 ```
 
 Set layer Number
@@ -231,7 +231,7 @@ Set layer Number
 ### UpdateActiveFlagOfAllEntities
 
 ```
-ITireGroupSoil.UpdateActiveFlagOfAllEntities(Val)¶
+ITireGroupSoil.UpdateActiveFlagOfAllEntities(Val)
 ```
 
 Update active flag of all entities
@@ -239,7 +239,7 @@ Update active flag of all entities
 ### UpdateAllProperties
 
 ```
-ITireGroupSoil.UpdateAllProperties()¶
+ITireGroupSoil.UpdateAllProperties()
 ```
 
 Update all properties
@@ -247,7 +247,7 @@ Update all properties
 ### classITireGroupSoil
 
 ```
-classITireGroupSoil(oobj=None)¶
+classITireGroupSoil(oobj=None)
 ```
 
 Bases:DispatchBaseClassSoil Tire GroupPropertiesActiveActiveCommentCommentEachRenderModeRendering modeFullNameFullName such asBody1.Marker1@Model1LayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceTireBodyGet Tire BodyTireForceGet Soil Tire ForceUserDataUser supplied dataMethodsSetLayerNumberSet layer NumberUpdateActiveF
@@ -255,7 +255,7 @@ Bases:DispatchBaseClassSoil Tire GroupPropertiesActiveActiveCommentCommentEachRe
 ### CreateTireGroupGenericGround
 
 ```
-ITireToolkit.CreateTireGroupGenericGround(strName,pRefFrame)¶
+ITireToolkit.CreateTireGroupGenericGround(strName,pRefFrame)
 ```
 
 Creates a Generic Tire Group Ground
@@ -263,7 +263,7 @@ Creates a Generic Tire Group Ground
 ### CreateTireGroupGround
 
 ```
-ITireToolkit.CreateTireGroupGround(strName,pRefFrame)¶
+ITireToolkit.CreateTireGroupGround(strName,pRefFrame)
 ```
 
 Creates a Tire Group Ground
@@ -271,7 +271,7 @@ Creates a Tire Group Ground
 ### CreateTireGroupMFGround
 
 ```
-ITireToolkit.CreateTireGroupMFGround(strName,pRefFrame)¶
+ITireToolkit.CreateTireGroupMFGround(strName,pRefFrame)
 ```
 
 Creates a MF Tire Group Ground
@@ -279,7 +279,7 @@ Creates a MF Tire Group Ground
 ### CreateTireGroupSoilGround
 
 ```
-ITireToolkit.CreateTireGroupSoilGround(strName,pRefFrame)¶
+ITireToolkit.CreateTireGroupSoilGround(strName,pRefFrame)
 ```
 
 CreateTireGroupSoilGround is obsolete function
@@ -287,7 +287,7 @@ CreateTireGroupSoilGround is obsolete function
 ### CreateTireGroupSolidContact
 
 ```
-ITireToolkit.CreateTireGroupSolidContact(strName,pRefFrame,pBaseEntity)¶
+ITireToolkit.CreateTireGroupSolidContact(strName,pRefFrame,pBaseEntity)
 ```
 
 Creates a Tire Group SolidContact
@@ -295,7 +295,7 @@ Creates a Tire Group SolidContact
 ### classITireToolkit
 
 ```
-classITireToolkit(oobj=None)¶
+classITireToolkit(oobj=None)
 ```
 
 Bases:DispatchBaseClassTire ToolkitPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralSubSystemAccess general SubSystemNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied dataMethodsCreateTireGroupGenericGroundCreates a Generic Tire Group GroundCreateTireGroupGroundCreates a Tire Group GroundCreateT
@@ -303,7 +303,7 @@ Bases:DispatchBaseClassTire ToolkitPropertiesCommentCommentFullNameFullName such
 ### classIUserInputParameter
 
 ```
-classIUserInputParameter(oobj=None)¶
+classIUserInputParameter(oobj=None)
 ```
 
 Bases:DispatchBaseClassuser Input ParameterPropertiesArgumentsArguments listUserParameterUser defined parameters needed for the user written subroutine

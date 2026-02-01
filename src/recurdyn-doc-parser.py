@@ -235,7 +235,8 @@ class ProcessNetDocParser:
         """
         Extract parameters from Sphinx-formatted method documentation.
 
-        Parses both signature parameters and field-list parameter documentation.
+        Enhanced to extract parameter types, descriptions, optional flags, and default values
+        from multiple sources: signature spans, field-list documentation, and signature text.
 
         Args:
             dt_element: BeautifulSoup dt element containing method signature
@@ -249,12 +250,24 @@ class ProcessNetDocParser:
         # Input validation - limit text length to prevent regex DoS
         MAX_PARAM_TEXT_LENGTH = 10000
 
-        # Extract parameter names from signature
+        # Method 1: Extract from Sphinx signature spans (<em class="sig-param">)
         sig_params = dt_element.find_all('em', class_='sig-param')
         for sig_param in sig_params:
             param_name_elem = sig_param.find('span', class_='n')
             if param_name_elem:
                 param_name = param_name_elem.get_text(strip=True)
+
+                # Extract parameter type from preceding type span
+                param_type = ""
+                type_elem = sig_param.find('span', class_='property')
+                if type_elem:
+                    param_type = type_elem.get_text(strip=True)
+                else:
+                    # Try to find type before parameter name in signature
+                    sig_text = sig_param.get_text(strip=True)
+                    type_match = re.match(r'([^\s,()]+)\s+' + re.escape(param_name), sig_text)
+                    if type_match:
+                        param_type = type_match.group(1)
 
                 # Check for default value
                 default_val = None
@@ -264,78 +277,208 @@ class ProcessNetDocParser:
 
                 parameters.append(Parameter(
                     name=param_name,
+                    type=param_type,
                     default=default_val,
                     is_optional=default_val is not None
                 ))
 
-        # Extract parameter types and descriptions from field-list
+        # Method 2: If no params found via spans, parse from signature text
+        if not parameters:
+            sig_text = dt_element.get_text(strip=True)
+            # Match pattern: TypeName(param1, param2=value, param3)
+            param_match = re.search(r'\(([^)]*)\)', sig_text)
+            if param_match:
+                params_str = param_match.group(1)
+                if params_str.strip() and params_str.strip() != 'void':
+                    # Split by comma (handling nested brackets)
+                    param_parts = self._split_parameters(params_str)
+                    for part in param_parts:
+                        part = part.strip()
+                        if not part:
+                            continue
+                        # Check for default value
+                        if '=' in part:
+                            param_name, default_val = part.split('=', 1)
+                            param_name = param_name.strip()
+                            default_val = default_val.strip()
+                            # Extract type from before parameter name
+                            type_match = re.match(r'([a-zA-Z_][a-zA-Z0-9_<>,\s]*)\s+(\w+)$', param_name)
+                            if type_match:
+                                param_type = type_match.group(1).strip()
+                                param_name = type_match.group(2)
+                            else:
+                                param_type = ""
+                                param_name = param_name.split()[-1] if param_name else part
+                            parameters.append(Parameter(
+                                name=param_name,
+                                type=param_type,
+                                default=default_val,
+                                is_optional=True
+                            ))
+                        else:
+                            # No default, extract type and name
+                            type_match = re.match(r'([a-zA-Z_][a-zA-Z0-9_<>,\s]*)\s+(\w+)$', part)
+                            if type_match:
+                                param_type = type_match.group(1).strip()
+                                param_name = type_match.group(2)
+                            else:
+                                param_type = ""
+                                param_name = part.split()[-1] if part.split() else part
+                            parameters.append(Parameter(
+                                name=param_name,
+                                type=param_type,
+                                is_optional=False
+                            ))
+
+        # Method 3: Extract parameter types and descriptions from field-list
         if dd_element:
             field_list = dd_element.find('dl', class_='field-list')
             if field_list:
                 # Find Parameters field
                 for dt in field_list.find_all('dt', class_='field-odd'):
-                    if 'Parameters' in dt.get_text():
+                    if 'Parameters' in dt.get_text() or 'param' in dt.get('text', '').lower():
                         dd = dt.find_next_sibling('dd')
                         if dd:
                             # Parse parameter documentation
                             param_text = dd.get_text()[:MAX_PARAM_TEXT_LENGTH]
-                            # Format: **ParamName** - ParamType or ParamName - ParamType (plain text)
+                            # Update parameters with types and descriptions from field-list
                             for param in parameters:
                                 # Look for parameter name in bold
                                 if f"**{param.name}**" in str(dd) or f"<strong>{param.name}</strong>" in str(dd):
                                     # Try markdown format first
                                     param_match = re.search(
-                                        rf'\*\*{re.escape(param.name)}\*\*\s*-\s*([^\-\n]+)',
-                                        param_text
+                                        rf'\*\*{re.escape(param.name)}\*\*\s*[:\-]\s*([^\-\n*]+?)(?:\n|\*|$)',
+                                        str(dd)
                                     )
                                     if param_match:
-                                        param.type = param_match.group(1).strip()
-                                    else:
-                                        # Try without dash separator (markdown)
-                                        param_match = re.search(
-                                            rf'\*\*{re.escape(param.name)}\*\*\s+([^\n]+)',
-                                            param_text
-                                        )
-                                        if param_match:
-                                            param.type = param_match.group(1).strip()
-                                        else:
-                                            # Try plain text format: ParamName - Type
-                                            param_match = re.search(
-                                                rf'{re.escape(param.name)}\s*-\s*([^\n]+)',
-                                                param_text
-                                            )
-                                            if param_match:
-                                                param.type = param_match.group(1).strip()
+                                        extracted_type = param_match.group(1).strip()
+                                        if not param.type and extracted_type:
+                                            param.type = extracted_type
+
+                                    # Extract description after type
+                                    desc_match = re.search(
+                                        rf'\*\*{re.escape(param.name)}\*\*[^:]*:.*?\n(.*?)(?=\n\*\*|\n\n|$)',
+                                        str(dd),
+                                        re.DOTALL
+                                    )
+                                    if desc_match:
+                                        param.description = desc_match.group(1).strip()[:500]
 
         return parameters
 
-    def parse_sphinx_return_type(self, dd_element) -> tuple:
+    def _split_parameters(self, params_str: str) -> list:
+        """Split parameter string by comma, handling nested brackets."""
+        parts = []
+        current = ""
+        depth = 0
+        for char in params_str:
+            if char in '<>[':
+                depth += 1
+            elif char in '>]':
+                depth = max(0, depth - 1)
+            elif char == ',' and depth == 0:
+                parts.append(current)
+                current = ""
+            else:
+                current += char
+        if current:
+            parts.append(current)
+        return parts
+
+    def parse_sphinx_return_type(self, dd_element, signature_text: str = "") -> tuple:
         """
-        Extract return type and description from Sphinx field-list.
+        Extract return type and description from Sphinx field-list or signature.
+
+        Enhanced to extract from multiple sources: field-list "Returns:", "Return Type",
+        "Type", or from the signature text itself (e.g., "void MethodName()").
 
         Args:
             dd_element: BeautifulSoup dd element containing method description
+            signature_text: Optional signature text for parsing return type
 
         Returns:
             Tuple of (return_type, return_description)
         """
-        if not dd_element:
-            return ("", "")
+        return_type = ""
+        return_desc = ""
 
-        field_list = dd_element.find('dl', class_='field-list')
-        if not field_list:
-            return ("", "")
+        # Method 1: Extract from signature text (e.g., "string MethodName()", "void Method()")
+        if signature_text:
+            # Pattern: "TypeName MethodName(" or "TypeName ClassName.MethodName("
+            sig_match = re.match(r'^([a-zA-Z_][a-zA-Z0-9_<>,\s]*)\s+\w+(?:\.\w+)?\s*\(', signature_text)
+            if sig_match:
+                extracted_type = sig_match.group(1).strip()
+                # Clean up type annotations
+                extracted_type = re.sub(r'\s+', ' ', extracted_type)
+                return_type = extracted_type
 
-        # Look for "Return Type" or "Type" field
-        for dt in field_list.find_all('dt'):
-            dt_text = dt.get_text(strip=True)
-            if 'Return Type' in dt_text or dt_text == 'Type':
-                dd = dt.find_next_sibling('dd')
-                if dd:
-                    return_type = dd.get_text(strip=True)
-                    return (return_type, "")
+        # Method 2: Extract from field-list
+        if dd_element:
+            field_list = dd_element.find('dl', class_='field-list')
+            if field_list:
+                # Look for various return type field names
+                for dt in field_list.find_all('dt'):
+                    dt_text = dt.get_text(strip=True)
+                    if any(keyword in dt_text for keyword in ['Return Type', 'Type', 'Returns', 'rtype']):
+                        dd = dt.find_next_sibling('dd')
+                        if dd:
+                            if 'Return' in dt_text or 'rtype' in dt_text:
+                                # Full return description
+                                full_text = dd.get_text(strip=True)
+                                # Extract first word/type as return type
+                                type_match = re.match(r'^([a-zA-Z_][a-zA-Z0-9_<>,\s]*)', full_text)
+                                if type_match:
+                                    return_type = return_type or type_match.group(1).strip()
+                                    return_desc = full_text[:500]
+                            else:
+                                # Just the type
+                                return_type = return_type or dd.get_text(strip=True)
 
-        return ("", "")
+        # Method 3: Check for void return if no type found
+        if not return_type and signature_text:
+            if ' void ' in signature_text or signature_text.startswith('void '):
+                return_type = 'void'
+
+        return (return_type, return_desc)
+
+    def clean_signature(self, signature: str) -> str:
+        """
+        Clean up method signature by removing special characters and formatting.
+
+        Removes:
+        - Pilcrow symbols (¶)
+        - Extra whitespace
+        - Trailing punctuation
+        - Unicode special characters
+
+        Args:
+            signature: Raw signature string
+
+        Returns:
+            Cleaned signature string
+        """
+        if not signature:
+            return signature
+
+        # Remove pilcrow symbols and similar
+        signature = signature.replace('¶', '')
+        signature = signature.replace('\u00b6', '')  # Unicode pilcrow
+        signature = signature.replace('\u2191', '')  # Up arrow
+
+        # Remove other common documentation artifacts
+        signature = re.sub(r'\s*\[source\]', '', signature)
+        signature = re.sub(r'\s*\[edit\]', '', signature)
+
+        # Normalize whitespace
+        signature = re.sub(r'\s+', ' ', signature)
+
+        # Remove trailing punctuation (but keep parentheses)
+        signature = signature.rstrip('.;,')
+
+        # Remove leading/trailing whitespace
+        signature = signature.strip()
+
+        return signature
 
     def extract_sphinx_properties(self, soup: BeautifulSoup) -> list:
         """
@@ -466,6 +609,7 @@ class ProcessNetDocParser:
         Extract method signatures from Sphinx-formatted documentation.
 
         Supports both legacy definition lists and Sphinx .py.method patterns.
+        Enhanced to extract parameter types and return types with signature cleanup.
 
         Returns:
             List of Method objects with parameters and return types
@@ -490,6 +634,8 @@ class ProcessNetDocParser:
 
                         # Extract full signature text
                         sig_text = dt.get_text(strip=True)
+                        # Clean up the signature
+                        sig_text = self.clean_signature(sig_text)
 
                         # Extract description
                         description = ""
@@ -502,8 +648,8 @@ class ProcessNetDocParser:
                         # Parse parameters from signature and field-list
                         parameters = self.parse_sphinx_parameters(dt, dd)
 
-                        # Parse return type
-                        return_type, return_desc = self.parse_sphinx_return_type(dd)
+                        # Parse return type with signature text for better extraction
+                        return_type, return_desc = self.parse_sphinx_return_type(dd, sig_text)
 
                         methods.append(Method(
                             name=method_name,
@@ -519,6 +665,9 @@ class ProcessNetDocParser:
             for dl in soup.find_all('dl'):
                 for dt in dl.find_all('dt', recursive=False):
                     sig_text = dt.get_text(strip=True)
+                    # Clean signature
+                    sig_text = self.clean_signature(sig_text)
+
                     # Check if it looks like a method signature
                     if '(' in sig_text and ')' in sig_text:
                         dd = dt.find_next_sibling('dd')
@@ -528,10 +677,19 @@ class ProcessNetDocParser:
                         match = re.match(r'(\w+)\s*\(', sig_text)
                         if match:
                             method_name = match.group(1)
+
+                            # Try to extract parameters even from legacy format
+                            parameters = self.parse_sphinx_parameters(dt, dd)
+
+                            # Extract return type from signature
+                            return_type, _ = self.parse_sphinx_return_type(dd, sig_text)
+
                             methods.append(Method(
                                 name=method_name,
                                 signature=sig_text,
-                                description=description[:500]
+                                description=description[:500],
+                                parameters=[asdict(p) for p in parameters],
+                                returns=return_type
                             ))
 
         return methods

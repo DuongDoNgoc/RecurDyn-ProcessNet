@@ -15,7 +15,7 @@
 ### classIContactTrackToSurface
 
 ```
-classIContactTrackToSurface(oobj=None)¶
+classIContactTrackToSurface(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrack to surface contactPropertiesActionEntityAction entityActionPatchOptionSolid contact action patch optionActionUpDirectionAction up directionActiveActiveBaseEntityBase entityCommentCommentContactParameterContact parameterFullNameFullName such asBody1.Marker1@Model1LayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning IS
@@ -23,7 +23,7 @@ Bases:DispatchBaseClassTrack to surface contactPropertiesActionEntityAction enti
 ### Export
 
 ```
-IContactTrackToSurfaceProperty.Export(strName,Val)¶
+IContactTrackToSurfaceProperty.Export(strName,Val)
 ```
 
 Export is obsolete function
@@ -31,7 +31,7 @@ Export is obsolete function
 ### Import
 
 ```
-IContactTrackToSurfaceProperty.Import(strName)¶
+IContactTrackToSurfaceProperty.Import(strName)
 ```
 
 Import is obsolete function
@@ -39,7 +39,7 @@ Import is obsolete function
 ### SoftGroundType
 
 ```
-IContactTrackToSurfaceProperty.SoftGroundType(Val)¶
+IContactTrackToSurfaceProperty.SoftGroundType(Val)
 ```
 
 Soft ground type
@@ -47,7 +47,7 @@ Soft ground type
 ### classIContactTrackToSurfaceProperty
 
 ```
-classIContactTrackToSurfaceProperty(oobj=None)¶
+classIContactTrackToSurfaceProperty(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrack assembly to surface contact propertyPropertiesCohesionCohesion (c)DampingCoefficientThe viscous damping coefficient for the contact normal force.DampingExponentThe damping exponent for a non-linear contact normal forceDampingSplineDamping splineExponentialNumberExponential number (n)FrictionFrictionFrictionCoefficientThe friction coefficient for the contact normal force.FrictionSplineThe spline which shows relative velocity to the friction coefficient or the friction
@@ -55,7 +55,7 @@ Bases:DispatchBaseClassTrack assembly to surface contact propertyPropertiesCohes
 ### CopyActionToBase
 
 ```
-IForceConnectorBushing.CopyActionToBase(Type)¶
+IForceConnectorBushing.CopyActionToBase(Type)
 ```
 
 Copy action to base
@@ -63,7 +63,7 @@ Copy action to base
 ### CopyBaseToAction
 
 ```
-IForceConnectorBushing.CopyBaseToAction(Type)¶
+IForceConnectorBushing.CopyBaseToAction(Type)
 ```
 
 Copy base to action
@@ -71,7 +71,7 @@ Copy base to action
 ### classIForceConnectorBushing
 
 ```
-classIForceConnectorBushing(oobj=None)¶
+classIForceConnectorBushing(oobj=None)
 ```
 
 Bases:DispatchBaseClassBushing forcePropertiesActionMarkerAction markerActiveActiveBaseMarkerBase markerCommentCommentForceDisplayForce displayForceDisplayColorForce display colorForceDisplayUseForce display useFullNameFullName such asBody1.Marker1@Model1LayerNameLayer nameLayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interf
@@ -79,7 +79,7 @@ Bases:DispatchBaseClassBushing forcePropertiesActionMarkerAction markerActiveAct
 ### CopyActionToBase
 
 ```
-IForceConnectorFixed.CopyActionToBase(Type)¶
+IForceConnectorFixed.CopyActionToBase(Type)
 ```
 
 Copy action to base
@@ -87,7 +87,7 @@ Copy action to base
 ### CopyBaseToAction
 
 ```
-IForceConnectorFixed.CopyBaseToAction(Type)¶
+IForceConnectorFixed.CopyBaseToAction(Type)
 ```
 
 Copy base to action
@@ -95,7 +95,7 @@ Copy base to action
 ### classIForceConnectorFixed
 
 ```
-classIForceConnectorFixed(oobj=None)¶
+classIForceConnectorFixed(oobj=None)
 ```
 
 Bases:DispatchBaseClassConnector fixed forcePropertiesActionMarkerAction markerActiveActiveBaseMarkerBase markerCommentCommentForceDisplayForce displayForceDisplayColorForce display colorForceDisplayUseForce display useFullNameFullName such asBody1.Marker1@Model1LayerNameLayer nameLayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSyste
@@ -103,7 +103,7 @@ Bases:DispatchBaseClassConnector fixed forcePropertiesActionMarkerAction markerA
 ### CopyActionToBase
 
 ```
-IForceConnectorRevolute.CopyActionToBase(Type)¶
+IForceConnectorRevolute.CopyActionToBase(Type)
 ```
 
 Copy action to base
@@ -111,7 +111,7 @@ Copy action to base
 ### CopyBaseToAction
 
 ```
-IForceConnectorRevolute.CopyBaseToAction(Type)¶
+IForceConnectorRevolute.CopyBaseToAction(Type)
 ```
 
 Copy base to action
@@ -119,7 +119,7 @@ Copy base to action
 ### classIForceConnectorRevolute
 
 ```
-classIForceConnectorRevolute(oobj=None)¶
+classIForceConnectorRevolute(oobj=None)
 ```
 
 Bases:DispatchBaseClassConnector revolute forcePropertiesActionMarkerAction markerActiveActiveBaseMarkerBase markerCommentCommentForceDisplayForce displayForceDisplayColorForce display colorForceDisplayUseForce display useFullNameFullName such asBody1.Marker1@Model1LayerNameLayer nameLayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSy
@@ -127,7 +127,7 @@ Bases:DispatchBaseClassConnector revolute forcePropertiesActionMarkerAction mark
 ### CopyActionToBase
 
 ```
-IForceConnectorSpring.CopyActionToBase(Type)¶
+IForceConnectorSpring.CopyActionToBase(Type)
 ```
 
 Copy action to base
@@ -135,7 +135,7 @@ Copy action to base
 ### CopyBaseToAction
 
 ```
-IForceConnectorSpring.CopyBaseToAction(Type)¶
+IForceConnectorSpring.CopyBaseToAction(Type)
 ```
 
 Copy base to action
@@ -143,7 +143,7 @@ Copy base to action
 ### classIForceConnectorSpring
 
 ```
-classIForceConnectorSpring(oobj=None)¶
+classIForceConnectorSpring(oobj=None)
 ```
 
 Bases:DispatchBaseClassConnector Spring forcePropertiesActionMarkerAction markerActiveActiveBaseMarkerBase markerCommentCommentDampingDampingForceDisplayForce displayForceDisplayColorForce display colorForceDisplayUseForce display useFreeLengthThe free length of the springFullNameFullName such asBody1.Marker1@Model1LayerNameLayer nameLayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOw
@@ -151,7 +151,7 @@ Bases:DispatchBaseClassConnector Spring forcePropertiesActionMarkerAction marker
 ### classIToolkitContactFriction
 
 ```
-classIToolkitContactFriction(oobj=None)¶
+classIToolkitContactFriction(oobj=None)
 ```
 
 Bases:DispatchBaseClassToolkit contact frictionPropertiesDynamicThresholdVelocityDynamic threshold velocityMaxStictionDeformatonMax friction forceStaticFrictionCoefficientStatic friction coefficientStaticThresholdVelocityStatic threshold velocityUseMaxStictionDeformatonUse max friction force
@@ -159,7 +159,7 @@ Bases:DispatchBaseClassToolkit contact frictionPropertiesDynamicThresholdVelocit
 ### classToolkitSoftGroundType
 
 ```
-classToolkitSoftGroundType(value)¶
+classToolkitSoftGroundType(value)
 ```
 
 Bases:IntEnumToolkitSoftGroundType enumeration.MembersToolkitSoftGroundType_Clayey_SoilConstant value is 4.ToolkitSoftGroundType_Dry_SandConstant value is 0.ToolkitSoftGroundType_Grenville_LoamConstant value is 11.ToolkitSoftGroundType_Heavy_ClayConstant value is 5.ToolkitSoftGroundType_LETE_SandConstant value is 7.ToolkitSoftGroundType_Lean_ClayConstant value is 6.ToolkitSoftGroundType_North_Gower_Clayey_LoamConstant value is 10.ToolkitSoftGroundType_Rubicon_Sandy_LoamConstant value is 9.Toolki
@@ -167,7 +167,7 @@ Bases:IntEnumToolkitSoftGroundType enumeration.MembersToolkitSoftGroundType_Clay
 ### classTrackFrictionType
 
 ```
-classTrackFrictionType(value)¶
+classTrackFrictionType(value)
 ```
 
 Bases:IntEnumTrackFrictionType enumeration.MembersTrackFrictionType_DynamicFrictionCoefficientConstant value is 0.TrackFrictionType_FrictionCoefficientSplineConstant value is 2.TrackFrictionType_FrictionForceSplineConstant value is 1.

@@ -15,7 +15,7 @@
 ### classContactParameterSoftGroundType
 
 ```
-classContactParameterSoftGroundType(value)¶
+classContactParameterSoftGroundType(value)
 ```
 
 Bases:IntEnumContactParameterSoftGroundType enumeration.MembersContactParameterSoftGroundType_Clayey_SoilConstant value is 4.ContactParameterSoftGroundType_Dry_SandConstant value is 0.ContactParameterSoftGroundType_Grenville_LoamConstant value is 11.ContactParameterSoftGroundType_Heavy_ClayConstant value is 5.ContactParameterSoftGroundType_LETE_SandConstant value is 7.ContactParameterSoftGroundType_Lean_ClayConstant value is 6.ContactParameterSoftGroundType_North_Gower_Clayey_LoamConstant value 
@@ -23,7 +23,7 @@ Bases:IntEnumContactParameterSoftGroundType enumeration.MembersContactParameterS
 ### classContactSearchType
 
 ```
-classContactSearchType(value)¶
+classContactSearchType(value)
 ```
 
 Bases:IntEnumContactSearchType enumeration.MembersContactSearchType_FullSearchConstant value is 0.ContactSearchType_PartialSearchConstant value is 1.
@@ -31,7 +31,7 @@ Bases:IntEnumContactSearchType enumeration.MembersContactSearchType_FullSearchCo
 ### classContactSprocketType
 
 ```
-classContactSprocketType(value)¶
+classContactSprocketType(value)
 ```
 
 Bases:IntEnumContactSprocketType enumeration.MembersContactSprocketType_LeftPinConstant value is 0.ContactSprocketType_RightPinConstant value is 1.
@@ -39,7 +39,7 @@ Bases:IntEnumContactSprocketType enumeration.MembersContactSprocketType_LeftPinC
 ### classIPassingBodyCollection
 
 ```
-classIPassingBodyCollection(oobj=None)¶
+classIPassingBodyCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM passing body collection of assembly
@@ -47,7 +47,7 @@ Bases:DispatchBaseClassTrackLM passing body collection of assembly
 ### AddAllOutputLink
 
 ```
-ITrackLMAssembly.AddAllOutputLink()¶
+ITrackLMAssembly.AddAllOutputLink()
 ```
 
 Add all the link body to output list
@@ -55,7 +55,7 @@ Add all the link body to output list
 ### AddOutputLink
 
 ```
-ITrackLMAssembly.AddOutputLink(strFileName)¶
+ITrackLMAssembly.AddOutputLink(strFileName)
 ```
 
 Add a link body to output list
@@ -63,7 +63,7 @@ Add a link body to output list
 ### AddPassingBody
 
 ```
-ITrackLMAssembly.AddPassingBody(pVal)¶
+ITrackLMAssembly.AddPassingBody(pVal)
 ```
 
 Add a passing body
@@ -71,7 +71,7 @@ Add a passing body
 ### AddPassingBody2
 
 ```
-ITrackLMAssembly.AddPassingBody2(pVal)¶
+ITrackLMAssembly.AddPassingBody2(pVal)
 ```
 
 Add a passing body with ITrackLMBody
@@ -79,7 +79,7 @@ Add a passing body with ITrackLMBody
 ### CreateGrouserContact
 
 ```
-ITrackLMAssembly.CreateGrouserContact()¶
+ITrackLMAssembly.CreateGrouserContact()
 ```
 
 Create a grouser contact
@@ -87,7 +87,7 @@ Create a grouser contact
 ### DeleteGrouserContact
 
 ```
-ITrackLMAssembly.DeleteGrouserContact(pVal)¶
+ITrackLMAssembly.DeleteGrouserContact(pVal)
 ```
 
 Delete a grouser contact
@@ -95,7 +95,7 @@ Delete a grouser contact
 ### DeletePassingBody
 
 ```
-ITrackLMAssembly.DeletePassingBody(pVal)¶
+ITrackLMAssembly.DeletePassingBody(pVal)
 ```
 
 Delete a passing body
@@ -103,7 +103,7 @@ Delete a passing body
 ### DeletePassingBody2
 
 ```
-ITrackLMAssembly.DeletePassingBody2(pVal)¶
+ITrackLMAssembly.DeletePassingBody2(pVal)
 ```
 
 Delete a passing body with ITrackLMBody
@@ -111,7 +111,7 @@ Delete a passing body with ITrackLMBody
 ### GetOutputLinkList
 
 ```
-ITrackLMAssembly.GetOutputLinkList()¶
+ITrackLMAssembly.GetOutputLinkList()
 ```
 
 TrackLM assembly output list
@@ -119,7 +119,7 @@ TrackLM assembly output list
 ### RemoveAllOutputLink
 
 ```
-ITrackLMAssembly.RemoveAllOutputLink()¶
+ITrackLMAssembly.RemoveAllOutputLink()
 ```
 
 Remove all the link body from output list
@@ -127,7 +127,7 @@ Remove all the link body from output list
 ### RemoveOutputLink
 
 ```
-ITrackLMAssembly.RemoveOutputLink(strFileName)¶
+ITrackLMAssembly.RemoveOutputLink(strFileName)
 ```
 
 Remove a link body from output list
@@ -135,7 +135,7 @@ Remove a link body from output list
 ### UpdateLinkInitialVelocity
 
 ```
-ITrackLMAssembly.UpdateLinkInitialVelocity()¶
+ITrackLMAssembly.UpdateLinkInitialVelocity()
 ```
 
 Update initial velocity of links
@@ -143,7 +143,7 @@ Update initial velocity of links
 ### classITrackLMAssembly
 
 ```
-classITrackLMAssembly(oobj=None)¶
+classITrackLMAssembly(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM AssemblyPropertiesBushingForceCollectionBushing force collectionBushingForceParameterBushing force parameterCommentCommentContactParameterContact ground track link shoeFullNameFullName such asBody1.Marker1@Model1GrouserContactCollectionGrouser contact collectionGrouserContactPropertyGrouser contact propertyGrouserToSphereContactGrouser to sphere contact PropertyLinkInitialVelocityXAxisLink initial velocity x-axisLinkNumbersLink numbersNameNameOwnerOwner returns own
@@ -151,7 +151,7 @@ Bases:DispatchBaseClassTrackLM AssemblyPropertiesBushingForceCollectionBushing f
 ### Export
 
 ```
-ITrackLMAssemblyBushingForceParameter.Export(strName,val)¶
+ITrackLMAssemblyBushingForceParameter.Export(strName,val)
 ```
 
 Export bushing force parameter
@@ -159,7 +159,7 @@ Export bushing force parameter
 ### Import
 
 ```
-ITrackLMAssemblyBushingForceParameter.Import(strName)¶
+ITrackLMAssemblyBushingForceParameter.Import(strName)
 ```
 
 Import bushing force parameter
@@ -167,7 +167,7 @@ Import bushing force parameter
 ### classITrackLMAssemblyBushingForceParameter
 
 ```
-classITrackLMAssemblyBushingForceParameter(oobj=None)¶
+classITrackLMAssemblyBushingForceParameter(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM Assembly Bushing Force ParameterPropertiesRotationDampingCoefficientXRotation damping coefficient XRotationDampingCoefficientYRotation damping coefficient YRotationDampingCoefficientZRotation damping coefficient ZRotationDampingExponentXRotation damping exponent XRotationDampingExponentYRotation damping exponent YRotationDampingExponentZRotation damping exponent ZRotationDampingSplineXRotation damping spline XRotationDampingSplineYRotation damping spline YRotationD
@@ -175,7 +175,7 @@ Bases:DispatchBaseClassTrackLM Assembly Bushing Force ParameterPropertiesRotatio
 ### Item
 
 ```
-ITrackLMAssemblyCollection.Item(var)¶
+ITrackLMAssemblyCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -183,7 +183,7 @@ Returns a specific item.
 ### classITrackLMAssemblyCollection
 
 ```
-classITrackLMAssemblyCollection(oobj=None)¶
+classITrackLMAssemblyCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM Assembly CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -191,7 +191,7 @@ Bases:DispatchBaseClassTrackLM Assembly CollectionPropertiesCountReturns the num
 ### Export
 
 ```
-ITrackLMAssemblyContactGroundTrackLinkShoe.Export(strName,val)¶
+ITrackLMAssemblyContactGroundTrackLinkShoe.Export(strName,val)
 ```
 
 Export ground parameter
@@ -199,7 +199,7 @@ Export ground parameter
 ### Import
 
 ```
-ITrackLMAssemblyContactGroundTrackLinkShoe.Import(strName)¶
+ITrackLMAssemblyContactGroundTrackLinkShoe.Import(strName)
 ```
 
 Import ground parameter
@@ -207,7 +207,7 @@ Import ground parameter
 ### SoftGroundType
 
 ```
-ITrackLMAssemblyContactGroundTrackLinkShoe.SoftGroundType(val)¶
+ITrackLMAssemblyContactGroundTrackLinkShoe.SoftGroundType(val)
 ```
 
 Soft ground type
@@ -215,7 +215,7 @@ Soft ground type
 ### classITrackLMAssemblyContactGroundTrackLinkShoe
 
 ```
-classITrackLMAssemblyContactGroundTrackLinkShoe(oobj=None)¶
+classITrackLMAssemblyContactGroundTrackLinkShoe(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM Assembly Contact Ground TrackLink ShoePropertiesCohesionCohesion (c)DampingCoefficientThe viscous damping coefficient for the contact normal force.DampingExponentThe damping exponent for a non-linear contact normal forceDampingSplineDamping splineExponentialNumberExponential number (n)FrictionFrictionFrictionCoefficientThe friction coefficient for the contact normal force.FrictionSplineThe spline which shows relative velocity to the friction coefficient or the fric
@@ -223,7 +223,7 @@ Bases:DispatchBaseClassTrackLM Assembly Contact Ground TrackLink ShoePropertiesC
 ### classITrackLMAssemblyGrouserContact
 
 ```
-classITrackLMAssemblyGrouserContact(oobj=None)¶
+classITrackLMAssemblyGrouserContact(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM Assembly Grouser ContactPropertiesActionPositionAction positionActionRadiusAction radiusBasePositionBase positionBaseRadiusBase radiusDistanceBetweenLinksDistance between Links
@@ -231,7 +231,7 @@ Bases:DispatchBaseClassTrackLM Assembly Grouser ContactPropertiesActionPositionA
 ### Item
 
 ```
-ITrackLMAssemblyGrouserContactCollection.Item(var)¶
+ITrackLMAssemblyGrouserContactCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -239,7 +239,7 @@ Returns a specific item.
 ### classITrackLMAssemblyGrouserContactCollection
 
 ```
-classITrackLMAssemblyGrouserContactCollection(oobj=None)¶
+classITrackLMAssemblyGrouserContactCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM Assembly Grouser Contact CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -247,7 +247,7 @@ Bases:DispatchBaseClassTrackLM Assembly Grouser Contact CollectionPropertiesCoun
 ### AddGrouserToSphereContact
 
 ```
-ITrackLMAssemblyGrouserToSphereContact.AddGrouserToSphereContact(pGeometrySphere)¶
+ITrackLMAssemblyGrouserToSphereContact.AddGrouserToSphereContact(pGeometrySphere)
 ```
 
 Add a grouser to sphere contact
@@ -255,7 +255,7 @@ Add a grouser to sphere contact
 ### classITrackLMAssemblyGrouserToSphereContact
 
 ```
-classITrackLMAssemblyGrouserToSphereContact(oobj=None)¶
+classITrackLMAssemblyGrouserToSphereContact(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM grouser to sphere contact propertyPropertiesContactPropertyGrouser to sphere contact propertyGeometrySphereCollectionSphere geometry collection of grouser to sphere contactMaximumPenetrationMaximum penetration.MethodsAddGrouserToSphereContactAdd a grouser to sphere contact
@@ -263,7 +263,7 @@ Bases:DispatchBaseClassTrackLM grouser to sphere contact propertyPropertiesConta
 ### classITrackLMBody
 
 ```
-classITrackLMBody(oobj=None)¶
+classITrackLMBody(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM bodyPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -271,7 +271,7 @@ Bases:DispatchBaseClassTrackLM bodyPropertiesCommentCommentFullNameFullName such
 ### Item
 
 ```
-ITrackLMBodyCollection.Item(var)¶
+ITrackLMBodyCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -279,7 +279,7 @@ Returns a specific item.
 ### classITrackLMBodyCollection
 
 ```
-classITrackLMBodyCollection(oobj=None)¶
+classITrackLMBodyCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM roller guard body collectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -287,7 +287,7 @@ Bases:DispatchBaseClassTrackLM roller guard body collectionPropertiesCountReturn
 ### classITrackLMBodyFlangeCenter
 
 ```
-classITrackLMBodyFlangeCenter(oobj=None)¶
+classITrackLMBodyFlangeCenter(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM flange centerPropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -295,7 +295,7 @@ Bases:DispatchBaseClassTrackLM flange centerPropertiesCommentCommentContactPrope
 ### classITrackLMBodyFlangeDouble
 
 ```
-classITrackLMBodyFlangeDouble(oobj=None)¶
+classITrackLMBodyFlangeDouble(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM flange doublePropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -303,7 +303,7 @@ Bases:DispatchBaseClassTrackLM flange doublePropertiesCommentCommentContactPrope
 ### classITrackLMBodyFlangeFlat
 
 ```
-classITrackLMBodyFlangeFlat(oobj=None)¶
+classITrackLMBodyFlangeFlat(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM flange flatPropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -311,7 +311,7 @@ Bases:DispatchBaseClassTrackLM flange flatPropertiesCommentCommentContactPropert
 ### classITrackLMBodyFlangeSingle
 
 ```
-classITrackLMBodyFlangeSingle(oobj=None)¶
+classITrackLMBodyFlangeSingle(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM flange singlePropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -319,7 +319,7 @@ Bases:DispatchBaseClassTrackLM flange singlePropertiesCommentCommentContactPrope
 ### CreateMarker
 
 ```
-ITrackLMBodyLink.CreateMarker(strName,pRefFrame)¶
+ITrackLMBodyLink.CreateMarker(strName,pRefFrame)
 ```
 
 Creates a marker
@@ -327,7 +327,7 @@ Creates a marker
 ### UpdateGeometry
 
 ```
-ITrackLMBodyLink.UpdateGeometry()¶
+ITrackLMBodyLink.UpdateGeometry()
 ```
 
 Update geometry
@@ -335,7 +335,7 @@ Update geometry
 ### classITrackLMBodyLink
 
 ```
-classITrackLMBodyLink(oobj=None)¶
+classITrackLMBodyLink(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM Body LinkPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryGraphicGraphicLinkGrouserProfileLink grouser profileLinkShapeProfileLink shape profileNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUseBodyGraphicUse graphic of clone boyUseLinkShapeUse link sha
@@ -343,7 +343,7 @@ Bases:DispatchBaseClassTrackLM Body LinkPropertiesCommentCommentFullNameFullName
 ### Item
 
 ```
-ITrackLMBodyLinkCollection.Item(var)¶
+ITrackLMBodyLinkCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -351,7 +351,7 @@ Returns a specific item.
 ### classITrackLMBodyLinkCollection
 
 ```
-classITrackLMBodyLinkCollection(oobj=None)¶
+classITrackLMBodyLinkCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM Body Link CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -359,7 +359,7 @@ Bases:DispatchBaseClassTrackLM Body Link CollectionPropertiesCountReturns the nu
 ### classITrackLMBodyRollerGuard
 
 ```
-classITrackLMBodyRollerGuard(oobj=None)¶
+classITrackLMBodyRollerGuard(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM Body Roller GuardPropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -367,7 +367,7 @@ Bases:DispatchBaseClassTrackLM Body Roller GuardPropertiesCommentCommentContactP
 ### UpdateProperties
 
 ```
-ITrackLMBodySprocket.UpdateProperties()¶
+ITrackLMBodySprocket.UpdateProperties()
 ```
 
 Update Properties
@@ -375,7 +375,7 @@ Update Properties
 ### classITrackLMBodySprocket
 
 ```
-classITrackLMBodySprocket(oobj=None)¶
+classITrackLMBodySprocket(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLMBodySprocketPropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeCreateContactOutputFileCreate contact output fileFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceToothProfileToothProfileUserDataUser
@@ -383,7 +383,7 @@ Bases:DispatchBaseClassTrackLMBodySprocketPropertiesCommentCommentContactPropert
 ### classITrackLMContactFriction
 
 ```
-classITrackLMContactFriction(oobj=None)¶
+classITrackLMContactFriction(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM contact frictionPropertiesDynamicThresholdVelocityDynamic threshold velocityStaticFrictionCoefficientStatic friction coefficientStaticThresholdVelocityStatic threshold velocity
@@ -391,7 +391,7 @@ Bases:DispatchBaseClassTrackLM contact frictionPropertiesDynamicThresholdVelocit
 ### classITrackLMContactProperty
 
 ```
-classITrackLMContactProperty(oobj=None)¶
+classITrackLMContactProperty(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM contact propertyPropertiesDampingCoefficientThe viscous damping coefficient for the contact normal force.DampingExponentThe damping exponent for a non-linear contact normal forceDampingSplineDamping splineFrictionFrictionFrictionCoefficientThe friction coefficient for the contact normal force.FrictionSplineThe spline which shows relative velocity to the friction coefficient or the friction force.FrictionTypeFriction typeIndentationExponentThe indentation exponent y
@@ -399,7 +399,7 @@ Bases:DispatchBaseClassTrackLM contact propertyPropertiesDampingCoefficientThe v
 ### classITrackLMContactSearch
 
 ```
-classITrackLMContactSearch(oobj=None)¶
+classITrackLMContactSearch(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM flange contact searchPropertiesTypeSearch type of the flange.UseUserBoundaryForPartialSearchUse the user boundary of the partial search.UserBoundaryForPartialSearchUser boundary of the partial search.
@@ -407,7 +407,7 @@ Bases:DispatchBaseClassTrackLM flange contact searchPropertiesTypeSearch type of
 ### classITrackLMGeometryFlangeCenter
 
 ```
-classITrackLMGeometryFlangeCenter(oobj=None)¶
+classITrackLMGeometryFlangeCenter(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM flange center geometryPropertiesInnerFlangeRadiusInner flange radius.InnerFlangeWidthInner flange width.TotalWidthTotal width.WheelRadiusWheel radius.

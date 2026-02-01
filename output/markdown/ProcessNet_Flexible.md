@@ -15,7 +15,7 @@
 ### classBodyType
 
 ```
-classBodyType(value)¶
+classBodyType(value)
 ```
 
 Bases:IntEnumBodyType enumeration.MembersBodyType_FFLEXConstant value is 1.BodyType_RFLEXConstant value is 2.BodyType_RIGIDConstant value is 0.
@@ -23,7 +23,7 @@ Bases:IntEnumBodyType enumeration.MembersBodyType_FFLEXConstant value is 1.BodyT
 ### classContourBandLegendType
 
 ```
-classContourBandLegendType(value)¶
+classContourBandLegendType(value)
 ```
 
 Bases:IntEnumContourBandLegendType enumeration.MembersCB_Legned_DialogConstant value is 1.CB_Legned_DisableConstant value is 0.CB_Legned_DisplayConstant value is 2.
@@ -31,7 +31,7 @@ Bases:IntEnumContourBandLegendType enumeration.MembersCB_Legned_DialogConstant v
 ### classContourColorSetType
 
 ```
-classContourColorSetType(value)¶
+classContourColorSetType(value)
 ```
 
 Bases:IntEnumContourColorSetType enumeration.MembersColorSetType_GradationConstant value is 1.ColorSetType_SpectrumConstant value is 0.
@@ -39,7 +39,7 @@ Bases:IntEnumContourColorSetType enumeration.MembersColorSetType_GradationConsta
 ### classContourColorStyle
 
 ```
-classContourColorStyle(value)¶
+classContourColorStyle(value)
 ```
 
 Bases:IntEnumContourColorStyle enumeration.MembersC_Style_SmoothConstant value is 0.C_Style_SteppedConstant value is 2.C_Style_WireConstant value is 1.
@@ -47,7 +47,7 @@ Bases:IntEnumContourColorStyle enumeration.MembersC_Style_SmoothConstant value i
 ### classContourComponent
 
 ```
-classContourComponent(value)¶
+classContourComponent(value)
 ```
 
 Bases:IntEnumContourComponent enumeration.MembersCC_CONTACT_MAGNITUDEConstant value is 33.CC_CONTACT_NORMALConstant value is 31.CC_CONTACT_TANGENTConstant value is 32.CC_CP_CPConstant value is 42.CC_CP_ELConstant value is 41.CC_E1Constant value is 15.CC_E2Constant value is 16.CC_E3Constant value is 17.CC_EINTConstant value is 18.CC_EMISESConstant value is 19.CC_ERPConstant value is 51.CC_ERP_DENSITYConstant value is 52.CC_EXConstant value is 9.CC_EXYConstant value is 12.CC_EYConstant value is 10
@@ -55,7 +55,7 @@ Bases:IntEnumContourComponent enumeration.MembersCC_CONTACT_MAGNITUDEConstant va
 ### classContourContactSurfaceOnlyType
 
 ```
-classContourContactSurfaceOnlyType(value)¶
+classContourContactSurfaceOnlyType(value)
 ```
 
 Bases:IntEnumContourContactSurfaceOnlyType enumeration.MembersContact_Patches_OnlyConstant value is 1.UserDefine_Contact_SurfaceConstant value is 0.
@@ -63,7 +63,7 @@ Bases:IntEnumContourContactSurfaceOnlyType enumeration.MembersContact_Patches_On
 ### classContourDataExportSelectType
 
 ```
-classContourDataExportSelectType(value)¶
+classContourDataExportSelectType(value)
 ```
 
 Bases:IntEnumContourDataExportSelectType enumeration.MembersSelect_AllConstant value is 5.Select_ElementSetConstant value is 4.Select_LineSetConstant value is 3.Select_NodeConstant value is 0.Select_NodeSetConstant value is 1.Select_PatchSetConstant value is 2.
@@ -71,7 +71,7 @@ Bases:IntEnumContourDataExportSelectType enumeration.MembersSelect_AllConstant v
 ### classContourDataExportType
 
 ```
-classContourDataExportType(value)¶
+classContourDataExportType(value)
 ```
 
 Bases:IntEnumContourDataExportType enumeration.MembersExport_MinMaxConstant value is 2.Export_NodeConstant value is 0.Export_TimeConstant value is 1.
@@ -79,7 +79,7 @@ Bases:IntEnumContourDataExportType enumeration.MembersExport_MinMaxConstant valu
 ### classContourMinMaxType
 
 ```
-classContourMinMaxType(value)¶
+classContourMinMaxType(value)
 ```
 
 Bases:IntEnumContourMinMaxType enumeration.MembersMM_DisplayConstant value is 0.MM_UserDefinedConstant value is 1.
@@ -87,7 +87,7 @@ Bases:IntEnumContourMinMaxType enumeration.MembersMM_DisplayConstant value is 0.
 ### classContourReferenceType
 
 ```
-classContourReferenceType(value)¶
+classContourReferenceType(value)
 ```
 
 Bases:IntEnumContourReferenceType enumeration.MembersReferenceType_MarkerConstant value is 1.ReferenceType_NodeConstant value is 0.
@@ -95,7 +95,7 @@ Bases:IntEnumContourReferenceType enumeration.MembersReferenceType_MarkerConstan
 ### classContourType
 
 ```
-classContourType(value)¶
+classContourType(value)
 ```
 
 Bases:IntEnumContourType enumeration.MembersCT_CONTACT_FORCEConstant value is 3.CT_CONTACT_PRESSUREConstant value is 4.CT_DISPLACEMENTConstant value is 0.CT_ELASTIC_STRAINConstant value is 5.CT_PLASTIC_STRAINConstant value is 6.CT_SOUNDConstant value is 8.CT_STRAINConstant value is 1.CT_STRESSConstant value is 2.CT_TEMPERATUREConstant value is 9.CT_THERMAL_STRAINConstant value is 7.
@@ -103,7 +103,7 @@ Bases:IntEnumContourType enumeration.MembersCT_CONTACT_FORCEConstant value is 3.
 ### classConvertFFlexToRFlexType
 
 ```
-classConvertFFlexToRFlexType(value)¶
+classConvertFFlexToRFlexType(value)
 ```
 
 Bases:IntEnumConvertFFlexToRFlexType enumeration.MembersFFlexToRFlex_Swap_RFIConstant value is 1.FFlexToRFlex_Swap_RFlexGenConstant value is 0.
@@ -111,7 +111,7 @@ Bases:IntEnumConvertFFlexToRFlexType enumeration.MembersFFlexToRFlex_Swap_RFICon
 ### classConvertFFlexToRigidType
 
 ```
-classConvertFFlexToRigidType(value)¶
+classConvertFFlexToRigidType(value)
 ```
 
 Bases:IntEnumConvertFFlexToRigidType enumeration.MembersFFlexToRigid_ConvertConstant value is 1.FFlexToRigid_Convert_RigidShellConstant value is 0.FFlexToRigid_Swap_CADDataConstant value is 2.
@@ -119,7 +119,7 @@ Bases:IntEnumConvertFFlexToRigidType enumeration.MembersFFlexToRigid_ConvertCons
 ### classConvertRFlexToFFlexType
 
 ```
-classConvertRFlexToFFlexType(value)¶
+classConvertRFlexToFFlexType(value)
 ```
 
 Bases:IntEnumConvertRFlexToFFlexType enumeration.MembersRFlexToFFlex_ConvertConstant value is 0.RFlexToFFlex_SwapConstant value is 1.
@@ -127,7 +127,7 @@ Bases:IntEnumConvertRFlexToFFlexType enumeration.MembersRFlexToFFlex_ConvertCons
 ### classConvertRFlexToRFlexType
 
 ```
-classConvertRFlexToRFlexType(value)¶
+classConvertRFlexToRFlexType(value)
 ```
 
 Bases:IntEnumConvertRFlexToRFlexType enumeration.MembersRFlexToRFlex_Swap_RFIConstant value is 1.RFlexToRFlex_Swap_RFlexGenConstant value is 0.
@@ -135,7 +135,7 @@ Bases:IntEnumConvertRFlexToRFlexType enumeration.MembersRFlexToRFlex_Swap_RFICon
 ### classConvertRFlexToRigidType
 
 ```
-classConvertRFlexToRigidType(value)¶
+classConvertRFlexToRigidType(value)
 ```
 
 Bases:IntEnumConvertRFlexToRigidType enumeration.MembersRFlexToRigid_Convert_RigidShellConstant value is 0.RFlexToRigid_Swap_CADDataConstant value is 1.
@@ -143,7 +143,7 @@ Bases:IntEnumConvertRFlexToRigidType enumeration.MembersRFlexToRigid_Convert_Rig
 ### classConvertRigidToFFlexType
 
 ```
-classConvertRigidToFFlexType(value)¶
+classConvertRigidToFFlexType(value)
 ```
 
 Bases:IntEnumConvertRigidToFFlexType enumeration.MembersRigidToFFlex_MeshConstant value is 0.RigidToFFlex_SwapConstant value is 1.
@@ -151,7 +151,7 @@ Bases:IntEnumConvertRigidToFFlexType enumeration.MembersRigidToFFlex_MeshConstan
 ### classCuttingPlaneFlexType
 
 ```
-classCuttingPlaneFlexType(value)¶
+classCuttingPlaneFlexType(value)
 ```
 
 Bases:IntEnumCuttingPlaneFlexType enumeration.MembersCuttingPlaneFlexType_CrossSectionConstant value is 0.CuttingPlaneFlexType_ElementShapeConstant value is 1.
@@ -159,7 +159,7 @@ Bases:IntEnumCuttingPlaneFlexType enumeration.MembersCuttingPlaneFlexType_CrossS
 ### AddDataTrace
 
 ```
-IContour.AddDataTrace(pVal,Val)¶
+IContour.AddDataTrace(pVal,Val)
 ```
 
 Add DataTrace
@@ -167,7 +167,7 @@ Add DataTrace
 ### AddPartSelction
 
 ```
-IContour.AddPartSelction(pBody,pSet)¶
+IContour.AddPartSelction(pBody,pSet)
 ```
 
 Add Part Selection
@@ -175,7 +175,7 @@ Add Part Selection
 ### CloseContourDialog
 
 ```
-IContour.CloseContourDialog()¶
+IContour.CloseContourDialog()
 ```
 
 Close Contour Dialog
@@ -183,7 +183,7 @@ Close Contour Dialog
 ### DeleteDataTrace
 
 ```
-IContour.DeleteDataTrace(pVal)¶
+IContour.DeleteDataTrace(pVal)
 ```
 
 Delete DataTrace
@@ -191,7 +191,7 @@ Delete DataTrace
 ### DeleteDataTracebyIndex
 
 ```
-IContour.DeleteDataTracebyIndex(Val)¶
+IContour.DeleteDataTracebyIndex(Val)
 ```
 
 Delete DataTrace
@@ -199,7 +199,7 @@ Delete DataTrace
 ### DeletePartSelction
 
 ```
-IContour.DeletePartSelction(pVal)¶
+IContour.DeletePartSelction(pVal)
 ```
 
 Delete Part Selection
@@ -207,7 +207,7 @@ Delete Part Selection
 ### DeletePartSelctionbyIndex
 
 ```
-IContour.DeletePartSelctionbyIndex(Val)¶
+IContour.DeletePartSelctionbyIndex(Val)
 ```
 
 Delete Part Selection
@@ -215,7 +215,7 @@ Delete Part Selection
 ### OpenContourDialog
 
 ```
-IContour.OpenContourDialog()¶
+IContour.OpenContourDialog()
 ```
 
 Open Contour Dialog
@@ -223,7 +223,7 @@ Open Contour Dialog
 ### UpdateLegend
 
 ```
-IContour.UpdateLegend()¶
+IContour.UpdateLegend()
 ```
 
 Contour Setting Done
@@ -231,7 +231,7 @@ Contour Setting Done
 ### classIContour
 
 ```
-classIContour(oobj=None)¶
+classIContour(oobj=None)
 ```
 
 Bases:DispatchBaseClassContourPropertiesBandOptionBandOption is obsolete function.BandOption2Get Contour Band OptionDataExportGet Contour Data ExportDataTraceCollectionContains Contour Data TraceEnableViewEnable View FlagMinMaxOptionMinMaxOption is obsolete function.MinMaxOption2Get Contour MinMax OptionPartSelectionCollectionContains Contour Part SelectionReferenceNodeCollectionContains Contour Reference NodeStyleOptionStyleOption is obsolete function.StyleOption2Get Contour Style OptionTypeOpt
@@ -239,7 +239,7 @@ Bases:DispatchBaseClassContourPropertiesBandOptionBandOption is obsolete functio
 ### classIContourBandOption
 
 ```
-classIContourBandOption(oobj=None)¶
+classIContourBandOption(oobj=None)
 ```
 
 Bases:DispatchBaseClassIContourBandOptionn is obsolete interface. Use IContourBandOption2.PropertiesBandLevelBandLevel is obsolete functionLegendLocationLegendLocationType is obsolete functionLegendTypeLegendType is obsolete functionShowTextLegendShowTextLegend is obsolete function
@@ -247,7 +247,7 @@ Bases:DispatchBaseClassIContourBandOptionn is obsolete interface. Use IContourBa
 ### SetCustomizeBandValuesColors
 
 ```
-IContourBandOption2.SetCustomizeBandValuesColors(arrValues,arrColors)¶
+IContourBandOption2.SetCustomizeBandValuesColors(arrValues,arrColors)
 ```
 
 Set Customize Band Option Values and Colors
@@ -255,7 +255,7 @@ Set Customize Band Option Values and Colors
 ### UpdateCustomizeBandValuesWithLogScale
 
 ```
-IContourBandOption2.UpdateCustomizeBandValuesWithLogScale(arrValues,bLogScale)¶
+IContourBandOption2.UpdateCustomizeBandValuesWithLogScale(arrValues,bLogScale)
 ```
 
 Update Customize Band Values with Log Scale
@@ -263,7 +263,7 @@ Update Customize Band Values with Log Scale
 ### classIContourBandOption2
 
 ```
-classIContourBandOption2(oobj=None)¶
+classIContourBandOption2(oobj=None)
 ```
 
 Bases:DispatchBaseClassContour Band Option2PropertiesBandLevelBand LevelColorSetTypeContour Color Set TypeCustomizeBandColorsCustomize Band ColorsCustomizeBandEnableLogScaleCustomize Band Log ScaleCustomizeBandValuesCustomize Band ValuesEnableLogScaleLog ScaleMaxColorMax ColorMinColorMin ColorUseCustomizeBandOptionCustomize Band OptionMethodsSetCustomizeBandValuesColorsSet Customize Band Option Values and ColorsUpdateCustomizeBandValuesWithLogScaleUpdate Customize Band Values with Log Scale
@@ -271,7 +271,7 @@ Bases:DispatchBaseClassContour Band Option2PropertiesBandLevelBand LevelColorSet
 ### Export
 
 ```
-IContourDataExport.Export(Val)¶
+IContourDataExport.Export(Val)
 ```
 
 Export Contour Data
@@ -279,7 +279,7 @@ Export Contour Data
 ### SelectFramesWithRange
 
 ```
-IContourDataExport.SelectFramesWithRange(start,end)¶
+IContourDataExport.SelectFramesWithRange(start,end)
 ```
 
 Select Frames
@@ -287,7 +287,7 @@ Select Frames
 ### SelectNodesWithRange
 
 ```
-IContourDataExport.SelectNodesWithRange(start,end)¶
+IContourDataExport.SelectNodesWithRange(start,end)
 ```
 
 Select Nodes
@@ -295,7 +295,7 @@ Select Nodes
 ### classIContourDataExport
 
 ```
-classIContourDataExport(oobj=None)¶
+classIContourDataExport(oobj=None)
 ```
 
 Bases:DispatchBaseClassContour Data ExportPropertiesBodyExport BodySelectFramesSelect FramesSelectNodesSelect NodesSelectTypeSelect TypeSignificantDigitsSignificant digitsTypeTypeUseScientificNotationExport data with scientific notation flagMethodsExportExport Contour DataSelectFramesWithRangeSelect FramesSelectNodesWithRangeSelect Nodes
@@ -303,7 +303,7 @@ Bases:DispatchBaseClassContour Data ExportPropertiesBodyExport BodySelectFramesS
 ### classIContourDataTrace
 
 ```
-classIContourDataTrace(oobj=None)¶
+classIContourDataTrace(oobj=None)
 ```
 
 Bases:DispatchBaseClassContour Data TracePropertiesBodyBodyNodeIDReference Node IDSelectSelection
@@ -311,7 +311,7 @@ Bases:DispatchBaseClassContour Data TracePropertiesBodyBodyNodeIDReference Node 
 ### Item
 
 ```
-IContourDataTraceCollection.Item(var)¶
+IContourDataTraceCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -319,7 +319,7 @@ Returns a specific item.
 ### classIContourDataTraceCollection
 
 ```
-classIContourDataTraceCollection(oobj=None)¶
+classIContourDataTraceCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -327,7 +327,7 @@ Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collect
 ### Calculation
 
 ```
-IContourMinMaxOption.Calculation()¶
+IContourMinMaxOption.Calculation()
 ```
 
 MinMaxCalculation is obsolete function
@@ -335,7 +335,7 @@ MinMaxCalculation is obsolete function
 ### classIContourMinMaxOption
 
 ```
-classIContourMinMaxOption(oobj=None)¶
+classIContourMinMaxOption(oobj=None)
 ```
 
 Bases:DispatchBaseClassIContourMinMaxOption is obsolete function. Use IContourMinMaxOption2.PropertiesEnableLogScaleLogScale is obsolete functionMaxMaxValue is obsolete functionMinMinValue is obsolete functionShowMaxShowMax is obsolete functionShowMinShowMin is obsolete functionShowMinMaxShowMinMax is obsolete functionTypeMinMaxType is obsolete functionUserDefinedMaxUserDefinedMaxValue is obsolete functionUserDefinedMaxColorUserDefinedMaxColor is obsolete functionUserDefinedMinUserDefinedMinValu
@@ -343,7 +343,7 @@ Bases:DispatchBaseClassIContourMinMaxOption is obsolete function. Use IContourMi
 ### Calculation
 
 ```
-IContourMinMaxOption2.Calculation()¶
+IContourMinMaxOption2.Calculation()
 ```
 
 Min Max Calculation
@@ -351,7 +351,7 @@ Min Max Calculation
 ### classIContourMinMaxOption2
 
 ```
-classIContourMinMaxOption2(oobj=None)¶
+classIContourMinMaxOption2(oobj=None)
 ```
 
 Bases:DispatchBaseClassContour MinMax Option2PropertiesMaxMax ValueMinMin ValueShowMaxShow MaxShowMinShow MinTypeMin Max TypeUserDefinedMaxUser Defined Max ValueUserDefinedMinUser Defined Min ValueMethodsCalculationMin Max Calculation
@@ -359,7 +359,7 @@ Bases:DispatchBaseClassContour MinMax Option2PropertiesMaxMax ValueMinMin ValueS
 ### classIContourPartSelection
 
 ```
-classIContourPartSelection(oobj=None)¶
+classIContourPartSelection(oobj=None)
 ```
 
 Bases:DispatchBaseClassContour Part SelectionPropertiesBodyBodyElementSetElement SetSelectSelection
@@ -367,7 +367,7 @@ Bases:DispatchBaseClassContour Part SelectionPropertiesBodyBodyElementSetElement
 ### Item
 
 ```
-IContourPartSelectionCollection.Item(var)¶
+IContourPartSelectionCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -375,7 +375,7 @@ Returns a specific item.
 ### classIContourPartSelectionCollection
 
 ```
-classIContourPartSelectionCollection(oobj=None)¶
+classIContourPartSelectionCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -383,7 +383,7 @@ Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collect
 ### classIContourReferenceNode
 
 ```
-classIContourReferenceNode(oobj=None)¶
+classIContourReferenceNode(oobj=None)
 ```
 
 Bases:DispatchBaseClassContour Reference NodePropertiesBodyBodyMarkerreference markerNodeIDReference Node IDOrientationReferenceMarkerOrientationReferenceMarker is obsolete functionReferenceTypeReference TypeSelectSelectionUseOrientationReferenceMarkerUseOrientationReferenceMarker is obsolete function
@@ -391,7 +391,7 @@ Bases:DispatchBaseClassContour Reference NodePropertiesBodyBodyMarkerreference m
 ### Item
 
 ```
-IContourReferenceNodeCollection.Item(var)¶
+IContourReferenceNodeCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -399,7 +399,7 @@ Returns a specific item.
 ### classIContourReferenceNodeCollection
 
 ```
-classIContourReferenceNodeCollection(oobj=None)¶
+classIContourReferenceNodeCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassIConourReferenceNodeCollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -407,7 +407,7 @@ Bases:DispatchBaseClassIConourReferenceNodeCollectionPropertiesCountReturns the 
 ### classIContourStyleOption
 
 ```
-classIContourStyleOption(oobj=None)¶
+classIContourStyleOption(oobj=None)
 ```
 
 Bases:DispatchBaseClassIContourStyleOption is obsolete interface. Use IContourStyleOption2.PropertiesColorTypeColorType is obsolete functionExceedMaxColorExceedMaxColor is obsolete functionGrayScaleColorGrayScaleColor is obsolete functionLessThanMinColorLessthanMinColor is obsolete functionMeshLinesColorMeshLinesColor is obsolete functionShowMeshLinesShowMeshLines is obsolete functionSpectrumMaxColorSpectrumMaxColor is obsolete functionSpectrumMinColorSpectrumMinColor is obsolete functionStyleCo

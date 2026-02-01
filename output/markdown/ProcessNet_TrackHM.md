@@ -15,7 +15,7 @@
 ### AddAllOutputLink
 
 ```
-ITrackHMAssembly.AddAllOutputLink()¶
+ITrackHMAssembly.AddAllOutputLink()
 ```
 
 Add all the link body to output list
@@ -23,7 +23,7 @@ Add all the link body to output list
 ### AddOutputLink
 
 ```
-ITrackHMAssembly.AddOutputLink(strFileName)¶
+ITrackHMAssembly.AddOutputLink(strFileName)
 ```
 
 Add a link body to output list
@@ -31,7 +31,7 @@ Add a link body to output list
 ### AddPassingBody
 
 ```
-ITrackHMAssembly.AddPassingBody(pVal)¶
+ITrackHMAssembly.AddPassingBody(pVal)
 ```
 
 Add a passing body
@@ -39,7 +39,7 @@ Add a passing body
 ### AddPassingBody2
 
 ```
-ITrackHMAssembly.AddPassingBody2(pVal)¶
+ITrackHMAssembly.AddPassingBody2(pVal)
 ```
 
 Add a passing body with ITrackHMBody
@@ -47,7 +47,7 @@ Add a passing body with ITrackHMBody
 ### DeletePassingBody
 
 ```
-ITrackHMAssembly.DeletePassingBody(pVal)¶
+ITrackHMAssembly.DeletePassingBody(pVal)
 ```
 
 Delete a passing body
@@ -55,7 +55,7 @@ Delete a passing body
 ### DeletePassingBody2
 
 ```
-ITrackHMAssembly.DeletePassingBody2(pVal)¶
+ITrackHMAssembly.DeletePassingBody2(pVal)
 ```
 
 Delete a passing body with ITrackHMBody
@@ -63,7 +63,7 @@ Delete a passing body with ITrackHMBody
 ### GetOutputLinkList
 
 ```
-ITrackHMAssembly.GetOutputLinkList()¶
+ITrackHMAssembly.GetOutputLinkList()
 ```
 
 TrackHM assembly output list
@@ -71,7 +71,7 @@ TrackHM assembly output list
 ### RemoveAllOutputLink
 
 ```
-ITrackHMAssembly.RemoveAllOutputLink()¶
+ITrackHMAssembly.RemoveAllOutputLink()
 ```
 
 Remove all the link body from output list
@@ -79,7 +79,7 @@ Remove all the link body from output list
 ### RemoveOutputLink
 
 ```
-ITrackHMAssembly.RemoveOutputLink(strFileName)¶
+ITrackHMAssembly.RemoveOutputLink(strFileName)
 ```
 
 Remove a link body from output list
@@ -87,7 +87,7 @@ Remove a link body from output list
 ### UpdateLinkInitialVelocity
 
 ```
-ITrackHMAssembly.UpdateLinkInitialVelocity()¶
+ITrackHMAssembly.UpdateLinkInitialVelocity()
 ```
 
 Update initial velocity of links
@@ -95,7 +95,7 @@ Update initial velocity of links
 ### classITrackHMAssembly
 
 ```
-classITrackHMAssembly(oobj=None)¶
+classITrackHMAssembly(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM AssemblyPropertiesBushingForceCollectionBushing force collectionBushingForceParameterBushing force parameterCommentCommentContactParameterContact ground track link shoeFullNameFullName such asBody1.Marker1@Model1LinkInitialVelocityReferenceFramelink initialvelocity Reference FrameLinkInitialVelocityXAxisLink initial velocity x-axisLinkNumbersLink numbersNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody retu
@@ -103,7 +103,7 @@ Bases:DispatchBaseClassTrackHM AssemblyPropertiesBushingForceCollectionBushing f
 ### Export
 
 ```
-ITrackHMAssemblyBushingForceParameter.Export(strName,val)¶
+ITrackHMAssemblyBushingForceParameter.Export(strName,val)
 ```
 
 Export bushing force parameter
@@ -111,7 +111,7 @@ Export bushing force parameter
 ### Import
 
 ```
-ITrackHMAssemblyBushingForceParameter.Import(strName)¶
+ITrackHMAssemblyBushingForceParameter.Import(strName)
 ```
 
 Import bushing force parameter
@@ -119,7 +119,7 @@ Import bushing force parameter
 ### classITrackHMAssemblyBushingForceParameter
 
 ```
-classITrackHMAssemblyBushingForceParameter(oobj=None)¶
+classITrackHMAssemblyBushingForceParameter(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM Assembly Bushing Force ParameterPropertiesRotationDampingCoefficientXRotation damping coefficient XRotationDampingCoefficientYRotation damping coefficient YRotationDampingCoefficientZRotation damping coefficient ZRotationDampingExponentXRotation damping exponent XRotationDampingExponentYRotation damping exponent YRotationDampingExponentZRotation damping exponent ZRotationDampingSplineXRotation damping spline XRotationDampingSplineYRotation damping spline YRotationD
@@ -127,7 +127,7 @@ Bases:DispatchBaseClassTrackHM Assembly Bushing Force ParameterPropertiesRotatio
 ### Item
 
 ```
-ITrackHMAssemblyCollection.Item(var)¶
+ITrackHMAssemblyCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -135,7 +135,7 @@ Returns a specific item.
 ### classITrackHMAssemblyCollection
 
 ```
-classITrackHMAssemblyCollection(oobj=None)¶
+classITrackHMAssemblyCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM Assembly CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -143,7 +143,7 @@ Bases:DispatchBaseClassTrackHM Assembly CollectionPropertiesCountReturns the num
 ### Export
 
 ```
-ITrackHMAssemblyContactGroundTrackLinkShoePad.Export(strName,val)¶
+ITrackHMAssemblyContactGroundTrackLinkShoePad.Export(strName,val)
 ```
 
 Export ground parameter
@@ -151,7 +151,7 @@ Export ground parameter
 ### Import
 
 ```
-ITrackHMAssemblyContactGroundTrackLinkShoePad.Import(strName)¶
+ITrackHMAssemblyContactGroundTrackLinkShoePad.Import(strName)
 ```
 
 Import ground parameter
@@ -159,7 +159,7 @@ Import ground parameter
 ### SoftGroundType
 
 ```
-ITrackHMAssemblyContactGroundTrackLinkShoePad.SoftGroundType(val)¶
+ITrackHMAssemblyContactGroundTrackLinkShoePad.SoftGroundType(val)
 ```
 
 Soft ground type
@@ -167,7 +167,7 @@ Soft ground type
 ### classITrackHMAssemblyContactGroundTrackLinkShoePad
 
 ```
-classITrackHMAssemblyContactGroundTrackLinkShoePad(oobj=None)¶
+classITrackHMAssemblyContactGroundTrackLinkShoePad(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM Assembly Contact Ground TrackLink Shoe PadPropertiesCohesionCohesion (c)DampingCoefficientThe viscous damping coefficient for the contact normal force.DampingExponentThe damping exponent for a non-linear contact normal forceDampingSplineDamping splineExponentialNumberExponential number (n)FrictionFrictionFrictionCoefficientThe friction coefficient for the contact normal force.FrictionSplineThe spline which shows relative velocity to the friction coefficient or the 
@@ -175,7 +175,7 @@ Bases:DispatchBaseClassTrackHM Assembly Contact Ground TrackLink Shoe PadPropert
 ### classITrackHMAssemblySphereContact
 
 ```
-classITrackHMAssemblySphereContact(oobj=None)¶
+classITrackHMAssemblySphereContact(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM sphere contact propertyPropertiesContactPropertySphere contact propertyGeometrySphereCollectionSphere geometry collection of the sphere contactMaximumPenetrationMaximum penetration.MethodsAddSphereContactAdd a sphere contact
@@ -183,7 +183,7 @@ Bases:DispatchBaseClassTrackHM sphere contact propertyPropertiesContactPropertyS
 ### classITrackHMBody
 
 ```
-classITrackHMBody(oobj=None)¶
+classITrackHMBody(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM bodyPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -191,7 +191,7 @@ Bases:DispatchBaseClassTrackHM bodyPropertiesCommentCommentFullNameFullName such
 ### classITrackHMBodyCollection
 
 ```
-classITrackHMBodyCollection(oobj=None)¶
+classITrackHMBodyCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM wheel body collectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -199,7 +199,7 @@ Bases:DispatchBaseClassTrackHM wheel body collectionPropertiesCountReturns the n
 ### classITrackHMBodyLink
 
 ```
-classITrackHMBodyLink(oobj=None)¶
+classITrackHMBodyLink(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM body linkPropertiesActiveDoubleShoePadDouble shoe padActiveShoePadActive shoe padCommentCommentDoubleShoePadFirstDouble shoe pad first profileDoubleShoePadSecondDouble shoe pad second profileFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGraphicGraphicMeshSegmentMesh segmentNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns
@@ -207,7 +207,7 @@ Bases:DispatchBaseClassTrackHM body linkPropertiesActiveDoubleShoePadDouble shoe
 ### classITrackHMBodyLinkCollection
 
 ```
-classITrackHMBodyLinkCollection(oobj=None)¶
+classITrackHMBodyLinkCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM Body Link CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -215,7 +215,7 @@ Bases:DispatchBaseClassTrackHM Body Link CollectionPropertiesCountReturns the nu
 ### classITrackHMBodyLinkDouble
 
 ```
-classITrackHMBodyLinkDouble(oobj=None)¶
+classITrackHMBodyLinkDouble(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM double link bodyPropertiesActiveDoubleShoePadDouble shoe padActiveShoePadActive shoe padCommentCommentDoubleShoePadFirstDouble shoe pad first profileDoubleShoePadSecondDouble shoe pad second profileFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryGraphicGraphicMeshSegmentMesh segmentNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSyste
@@ -223,7 +223,7 @@ Bases:DispatchBaseClassTrackHM double link bodyPropertiesActiveDoubleShoePadDoub
 ### classITrackHMBodyLinkInner
 
 ```
-classITrackHMBodyLinkInner(oobj=None)¶
+classITrackHMBodyLinkInner(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM inner link bodyPropertiesActiveDoubleShoePadDouble shoe padActiveShoePadActive shoe padCommentCommentDoubleShoePadFirstDouble shoe pad first profileDoubleShoePadSecondDouble shoe pad second profileFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryGraphicGraphicMeshSegmentMesh segmentNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystem
@@ -231,7 +231,7 @@ Bases:DispatchBaseClassTrackHM inner link bodyPropertiesActiveDoubleShoePadDoubl
 ### classITrackHMBodyLinkSingle
 
 ```
-classITrackHMBodyLinkSingle(oobj=None)¶
+classITrackHMBodyLinkSingle(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM single link bodyPropertiesActiveDoubleShoePadDouble shoe padActiveShoePadActive shoe padCommentCommentDoubleShoePadFirstDouble shoe pad first profileDoubleShoePadSecondDouble shoe pad second profileFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryGraphicGraphicMeshSegmentMesh segmentNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSyste
@@ -239,7 +239,7 @@ Bases:DispatchBaseClassTrackHM single link bodyPropertiesActiveDoubleShoePadDoub
 ### classITrackHMBodySprocket
 
 ```
-classITrackHMBodySprocket(oobj=None)¶
+classITrackHMBodySprocket(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHMBodySprocketPropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeCreateContactOutputFileCreate contact output fileFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceToothProfileToothProfileUserDataUser
@@ -247,7 +247,7 @@ Bases:DispatchBaseClassTrackHMBodySprocketPropertiesCommentCommentContactPropert
 ### classITrackHMBodyWheelDouble
 
 ```
-classITrackHMBodyWheelDouble(oobj=None)¶
+classITrackHMBodyWheelDouble(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM Wheel doublePropertiesCommentCommentContactCenterPropertyCenter Contact PropertyContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -255,7 +255,7 @@ Bases:DispatchBaseClassTrackHM Wheel doublePropertiesCommentCommentContactCenter
 ### classITrackHMBodyWheelSingle
 
 ```
-classITrackHMBodyWheelSingle(oobj=None)¶
+classITrackHMBodyWheelSingle(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM wheel singlePropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -263,7 +263,7 @@ Bases:DispatchBaseClassTrackHM wheel singlePropertiesCommentCommentContactProper
 ### classITrackHMContactFriction
 
 ```
-classITrackHMContactFriction(oobj=None)¶
+classITrackHMContactFriction(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM contact frictionPropertiesDynamicThresholdVelocityDynamic threshold velocityStaticFrictionCoefficientStatic friction coefficientStaticThresholdVelocityStatic threshold velocity
@@ -271,7 +271,7 @@ Bases:DispatchBaseClassTrackHM contact frictionPropertiesDynamicThresholdVelocit
 ### classITrackHMContactProperty
 
 ```
-classITrackHMContactProperty(oobj=None)¶
+classITrackHMContactProperty(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM contact propertyPropertiesDampingCoefficientThe viscous damping coefficient for the contact normal force.DampingExponentThe damping exponent for a non-linear contact normal forceDampingSplineDamping splineFrictionFrictionFrictionCoefficientThe friction coefficient for the contact normal force.FrictionSplineThe spline which shows relative velocity to the friction coefficient or the friction force.FrictionTypeFriction typeIndentationExponentThe indentation exponent y
@@ -279,7 +279,7 @@ Bases:DispatchBaseClassTrackHM contact propertyPropertiesDampingCoefficientThe v
 ### classITrackHMContactSearch
 
 ```
-classITrackHMContactSearch(oobj=None)¶
+classITrackHMContactSearch(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM contact searchPropertiesTypeSearch typeUseUserBoundaryForPartialSearchUse the user boundary of the partial search.UserBoundaryForPartialSearchUser boundary of the partial search.
@@ -287,7 +287,7 @@ Bases:DispatchBaseClassTrackHM contact searchPropertiesTypeSearch typeUseUserBou
 ### classITrackHMGeometryLinkDouble
 
 ```
-classITrackHMGeometryLinkDouble(oobj=None)¶
+classITrackHMGeometryLinkDouble(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM double link geometryPropertiesCenterGuideLengthCenter guide lengthCenterGuidePositionCenter guide positionCenterGuideThicknessCenter guide thicknessEndConnectorLengthEnd connector LengthLeftLengthLeft lengthLeftPinPositionLeft pin positionLowerHeightLower heightPinLengthPin lengthPinRadiusPin radiusRightLengthRight lengthRightPinPositionRight pin positionUpperHeightUpper heightWidthWidth
@@ -295,7 +295,7 @@ Bases:DispatchBaseClassTrackHM double link geometryPropertiesCenterGuideLengthCe
 ### classITrackHMGeometryLinkInner
 
 ```
-classITrackHMGeometryLinkInner(oobj=None)¶
+classITrackHMGeometryLinkInner(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM inner link geometryPropertiesCenterGuideLengthCenter guide lengthCenterGuidePositionCenter guide positionCenterGuideThicknessCenter guide thicknessContactRadiusContact radiusEndConnectorLengthEnd connector lengthInnerWidthInner widthLeftContactCylinderPositionLeft contact cylinder positionLeftLengthLeft lengthLeftPinPositionLeft pin positionLinkWidthLink widthLowerHeightLower heightOuterWidthOuter widthPinLengthPin lengthPinRadiusPin radiusRightContactCylinderPosit
@@ -303,7 +303,7 @@ Bases:DispatchBaseClassTrackHM inner link geometryPropertiesCenterGuideLengthCen
 ### classITrackHMGeometryLinkSingle
 
 ```
-classITrackHMGeometryLinkSingle(oobj=None)¶
+classITrackHMGeometryLinkSingle(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM single link geometryPropertiesBushingWidthBushing WidthCenterGuideLengthCenter guide lengthCenterGuidePositionCenter guide positionCenterGuideThicknessCenter guide thicknessConnectorLengthConnector LengthLeftBushingPositionLeft bushing positionLeftLengthLeft lengthLeftPinPositionLeft pin positionLowerHeightLower heightPinLengthPin lengthPinRadiusPin radiusRightBushingPositionRight bushing positionRightLengthRight lengthRightPinPositionRight pin positionUpperHeightU
@@ -311,7 +311,7 @@ Bases:DispatchBaseClassTrackHM single link geometryPropertiesBushingWidthBushing
 ### classITrackHMGeometrySprocket
 
 ```
-classITrackHMGeometrySprocket(oobj=None)¶
+classITrackHMGeometrySprocket(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHMBodySprocketGeometryPropertiesAddendumCircleRadiusAddendum circle radius of the sprocket.BaseCircleRadiusBase circle radius of the sprocket.DedendumCircleRadiusDedendum circle radius of the sprocket.LinkAssemblyAssembledRadiusAssembled radius of the link assembly.LinkAssemblyRadialDistanceAssembled distance of the link assembly.NumberOfTeethNumber of teeth of the sprocket.PitchCircleRadiusPitch circle radius of the sprocket.SprocketCarrierRadiusCarrier Radius of the
@@ -319,7 +319,7 @@ Bases:DispatchBaseClassTrackHMBodySprocketGeometryPropertiesAddendumCircleRadius
 ### classITrackHMGeometryWheelDouble
 
 ```
-classITrackHMGeometryWheelDouble(oobj=None)¶
+classITrackHMGeometryWheelDouble(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM Wheel double geometryPropertiesHubRadiusHub radiusHubWidthHub widthTotalWidthTotal widthWheelRadiusWheel radius
@@ -327,7 +327,7 @@ Bases:DispatchBaseClassTrackHM Wheel double geometryPropertiesHubRadiusHub radiu
 ### classITrackHMGeometryWheelSingle
 
 ```
-classITrackHMGeometryWheelSingle(oobj=None)¶
+classITrackHMGeometryWheelSingle(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM Wheel single geometryPropertiesWheelRadiusWheel Radius.WheelWidthWheel Width.
@@ -335,7 +335,7 @@ Bases:DispatchBaseClassTrackHM Wheel single geometryPropertiesWheelRadiusWheel R
 ### classITrackHMLinkClone
 
 ```
-classITrackHMLinkClone(oobj=None)¶
+classITrackHMLinkClone(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM link clonePropertiesActiveActiveActiveDoubleShoePadDouble shoe padActiveShoePadActive shoe padCenterMarkerCenter markerCommentCommentDensityDensityDoubleShoePadFirstDouble shoe pad first profileDoubleShoePadSecondDouble shoe pad second profileFullNameFullName such asBody1.Marker1@Model1GraphicGraphicIxxIxxIxyIxyIyyIyyIyzIyzIzxIzxIzzIzzMassMassMaterialMaterialMaterialInputMaterial inputMaterialUserUser MaterialMeshSegmentMesh segmentNameNameOwnerOwner returns owning
@@ -343,7 +343,7 @@ Bases:DispatchBaseClassTrackHM link clonePropertiesActiveActiveActiveDoubleShoeP
 ### classITrackHMLinkCloneCollection
 
 ```
-classITrackHMLinkCloneCollection(oobj=None)¶
+classITrackHMLinkCloneCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM clone link collectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -351,7 +351,7 @@ Bases:DispatchBaseClassTrackHM clone link collectionPropertiesCountReturns the n
 ### classITrackHMLinkCloneDouble
 
 ```
-classITrackHMLinkCloneDouble(oobj=None)¶
+classITrackHMLinkCloneDouble(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM double link clonePropertiesActiveActiveActiveDoubleShoePadDouble shoe padActiveShoePadActive shoe padCenterMarkerCenter markerCommentCommentDensityDensityDoubleShoePadFirstDouble shoe pad first profileDoubleShoePadSecondDouble shoe pad second profileFullNameFullName such asBody1.Marker1@Model1GeometryGeometryGraphicGraphicIxxIxxIxyIxyIyyIyyIyzIyzIzxIzxIzzIzzMassMassMaterialMaterialMaterialInputMaterial inputMaterialUserUser MaterialMeshSegmentMesh segmentNameNameOw
@@ -359,7 +359,7 @@ Bases:DispatchBaseClassTrackHM double link clonePropertiesActiveActiveActiveDoub
 ### classITrackHMLinkCloneInner
 
 ```
-classITrackHMLinkCloneInner(oobj=None)¶
+classITrackHMLinkCloneInner(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM inner link clonePropertiesActiveActiveActiveDoubleShoePadDouble shoe padActiveShoePadActive shoe padCenterMarkerCenter markerCommentCommentDensityDensityDoubleShoePadFirstDouble shoe pad first profileDoubleShoePadSecondDouble shoe pad second profileFullNameFullName such asBody1.Marker1@Model1GeometryGeometryGraphicGraphicIxxIxxIxyIxyIyyIyyIyzIyzIzxIzxIzzIzzMassMassMaterialMaterialMaterialInputMaterial inputMaterialUserUser MaterialMeshSegmentMesh segmentNameNameOwn
@@ -367,7 +367,7 @@ Bases:DispatchBaseClassTrackHM inner link clonePropertiesActiveActiveActiveDoubl
 ### classITrackHMLinkCloneSingle
 
 ```
-classITrackHMLinkCloneSingle(oobj=None)¶
+classITrackHMLinkCloneSingle(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM single link clonePropertiesActiveActiveActiveDoubleShoePadDouble shoe padActiveShoePadActive shoe padCenterMarkerCenter markerCommentCommentDensityDensityDoubleShoePadFirstDouble shoe pad first profileDoubleShoePadSecondDouble shoe pad second profileFullNameFullName such asBody1.Marker1@Model1GeometryGeometryGraphicGraphicIxxIxxIxyIxyIyyIyyIyzIyzIzxIzxIzzIzzMassMassMaterialMaterialMaterialInputMaterial inputMaterialUserUser MaterialMeshSegmentMesh segmentNameNameOw
@@ -375,7 +375,7 @@ Bases:DispatchBaseClassTrackHM single link clonePropertiesActiveActiveActiveDoub
 ### classITrackHMMeshSegment
 
 ```
-classITrackHMMeshSegment(oobj=None)¶
+classITrackHMMeshSegment(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM mesh segmentPropertiesShoePadMeshHeightSegmentShoe pad height mesh segmentShoePadMeshLengthSegmentShoe pad length mesh segmentShoePadMeshWidthSegmentShoe pad width mesh segment
@@ -383,7 +383,7 @@ Bases:DispatchBaseClassTrackHM mesh segmentPropertiesShoePadMeshHeightSegmentSho
 ### classITrackHMProfileShoePoint
 
 ```
-classITrackHMProfileShoePoint(oobj=None)¶
+classITrackHMProfileShoePoint(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM link clonePropertiesPoint3DCollection3D Point CollectionMethodsExportExport shoe pointImportImport shoe point
@@ -391,7 +391,7 @@ Bases:DispatchBaseClassTrackHM link clonePropertiesPoint3DCollection3D Point Col
 ### classITrackHMShoePad
 
 ```
-classITrackHMShoePad(oobj=None)¶
+classITrackHMShoePad(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM link clonePropertiesFirstPointFirst positionSecondPointSecond position
@@ -399,7 +399,7 @@ Bases:DispatchBaseClassTrackHM link clonePropertiesFirstPointFirst positionSecon
 ### classITrackHMSphereContactProperty
 
 ```
-classITrackHMSphereContactProperty(oobj=None)¶
+classITrackHMSphereContactProperty(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM sphere contact propertyPropertiesDampingCoefficientThe viscous damping coefficient for the contact normal force.DampingExponentThe damping exponent for a non-linear contact normal forceDampingSplineDamping splineFrictionCoefficientThe friction coefficient for the contact normal force.FrictionSplineThe spline which shows relative velocity to the friction coefficient or the friction force.FrictionTypeFriction typeIndentationExponentThe indentation exponent yields an 
@@ -407,7 +407,7 @@ Bases:DispatchBaseClassTrackHM sphere contact propertyPropertiesDampingCoefficie
 ### classITrackHMSubSystem
 
 ```
-classITrackHMSubSystem(oobj=None)¶
+classITrackHMSubSystem(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackHM subsystemPropertiesAssemblyCollectionGet the collection of assemblyCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralSubSystemGeneral subsystemLinkCloneCollectionGet the collection of clonesNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceTrackHMBodyCollectionGet the TrackHM body collection of as

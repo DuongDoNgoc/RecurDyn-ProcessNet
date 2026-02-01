@@ -15,7 +15,7 @@
 ### classAScalingType
 
 ```
-classAScalingType(value)¶
+classAScalingType(value)
 ```
 
 Bases:IntEnumAScalingType enumeration.MembersAnimation_Scaling_ModeConstant value is 1.Animation_Scaling_TraRotConstant value is 0.
@@ -23,7 +23,7 @@ Bases:IntEnumAScalingType enumeration.MembersAnimation_Scaling_ModeConstant valu
 ### classBeamGroupInertiaPropertyInput
 
 ```
-classBeamGroupInertiaPropertyInput(value)¶
+classBeamGroupInertiaPropertyInput(value)
 ```
 
 Bases:IntEnumBeamGroupInertiaPropertyInput enumeration.MembersBeamGroup_DensityConstant value is 1.BeamGroup_TotalMassConstant value is 0.
@@ -31,7 +31,7 @@ Bases:IntEnumBeamGroupInertiaPropertyInput enumeration.MembersBeamGroup_DensityC
 ### classBeamRecoveryType
 
 ```
-classBeamRecoveryType(value)¶
+classBeamRecoveryType(value)
 ```
 
 Bases:IntEnumBeamRecoveryType enumeration.MembersBeam_Recovery_CConstant value is 1.Beam_Recovery_DConstant value is 2.Beam_Recovery_EConstant value is 3.Beam_Recovery_FConstant value is 4.Beam_Recovery_MAX_DISTANCEConstant value is 0.Beam_Recovery_MAX_VONMISES_STRESSConstant value is 5.
@@ -39,7 +39,7 @@ Bases:IntEnumBeamRecoveryType enumeration.MembersBeam_Recovery_CConstant value i
 ### classDataPrecisionofStressStrainShapeType
 
 ```
-classDataPrecisionofStressStrainShapeType(value)¶
+classDataPrecisionofStressStrainShapeType(value)
 ```
 
 Bases:IntEnumDataPrecisionofStressStrainShapeType enumeration.MembersDataPrecisionDoubleConstant value is 1.DataPrecisionSingleConstant value is 0.
@@ -47,7 +47,7 @@ Bases:IntEnumDataPrecisionofStressStrainShapeType enumeration.MembersDataPrecisi
 ### classDisplacementDataPrecision
 
 ```
-classDisplacementDataPrecision(value)¶
+classDisplacementDataPrecision(value)
 ```
 
 Bases:IntEnumDisplacementDataPrecision enumeration.MembersDisplacementDataPrecision_DoubleConstant value is 1.DisplacementDataPrecision_FloatConstant value is 0.
@@ -55,7 +55,7 @@ Bases:IntEnumDisplacementDataPrecision enumeration.MembersDisplacementDataPrecis
 ### classFEMFATVersionType
 
 ```
-classFEMFATVersionType(value)¶
+classFEMFATVersionType(value)
 ```
 
 Bases:IntEnumFEMFATVersionType enumeration.MembersFEMFAT_48Constant value is 0.FEMFAT_50Constant value is 1.FEMFAT_53Constant value is 2.FEMFAT_532Constant value is 3.
@@ -63,7 +63,7 @@ Bases:IntEnumFEMFATVersionType enumeration.MembersFEMFAT_48Constant value is 0.F
 ### classFESoftwareType
 
 ```
-classFESoftwareType(value)¶
+classFESoftwareType(value)
 ```
 
 Bases:IntEnumFESoftwareType enumeration.MembersAnsysConstant value is 0.MSC_NastranConstant value is 2.NX_NastranConstant value is 1.
@@ -71,7 +71,7 @@ Bases:IntEnumFESoftwareType enumeration.MembersAnsysConstant value is 0.MSC_Nast
 ### GetAnimationScalingModeShapeFactor
 
 ```
-IRFlexAnimationDataScaling.GetAnimationScalingModeShapeFactor()¶
+IRFlexAnimationDataScaling.GetAnimationScalingModeShapeFactor()
 ```
 
 GSetAnimationScalingModeShapeFactor is obsolete function.
@@ -79,7 +79,7 @@ GSetAnimationScalingModeShapeFactor is obsolete function.
 ### GetAnimationScalingRotationalFactor
 
 ```
-IRFlexAnimationDataScaling.GetAnimationScalingRotationalFactor()¶
+IRFlexAnimationDataScaling.GetAnimationScalingRotationalFactor()
 ```
 
 GetAnimationScalingRotationalFactor is obsolete function.
@@ -87,7 +87,7 @@ GetAnimationScalingRotationalFactor is obsolete function.
 ### GetAnimationScalingTranslationalFactor
 
 ```
-IRFlexAnimationDataScaling.GetAnimationScalingTranslationalFactor()¶
+IRFlexAnimationDataScaling.GetAnimationScalingTranslationalFactor()
 ```
 
 GetAnimationScalingTranslationalFactor is obsolete function.
@@ -95,7 +95,7 @@ GetAnimationScalingTranslationalFactor is obsolete function.
 ### SetAnimationScalingModeShapeFactor
 
 ```
-IRFlexAnimationDataScaling.SetAnimationScalingModeShapeFactor(dFactor)¶
+IRFlexAnimationDataScaling.SetAnimationScalingModeShapeFactor(dFactor)
 ```
 
 SetAnimationScalingModeShapeFactor is obsolete function.
@@ -103,7 +103,7 @@ SetAnimationScalingModeShapeFactor is obsolete function.
 ### SetAnimationScalingRotationalFactor
 
 ```
-IRFlexAnimationDataScaling.SetAnimationScalingRotationalFactor(x,y,z)¶
+IRFlexAnimationDataScaling.SetAnimationScalingRotationalFactor(x,y,z)
 ```
 
 SetAnimationScalingRotationalFactor is obsolete function.
@@ -111,7 +111,7 @@ SetAnimationScalingRotationalFactor is obsolete function.
 ### SetAnimationScalingTranslationalFactor
 
 ```
-IRFlexAnimationDataScaling.SetAnimationScalingTranslationalFactor(x,y,z)¶
+IRFlexAnimationDataScaling.SetAnimationScalingTranslationalFactor(x,y,z)
 ```
 
 SetAnimationScalingTranslationalFactor is obsolete function.
@@ -119,7 +119,7 @@ SetAnimationScalingTranslationalFactor is obsolete function.
 ### classIRFlexAnimationDataScaling
 
 ```
-classIRFlexAnimationDataScaling(oobj=None)¶
+classIRFlexAnimationDataScaling(oobj=None)
 ```
 
 Bases:DispatchBaseClassRFlex Animation ScalingPropertiesAnimationScalingRefMarkerAnimationScalingRefMarker is obsolete property.AnimationScalingTypeAnimationScalingType is obsolete property.ReferenceNodeReferenceNode is obsolete property.UseAnimationScalingUseAnimationScaling is obsolete property.MethodsGetAnimationScalingModeShapeFactorGSetAnimationScalingModeShapeFactor is obsolete function.GetAnimationScalingRotationalFactorGetAnimationScalingRotationalFactor is obsolete function.GetAnimation
@@ -127,7 +127,7 @@ Bases:DispatchBaseClassRFlex Animation ScalingPropertiesAnimationScalingRefMarke
 ### CreateElementSet
 
 ```
-IRFlexBody.CreateElementSet(strName,arrElementID)¶
+IRFlexBody.CreateElementSet(strName,arrElementID)
 ```
 
 Create a element set
@@ -135,7 +135,7 @@ Create a element set
 ### CreateLineSet
 
 ```
-IRFlexBody.CreateLineSet(strName,arrNodeID)¶
+IRFlexBody.CreateLineSet(strName,arrNodeID)
 ```
 
 Create a line set
@@ -143,7 +143,7 @@ Create a line set
 ### CreateMarker
 
 ```
-IRFlexBody.CreateMarker(strName,pRefFrame)¶
+IRFlexBody.CreateMarker(strName,pRefFrame)
 ```
 
 Create a marker
@@ -151,7 +151,7 @@ Create a marker
 ### CreateMarkerOnNode
 
 ```
-IRFlexBody.CreateMarkerOnNode(strName,uiNodeID)¶
+IRFlexBody.CreateMarkerOnNode(strName,uiNodeID)
 ```
 
 Create a marker on target node
@@ -159,7 +159,7 @@ Create a marker on target node
 ### CreateNodeSet
 
 ```
-IRFlexBody.CreateNodeSet(strName,arrNodeID)¶
+IRFlexBody.CreateNodeSet(strName,arrNodeID)
 ```
 
 Create a node set
@@ -167,7 +167,7 @@ Create a node set
 ### CreateOutput
 
 ```
-IRFlexBody.CreateOutput(strName,arrNodeID)¶
+IRFlexBody.CreateOutput(strName,arrNodeID)
 ```
 
 Create an output
@@ -175,7 +175,7 @@ Create an output
 ### CreateParametricPoint
 
 ```
-IRFlexBody.CreateParametricPoint(strName,pPoint,pRefMarker)¶
+IRFlexBody.CreateParametricPoint(strName,pPoint,pRefMarker)
 ```
 
 Creates a parametric point
@@ -183,7 +183,7 @@ Creates a parametric point
 ### CreateParametricPointWithText
 
 ```
-IRFlexBody.CreateParametricPointWithText(strName,strText,pRefMarker)¶
+IRFlexBody.CreateParametricPointWithText(strName,strText,pRefMarker)
 ```
 
 Creates a parametric point with text
@@ -191,7 +191,7 @@ Creates a parametric point with text
 ### CreateParametricValue
 
 ```
-IRFlexBody.CreateParametricValue(strName,dValue)¶
+IRFlexBody.CreateParametricValue(strName,dValue)
 ```
 
 Creates a parametric value
@@ -199,7 +199,7 @@ Creates a parametric value
 ### CreateParametricValueWithText
 
 ```
-IRFlexBody.CreateParametricValueWithText(strName,strText)¶
+IRFlexBody.CreateParametricValueWithText(strName,strText)
 ```
 
 Creates a parametric value with text
@@ -207,7 +207,7 @@ Creates a parametric value with text
 ### CreatePatchSet
 
 ```
-IRFlexBody.CreatePatchSet(strName,arrNodeID)¶
+IRFlexBody.CreatePatchSet(strName,arrNodeID)
 ```
 
 Create a patch set
@@ -215,7 +215,7 @@ Create a patch set
 ### CreatePatchSetWithBox
 
 ```
-IRFlexBody.CreatePatchSetWithBox(strName,pRefFrame,dWidth,dHeight,dDepth)¶
+IRFlexBody.CreatePatchSetWithBox(strName,pRefFrame,dWidth,dHeight,dDepth)
 ```
 
 Create a patch set with a box
@@ -223,7 +223,7 @@ Create a patch set with a box
 ### CreatePatchSetWithCone
 
 ```
-IRFlexBody.CreatePatchSetWithCone(strName,pFirstPoint,pSecondPoint,dTopRadius,dBottomRadius,dTolerance)¶
+IRFlexBody.CreatePatchSetWithCone(strName,pFirstPoint,pSecondPoint,dTopRadius,dBottomRadius,dTolerance)
 ```
 
 Create a patch set with a cone
@@ -231,7 +231,7 @@ Create a patch set with a cone
 ### CreatePatchSetWithElementIDs
 
 ```
-IRFlexBody.CreatePatchSetWithElementIDs(strName,arrElementID)¶
+IRFlexBody.CreatePatchSetWithElementIDs(strName,arrElementID)
 ```
 
 Create a patch set with ElementIDs
@@ -239,7 +239,7 @@ Create a patch set with ElementIDs
 ### CreatePatchSetWithElementIDsContinuous
 
 ```
-IRFlexBody.CreatePatchSetWithElementIDsContinuous(strName,arrElementID,dAngle,bCheckReverse)¶
+IRFlexBody.CreatePatchSetWithElementIDsContinuous(strName,arrElementID,dAngle,bCheckReverse)
 ```
 
 Create a patch set with ElementIDs, patches connected with the external patch of the element continuoulsy
@@ -247,7 +247,7 @@ Create a patch set with ElementIDs, patches connected with the external patch of
 ### CreatePatchSetWithNodeSet
 
 ```
-IRFlexBody.CreatePatchSetWithNodeSet(strName,pNodeSet)¶
+IRFlexBody.CreatePatchSetWithNodeSet(strName,pNodeSet)
 ```
 
 Create a patch set with a nodeset
@@ -255,7 +255,7 @@ Create a patch set with a nodeset
 ### CreatePatchSetWithPatchIndices
 
 ```
-IRFlexBody.CreatePatchSetWithPatchIndices(strName,arrPatchesIndices)¶
+IRFlexBody.CreatePatchSetWithPatchIndices(strName,arrPatchesIndices)
 ```
 
 Create a patch set with patches’ indices
@@ -263,7 +263,7 @@ Create a patch set with patches’ indices
 ### CreatePatchSetWithPatchIndicesContinuous
 
 ```
-IRFlexBody.CreatePatchSetWithPatchIndicesContinuous(strName,arrPatchesIndices,dAngle,bCheckReverse)¶
+IRFlexBody.CreatePatchSetWithPatchIndicesContinuous(strName,arrPatchesIndices,dAngle,bCheckReverse)
 ```
 
 Create a patch set with patches’ indices, patches connected continuously will be used for the patchset
@@ -271,7 +271,7 @@ Create a patch set with patches’ indices, patches connected continuously will 
 ### DeleteAnimationScaling
 
 ```
-IRFlexBody.DeleteAnimationScaling()¶
+IRFlexBody.DeleteAnimationScaling()
 ```
 
 Delete Animation Scaling
@@ -279,7 +279,7 @@ Delete Animation Scaling
 ### ExportParametricPoint
 
 ```
-IRFlexBody.ExportParametricPoint(strFileName)¶
+IRFlexBody.ExportParametricPoint(strFileName)
 ```
 
 Export parametric point
@@ -287,7 +287,7 @@ Export parametric point
 ### ExportParametricValue
 
 ```
-IRFlexBody.ExportParametricValue(strFileName)¶
+IRFlexBody.ExportParametricValue(strFileName)
 ```
 
 Export parametric value
@@ -295,7 +295,7 @@ Export parametric value
 ### GetElementByID
 
 ```
-IRFlexBody.GetElementByID(nID)¶
+IRFlexBody.GetElementByID(nID)
 ```
 
 Get element by ID
@@ -303,7 +303,7 @@ Get element by ID
 ### GetEntity
 
 ```
-IRFlexBody.GetEntity(strName)¶
+IRFlexBody.GetEntity(strName)
 ```
 
 Get an entity
@@ -311,7 +311,7 @@ Get an entity
 ### GetNodeByID
 
 ```
-IRFlexBody.GetNodeByID(nID)¶
+IRFlexBody.GetNodeByID(nID)
 ```
 
 Get node by ID
@@ -319,7 +319,7 @@ Get node by ID
 ### ImportParametricPoint
 
 ```
-IRFlexBody.ImportParametricPoint(strFileName)¶
+IRFlexBody.ImportParametricPoint(strFileName)
 ```
 
 Import parametric point
@@ -327,7 +327,7 @@ Import parametric point
 ### ImportParametricValue
 
 ```
-IRFlexBody.ImportParametricValue(strFileName)¶
+IRFlexBody.ImportParametricValue(strFileName)
 ```
 
 Import parametric value
@@ -335,7 +335,7 @@ Import parametric value
 ### ModeInformation
 
 ```
-IRFlexBody.ModeInformation(pModeSequence)¶
+IRFlexBody.ModeInformation(pModeSequence)
 ```
 
 Get the Mode Information
@@ -343,7 +343,7 @@ Get the Mode Information
 ### Redraw
 
 ```
-IRFlexBody.Redraw()¶
+IRFlexBody.Redraw()
 ```
 
 Redraw method
@@ -351,7 +351,7 @@ Redraw method
 ### classIRFlexBody
 
 ```
-classIRFlexBody(oobj=None)¶
+classIRFlexBody(oobj=None)
 ```
 
 Bases:DispatchBaseClassFunctionBay Internal Use OnlyPropertiesActiveActiveAnimationDataScalingAnimationDataScaling is obsolete property.AnimationScalingAnimationScalingCommentCommentDisplaySettingGet Display SettingExportSetDataGet Export Set DataExportShellFormatDataGet Export Shell Format DataFullNameFullName such asBody1.Marker1@Model1GraphicGraphicInitialRotationalVelocityXInitial rotational velocity XInitialRotationalVelocityYInitial rotational velocity YInitialRotationalVelocityZInitial ro
@@ -359,7 +359,7 @@ Bases:DispatchBaseClassFunctionBay Internal Use OnlyPropertiesActiveActiveAnimat
 ### Item
 
 ```
-IRFlexBodyCollection.Item(var)¶
+IRFlexBodyCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -367,7 +367,7 @@ Returns a specific item.
 ### classIRFlexBodyCollection
 
 ```
-classIRFlexBodyCollection(oobj=None)¶
+classIRFlexBodyCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -375,7 +375,7 @@ Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collect
 ### classIRFlexBodyImportOption
 
 ```
-classIRFlexBodyImportOption(oobj=None)¶
+classIRFlexBodyImportOption(oobj=None)
 ```
 
 Bases:DispatchBaseClassRFlexBody import optionPropertiesUseInternalNodesUseInternalNodes is obsolete functionUseNodalResidualUseNodalResidual is obsolete functionUseUserDefinedRigidBodyFrequencyUse user defined rigid body frequencyUserDefinedRigidBodyFrequencyUser defined rigid body frequency
@@ -383,7 +383,7 @@ Bases:DispatchBaseClassRFlexBody import optionPropertiesUseInternalNodesUseInter
 ### classIRFlexElement
 
 ```
-classIRFlexElement(oobj=None)¶
+classIRFlexElement(oobj=None)
 ```
 
 Bases:DispatchBaseClassRFlex ElementPropertiesCommentCommentElementTypeElement typeFullNameFullName such asBody1.Marker1@Model1IDIDNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -391,7 +391,7 @@ Bases:DispatchBaseClassRFlex ElementPropertiesCommentCommentElementTypeElement t
 ### Item
 
 ```
-IRFlexElementCollection.Item(var)¶
+IRFlexElementCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -399,7 +399,7 @@ Returns a specific item.
 ### classIRFlexElementCollection
 
 ```
-classIRFlexElementCollection(oobj=None)¶
+classIRFlexElementCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -407,7 +407,7 @@ Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collect
 ### classIRFlexElementSet
 
 ```
-classIRFlexElementSet(oobj=None)¶
+classIRFlexElementSet(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesColorElement set colorCommentCommentElementCollectionElement CollectionFullNameFullName such asBody1.Marker1@Model1NameNameNodeCollectionNode Collection of Element setOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data

@@ -15,7 +15,7 @@
 ### classADProcessNetType
 
 ```
-classADProcessNetType(value)¶
+classADProcessNetType(value)
 ```
 
 Bases:IntEnumADProcessNetType enumeration.MembersADProcessNet_GeneralConstant value is 1.ADProcessNet_PythonConstant value is 2.ADProcessNet_VSTAConstant value is 0.
@@ -23,7 +23,7 @@ Bases:IntEnumADProcessNetType enumeration.MembersADProcessNet_GeneralConstant va
 ### classIADAnalysisResponseProcessNet
 
 ```
-classIADAnalysisResponseProcessNet(oobj=None)¶
+classIADAnalysisResponseProcessNet(oobj=None)
 ```
 
 Bases:DispatchBaseClassAnalysisResponse - ProcessNetPropertiesADProcessNetTypeProcessNet TypeAnalysisResponseTypeAnalysis Response TypeCommentCommentDescriptionDescriptionFullNameFullName such asBody1.Marker1@Model1NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceProcessNetDllProjectPathFull path of ProcessNet Dll or ProjectProcessNetFunctio
@@ -31,7 +31,7 @@ Bases:DispatchBaseClassAnalysisResponse - ProcessNetPropertiesADProcessNetTypePr
 ### AutoDesign_Open_DesignStudy
 
 ```
-staticAutoDesignExample.AutoDesign_Open_DesignStudy()¶
+staticAutoDesignExample.AutoDesign_Open_DesignStudy()
 ```
 
 Examples
@@ -39,7 +39,7 @@ Examples
 ### AutoDesign_Open_Reliability_Monte
 
 ```
-staticAutoDesignExample.AutoDesign_Open_Reliability_Monte()¶
+staticAutoDesignExample.AutoDesign_Open_Reliability_Monte()
 ```
 
 Examples
@@ -47,7 +47,7 @@ Examples
 ### AutoDesign_Open_Reliability_SAO
 
 ```
-staticAutoDesignExample.AutoDesign_Open_Reliability_SAO()¶
+staticAutoDesignExample.AutoDesign_Open_Reliability_SAO()
 ```
 
 Examples
@@ -55,7 +55,7 @@ Examples
 ### AutoDesign_Open_RobustOpt
 
 ```
-staticAutoDesignExample.AutoDesign_Open_RobustOpt()¶
+staticAutoDesignExample.AutoDesign_Open_RobustOpt()
 ```
 
 Examples
@@ -63,7 +63,7 @@ Examples
 ### AutoDesign_Parameter
 
 ```
-staticAutoDesignExample.AutoDesign_Parameter()¶
+staticAutoDesignExample.AutoDesign_Parameter()
 ```
 
 Examples
@@ -71,7 +71,7 @@ Examples
 ### AutoDesign_Response
 
 ```
-staticAutoDesignExample.AutoDesign_Response()¶
+staticAutoDesignExample.AutoDesign_Response()
 ```
 
 Examples
@@ -79,7 +79,7 @@ Examples
 ### AutoDesign_SimulationHistory
 
 ```
-staticAutoDesignExample.AutoDesign_SimulationHistory()¶
+staticAutoDesignExample.AutoDesign_SimulationHistory()
 ```
 
 Examples
@@ -87,7 +87,7 @@ Examples
 ### AutoDesign_SimulationHistory2
 
 ```
-staticAutoDesignExample.AutoDesign_SimulationHistory2()¶
+staticAutoDesignExample.AutoDesign_SimulationHistory2()
 ```
 
 Examples
@@ -95,7 +95,7 @@ Examples
 ### IBNPAssembly
 
 ```
-staticBNPExample.IBNPAssembly()¶
+staticBNPExample.IBNPAssembly()
 ```
 
 Examples
@@ -103,7 +103,7 @@ Examples
 ### IBNPAssembly2D
 
 ```
-staticBNPExample.IBNPAssembly2D()¶
+staticBNPExample.IBNPAssembly2D()
 ```
 
 Examples
@@ -111,7 +111,7 @@ Examples
 ### IBNPAssembly_Assembly_InitialVelocity
 
 ```
-staticBNPExample.IBNPAssembly_Assembly_InitialVelocity()¶
+staticBNPExample.IBNPAssembly_Assembly_InitialVelocity()
 ```
 
 Examples
@@ -119,7 +119,7 @@ Examples
 ### IBNPAssembly_IBNPAssemblyConnectingForceParameter
 
 ```
-staticBNPExample.IBNPAssembly_IBNPAssemblyConnectingForceParameter()¶
+staticBNPExample.IBNPAssembly_IBNPAssemblyConnectingForceParameter()
 ```
 
 Examples
@@ -127,7 +127,7 @@ Examples
 ### IBNPAssembly_IBNPAssemblyConnectingForceParameter_DampingMatrix
 
 ```
-staticBNPExample.IBNPAssembly_IBNPAssemblyConnectingForceParameter_DampingMatrix()¶
+staticBNPExample.IBNPAssembly_IBNPAssemblyConnectingForceParameter_DampingMatrix()
 ```
 
 Examples
@@ -135,7 +135,7 @@ Examples
 ### IBNPAssembly_IBNPAssemblyConnectingForceParameter_ParametricValue
 
 ```
-staticBNPExample.IBNPAssembly_IBNPAssemblyConnectingForceParameter_ParametricValue()¶
+staticBNPExample.IBNPAssembly_IBNPAssemblyConnectingForceParameter_ParametricValue()
 ```
 
 Examples
@@ -143,7 +143,7 @@ Examples
 ### IBNPAssembly_IBNPBodyBeltCollection
 
 ```
-staticBNPExample.IBNPAssembly_IBNPBodyBeltCollection()¶
+staticBNPExample.IBNPAssembly_IBNPBodyBeltCollection()
 ```
 
 Examples
@@ -151,7 +151,7 @@ Examples
 ### IBNPAssembly_IBushingForceCollection
 
 ```
-staticBNPExample.IBNPAssembly_IBushingForceCollection()¶
+staticBNPExample.IBNPAssembly_IBushingForceCollection()
 ```
 
 Examples
@@ -159,7 +159,7 @@ Examples
 ### IBNPAssembly_OpenLoop
 
 ```
-staticBNPExample.IBNPAssembly_OpenLoop()¶
+staticBNPExample.IBNPAssembly_OpenLoop()
 ```
 
 Examples
@@ -167,7 +167,7 @@ Examples
 ### IBNPAssembly_Output
 
 ```
-staticBNPExample.IBNPAssembly_Output()¶
+staticBNPExample.IBNPAssembly_Output()
 ```
 
 Examples
@@ -175,7 +175,7 @@ Examples
 ### IBNPAssembly_Timing_Pulley_Alignment
 
 ```
-staticBNPExample.IBNPAssembly_Timing_Pulley_Alignment()¶
+staticBNPExample.IBNPAssembly_Timing_Pulley_Alignment()
 ```
 
 Examples
@@ -183,7 +183,7 @@ Examples
 ### IBNPBeltCloneFlat
 
 ```
-staticBNPExample.IBNPBeltCloneFlat()¶
+staticBNPExample.IBNPBeltCloneFlat()
 ```
 
 Examples
@@ -191,7 +191,7 @@ Examples
 ### IBNPBeltCloneFlat_IBNPContactNodePropertyBeltFlat
 
 ```
-staticBNPExample.IBNPBeltCloneFlat_IBNPContactNodePropertyBeltFlat()¶
+staticBNPExample.IBNPBeltCloneFlat_IBNPContactNodePropertyBeltFlat()
 ```
 
 Examples
@@ -199,7 +199,7 @@ Examples
 ### IBNPBeltCloneFlat_IBNPGeometryBeltFlat
 
 ```
-staticBNPExample.IBNPBeltCloneFlat_IBNPGeometryBeltFlat()¶
+staticBNPExample.IBNPBeltCloneFlat_IBNPGeometryBeltFlat()
 ```
 
 Examples
@@ -207,7 +207,7 @@ Examples
 ### IBNPBeltCloneRibbedV
 
 ```
-staticBNPExample.IBNPBeltCloneRibbedV()¶
+staticBNPExample.IBNPBeltCloneRibbedV()
 ```
 
 Examples
@@ -215,7 +215,7 @@ Examples
 ### IBNPBeltCloneRibbedV_IBNPContactNodePropertyBeltRibbedV
 
 ```
-staticBNPExample.IBNPBeltCloneRibbedV_IBNPContactNodePropertyBeltRibbedV()¶
+staticBNPExample.IBNPBeltCloneRibbedV_IBNPContactNodePropertyBeltRibbedV()
 ```
 
 Examples
@@ -223,7 +223,7 @@ Examples
 ### IBNPBeltCloneRibbedV_IBNPGeometryBeltRibbedV
 
 ```
-staticBNPExample.IBNPBeltCloneRibbedV_IBNPGeometryBeltRibbedV()¶
+staticBNPExample.IBNPBeltCloneRibbedV_IBNPGeometryBeltRibbedV()
 ```
 
 Examples
@@ -231,7 +231,7 @@ Examples
 ### IBNPBeltCloneTiming
 
 ```
-staticBNPExample.IBNPBeltCloneTiming()¶
+staticBNPExample.IBNPBeltCloneTiming()
 ```
 
 Examples
@@ -239,7 +239,7 @@ Examples
 ### IBNPBeltCloneTiming_IBNPGeometryBeltTiming
 
 ```
-staticBNPExample.IBNPBeltCloneTiming_IBNPGeometryBeltTiming()¶
+staticBNPExample.IBNPBeltCloneTiming_IBNPGeometryBeltTiming()
 ```
 
 Examples
@@ -247,7 +247,7 @@ Examples
 ### IBNPBeltCloneV
 
 ```
-staticBNPExample.IBNPBeltCloneV()¶
+staticBNPExample.IBNPBeltCloneV()
 ```
 
 Examples
@@ -255,7 +255,7 @@ Examples
 ### IBNPBeltCloneV_IBNPContactNodePropertyBeltV
 
 ```
-staticBNPExample.IBNPBeltCloneV_IBNPContactNodePropertyBeltV()¶
+staticBNPExample.IBNPBeltCloneV_IBNPContactNodePropertyBeltV()
 ```
 
 Examples
@@ -263,7 +263,7 @@ Examples
 ### IBNPBeltCloneV_IBNPGeometryBeltV
 
 ```
-staticBNPExample.IBNPBeltCloneV_IBNPGeometryBeltV()¶
+staticBNPExample.IBNPBeltCloneV_IBNPGeometryBeltV()
 ```
 
 Examples
@@ -271,7 +271,7 @@ Examples
 ### IBNPBody2DGuide
 
 ```
-staticBNPExample.IBNPBody2DGuide()¶
+staticBNPExample.IBNPBody2DGuide()
 ```
 
 Examples
@@ -279,7 +279,7 @@ Examples
 ### IBNPBodyBeltBeam
 
 ```
-staticBNPExample.IBNPBodyBeltBeam()¶
+staticBNPExample.IBNPBodyBeltBeam()
 ```
 
 Examples
@@ -287,7 +287,7 @@ Examples
 ### IBNPBodyBeltBeam_CreateBodyBeltBeam2
 
 ```
-staticBNPExample.IBNPBodyBeltBeam_CreateBodyBeltBeam2()¶
+staticBNPExample.IBNPBodyBeltBeam_CreateBodyBeltBeam2()
 ```
 
 Examples
@@ -295,7 +295,7 @@ Examples
 ### IBNPBodyBeltBeam_CreateBodyBeltBeam3
 
 ```
-staticBNPExample.IBNPBodyBeltBeam_CreateBodyBeltBeam3()¶
+staticBNPExample.IBNPBodyBeltBeam_CreateBodyBeltBeam3()
 ```
 
 Examples
@@ -303,7 +303,7 @@ Examples
 ### IBNPBodyBeltBeam_CreatePatchSet
 
 ```
-staticBNPExample.IBNPBodyBeltBeam_CreatePatchSet()¶
+staticBNPExample.IBNPBodyBeltBeam_CreatePatchSet()
 ```
 
 Examples
@@ -311,7 +311,7 @@ Examples
 ### IBNPBodyBeltBeam_IBNPGeometryBeltBeam
 
 ```
-staticBNPExample.IBNPBodyBeltBeam_IBNPGeometryBeltBeam()¶
+staticBNPExample.IBNPBodyBeltBeam_IBNPGeometryBeltBeam()
 ```
 
 Examples
@@ -319,7 +319,7 @@ Examples
 ### IBNPBodyBeltBeam_IBNPGeometryBeltBeam_IBNPBeltBeamMaterialProperty
 
 ```
-staticBNPExample.IBNPBodyBeltBeam_IBNPGeometryBeltBeam_IBNPBeltBeamMaterialProperty()¶
+staticBNPExample.IBNPBodyBeltBeam_IBNPGeometryBeltBeam_IBNPBeltBeamMaterialProperty()
 ```
 
 Examples
@@ -327,7 +327,7 @@ Examples
 ### IBNPBodyBeltBeam_IBNPGeometryBeltBeam_IBNPConnectingParameters
 
 ```
-staticBNPExample.IBNPBodyBeltBeam_IBNPGeometryBeltBeam_IBNPConnectingParameters()¶
+staticBNPExample.IBNPBodyBeltBeam_IBNPGeometryBeltBeam_IBNPConnectingParameters()
 ```
 
 Examples
@@ -335,7 +335,7 @@ Examples
 ### IBNPBodyBeltBeam_IBNPGeometryBeltBeam_IBNPPassingBodyCollection
 
 ```
-staticBNPExample.IBNPBodyBeltBeam_IBNPGeometryBeltBeam_IBNPPassingBodyCollection()¶
+staticBNPExample.IBNPBodyBeltBeam_IBNPGeometryBeltBeam_IBNPPassingBodyCollection()
 ```
 
 Examples
@@ -343,7 +343,7 @@ Examples
 ### IBNPBodyBeltFlat_IBNPContactNodePropertyBeltFlat
 
 ```
-staticBNPExample.IBNPBodyBeltFlat_IBNPContactNodePropertyBeltFlat()¶
+staticBNPExample.IBNPBodyBeltFlat_IBNPContactNodePropertyBeltFlat()
 ```
 
 Examples
@@ -351,7 +351,7 @@ Examples
 ### IBNPBodyBeltFlat_IBNPGeometryBeltFlat
 
 ```
-staticBNPExample.IBNPBodyBeltFlat_IBNPGeometryBeltFlat()¶
+staticBNPExample.IBNPBodyBeltFlat_IBNPGeometryBeltFlat()
 ```
 
 Examples
@@ -359,7 +359,7 @@ Examples
 ### IBNPBodyBeltShell
 
 ```
-staticBNPExample.IBNPBodyBeltShell()¶
+staticBNPExample.IBNPBodyBeltShell()
 ```
 
 Examples
@@ -367,7 +367,7 @@ Examples
 ### IBNPBodyBeltShell_CreatPatchSet
 
 ```
-staticBNPExample.IBNPBodyBeltShell_CreatPatchSet()¶
+staticBNPExample.IBNPBodyBeltShell_CreatPatchSet()
 ```
 
 Examples
@@ -375,7 +375,7 @@ Examples
 ### IBNPBodyBeltShell_CreateBodyBeltShell2
 
 ```
-staticBNPExample.IBNPBodyBeltShell_CreateBodyBeltShell2()¶
+staticBNPExample.IBNPBodyBeltShell_CreateBodyBeltShell2()
 ```
 
 Examples
@@ -383,7 +383,7 @@ Examples
 ### IBNPBodyBeltShell_CreateBodyBeltShell3
 
 ```
-staticBNPExample.IBNPBodyBeltShell_CreateBodyBeltShell3()¶
+staticBNPExample.IBNPBodyBeltShell_CreateBodyBeltShell3()
 ```
 
 Examples
@@ -391,7 +391,7 @@ Examples
 ### IBNPBodyBeltShell_MaterialProperty_MAT8_MAT2
 
 ```
-staticBNPExample.IBNPBodyBeltShell_MaterialProperty_MAT8_MAT2()¶
+staticBNPExample.IBNPBodyBeltShell_MaterialProperty_MAT8_MAT2()
 ```
 
 Examples
@@ -399,7 +399,7 @@ Examples
 ### IBNPBodyPulleyCrown
 
 ```
-staticBNPExample.IBNPBodyPulleyCrown()¶
+staticBNPExample.IBNPBodyPulleyCrown()
 ```
 
 Examples
@@ -407,7 +407,7 @@ Examples
 ### IBNPBodyPulleyCrown_IBNPContactProperty
 
 ```
-staticBNPExample.IBNPBodyPulleyCrown_IBNPContactProperty()¶
+staticBNPExample.IBNPBodyPulleyCrown_IBNPContactProperty()
 ```
 
 Examples

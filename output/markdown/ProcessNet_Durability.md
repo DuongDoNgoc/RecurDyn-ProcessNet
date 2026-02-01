@@ -15,7 +15,7 @@
 ### classAngleType
 
 ```
-classAngleType(value)¶
+classAngleType(value)
 ```
 
 Bases:IntEnumAngleType enumeration.MembersAngleType_MaxDamageConstant value is 0.AngleType_UserDefinedConstant value is 1.
@@ -23,7 +23,7 @@ Bases:IntEnumAngleType enumeration.MembersAngleType_MaxDamageConstant value is 0
 ### classAxialMode
 
 ```
-classAxialMode(value)¶
+classAxialMode(value)
 ```
 
 Bases:IntEnumAxialMode enumeration.MembersBiAxialConstant value is 1.UniAxialConstant value is 0.
@@ -31,7 +31,7 @@ Bases:IntEnumAxialMode enumeration.MembersBiAxialConstant value is 1.UniAxialCon
 ### classBWIWeldType
 
 ```
-classBWIWeldType(value)¶
+classBWIWeldType(value)
 ```
 
 Bases:IntEnumBWIWeldType enumeration.MembersBWI_CLASS_BConstant value is 0.BWI_CLASS_CConstant value is 1.BWI_CLASS_DConstant value is 2.BWI_CLASS_EConstant value is 3.BWI_CLASS_FConstant value is 4.BWI_CLASS_F2Constant value is 5.BWI_CLASS_GConstant value is 6.BWI_CLASS_SConstant value is 8.BWI_CLASS_TConstant value is 9.BWI_CLASS_WConstant value is 7.
@@ -39,7 +39,7 @@ Bases:IntEnumBWIWeldType enumeration.MembersBWI_CLASS_BConstant value is 0.BWI_C
 ### classBandLegendLocationType
 
 ```
-classBandLegendLocationType(value)¶
+classBandLegendLocationType(value)
 ```
 
 Bases:IntEnumBandLegendLocationType enumeration.MembersBand_Legned_Location_BottomConstant value is 1.Band_Legned_Location_LeftConstant value is 2.Band_Legned_Location_RightConstant value is 3.Band_Legned_Location_TopConstant value is 0.
@@ -47,7 +47,7 @@ Bases:IntEnumBandLegendLocationType enumeration.MembersBand_Legned_Location_Bott
 ### classBandLegendType
 
 ```
-classBandLegendType(value)¶
+classBandLegendType(value)
 ```
 
 Bases:IntEnumBandLegendType enumeration.MembersBand_Legned_DialogConstant value is 1.Band_Legned_DisableConstant value is 0.Band_Legned_DisplayConstant value is 2.
@@ -55,7 +55,7 @@ Bases:IntEnumBandLegendType enumeration.MembersBand_Legned_DialogConstant value 
 ### classColorStyle
 
 ```
-classColorStyle(value)¶
+classColorStyle(value)
 ```
 
 Bases:IntEnumColorStyle enumeration.MembersColor_Style_SmoothConstant value is 0.Color_Style_SteppedConstant value is 2.Color_Style_WireConstant value is 1.
@@ -63,7 +63,7 @@ Bases:IntEnumColorStyle enumeration.MembersColor_Style_SmoothConstant value is 0
 ### classColorType
 
 ```
-classColorType(value)¶
+classColorType(value)
 ```
 
 Bases:IntEnumColorType enumeration.MembersColor_Gray_ScaleConstant value is 1.Color_SpectrumConstant value is 0.
@@ -71,7 +71,7 @@ Bases:IntEnumColorType enumeration.MembersColor_Gray_ScaleConstant value is 1.Co
 ### classContourOptionType
 
 ```
-classContourOptionType(value)¶
+classContourOptionType(value)
 ```
 
 Bases:IntEnumContourOptionType enumeration.MembersDamageConstant value is 0.LifeConstant value is 1.
@@ -79,7 +79,7 @@ Bases:IntEnumContourOptionType enumeration.MembersDamageConstant value is 0.Life
 ### classContourViewType
 
 ```
-classContourViewType(value)¶
+classContourViewType(value)
 ```
 
 Bases:IntEnumContourViewType enumeration.MembersView_BothConstant value is 2.View_Contour_OnlyConstant value is 0.View_Mean_StressConstant value is 3.View_Stress_AmplitudeConstant value is 4.View_Vector_OnlyConstant value is 1.
@@ -87,7 +87,7 @@ Bases:IntEnumContourViewType enumeration.MembersView_BothConstant value is 2.Vie
 ### classFatigueMaterialUnitType
 
 ```
-classFatigueMaterialUnitType(value)¶
+classFatigueMaterialUnitType(value)
 ```
 
 Bases:IntEnumFatigueMaterialUnitType enumeration.Membersinch_lbConstant value is 2.m_NConstant value is 0.mm_NConstant value is 1.
@@ -95,7 +95,7 @@ Bases:IntEnumFatigueMaterialUnitType enumeration.Membersinch_lbConstant value is
 ### classFatigueSurfaceFactorType
 
 ```
-classFatigueSurfaceFactorType(value)¶
+classFatigueSurfaceFactorType(value)
 ```
 
 Bases:IntEnumFatigueSurfaceFactorType enumeration.MembersForgedTypeConstant value is 4.GroundTypeConstant value is 1.MachinedTypeConstant value is 2.PolishedTypeConstant value is 0.RolledTypeConstant value is 3.UserInputTypeConstant value is 5.
@@ -103,7 +103,7 @@ Bases:IntEnumFatigueSurfaceFactorType enumeration.MembersForgedTypeConstant valu
 ### ContourView
 
 ```
-IDurabilityContour.ContourView()¶
+IDurabilityContour.ContourView()
 ```
 
 Contour View
@@ -111,7 +111,7 @@ Contour View
 ### ExportContourData
 
 ```
-IDurabilityContour.ExportContourData(Val)¶
+IDurabilityContour.ExportContourData(Val)
 ```
 
 Export Contour Data
@@ -119,7 +119,7 @@ Export Contour Data
 ### ExportContourDataWithNodeSet
 
 ```
-IDurabilityContour.ExportContourDataWithNodeSet(Val,pVal)¶
+IDurabilityContour.ExportContourDataWithNodeSet(Val,pVal)
 ```
 
 Export Contour Data with Nodeset
@@ -127,7 +127,7 @@ Export Contour Data with Nodeset
 ### classIDurabilityContour
 
 ```
-classIDurabilityContour(oobj=None)¶
+classIDurabilityContour(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability ContourPropertiesBandOptionGet Contour Band OptionMinMaxOptionGet Contour MinMax OptionOptionTypeContour Option TypeProbeOptionGet Contour Probe OptionRecoveryTypeContour Recovery TypeStyleOptionGet Contour Style OptionTimeHistoryIndexTimeHistory IndexViewTypeContour View TypeMethodsContourViewContour ViewExportContourDataExport Contour DataExportContourDataWithNodeSetExport Contour Data with Nodeset
@@ -135,7 +135,7 @@ Bases:DispatchBaseClassDurability ContourPropertiesBandOptionGet Contour Band Op
 ### classIDurabilityContourBandOption
 
 ```
-classIDurabilityContourBandOption(oobj=None)¶
+classIDurabilityContourBandOption(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Contour Band OptionPropertiesBandLevelBand LevelLegendLocationContour Band Legend Location TypeLegendTypeContour Band Legend TypeShowTextLegendShow Text Legend
@@ -143,7 +143,7 @@ Bases:DispatchBaseClassDurability Contour Band OptionPropertiesBandLevelBand Lev
 ### Calculation
 
 ```
-IDurabilityContourMinMaxOption.Calculation()¶
+IDurabilityContourMinMaxOption.Calculation()
 ```
 
 Min Max Calculation
@@ -151,7 +151,7 @@ Min Max Calculation
 ### classIDurabilityContourMinMaxOption
 
 ```
-classIDurabilityContourMinMaxOption(oobj=None)¶
+classIDurabilityContourMinMaxOption(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Contour MinMax OptionPropertiesEnableLogScaleEnable Log ScaleMaxMax ValueMinMin ValueMinMaxTypeContour Min Max TypeShowMinMaxShow Min MaxUserDefinedMaxUser Defined Max ValueUserDefinedMinUser Defined Min ValueMethodsCalculationMin Max Calculation
@@ -159,7 +159,7 @@ Bases:DispatchBaseClassDurability Contour MinMax OptionPropertiesEnableLogScaleE
 ### Clear
 
 ```
-IDurabilityContourProbeOption.Clear()¶
+IDurabilityContourProbeOption.Clear()
 ```
 
 Clear Probe Data
@@ -167,7 +167,7 @@ Clear Probe Data
 ### Select
 
 ```
-IDurabilityContourProbeOption.Select(Val)¶
+IDurabilityContourProbeOption.Select(Val)
 ```
 
 Select Probe Data
@@ -175,7 +175,7 @@ Select Probe Data
 ### classIDurabilityContourProbeOption
 
 ```
-classIDurabilityContourProbeOption(oobj=None)¶
+classIDurabilityContourProbeOption(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Contour Probe OptionPropertiesShowProbeResultShow Probe ResultMethodsClearClear Probe DataSelectSelect Probe Data
@@ -183,7 +183,7 @@ Bases:DispatchBaseClassDurability Contour Probe OptionPropertiesShowProbeResultS
 ### classIDurabilityContourStyleOption
 
 ```
-classIDurabilityContourStyleOption(oobj=None)¶
+classIDurabilityContourStyleOption(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Contour Style OptionPropertiesColorTypeColor TypeGrayScaleColorGray Scale ColorMeshLinesColorMesh Lines ColorShowMeshLinesShow Mesh LinesSpectrumMaxColorSpectrum Max ColorSpectrumMinColorSpectrum Min ColorStyleColor StyleTextColorText ColorVectorColorVector ColorVectorSizeVector Size
@@ -191,7 +191,7 @@ Bases:DispatchBaseClassDurability Contour Style OptionPropertiesColorTypeColor T
 ### Calculation
 
 ```
-IDurabilityFatigueEvaluation.Calculation()¶
+IDurabilityFatigueEvaluation.Calculation()
 ```
 
 Calculation Fatigue
@@ -199,7 +199,7 @@ Calculation Fatigue
 ### ClearTimeHistory
 
 ```
-IDurabilityFatigueEvaluation.ClearTimeHistory()¶
+IDurabilityFatigueEvaluation.ClearTimeHistory()
 ```
 
 Clear Time History List
@@ -207,7 +207,7 @@ Clear Time History List
 ### CreateTimeHistory
 
 ```
-IDurabilityFatigueEvaluation.CreateTimeHistory(use,Name,timeRange)¶
+IDurabilityFatigueEvaluation.CreateTimeHistory(use,Name,timeRange)
 ```
 
 Create Time History
@@ -215,7 +215,7 @@ Create Time History
 ### Import
 
 ```
-IDurabilityFatigueEvaluation.Import(strFileName)¶
+IDurabilityFatigueEvaluation.Import(strFileName)
 ```
 
 Import Previous Fatigue Results
@@ -223,7 +223,7 @@ Import Previous Fatigue Results
 ### PlotHistory
 
 ```
-IDurabilityFatigueEvaluation.PlotHistory()¶
+IDurabilityFatigueEvaluation.PlotHistory()
 ```
 
 Plot Original History in Fatigue Tool
@@ -231,7 +231,7 @@ Plot Original History in Fatigue Tool
 ### RainFlowCounting
 
 ```
-IDurabilityFatigueEvaluation.RainFlowCounting()¶
+IDurabilityFatigueEvaluation.RainFlowCounting()
 ```
 
 RainFlow Counting in Fatigue Tool
@@ -239,7 +239,7 @@ RainFlow Counting in Fatigue Tool
 ### classIDurabilityFatigueEvaluation
 
 ```
-classIDurabilityFatigueEvaluation(oobj=None)¶
+classIDurabilityFatigueEvaluation(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Fatigue EvaluationPropertiesAxialModeAxial ModeElementPatchSetElement/ Patch SetLifeCriteriaLife CriteriaMaterialGet fatigue MaterialOccurrenceOccurrencePlotOriginalHistoryGet Plot Original HistoryPreStressFilePre-Stress fileRainFlowGet Rainflow CountingResultGet fatigue Evaluation ResultSafetyFactorGet fatigue Evaluation Safety FactorSpecificAngleCalculationOptionGet Specific Angle Calculation OptionSpecificAngleCalculationResultGet Specific Angle Calculation R
@@ -247,7 +247,7 @@ Bases:DispatchBaseClassDurability Fatigue EvaluationPropertiesAxialModeAxial Mod
 ### classIDurabilityFatigueEvaluationSafetyFactor
 
 ```
-classIDurabilityFatigueEvaluationSafetyFactor(oobj=None)¶
+classIDurabilityFatigueEvaluationSafetyFactor(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Fatigue Evaluation - Safety FactorPropertiesLifeCriterionLife CriterionSearchingIncrementSearching Increment
@@ -255,7 +255,7 @@ Bases:DispatchBaseClassDurability Fatigue Evaluation - Safety FactorPropertiesLi
 ### classIDurabilityFatigueEvaluationStrain
 
 ```
-classIDurabilityFatigueEvaluationStrain(oobj=None)¶
+classIDurabilityFatigueEvaluationStrain(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Fatigue Evaluation - StrainPropertiesLifeCriterionLife CriterionSearchingIncrementSearching Increment
@@ -263,7 +263,7 @@ Bases:DispatchBaseClassDurability Fatigue Evaluation - StrainPropertiesLifeCrite
 ### classIDurabilityFatigueEvaluationStress
 
 ```
-classIDurabilityFatigueEvaluationStress(oobj=None)¶
+classIDurabilityFatigueEvaluationStress(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Fatigue Evaluation - StressPropertiesBWI_WeldBWI Weld TypeLifeCriterionLife CriterionMeanStressEffectMean Stress EffectNumofStdDeviationsNumber of Std.SearchingIncrementSearching Increment
@@ -271,7 +271,7 @@ Bases:DispatchBaseClassDurability Fatigue Evaluation - StressPropertiesBWI_WeldB
 ### classIDurabilityFatigueMaterial
 
 ```
-classIDurabilityFatigueMaterial(oobj=None)¶
+classIDurabilityFatigueMaterial(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Fatigue Evaluation - MaterialPropertiesActiveMaterialActive Material NameFileNameMaterial XML File NameUnitMaterial Unit TypeUserDefinedGet User Defined Material
@@ -279,7 +279,7 @@ Bases:DispatchBaseClassDurability Fatigue Evaluation - MaterialPropertiesActiveM
 ### Export
 
 ```
-IDurabilityFatigueMaterialUserDefined.Export(path,OverWrite)¶
+IDurabilityFatigueMaterialUserDefined.Export(path,OverWrite)
 ```
 
 Export method
@@ -287,7 +287,7 @@ Export method
 ### Import
 
 ```
-IDurabilityFatigueMaterialUserDefined.Import(path)¶
+IDurabilityFatigueMaterialUserDefined.Import(path)
 ```
 
 Import method
@@ -295,7 +295,7 @@ Import method
 ### classIDurabilityFatigueMaterialUserDefined
 
 ```
-classIDurabilityFatigueMaterialUserDefined(oobj=None)¶
+classIDurabilityFatigueMaterialUserDefined(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Fatigue Evaluation - User Defined MaterialPropertiesAmplitudeAmplitudeCycleToFailureCycle to FailureInterpolationTypeUser Defined Interpolation TypeStrengthCoefficientStrength CoefficientUltimateStrengthUltimate StrengthYieldStressYield StressMethodsExportExport methodImportImport method
@@ -303,7 +303,7 @@ Bases:DispatchBaseClassDurability Fatigue Evaluation - User Defined MaterialProp
 ### MeanStressList
 
 ```
-IDurabilityFatigueResult.MeanStressList(timeHist)¶
+IDurabilityFatigueResult.MeanStressList(timeHist)
 ```
 
 Mean stress list
@@ -311,7 +311,7 @@ Mean stress list
 ### StressAmplitudeList
 
 ```
-IDurabilityFatigueResult.StressAmplitudeList(timeHist)¶
+IDurabilityFatigueResult.StressAmplitudeList(timeHist)
 ```
 
 Stress amplitude list
@@ -319,7 +319,7 @@ Stress amplitude list
 ### classIDurabilityFatigueResult
 
 ```
-classIDurabilityFatigueResult(oobj=None)¶
+classIDurabilityFatigueResult(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Fatigue Evaluation - ResultPropertiesDamageDamageDamageListDamage listFaceNodeIDsFace Node IDsFaceNodeIDsListFace Node IDs listLifeLifeLifeListLife listSafetyFactorSafety FactorSafetyFactorListSafety Factor listTimeHistoryNameListTimeHistory Name listMethodsMeanStressListMean stress listStressAmplitudeListStress amplitude list
@@ -327,7 +327,7 @@ Bases:DispatchBaseClassDurability Fatigue Evaluation - ResultPropertiesDamageDam
 ### classIDurabilityPlotOriginalHistory
 
 ```
-classIDurabilityPlotOriginalHistory(oobj=None)¶
+classIDurabilityPlotOriginalHistory(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Fatigue Evaluation - Plot Original HistoryPropertiesAngleTypeAngle TypeLocationTypeLocationTypeTimeHistoryNameTimeHistory NameUserDefinedAngleUser Defined Angle (Degree)UserDefinedPatchIndexUser Defined Patch Index
@@ -335,7 +335,7 @@ Bases:DispatchBaseClassDurability Fatigue Evaluation - Plot Original HistoryProp
 ### Execute
 
 ```
-IDurabilityPreStress.Execute()¶
+IDurabilityPreStress.Execute()
 ```
 
 Execute method
@@ -343,7 +343,7 @@ Execute method
 ### classIDurabilityPreStress
 
 ```
-classIDurabilityPreStress(oobj=None)¶
+classIDurabilityPreStress(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Pre-StressPropertiesElementPatchSetElement/ Patch SetInputFileInput CSV fileReferenceMarkerReference markerResultFileResult DNSRD fileMethodsExecuteExecute method
@@ -351,7 +351,7 @@ Bases:DispatchBaseClassDurability Pre-StressPropertiesElementPatchSetElement/ Pa
 ### classIDurabilityPreference
 
 ```
-classIDurabilityPreference(oobj=None)¶
+classIDurabilityPreference(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability PreferencePropertiesConvergenceControlGet Preference Convergence ControlFatigueInfluencingFactorsGet Preference Fatigue Influencing FactorsMaterialGet Preference MaterialRainFlowCountingGet Preference Rainflow Counting
@@ -359,7 +359,7 @@ Bases:DispatchBaseClassDurability PreferencePropertiesConvergenceControlGet Pref
 ### classIDurabilityPreferenceConvergenceControl
 
 ```
-classIDurabilityPreferenceConvergenceControl(oobj=None)¶
+classIDurabilityPreferenceConvergenceControl(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Preference - Convergence ControlPropertiesAbsoluteErrorAbsolute ErrorInitialValueInital ValueMaxNumberIterationMax Number Iteration
@@ -367,7 +367,7 @@ Bases:DispatchBaseClassDurability Preference - Convergence ControlPropertiesAbso
 ### classIDurabilityPreferenceFatigueInfluencingFactors
 
 ```
-classIDurabilityPreferenceFatigueInfluencingFactors(oobj=None)¶
+classIDurabilityPreferenceFatigueInfluencingFactors(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Preference - Fatigue Influencing FactorsPropertiesLoadFactorLoad FactorNotchFactorAmpNotch Factor AmpOtherFactorOther FactorScaleFactorScale FactorSizeFactorSize FactorSurfaceFactorSurface FactorSurfaceFactorTypeSurface Factor type
@@ -375,7 +375,7 @@ Bases:DispatchBaseClassDurability Preference - Fatigue Influencing FactorsProper
 ### classIDurabilityPreferenceMaterial
 
 ```
-classIDurabilityPreferenceMaterial(oobj=None)¶
+classIDurabilityPreferenceMaterial(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Preference - MaterialPropertiesLibraryPathMaterial Library Path
@@ -383,7 +383,7 @@ Bases:DispatchBaseClassDurability Preference - MaterialPropertiesLibraryPathMate
 ### classIDurabilityPreferenceRainflowCounting
 
 ```
-classIDurabilityPreferenceRainflowCounting(oobj=None)¶
+classIDurabilityPreferenceRainflowCounting(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Preference - RainFlow CountingPropertiesNumberRangesNumber RangesPeakValleyPeak Valley
@@ -391,7 +391,7 @@ Bases:DispatchBaseClassDurability Preference - RainFlow CountingPropertiesNumber
 ### classIDurabilityRainflowCounting
 
 ```
-classIDurabilityRainflowCounting(oobj=None)¶
+classIDurabilityRainflowCounting(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Fatigue Evaluation - Rainflow CountingPropertiesAngleTypeAngle TypeLocationTypeLocationTypeTimeHistoryNameTimeHistory NameUserDefinedAngleUser Defined Angle (Degree)UserDefinedPatchIndexUser Defined Patch Index
@@ -399,7 +399,7 @@ Bases:DispatchBaseClassDurability Fatigue Evaluation - Rainflow CountingProperti
 ### classIDurabilitySpecificAngleCalculationOption
 
 ```
-classIDurabilitySpecificAngleCalculationOption(oobj=None)¶
+classIDurabilitySpecificAngleCalculationOption(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Fatigue Evaluation - Specific Angle Calculation OptionPropertiesAngleTypeAngle TypeLocationTypePatch Location TypeTimeHistoryNameTimeHistory NameUserDefinedAngleUser Defined Angle (Degree)UserDefinedPatchIndexUser Defined Patch Index
@@ -407,7 +407,7 @@ Bases:DispatchBaseClassDurability Fatigue Evaluation - Specific Angle Calculatio
 ### classIDurabilitySpecificAngleCalculationResult
 
 ```
-classIDurabilitySpecificAngleCalculationResult(oobj=None)¶
+classIDurabilitySpecificAngleCalculationResult(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Fatigue Evaluation - Specific Angle Calculation ResultPropertiesDamageDamageLifeLifeSafetyFactorSafety Factor

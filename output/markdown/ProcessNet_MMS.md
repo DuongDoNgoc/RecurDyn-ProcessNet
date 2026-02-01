@@ -15,7 +15,7 @@
 ### SetLayerNumber
 
 ```
-IMMSGroup.SetLayerNumber(iVal)¶
+IMMSGroup.SetLayerNumber(iVal)
 ```
 
 Set layer Number
@@ -23,7 +23,7 @@ Set layer Number
 ### UpdateActiveFlagOfAllEntities
 
 ```
-IMMSGroup.UpdateActiveFlagOfAllEntities(Val)¶
+IMMSGroup.UpdateActiveFlagOfAllEntities(Val)
 ```
 
 Update active flag of all entities
@@ -31,7 +31,7 @@ Update active flag of all entities
 ### UpdateAllProperties
 
 ```
-IMMSGroup.UpdateAllProperties()¶
+IMMSGroup.UpdateAllProperties()
 ```
 
 Update all properties
@@ -39,7 +39,7 @@ Update all properties
 ### classIMMSGroup
 
 ```
-classIMMSGroup(oobj=None)¶
+classIMMSGroup(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMSPropertiesActiveActiveCommentCommentEachRenderModeRendering modeFullNameFullName such asBody1.Marker1@Model1LayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUseAutoUpdateGeometryUse Update Geometry AutomaticallyUserDataUser supplied dataMethodsSetLayerNumberSet layer NumberUpdateActiveFlagOfAl
@@ -47,7 +47,7 @@ Bases:DispatchBaseClassMMSPropertiesActiveActiveCommentCommentEachRenderModeRend
 ### SetLayerNumber
 
 ```
-IMMSGroupTypeA.SetLayerNumber(iVal)¶
+IMMSGroupTypeA.SetLayerNumber(iVal)
 ```
 
 Set layer Number
@@ -55,7 +55,7 @@ Set layer Number
 ### UpdateActiveFlagOfAllEntities
 
 ```
-IMMSGroupTypeA.UpdateActiveFlagOfAllEntities(Val)¶
+IMMSGroupTypeA.UpdateActiveFlagOfAllEntities(Val)
 ```
 
 Update active flag of all entities
@@ -63,7 +63,7 @@ Update active flag of all entities
 ### UpdateAllProperties
 
 ```
-IMMSGroupTypeA.UpdateAllProperties()¶
+IMMSGroupTypeA.UpdateAllProperties()
 ```
 
 Update all properties
@@ -71,7 +71,7 @@ Update all properties
 ### classIMMSGroupTypeA
 
 ```
-classIMMSGroupTypeA(oobj=None)¶
+classIMMSGroupTypeA(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMS TypeAPropertiesActiveActiveCoilClashSpring PropertyColorColorCommentCommentEachRenderModeRendering modeFirstPointFirst pointFreeLengthFree LengthFullNameFullName such asBody1.Marker1@Model1HorizontalRadiusOfSectionHorizontal Radius of SectionLayerNumberLayer numberMeanCoilRadiusMean Coil RadiusNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns ow
@@ -79,7 +79,7 @@ Bases:DispatchBaseClassMMS TypeAPropertiesActiveActiveCoilClashSpring PropertyCo
 ### classIMMSGroupTypeACoilClash
 
 ```
-classIMMSGroupTypeACoilClash(oobj=None)¶
+classIMMSGroupTypeACoilClash(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMS TypeA Coil Clash PropertyPropertiesDampingDampingPenetrationDepthPenetration depthStiffnessStiffnessStiffnessExponentStiffness exponent
@@ -87,7 +87,7 @@ Bases:DispatchBaseClassMMS TypeA Coil Clash PropertyPropertiesDampingDampingPene
 ### classIMMSGroupTypeASpringProperty
 
 ```
-classIMMSGroupTypeASpringProperty(oobj=None)¶
+classIMMSGroupTypeASpringProperty(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMS TypeA Additional Spring InformationPropertiesDampingDampingMaterialMaterialShearModulusShear modulusStiffnessStiffnessUseAutoCalcShearModulusUse auto calc.UseAutoCalcTSDAStiffnessUse auto calc.
@@ -95,7 +95,7 @@ Bases:DispatchBaseClassMMS TypeA Additional Spring InformationPropertiesDampingD
 ### SetLayerNumber
 
 ```
-IMMSGroupTypeB.SetLayerNumber(iVal)¶
+IMMSGroupTypeB.SetLayerNumber(iVal)
 ```
 
 Set layer Number
@@ -103,7 +103,7 @@ Set layer Number
 ### UpdateActiveFlagOfAllEntities
 
 ```
-IMMSGroupTypeB.UpdateActiveFlagOfAllEntities(Val)¶
+IMMSGroupTypeB.UpdateActiveFlagOfAllEntities(Val)
 ```
 
 Update active flag of all entities
@@ -111,7 +111,7 @@ Update active flag of all entities
 ### UpdateAllProperties
 
 ```
-IMMSGroupTypeB.UpdateAllProperties()¶
+IMMSGroupTypeB.UpdateAllProperties()
 ```
 
 Update all properties
@@ -119,7 +119,7 @@ Update all properties
 ### classIMMSGroupTypeB
 
 ```
-classIMMSGroupTypeB(oobj=None)¶
+classIMMSGroupTypeB(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMS TypeBPropertiesActiveActiveColorColorCommentCommentEachRenderModeRendering modeFirstPointFirst pointFreeLengthFree LengthFullNameFullName such asBody1.Marker1@Model1InactiveCoilsInactive CoilsInstalledLengthInstalled LengthLayerNumberLayer numberNameNameNormalDirectionNormal directionOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem
@@ -127,7 +127,7 @@ Bases:DispatchBaseClassMMS TypeBPropertiesActiveActiveColorColorCommentCommentEa
 ### ExportSkeletonProfile
 
 ```
-IMMSGroupTypeBSkeletonProfile.ExportSkeletonProfile(strFileName)¶
+IMMSGroupTypeBSkeletonProfile.ExportSkeletonProfile(strFileName)
 ```
 
 Export Skeleton Profile
@@ -135,7 +135,7 @@ Export Skeleton Profile
 ### GetSizeSkeletonProfile
 
 ```
-IMMSGroupTypeBSkeletonProfile.GetSizeSkeletonProfile()¶
+IMMSGroupTypeBSkeletonProfile.GetSizeSkeletonProfile()
 ```
 
 Get index size of Skeleton Profile
@@ -143,7 +143,7 @@ Get index size of Skeleton Profile
 ### GetSkeletonProfile
 
 ```
-IMMSGroupTypeBSkeletonProfile.GetSkeletonProfile(nIndex)¶
+IMMSGroupTypeBSkeletonProfile.GetSkeletonProfile(nIndex)
 ```
 
 Get Skeleton Profile
@@ -151,7 +151,7 @@ Get Skeleton Profile
 ### ImportSkeletonProfile
 
 ```
-IMMSGroupTypeBSkeletonProfile.ImportSkeletonProfile(strFileName)¶
+IMMSGroupTypeBSkeletonProfile.ImportSkeletonProfile(strFileName)
 ```
 
 Import Skeleton Profile
@@ -159,7 +159,7 @@ Import Skeleton Profile
 ### SetSkeletonProfile
 
 ```
-IMMSGroupTypeBSkeletonProfile.SetSkeletonProfile(nIndex,pSafeArray)¶
+IMMSGroupTypeBSkeletonProfile.SetSkeletonProfile(nIndex,pSafeArray)
 ```
 
 Set Skeleton Profile
@@ -167,7 +167,7 @@ Set Skeleton Profile
 ### classIMMSGroupTypeBSkeletonProfile
 
 ```
-classIMMSGroupTypeBSkeletonProfile(oobj=None)¶
+classIMMSGroupTypeBSkeletonProfile(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMS TypeB Skeleton ProfilePropertiesSkeletonProfileFileNameSkeleton Profile File nameSkeletonProfileTypeSkeleton Profile TypeMethodsExportSkeletonProfileExport Skeleton ProfileGetSizeSkeletonProfileGet index size of Skeleton ProfileGetSkeletonProfileGet Skeleton ProfileImportSkeletonProfileImport Skeleton ProfileSetSkeletonProfileSet Skeleton Profile
@@ -175,7 +175,7 @@ Bases:DispatchBaseClassMMS TypeB Skeleton ProfilePropertiesSkeletonProfileFileNa
 ### classIMMSGroupTypeBSpringProperty
 
 ```
-classIMMSGroupTypeBSpringProperty(oobj=None)¶
+classIMMSGroupTypeBSpringProperty(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMS TypeB Spring PropertyPropertiesBlockDampingBlock dampingDampingExponentDampingFreeDampingFree dampingShearModulusShear modulusTotalMassTotal mass
@@ -183,7 +183,7 @@ Bases:DispatchBaseClassMMS TypeB Spring PropertyPropertiesBlockDampingBlock damp
 ### ExportWireProfile
 
 ```
-IMMSGroupTypeBWireProfile.ExportWireProfile(strFileName)¶
+IMMSGroupTypeBWireProfile.ExportWireProfile(strFileName)
 ```
 
 Export Wire Profile
@@ -191,7 +191,7 @@ Export Wire Profile
 ### GetSizeWireProfile
 
 ```
-IMMSGroupTypeBWireProfile.GetSizeWireProfile()¶
+IMMSGroupTypeBWireProfile.GetSizeWireProfile()
 ```
 
 Get index size of Wire Profile
@@ -199,7 +199,7 @@ Get index size of Wire Profile
 ### GetWireProfile
 
 ```
-IMMSGroupTypeBWireProfile.GetWireProfile(nIndex)¶
+IMMSGroupTypeBWireProfile.GetWireProfile(nIndex)
 ```
 
 Get Wire Profile
@@ -207,7 +207,7 @@ Get Wire Profile
 ### ImportWireProfile
 
 ```
-IMMSGroupTypeBWireProfile.ImportWireProfile(strFileName)¶
+IMMSGroupTypeBWireProfile.ImportWireProfile(strFileName)
 ```
 
 Import Wire Profile
@@ -215,7 +215,7 @@ Import Wire Profile
 ### SetWireProfile
 
 ```
-IMMSGroupTypeBWireProfile.SetWireProfile(nIndex,pSafeArray)¶
+IMMSGroupTypeBWireProfile.SetWireProfile(nIndex,pSafeArray)
 ```
 
 Set Wire Profile
@@ -223,7 +223,7 @@ Set Wire Profile
 ### classIMMSGroupTypeBWireProfile
 
 ```
-classIMMSGroupTypeBWireProfile(oobj=None)¶
+classIMMSGroupTypeBWireProfile(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMS TypeB Wire ProfilePropertiesHorizontalRadiusHorizontal radiusNumOfSegmentsNumber of segmentsVerticalRadiusVertical radiusWireProfileFileNameWire Profile File nameWireProfileTypeWire Profile TypeMethodsExportWireProfileExport Wire ProfileGetSizeWireProfileGet index size of Wire ProfileGetWireProfileGet Wire ProfileImportWireProfileImport Wire ProfileSetWireProfileSet Wire Profile
@@ -231,7 +231,7 @@ Bases:DispatchBaseClassMMS TypeB Wire ProfilePropertiesHorizontalRadiusHorizonta
 ### CopyActionToBase
 
 ```
-IMMSGroupTypeC.CopyActionToBase(type)¶
+IMMSGroupTypeC.CopyActionToBase(type)
 ```
 
 Copy action to base
@@ -239,7 +239,7 @@ Copy action to base
 ### CopyBaseToAction
 
 ```
-IMMSGroupTypeC.CopyBaseToAction(type)¶
+IMMSGroupTypeC.CopyBaseToAction(type)
 ```
 
 Copy base to action
@@ -247,7 +247,7 @@ Copy base to action
 ### SetLayerNumber
 
 ```
-IMMSGroupTypeC.SetLayerNumber(iVal)¶
+IMMSGroupTypeC.SetLayerNumber(iVal)
 ```
 
 Set layer Number
@@ -255,7 +255,7 @@ Set layer Number
 ### UpdateActiveFlagOfAllEntities
 
 ```
-IMMSGroupTypeC.UpdateActiveFlagOfAllEntities(Val)¶
+IMMSGroupTypeC.UpdateActiveFlagOfAllEntities(Val)
 ```
 
 Update active flag of all entities
@@ -263,7 +263,7 @@ Update active flag of all entities
 ### UpdateAllProperties
 
 ```
-IMMSGroupTypeC.UpdateAllProperties()¶
+IMMSGroupTypeC.UpdateAllProperties()
 ```
 
 Update all properties
@@ -271,7 +271,7 @@ Update all properties
 ### classIMMSGroupTypeC
 
 ```
-classIMMSGroupTypeC(oobj=None)¶
+classIMMSGroupTypeC(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMS TypeCPropertiesActionMarkerAction markerActiveActiveBaseMarkerBase markerColorColorCommentCommentEachRenderModeRendering modeFreeLengthFree LengthFullNameFullName such asBody1.Marker1@Model1LayerNumberLayer numberNameNameNumOfWindingForHighPitchPartNumber of winding for High Pitch PartNumOfWindingForLowPitchPartNumber of winding for Low Pitch PartNumOfWindingForSeatContactPartNumber of winding for Seat Contact PartOwnerOwner returns owning IGeneric interface, use Owner
@@ -279,7 +279,7 @@ Bases:DispatchBaseClassMMS TypeCPropertiesActionMarkerAction markerActiveActiveB
 ### classIMMSGroupTypeCSpringProperty
 
 ```
-classIMMSGroupTypeCSpringProperty(oobj=None)¶
+classIMMSGroupTypeCSpringProperty(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMS TypeC Spring PropertyPropertiesDampingRatioDamping ratioDensityDensityShearModulusShear modulusYoungsModulusYoung's modulus
@@ -287,7 +287,7 @@ Bases:DispatchBaseClassMMS TypeC Spring PropertyPropertiesDampingRatioDamping ra
 ### SetLayerNumber
 
 ```
-IMMSGroupTypeD.SetLayerNumber(iVal)¶
+IMMSGroupTypeD.SetLayerNumber(iVal)
 ```
 
 Set layer Number
@@ -295,7 +295,7 @@ Set layer Number
 ### UpdateActiveFlagOfAllEntities
 
 ```
-IMMSGroupTypeD.UpdateActiveFlagOfAllEntities(Val)¶
+IMMSGroupTypeD.UpdateActiveFlagOfAllEntities(Val)
 ```
 
 Update active flag of all entities
@@ -303,7 +303,7 @@ Update active flag of all entities
 ### UpdateAllProperties
 
 ```
-IMMSGroupTypeD.UpdateAllProperties()¶
+IMMSGroupTypeD.UpdateAllProperties()
 ```
 
 Update all properties
@@ -311,7 +311,7 @@ Update all properties
 ### classIMMSGroupTypeD
 
 ```
-classIMMSGroupTypeD(oobj=None)¶
+classIMMSGroupTypeD(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMS TypeDPropertiesActiveActiveCommentCommentContactPropertyGroup Type D Contact PropertyEachRenderModeRendering modeFirstPointFirst pointForceDisplayForce displayFullNameFullName such asBody1.Marker1@Model1GeometryGroup Type D GeometryLayerNumberLayer numberMaterialGroup Type D MaterialNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSu
@@ -319,7 +319,7 @@ Bases:DispatchBaseClassMMS TypeDPropertiesActiveActiveCommentCommentContactPrope
 ### classIMMSGroupTypeDContactFriction
 
 ```
-classIMMSGroupTypeDContactFriction(oobj=None)¶
+classIMMSGroupTypeDContactFriction(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMS TypeD Contact frictionPropertiesCoefficientThe constant dynamic friction coefficient for the contact friction force.ContactFrictionTypeContact friction typeDynamicThresholdVelocityDynamic threshold velocityMaximumForceMaximum forceSplineThe spline which shows relative velocity to the friction coefficient or the friction force.StaticCoefficientStatic coefficientStaticThresholdVelocityStatic threshold velocityUseMaximumForceUse maximum force
@@ -327,7 +327,7 @@ Bases:DispatchBaseClassMMS TypeD Contact frictionPropertiesCoefficientThe consta
 ### classIMMSGroupTypeDContactProperty
 
 ```
-classIMMSGroupTypeDContactProperty(oobj=None)¶
+classIMMSGroupTypeDContactProperty(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMS TypeD Contact propertyPropertiesBufferRadiusFactorBuffer radius factor.DampingCoefficientThe viscous damping coefficient for the contact normal force.DampingExponentThe damping exponent for a non-linear contact normal forceDampingSplineDamping splineForceDisplayForce displayFrictionFrictionIndentationExponentThe indentation exponent yields an indentation damping effect.MaxStepSizeFactorMaximum step size factor.StiffnessCoefficientThe stiffness coefficient for the conta
@@ -335,7 +335,7 @@ Bases:DispatchBaseClassMMS TypeD Contact propertyPropertiesBufferRadiusFactorBuf
 ### AddCenterLineProfile
 
 ```
-IMMSGroupTypeDGeometry.AddCenterLineProfile(pSafeArray)¶
+IMMSGroupTypeDGeometry.AddCenterLineProfile(pSafeArray)
 ```
 
 Insert Center Line Profile
@@ -343,7 +343,7 @@ Insert Center Line Profile
 ### DeleteAllCenterLineProfile
 
 ```
-IMMSGroupTypeDGeometry.DeleteAllCenterLineProfile()¶
+IMMSGroupTypeDGeometry.DeleteAllCenterLineProfile()
 ```
 
 Delete Center Line Profile
@@ -351,7 +351,7 @@ Delete Center Line Profile
 ### DeleteCenterLineProfile
 
 ```
-IMMSGroupTypeDGeometry.DeleteCenterLineProfile(nIndex)¶
+IMMSGroupTypeDGeometry.DeleteCenterLineProfile(nIndex)
 ```
 
 Delete Center Line Profile
@@ -359,7 +359,7 @@ Delete Center Line Profile
 ### ExportCenterLineProfile
 
 ```
-IMMSGroupTypeDGeometry.ExportCenterLineProfile(strFileName)¶
+IMMSGroupTypeDGeometry.ExportCenterLineProfile(strFileName)
 ```
 
 Export Center Line Profile
@@ -367,7 +367,7 @@ Export Center Line Profile
 ### GetCenterLineProfile
 
 ```
-IMMSGroupTypeDGeometry.GetCenterLineProfile(nIndex)¶
+IMMSGroupTypeDGeometry.GetCenterLineProfile(nIndex)
 ```
 
 Get Center Line Profile
@@ -375,7 +375,7 @@ Get Center Line Profile
 ### GetSizeCenterLineProfile
 
 ```
-IMMSGroupTypeDGeometry.GetSizeCenterLineProfile()¶
+IMMSGroupTypeDGeometry.GetSizeCenterLineProfile()
 ```
 
 Get index size of Center Line Profile
@@ -383,7 +383,7 @@ Get index size of Center Line Profile
 ### ImportCenterLineProfile
 
 ```
-IMMSGroupTypeDGeometry.ImportCenterLineProfile(strFileName)¶
+IMMSGroupTypeDGeometry.ImportCenterLineProfile(strFileName)
 ```
 
 Import Center Line Profile
@@ -391,7 +391,7 @@ Import Center Line Profile
 ### SetCenterLineProfile
 
 ```
-IMMSGroupTypeDGeometry.SetCenterLineProfile(nIndex,pSafeArray)¶
+IMMSGroupTypeDGeometry.SetCenterLineProfile(nIndex,pSafeArray)
 ```
 
 Set Center Line Profile
@@ -399,7 +399,7 @@ Set Center Line Profile
 ### classIMMSGroupTypeDGeometry
 
 ```
-classIMMSGroupTypeDGeometry(oobj=None)¶
+classIMMSGroupTypeDGeometry(oobj=None)
 ```
 
 Bases:DispatchBaseClassMMS TypeD GeometryPropertiesCenterLineProfileFileNameCenter Line Profile File nameCenterLineProfileTypeCenter Line Profile TypeCrossSectionTypeCross Section TypeDiameterDiameterDirectionHelixTypeDirection of Helix TypeEffectiveNoOfHelixEffective num of helixExponentExponentInsideDiameterInside DiameterNoOfHelixInBDivisionNum of helix in B divisionPitchAngleInBDivisionPitch angle in B divisionSplineInterpolationCoefficient1Spline interpolation coefficient 1SplineInterpolati
@@ -407,7 +407,7 @@ Bases:DispatchBaseClassMMS TypeD GeometryPropertiesCenterLineProfileFileNameCent
 ### DampingMatrix
 
 ```
-IMMSGroupTypeDMaterial.DampingMatrix(i,j)¶
+IMMSGroupTypeDMaterial.DampingMatrix(i,j)
 ```
 
 Damping matrix

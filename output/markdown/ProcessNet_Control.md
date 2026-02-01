@@ -15,7 +15,7 @@
 ### classControlCoSimFMIInterfaceTimeStepUnit
 
 ```
-classControlCoSimFMIInterfaceTimeStepUnit(value)¶
+classControlCoSimFMIInterfaceTimeStepUnit(value)
 ```
 
 Bases:IntEnumControlCoSimFMIInterfaceTimeStepUnit enumeration.MembersControlCoSimFMIInterfaceTimeStepUnit_MillisecondConstant value is 1.ControlCoSimFMIInterfaceTimeStepUnit_SecondConstant value is 0.
@@ -23,7 +23,7 @@ Bases:IntEnumControlCoSimFMIInterfaceTimeStepUnit enumeration.MembersControlCoSi
 ### classControlCoSimFMIType
 
 ```
-classControlCoSimFMIType(value)¶
+classControlCoSimFMIType(value)
 ```
 
 Bases:IntEnumControlCoSimFMIType enumeration.MembersControlCoSimFMIType_ExportConstant value is 1.ControlCoSimFMIType_ImportConstant value is 0.
@@ -31,7 +31,7 @@ Bases:IntEnumControlCoSimFMIType enumeration.MembersControlCoSimFMIType_ExportCo
 ### classControlCoSimFMIVersion
 
 ```
-classControlCoSimFMIVersion(value)¶
+classControlCoSimFMIVersion(value)
 ```
 
 Bases:IntEnumControlCoSimFMIVersion enumeration.MembersControlCoSimFMIVersion_V10Constant value is 0.ControlCoSimFMIVersion_V20Constant value is 1.
@@ -39,7 +39,7 @@ Bases:IntEnumControlCoSimFMIVersion enumeration.MembersControlCoSimFMIVersion_V1
 ### classControlCoSimHostProgram
 
 ```
-classControlCoSimHostProgram(value)¶
+classControlCoSimHostProgram(value)
 ```
 
 Bases:IntEnumControlCoSimHostProgram enumeration.MembersControlCoSimHostProgram_GeneralConstant value is 1.ControlCoSimHostProgram_RecurDynConstant value is 2.ControlCoSimHostProgram_SimulinkConstant value is 0.
@@ -47,7 +47,7 @@ Bases:IntEnumControlCoSimHostProgram enumeration.MembersControlCoSimHostProgram_
 ### classControlCoSimInterfaceVersion
 
 ```
-classControlCoSimInterfaceVersion(value)¶
+classControlCoSimInterfaceVersion(value)
 ```
 
 Bases:IntEnumControlCoSimInterfaceVersion enumeration.MembersControlCoSimInterfaceVersion_1_0Constant value is 0.ControlCoSimInterfaceVersion_2_0Constant value is 1.ControlCoSimInterfaceVersion_3_0Constant value is 2.
@@ -55,7 +55,7 @@ Bases:IntEnumControlCoSimInterfaceVersion enumeration.MembersControlCoSimInterfa
 ### classControlCoSimType
 
 ```
-classControlCoSimType(value)¶
+classControlCoSimType(value)
 ```
 
 Bases:IntEnumControlCoSimType enumeration.MembersControlCoSimType_AMESimConstant value is 3.ControlCoSimType_FMIConstant value is 4.ControlCoSimType_GeneralConstant value is 1.ControlCoSimType_RDExternalConstant value is 5.ControlCoSimType_SimplorerConstant value is 2.ControlCoSimType_SimulinkConstant value is 0.
@@ -63,7 +63,7 @@ Bases:IntEnumControlCoSimType enumeration.MembersControlCoSimType_AMESimConstant
 ### classIControlCoSim
 
 ```
-classIControlCoSim(oobj=None)¶
+classIControlCoSim(oobj=None)
 ```
 
 Bases:DispatchBaseClassControl CoSimPropertiesHostProgramHost ProgramInterfaceVersionInterfaceVersion is obsoleted.PlantFileNamePlant File NameSamplingPeriodSampling Period
@@ -71,7 +71,7 @@ Bases:DispatchBaseClassControl CoSimPropertiesHostProgramHost ProgramInterfaceVe
 ### classIControlCoSimAMESim
 
 ```
-classIControlCoSimAMESim(oobj=None)¶
+classIControlCoSimAMESim(oobj=None)
 ```
 
 Bases:DispatchBaseClassControl CoSim AMESimPropertiesInterfaceTimeStepIControlCoSimAMESim is obsoleted.ModelFileNameIControlCoSimAMESim is obsoleted.
@@ -79,7 +79,7 @@ Bases:DispatchBaseClassControl CoSim AMESimPropertiesInterfaceTimeStepIControlCo
 ### ExportFMUFile
 
 ```
-IControlCoSimFMI.ExportFMUFile()¶
+IControlCoSimFMI.ExportFMUFile()
 ```
 
 Export a FMU File
@@ -87,7 +87,7 @@ Export a FMU File
 ### classIControlCoSimFMI
 
 ```
-classIControlCoSimFMI(oobj=None)¶
+classIControlCoSimFMI(oobj=None)
 ```
 
 Bases:DispatchBaseClassControl CoSim FMIPropertiesActiveConnectionActive ConnectionFMUFileNameFMU File NameInterfaceTimeStepInterface Time StepInterfaceTimeStepUnitInterface Time Step UnitInterfaceVersionInterface VersionModelFileNameModel File NamePlantFileNamePlant File NameTypeFMI TypeUseFollowingInterfaceTimeOfHostUse Following the Interface Time of HostUseFollowingInterfaceTimeOfMasterUseFollowingInterfaceTimeOfMaster is obsolete propertyWaitingTimeWaiting TimeMethodsExportFMUFileExport a F
@@ -95,7 +95,7 @@ Bases:DispatchBaseClassControl CoSim FMIPropertiesActiveConnectionActive Connect
 ### classIControlCoSimGeneral
 
 ```
-classIControlCoSimGeneral(oobj=None)¶
+classIControlCoSimGeneral(oobj=None)
 ```
 
 Bases:DispatchBaseClassControl CoSim GeneralPropertiesClientProgramPathNameIControlCoSimGeneral is obsoleted.HostProgramHost ProgramInterfaceVersionInterfaceVersion is obsoleted.PlantFileNamePlant File NameSamplingPeriodSampling PeriodWaitingTimeIControlCoSimGeneral is obsoleted.
@@ -103,7 +103,7 @@ Bases:DispatchBaseClassControl CoSim GeneralPropertiesClientProgramPathNameICont
 ### classIControlCoSimRDExternal
 
 ```
-classIControlCoSimRDExternal(oobj=None)¶
+classIControlCoSimRDExternal(oobj=None)
 ```
 
 Bases:DispatchBaseClassControl CoSim RDExternalPropertiesClientProgramPathNameClient Program Path and NameHostProgramHost ProgramInterfaceVersionInterfaceVersion is obsoleted.PlantFileNamePlant File NameSamplingPeriodSampling PeriodUseFollowingInterfaceTimeOfHostUse Following the Interface Time of HostWaitingTimeWaiting Time
@@ -111,7 +111,7 @@ Bases:DispatchBaseClassControl CoSim RDExternalPropertiesClientProgramPathNameCl
 ### classIControlCoSimSimplorer
 
 ```
-classIControlCoSimSimplorer(oobj=None)¶
+classIControlCoSimSimplorer(oobj=None)
 ```
 
 Bases:DispatchBaseClassControl CoSim SimplorerPropertiesHostProgramHost ProgramInterfaceVersionInterfaceVersion is obsoleted.PlantFileNamePlant File NameSamplingPeriodSampling Period
@@ -119,7 +119,7 @@ Bases:DispatchBaseClassControl CoSim SimplorerPropertiesHostProgramHost ProgramI
 ### ExportMFileToCreatePlantBlock
 
 ```
-IControlCoSimSimulink.ExportMFileToCreatePlantBlock(strName)¶
+IControlCoSimSimulink.ExportMFileToCreatePlantBlock(strName)
 ```
 
 Obsolete Function
@@ -127,7 +127,7 @@ Obsolete Function
 ### ExportMFileToCreatePlantBlock2
 
 ```
-IControlCoSimSimulink.ExportMFileToCreatePlantBlock2()¶
+IControlCoSimSimulink.ExportMFileToCreatePlantBlock2()
 ```
 
 Export M-File to create Plant Block
@@ -135,7 +135,7 @@ Export M-File to create Plant Block
 ### ExportMFileToRunSimulinkModel
 
 ```
-IControlCoSimSimulink.ExportMFileToRunSimulinkModel(strName)¶
+IControlCoSimSimulink.ExportMFileToRunSimulinkModel(strName)
 ```
 
 Obsolete Function
@@ -143,7 +143,7 @@ Obsolete Function
 ### ExportMFileToRunSimulinkModel2
 
 ```
-IControlCoSimSimulink.ExportMFileToRunSimulinkModel2()¶
+IControlCoSimSimulink.ExportMFileToRunSimulinkModel2()
 ```
 
 Export M-File to run Simulink Model
@@ -151,7 +151,7 @@ Export M-File to run Simulink Model
 ### classIControlCoSimSimulink
 
 ```
-classIControlCoSimSimulink(oobj=None)¶
+classIControlCoSimSimulink(oobj=None)
 ```
 
 Bases:DispatchBaseClassControl CoSim SimulinkPropertiesHostProgramHost ProgramInterfaceVersionInterfaceVersion is obsoleted.MFilePlantBlockM-File to Create Plant BlockMFileSimulinkModelM-File to Run Simulink ModelMatlabProgramPathNameMatlab Program Path and NameOutputFileNameOutput File NamePlantFileNamePlant File NameSamplingPeriodSampling PeriodSimulinkModelPathNameSimulink Model Path and NameUseFollowingInterfaceTimeOfHostUse Following the Interface Time of HostUseFollowingInterfaceTimeOfMast
@@ -159,7 +159,7 @@ Bases:DispatchBaseClassControl CoSim SimulinkPropertiesHostProgramHost ProgramIn
 ### AddGeneralPlantInput
 
 ```
-IControlGeneralCoSim.AddGeneralPlantInput(pVal)¶
+IControlGeneralCoSim.AddGeneralPlantInput(pVal)
 ```
 
 Add a General Plant Input
@@ -167,7 +167,7 @@ Add a General Plant Input
 ### AddGeneralPlantOutput
 
 ```
-IControlGeneralCoSim.AddGeneralPlantOutput(pVal)¶
+IControlGeneralCoSim.AddGeneralPlantOutput(pVal)
 ```
 
 Add a General Plant Output
@@ -175,7 +175,7 @@ Add a General Plant Output
 ### DeleteGeneralPlantInput
 
 ```
-IControlGeneralCoSim.DeleteGeneralPlantInput(pVal)¶
+IControlGeneralCoSim.DeleteGeneralPlantInput(pVal)
 ```
 
 Delete a General Plant Input
@@ -183,7 +183,7 @@ Delete a General Plant Input
 ### DeleteGeneralPlantOutput
 
 ```
-IControlGeneralCoSim.DeleteGeneralPlantOutput(pVal)¶
+IControlGeneralCoSim.DeleteGeneralPlantOutput(pVal)
 ```
 
 Delete a General Plant Output
@@ -191,7 +191,7 @@ Delete a General Plant Output
 ### classIControlGeneralCoSim
 
 ```
-classIControlGeneralCoSim(oobj=None)¶
+classIControlGeneralCoSim(oobj=None)
 ```
 
 Bases:DispatchBaseClassGeneral CoSimPropertiesActiveUse FlagCoSimGeneralPlantInputCollectionCoSimGeneralPlantOutputCollectionCoSimTypeData TypeCommentCommentFMIFMIFullNameFullName such asBody1.Marker1@Model1NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceRDExternalRDExternalSimulinkSimulinkUserDataUser supplied dataMethodsAddGeneralPlantInp
@@ -199,7 +199,7 @@ Bases:DispatchBaseClassGeneral CoSimPropertiesActiveUse FlagCoSimGeneralPlantInp
 ### Item
 
 ```
-IControlGeneralCoSimCollection.Item(var)¶
+IControlGeneralCoSimCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -207,7 +207,7 @@ Returns a specific item.
 ### classIControlGeneralCoSimCollection
 
 ```
-classIControlGeneralCoSimCollection(oobj=None)¶
+classIControlGeneralCoSimCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassControl General CoSim CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -215,7 +215,7 @@ Bases:DispatchBaseClassControl General CoSim CollectionPropertiesCountReturns th
 ### CreateGeneralCoSim
 
 ```
-IControlGeneralToolkit.CreateGeneralCoSim(strName)¶
+IControlGeneralToolkit.CreateGeneralCoSim(strName)
 ```
 
 Create a General CoSim
@@ -223,7 +223,7 @@ Create a General CoSim
 ### CreateGeneralPlantInput
 
 ```
-IControlGeneralToolkit.CreateGeneralPlantInput(strName)¶
+IControlGeneralToolkit.CreateGeneralPlantInput(strName)
 ```
 
 CreateGeneralPlantInput is obsoleted. Use CreateGeneralPlantInput2
@@ -231,7 +231,7 @@ CreateGeneralPlantInput is obsoleted. Use CreateGeneralPlantInput2
 ### CreateGeneralPlantOutput
 
 ```
-IControlGeneralToolkit.CreateGeneralPlantOutput(strName,pExpression)¶
+IControlGeneralToolkit.CreateGeneralPlantOutput(strName,pExpression)
 ```
 
 CreateGeneralPlantOutput is obsoleted. Use CreateGeneralPlantOutput2
@@ -239,7 +239,7 @@ CreateGeneralPlantOutput is obsoleted. Use CreateGeneralPlantOutput2
 ### DeleteGeneralPlantInput
 
 ```
-IControlGeneralToolkit.DeleteGeneralPlantInput(pVal)¶
+IControlGeneralToolkit.DeleteGeneralPlantInput(pVal)
 ```
 
 DeleteGeneralPlantInput is obsoleted. Use DeleteGeneralPlantInput2
@@ -247,7 +247,7 @@ DeleteGeneralPlantInput is obsoleted. Use DeleteGeneralPlantInput2
 ### DeleteGeneralPlantOutput
 
 ```
-IControlGeneralToolkit.DeleteGeneralPlantOutput(pVal)¶
+IControlGeneralToolkit.DeleteGeneralPlantOutput(pVal)
 ```
 
 DeleteGeneralPlantOutput is obsoleted. Use DeleteGeneralPlantOutput2
@@ -255,7 +255,7 @@ DeleteGeneralPlantOutput is obsoleted. Use DeleteGeneralPlantOutput2
 ### classIControlGeneralToolkit
 
 ```
-classIControlGeneralToolkit(oobj=None)¶
+classIControlGeneralToolkit(oobj=None)
 ```
 
 Bases:DispatchBaseClassControl Gerneral ToolkitPropertiesCommentCommentControlGeneralCoSimCollectionControlGeneralPlantInputCollectionControlGeneralPlantOutputCollectionFullNameFullName such asBody1.Marker1@Model1NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUseCoSimInfoCheck whether the GCoSim information exists or not.UserDataUser suppl
@@ -263,7 +263,7 @@ Bases:DispatchBaseClassControl Gerneral ToolkitPropertiesCommentCommentControlGe
 ### classIControlPlantInput
 
 ```
-classIControlPlantInput(oobj=None)¶
+classIControlPlantInput(oobj=None)
 ```
 
 Bases:DispatchBaseClassPlant InputPropertiesActiveUse FlagCommentCommentFullNameFullName such asBody1.Marker1@Model1NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
@@ -271,7 +271,7 @@ Bases:DispatchBaseClassPlant InputPropertiesActiveUse FlagCommentCommentFullName
 ### Item
 
 ```
-IControlPlantInputCollection.Item(var)¶
+IControlPlantInputCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -279,7 +279,7 @@ Returns a specific item.
 ### classIControlPlantInputCollection
 
 ```
-classIControlPlantInputCollection(oobj=None)¶
+classIControlPlantInputCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassControlPlantInputCollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -287,7 +287,7 @@ Bases:DispatchBaseClassControlPlantInputCollectionPropertiesCountReturns the num
 ### classIControlPlantOutput
 
 ```
-classIControlPlantOutput(oobj=None)¶
+classIControlPlantOutput(oobj=None)
 ```
 
 Bases:DispatchBaseClassPlant OutputPropertiesActiveUse FlagArgumentsArguments listCommentCommentFullNameFullName such asBody1.Marker1@Model1InitialValueInitial ValueNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceTextTextUserDataUser supplied data
@@ -295,7 +295,7 @@ Bases:DispatchBaseClassPlant OutputPropertiesActiveUse FlagArgumentsArguments li
 ### Item
 
 ```
-IControlPlantOutputCollection.Item(var)¶
+IControlPlantOutputCollection.Item(var)
 ```
 
 Returns a specific item.
@@ -303,7 +303,7 @@ Returns a specific item.
 ### classIControlPlantOutputCollection
 
 ```
-classIControlPlantOutputCollection(oobj=None)¶
+classIControlPlantOutputCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassControlPlantOutputCollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
@@ -311,7 +311,7 @@ Bases:DispatchBaseClassControlPlantOutputCollectionPropertiesCountReturns the nu
 ### CreatePlantInput
 
 ```
-IControlToolkit.CreatePlantInput(strName)¶
+IControlToolkit.CreatePlantInput(strName)
 ```
 
 Create a Plant Input
@@ -319,7 +319,7 @@ Create a Plant Input
 ### CreatePlantOutput
 
 ```
-IControlToolkit.CreatePlantOutput(strName,strExpression)¶
+IControlToolkit.CreatePlantOutput(strName,strExpression)
 ```
 
 Create a Plant Output
@@ -327,7 +327,7 @@ Create a Plant Output
 ### CreatePlantOutputWithArguments
 
 ```
-IControlToolkit.CreatePlantOutputWithArguments(strName,strExpression,strArgument)¶
+IControlToolkit.CreatePlantOutputWithArguments(strName,strExpression,strArgument)
 ```
 
 Create a Plant Output with Arguments
@@ -335,7 +335,7 @@ Create a Plant Output with Arguments
 ### DeleteCoSimInfo
 
 ```
-IControlToolkit.DeleteCoSimInfo()¶
+IControlToolkit.DeleteCoSimInfo()
 ```
 
 IControlToolkit.DeleteCoSimInfo is obsoleted.
@@ -343,7 +343,7 @@ IControlToolkit.DeleteCoSimInfo is obsoleted.
 ### DeletePlantInput
 
 ```
-IControlToolkit.DeletePlantInput(pVal)¶
+IControlToolkit.DeletePlantInput(pVal)
 ```
 
 Delete a Plant Input
@@ -351,7 +351,7 @@ Delete a Plant Input
 ### DeletePlantOutput
 
 ```
-IControlToolkit.DeletePlantOutput(pVal)¶
+IControlToolkit.DeletePlantOutput(pVal)
 ```
 
 Delete a Plant Output
@@ -359,7 +359,7 @@ Delete a Plant Output
 ### classIControlToolkit
 
 ```
-classIControlToolkit(oobj=None)¶
+classIControlToolkit(oobj=None)
 ```
 
 Bases:DispatchBaseClassControl ToolkitPropertiesAMESimIControlToolkit.AMESim is obsoleted.CoSimTypeIControlToolkit.CoSimType is obsoleted.CommentCommentControlPlantInputCollectionControlPlantOutputCollectionFMIIControlToolkit.FMI is obsoleted.FullNameFullName such asBody1.Marker1@Model1GeneralIControlToolkit.General is obsoleted.NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem r

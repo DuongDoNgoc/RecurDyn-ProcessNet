@@ -15,7 +15,7 @@
 ### classIFlexInterface
 
 ```
-classIFlexInterface(oobj=None)¶
+classIFlexInterface(oobj=None)
 ```
 
 Bases:DispatchBaseClassFlex Interface ToolkitPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceRFlexGeneratorGet RFlex GeneratorUserDataUser supplied data
@@ -23,7 +23,7 @@ Bases:DispatchBaseClassFlex Interface ToolkitPropertiesCommentCommentFullNameFul
 ### classIRFlexGenerationOption
 
 ```
-classIRFlexGenerationOption(oobj=None)¶
+classIRFlexGenerationOption(oobj=None)
 ```
 
 Bases:DispatchBaseClassOption for Generating RFlex BodyPropertiesAutoMPCFlagAutoMPC FlagBDFFilePathBDF file pathBodyTarget BodyDeleteDynamisDataBaseFilesFlagFlag to delete dynamis dataBase filessDynamisInputFilePathDYNAMIS input file pathFixedInterfaceNormalModeLowerFrequencyFixed Interface Normal Mode Lower frequencyFixedInterfaceNormalModeUpperFrequencyFixed Interface Normal Mode Upper frequencyIncludeBCFlagInlcude BC from fixed joint and FFlex BC FlagInterfaceNodeFDRElementMultiInterface node
@@ -31,7 +31,7 @@ Bases:DispatchBaseClassOption for Generating RFlex BodyPropertiesAutoMPCFlagAuto
 ### execute
 
 ```
-IRFlexGenerator.execute()¶
+IRFlexGenerator.execute()
 ```
 
 Generate RFlex Body
@@ -39,7 +39,7 @@ Generate RFlex Body
 ### classIRFlexGenerator
 
 ```
-classIRFlexGenerator(oobj=None)¶
+classIRFlexGenerator(oobj=None)
 ```
 
 Bases:DispatchBaseClassRFlex GeneratorPropertiesOptionOption to generate RFlex BodyMethodsexecuteGenerate RFlex Body
@@ -47,7 +47,7 @@ Bases:DispatchBaseClassRFlex GeneratorPropertiesOptionOption to generate RFlex B
 ### classInterfaceNodeType
 
 ```
-classInterfaceNodeType(value)¶
+classInterfaceNodeType(value)
 ```
 
 Bases:IntEnumInterfaceNodeType enumeration.MembersInterfaceNodeType_DirectInputConstant value is 3.InterfaceNodeType_MultiFDRElementConstant value is 2.InterfaceNodeType_MultiNodeSetConstant value is 1.InterfaceNodeType_SingleNodeSetConstant value is 0.
@@ -55,7 +55,7 @@ Bases:IntEnumInterfaceNodeType enumeration.MembersInterfaceNodeType_DirectInputC
 ### classRFIShellRecoveryType
 
 ```
-classRFIShellRecoveryType(value)¶
+classRFIShellRecoveryType(value)
 ```
 
 Bases:IntEnumRFIShellRecoveryType enumeration.MembersRFIShellRecoveryType_BOTTOMConstant value is 1.RFIShellRecoveryType_TOPConstant value is 0.
@@ -63,7 +63,7 @@ Bases:IntEnumRFIShellRecoveryType enumeration.MembersRFIShellRecoveryType_BOTTOM
 ### classRFISolverType
 
 ```
-classRFISolverType(value)¶
+classRFISolverType(value)
 ```
 
 Bases:IntEnumRFISolverType enumeration.MembersRFISolverType_DynamisConstant value is 1.RFISolverType_SunShineConstant value is 0.
@@ -71,7 +71,7 @@ Bases:IntEnumRFISolverType enumeration.MembersRFISolverType_DynamisConstant valu
 ### classRFITargetBodyType
 
 ```
-classRFITargetBodyType(value)¶
+classRFITargetBodyType(value)
 ```
 
 Bases:IntEnumRFITargetBodyType enumeration.MembersRFITargetBodyType_BDFFileConstant value is 1.RFITargetBodyType_BodyConstant value is 0.RFITargetBodyType_DYNAMISInputFileConstant value is 2.
