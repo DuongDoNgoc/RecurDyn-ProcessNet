@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.R2R2D
 
-**Methods:** 77
+**Methods:** 121
 
 **Examples:** 0
 
@@ -60,6 +60,30 @@ classIR2R2DBodyBeam(oobj=None)
 
 Bases:DispatchBaseClassR2R2D Beam AssemblyPropertiesActiveActiveAirResistanceConstantAir Resistance Coefficient ConstantAirResistanceExpressionAir Resistance Coefficient ExpressionAirResistanceForceDirectionAir resistance force directionAirResistanceTypeAir Resistance Coefficient TypeBCCollectionNode boundary condition collectionCommentCommentConnectingParametersConnecting parametersFlexBodyFlex body editFullNameFullName such asBody1.Marker1@Model1GeometryGeometryInitialLongitudinalVelocityIniti
 
+### AddPassingBody
+
+```
+AddPassingBody()
+```
+
+Add a passing body
+
+### DeletePassingBody
+
+```
+DeletePassingBody()
+```
+
+Delete a passing body
+
+### UpdateAllProperties
+
+```
+UpdateAllProperties()
+```
+
+Update all properties
+
 ### Item
 
 ```
@@ -79,6 +103,14 @@ Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collect
 ### Item
 
 ```
+Item()
+```
+
+Returns a specific item.
+
+### Item
+
+```
 IR2R2DBodyCollection.Item(var)
 ```
 
@@ -91,6 +123,14 @@ classIR2R2DBodyCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### classIR2R2DBodyRoller
 
@@ -131,6 +171,14 @@ classIR2R2DConcentratedLoadUSUBCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### classIR2R2DConnectingParameters
 
@@ -188,6 +236,14 @@ classIR2R2DContactWorkpieceToWorkpieceCollection(oobj=None)
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
 
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
+
 ### classIR2R2DGeometryBeam
 
 ```
@@ -219,6 +275,22 @@ classIR2R2DGeometryRollerCircle(oobj=None)
 ```
 
 Bases:DispatchBaseClassR2R2D circle roller body geometryPropertiesCommentCommentDepthThe depth of circle roller.FullNameFullName such asBody1.Marker1@Model1GraphicGraphicNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceRadiusThe radius of circle roller.RefFrameReference frameUserDataUser supplied dataVertexCollectionMethodsGetBoundingBoxGet 
+
+### GetBoundingBox
+
+```
+GetBoundingBox()
+```
+
+Get bounding box, internal use only
+
+### GetBoundingBoxWithRefFrame
+
+```
+GetBoundingBoxWithRefFrame()
+```
+
+Get bounding box with reference frame
 
 ### Export
 
@@ -260,6 +332,38 @@ classIR2R2DGeometryRollerGeneral(oobj=None)
 
 Bases:DispatchBaseClassR2R2D general roller body geometryPropertiesCommentCommentDepthThe depth of general roller.FullNameFullName such asBody1.Marker1@Model1GraphicGraphicNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfacePointCollectionPoint with radius collectionRefFrameReference frameUserDataUser supplied dataVertexCollectionMethodsExportE
 
+### Export
+
+```
+Export()
+```
+
+Export method
+
+### GetBoundingBox
+
+```
+GetBoundingBox()
+```
+
+Get bounding box, internal use only
+
+### GetBoundingBoxWithRefFrame
+
+```
+GetBoundingBoxWithRefFrame()
+```
+
+Get bounding box with reference frame
+
+### Import
+
+```
+Import()
+```
+
+Import method
+
 ### UpdateAllProperties
 
 ```
@@ -275,6 +379,14 @@ classIR2R2DGuide(oobj=None)
 ```
 
 Bases:DispatchBaseClassR2R2D guidePropertiesActiveActiveCommentCommentContactParameterContact ParameterFullNameFullName such asBody1.Marker1@Model1InnerContactPointsThe number of inner contat pointsLayerNumberLayer numberMotherBodyThe mother body of guideNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied dataMethodsUpdate
+
+### UpdateAllProperties
+
+```
+UpdateAllProperties()
+```
+
+Update All Properties
 
 ### UpdateAllProperties
 
@@ -295,120 +407,8 @@ Bases:DispatchBaseClassR2R2D arc guidePropertiesActiveActiveAngleThe angle of ar
 ### UpdateAllProperties
 
 ```
-IR2R2DGuideCircle.UpdateAllProperties()
+UpdateAllProperties()
 ```
 
 Update All Properties
-
-### classIR2R2DGuideCircle
-
-```
-classIR2R2DGuideCircle(oobj=None)
-```
-
-Bases:DispatchBaseClassR2R2D circle guidePropertiesActiveActiveCenterPointThe center point of circleCommentCommentContactParameterContact ParameterFullNameFullName such asBody1.Marker1@Model1InnerContactPointsThe number of inner contat pointsLayerNumberLayer numberMotherBodyThe mother body of guideNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem inte
-
-### Item
-
-```
-IR2R2DGuideCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classIR2R2DGuideCollection
-
-```
-classIR2R2DGuideCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### UpdateAllProperties
-
-```
-IR2R2DGuideLinear.UpdateAllProperties()
-```
-
-Update All Properties
-
-### classIR2R2DGuideLinear
-
-```
-classIR2R2DGuideLinear(oobj=None)
-```
-
-Bases:DispatchBaseClassR2R2D linear guidePropertiesActiveActiveCircleEdgeRadiusThe radius of imaginary circle edgeCommentCommentContactParameterContact ParameterContactUpDirectionTrue: upside, False: downsideFullNameFullName such asBody1.Marker1@Model1ImaginaryCircleEdgeEndEnd point of imaginary circle edgeImaginaryCircleEdgeStartStart point of imaginary circle edgeInnerContactPointsThe number of inner contat pointsLayerNumberLayer numberMotherBodyThe mother body of guideNameNameOwnerOwner retur
-
-### classIR2R2DLoadConcentratedUSUB
-
-```
-classIR2R2DLoadConcentratedUSUB(oobj=None)
-```
-
-Bases:DispatchBaseClassR2R2D Load Concentrated USUBPropertiesActiveActiveBaseBodyBase BodyCommentCommentFullNameFullName such asBody1.Marker1@Model1LayerNumberLayer numberNameNameNodeSetNode setOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceReportNodeIDsReport node IDsUseReportNodesUse report nNodesUserDataUser supplied dataUserSubroutineUser subr
-
-### UpdateProperties
-
-```
-IR2R2DMaterialPropertyBeam.UpdateProperties()
-```
-
-Update Properties
-
-### UpdateShearModulus
-
-```
-IR2R2DMaterialPropertyBeam.UpdateShearModulus()
-```
-
-Update Shear Modulus
-
-### classIR2R2DMaterialPropertyBeam
-
-```
-classIR2R2DMaterialPropertyBeam(oobj=None)
-```
-
-Bases:DispatchBaseClassR2R2D Beam material propertyPropertiesAsyShear Area Factor AsyAszShear Area Factor AszCZStress Recovery Points CY, DYCrossSectionAreaCross section areaDampingRatioDamping ratioDensityDensityFZStress Recovery Points EY, FYIxxMoment of area, IxxIyyMoment of area, IyyIzzMoment of area, IzzMassTypeMassTypePoissonsRatioPoisson's ratioShearModulusShere ModulusTotalMassTotoal massUpdateCrossSectionPropertyAutomaticallyFlagUpdate Cross Section Property Automatically FlagYoungsModu
-
-### Item
-
-```
-IR2R2DPassingBodyCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classIR2R2DPassingBodyCollection
-
-```
-classIR2R2DPassingBodyCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### classIR2R2DSelfContact
-
-```
-classIR2R2DSelfContact(oobj=None)
-```
-
-Bases:DispatchBaseClassR2R2D self contactPropertiesContactParameterContact ParameterUnWinderConectedNodeTypeUnWinder conected node typeUnWinderRollerUnWinder rollerUnWinderSearchBoundaryFactorUnWinder search boundary factorUseUnWinderUse unwinderUseWinderUse winderWinderConectedNodeTypeWinder conected node typeWinderRollerWinder rollerWinderSearchBoundaryFactorWinder search boundary factor
-
-### CreateBodyBeam
-
-```
-IR2R2DSubSystem.CreateBodyBeam(strName,pBodyList,pInOutList,uiNumberOfElements,Thickness)
-```
-
-CreateBodyBeam is obsoleted. Use CreateBodyBeam2
-
-### CreateBodyBeam2
-
-```
-IR2R2DSubSystem.CreateBodyBeam2(strName,pBodyList,pInOutList,uiNumberOfElements)
-```
-
-Create a beam assembly
 

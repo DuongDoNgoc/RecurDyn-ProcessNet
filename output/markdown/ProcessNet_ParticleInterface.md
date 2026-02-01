@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.ParticleInterface
 
-**Methods:** 36
+**Methods:** 58
 
 **Examples:** 0
 
@@ -36,6 +36,22 @@ classIParticleInterface2DProfile(oobj=None)
 
 Bases:DispatchBaseClass2D ProfilePropertiesColorRecurDynCOMParticleInterface is obsolete.CommentCommentDivisionRecurDynCOMParticleInterface is obsolete.FullNameFullName such asBody1.Marker1@Model1GroupSequenceRecurDynCOMParticleInterface is obsolete.HalfdepthRecurDynCOMParticleInterface is obsolete.LengthRecurDynCOMParticleInterface is obsolete.NameNameNormalDirectionRecurDynCOMParticleInterface is obsolete.OwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBo
 
+### HidePlotDialog
+
+```
+HidePlotDialog()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
+### ShowPlotDialog
+
+```
+ShowPlotDialog()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
 ### Item
 
 ```
@@ -51,6 +67,14 @@ classIParticleInterface2DProfileCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClass2D Profile CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### AddGroup
 
@@ -68,6 +92,14 @@ classIParticleInterfaceMassCenter(oobj=None)
 
 Bases:DispatchBaseClassMass CenterPropertiesColorRecurDynCOMParticleInterface is obsolete.CommentCommentFullNameFullName such asBody1.Marker1@Model1NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied dataVisibleRecurDynCOMParticleInterface is obsolete.WidthRecurDynCOMParticleInterface is obsolete.MethodsAddGroupRecurDynCOM
 
+### AddGroup
+
+```
+AddGroup()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
 ### Item
 
 ```
@@ -83,6 +115,14 @@ classIParticleInterfaceMassCenterCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassMass Center CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### HidePlotDialog
 
@@ -111,6 +151,22 @@ Bases:DispatchBaseClassParticle SensorPropertiesColorRecurDynCOMParticleInterfac
 ### HidePlotDialog
 
 ```
+HidePlotDialog()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
+### ShowPlotDialog
+
+```
+ShowPlotDialog()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
+### HidePlotDialog
+
+```
 IParticleInterfaceSensorBox.HidePlotDialog()
 ```
 
@@ -132,6 +188,22 @@ classIParticleInterfaceSensorBox(oobj=None)
 
 Bases:DispatchBaseClassParticle Box SensorPropertiesColorRecurDynCOMParticleInterface is obsolete.CommentCommentDepthRecurDynCOMParticleInterface is obsolete.FullNameFullName such asBody1.Marker1@Model1GroupSequenceRecurDynCOMParticleInterface is obsolete.HeightRecurDynCOMParticleInterface is obsolete.NameNameNormalDirectionRecurDynCOMParticleInterface is obsolete.OwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOw
 
+### HidePlotDialog
+
+```
+HidePlotDialog()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
+### ShowPlotDialog
+
+```
+ShowPlotDialog()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
 ### Item
 
 ```
@@ -147,6 +219,14 @@ classIParticleInterfaceSensorCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassParticle Sensor CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### HidePlotDialog
 
@@ -171,6 +251,22 @@ classIParticleInterfaceSensorSphere(oobj=None)
 ```
 
 Bases:DispatchBaseClassParticle Sphere SensorPropertiesColorRecurDynCOMParticleInterface is obsolete.CommentCommentFullNameFullName such asBody1.Marker1@Model1GroupSequenceRecurDynCOMParticleInterface is obsolete.NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfacePositionRecurDynCOMParticleInterface is obsolete.RadiusRecurDynCOMParticleInterfa
+
+### HidePlotDialog
+
+```
+HidePlotDialog()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
+### ShowPlotDialog
+
+```
+ShowPlotDialog()
+```
+
+RecurDynCOMParticleInterface is obsolete.
 
 ### CreateBoxSensor
 
@@ -244,6 +340,70 @@ classIParticleInterfaceToolkit(oobj=None)
 
 Bases:DispatchBaseClassParticleInterface ToolkitPropertiesCommentCommentConnectParticleworksRecurDynCOMParticleInterface is obsolete.FullNameFullName such asBody1.Marker1@Model1HideParticlesRecurDynCOMParticleInterface is obsolete.InitialParticleFileRecurDynCOMParticleInterface is obsolete.MassCenterCollectionRecurDynCOMParticleInterface is obsolete.MatchStepSizeRecurDynCOMParticleInterface is obsolete.ModifyContainerFileRecurDynCOMParticleInterface is obsolete.NameNameOwnerOwner returns owning 
 
+### CreateBoxSensor
+
+```
+CreateBoxSensor()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
+### CreateMassCenter
+
+```
+CreateMassCenter()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
+### CreateProfile
+
+```
+CreateProfile()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
+### CreateSphereSensor
+
+```
+CreateSphereSensor()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
+### CreateTrace
+
+```
+CreateTrace()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
+### CreateVessel
+
+```
+CreateVessel()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
+### ExportVesselFiles
+
+```
+ExportVesselFiles()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
+### UpdatePostData
+
+```
+UpdatePostData()
+```
+
+RecurDynCOMParticleInterface is obsolete.
+
 ### classIParticleInterfaceTrace
 
 ```
@@ -251,52 +411,4 @@ classIParticleInterfaceTrace(oobj=None)
 ```
 
 Bases:DispatchBaseClassTracePropertiesColorRecurDynCOMParticleInterface is obsolete.CommentCommentFullNameFullName such asBody1.Marker1@Model1GroupSequenceRecurDynCOMParticleInterface is obsolete.NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceParticleIndexRecurDynCOMParticleInterface is obsolete.UserDataUser supplied dataVisibleRecurDynCOM
-
-### Item
-
-```
-IParticleInterfaceTraceCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classIParticleInterfaceTraceCollection
-
-```
-classIParticleInterfaceTraceCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassTrace CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### classIVessel
-
-```
-classIVessel(oobj=None)
-```
-
-Bases:DispatchBaseClassVesselPropertiesCommentCommentEntityRecurDynCOMParticleInterface is obsolete.FileNameRecurDynCOMParticleInterface is obsolete.FullNameFullName such asBody1.Marker1@Model1NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfacePatchOptionRecurDynCOMParticleInterface is obsolete.SynchNameRecurDynCOMParticleInterface is obsolete
-
-### Item
-
-```
-IVesselCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classIVesselCollection
-
-```
-classIVesselCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### classIVesselPatchOption
-
-```
-classIVesselPatchOption(oobj=None)
-```
-
-Bases:DispatchBaseClassVessel patch optionPropertiesMaxFacetSizeFactorRecurDynCOMParticleInterface is obsolete.PlaneToleranceFactorRecurDynCOMParticleInterface is obsolete.UseMaxFacetSizeFactorRecurDynCOMParticleInterface is obsolete.UsePlaneToleranceFactorRecurDynCOMParticleInterface is obsolete.
 

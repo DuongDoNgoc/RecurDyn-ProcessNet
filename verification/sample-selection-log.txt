@@ -1,0 +1,525 @@
+Sample Selection Log
+================================================================================
+
+Total Samples: 86
+Random Seed: 42
+Selection Date: 2026-02-01
+
+Samples:
+--------------------------------------------------------------------------------
+
+[1] ICameraMovingCollection
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/ICameraMovingCollection.html
+  Inheritance: DispatchBaseClass
+
+[2] CampbellDiagramWindowType
+  Namespace: ProcessNet.ProcessNet
+  Type: enum
+  File: Python/Professional/CampbellDiagramWindowType.html
+  Inheritance: IntEnum
+
+[3] IGeometryFaceSurface
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IGeometryFaceSurface.html
+  Inheritance: DispatchBaseClass
+
+[4] IForceTire
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IForceTire.html
+  Inheritance: DispatchBaseClass
+
+[5] IFillHoleOption
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IFillHoleOption.html
+  Inheritance: DispatchBaseClass
+
+[6] IContactCurveToCurve
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IContactCurveToCurve.html
+  Inheritance: DispatchBaseClass
+
+[7] IBeamCrossSectionThinWallTube
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IBeamCrossSectionThinWallTube.html
+  Inheritance: DispatchBaseClass
+
+[8] InterferenceType
+  Namespace: ProcessNet.ProcessNet
+  Type: enum
+  File: Python/Professional/InterferenceType.html
+  Inheritance: IntEnum
+
+[9] IAnimationDataScalingBase
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IAnimationDataScalingBase.html
+  Inheritance: DispatchBaseClass
+
+[10] ScopeGapInterferenceType
+  Namespace: ProcessNet.ProcessNet
+  Type: enum
+  File: Python/Professional/ScopeGapInterferenceType.html
+  Inheritance: IntEnum
+
+[11] IParametricPointConnectorCollection
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IParametricPointConnectorCollection.html
+  Inheritance: DispatchBaseClass
+
+[12] ContactSurfaceType
+  Namespace: ProcessNet.ProcessNet
+  Type: enum
+  File: Python/Professional/ContactSurfaceType.html
+  Inheritance: IntEnum
+
+[13] ContactForceType
+  Namespace: ProcessNet.ProcessNet
+  Type: enum
+  File: Python/Professional/ContactForceType.html
+  Inheritance: IntEnum
+
+[14] IBackgroundColor
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IBackgroundColor.html
+  Inheritance: DispatchBaseClass
+
+[15] IFileExportOptionCATIA
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IFileExportOptionCATIA.html
+  Inheritance: DispatchBaseClass
+
+[16] IForceBushing
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IForceBushing.html
+  Inheritance: DispatchBaseClass
+
+[17] ISensorTension
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/ISensorTension.html
+  Inheritance: DispatchBaseClass
+
+[18] StrainStressDataPrecision
+  Namespace: ProcessNet.ProcessNet
+  Type: enum
+  File: Python/Professional/StrainStressDataPrecision.html
+  Inheritance: IntEnum
+
+[19] CartesianMotionType
+  Namespace: ProcessNet.ProcessNet
+  Type: enum
+  File: Python/Professional/CartesianMotionType.html
+  Inheritance: IntEnum
+
+[20] MirrorType
+  Namespace: ProcessNet.ProcessNet
+  Type: enum
+  File: Python/Professional/MirrorType.html
+  Inheritance: IntEnum
+
+[21] IDesignStudyPI
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IDesignStudyPI.html
+  Inheritance: DispatchBaseClass
+
+[22] IParametricPoint
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IParametricPoint.html
+  Inheritance: DispatchBaseClass
+
+[23] IFileImportOption
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IFileImportOption.html
+  Inheritance: DispatchBaseClass
+
+[24] IRequestUserSubroutineCollection
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IRequestUserSubroutineCollection.html
+  Inheritance: DispatchBaseClass
+
+[25] ScopeEntityType
+  Namespace: ProcessNet.ProcessNet
+  Type: enum
+  File: Python/Professional/ScopeEntityType.html
+  Inheritance: IntEnum
+
+[26] IGeometryHelixCurve
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IGeometryHelixCurve.html
+  Inheritance: DispatchBaseClass
+
+[27] VerticalAlignmentEx
+  Namespace: ProcessNet.Post
+  Type: enum
+  File: Python/Post/VerticalAlignmentEx.html
+  Inheritance: IntEnum
+
+[28] Alignment
+  Namespace: ProcessNet.Post
+  Type: enum
+  File: Python/Post/Alignment.html
+  Inheritance: IntEnum
+
+[29] ShowOrderNumberBy
+  Namespace: ProcessNet.Post
+  Type: enum
+  File: Python/Post/ShowOrderNumberBy.html
+  Inheritance: IntEnum
+
+[30] VKInputType
+  Namespace: ProcessNet.Post
+  Type: enum
+  File: Python/Post/VKInputType.html
+  Inheritance: IntEnum
+
+[31] ICampbellDiagram
+  Namespace: ProcessNet.Post
+  Type: interface
+  File: Python/Post/ICampbellDiagram.html
+  Inheritance: DispatchBaseClass
+
+[32] PaneType
+  Namespace: ProcessNet.Post
+  Type: enum
+  File: Python/Post/PaneType.html
+  Inheritance: IntEnum
+
+[33] IEntity
+  Namespace: ProcessNet.Post
+  Type: interface
+  File: Python/Post/IEntity.html
+  Inheritance: DispatchBaseClass
+
+[34] IChartStyleGridLine
+  Namespace: ProcessNet.Post
+  Type: interface
+  File: Python/Post/IChartStyleGridLine.html
+  Inheritance: DispatchBaseClass
+
+[35] IChartModifier3DOrbit
+  Namespace: ProcessNet.Post
+  Type: interface
+  File: Python/Post/IChartModifier3DOrbit.html
+  Inheritance: DispatchBaseClass
+
+[36] IFFlexContactSphereToFCurve
+  Namespace: ProcessNet.FFlex
+  Type: interface
+  File: Python/FFlex/IFFlexContactSphereToFCurve.html
+  Inheritance: DispatchBaseClass
+
+[37] IFFlexExportMeshDataCommonOption
+  Namespace: ProcessNet.FFlex
+  Type: interface
+  File: Python/FFlex/IFFlexExportMeshDataCommonOption.html
+  Inheritance: DispatchBaseClass
+
+[38] IFFlexMaterialPlastic
+  Namespace: ProcessNet.FFlex
+  Type: interface
+  File: Python/FFlex/IFFlexMaterialPlastic.html
+  Inheritance: DispatchBaseClass
+
+[39] IFFlexBoundaryConditionCollection
+  Namespace: ProcessNet.FFlex
+  Type: interface
+  File: Python/FFlex/IFFlexBoundaryConditionCollection.html
+  Inheritance: DispatchBaseClass
+
+[40] IFFlexBodyImportOption
+  Namespace: ProcessNet.FFlex
+  Type: interface
+  File: Python/FFlex/IFFlexBodyImportOption.html
+  Inheritance: DispatchBaseClass
+
+[41] IFFlexOutput
+  Namespace: ProcessNet.FFlex
+  Type: interface
+  File: Python/FFlex/IFFlexOutput.html
+  Inheritance: DispatchBaseClass
+
+[42] DeviationType
+  Namespace: ProcessNet.AutoDesign
+  Type: enum
+  File: Python/AutoDesign/DeviationType.html
+  Inheritance: IntEnum
+
+[43] IADDesignVariableRobustOptimization
+  Namespace: ProcessNet.AutoDesign
+  Type: interface
+  File: Python/AutoDesign/IADDesignVariableRobustOptimization.html
+  Inheritance: DispatchBaseClass
+
+[44] IADDesignVariableReliability
+  Namespace: ProcessNet.AutoDesign
+  Type: interface
+  File: Python/AutoDesign/IADDesignVariableReliability.html
+  Inheritance: DispatchBaseClass
+
+[45] IADSimulationHistoryValueCollection
+  Namespace: ProcessNet.AutoDesign
+  Type: interface
+  File: Python/AutoDesign/IADSimulationHistoryValueCollection.html
+  Inheritance: DispatchBaseClass
+
+[46] IBNPBody2DGuideLinear
+  Namespace: ProcessNet.BNP
+  Type: interface
+  File: Python/BNP/IBNPBody2DGuideLinear.html
+  Inheritance: DispatchBaseClass
+
+[47] BNPBeltSpecialMaterialPropertyType
+  Namespace: ProcessNet.BNP
+  Type: enum
+  File: Python/BNP/BNPBeltSpecialMaterialPropertyType.html
+  Inheritance: IntEnum
+
+[48] IBNPContactSearch
+  Namespace: ProcessNet.BNP
+  Type: interface
+  File: Python/BNP/IBNPContactSearch.html
+  Inheritance: DispatchBaseClass
+
+[49] IBNPGeometryPulleyCrown
+  Namespace: ProcessNet.BNP
+  Type: interface
+  File: Python/BNP/IBNPGeometryPulleyCrown.html
+  Inheritance: DispatchBaseClass
+
+[50] IParticleSensorExternal
+  Namespace: ProcessNet.ExternalSPI
+  Type: interface
+  File: Python/ExternalSPI/IParticleSensorExternal.html
+  Inheritance: DispatchBaseClass
+
+[51] ICuttingPlanePreset
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/ICuttingPlanePreset.html
+  Inheritance: DispatchBaseClass
+
+[52] IChainGeometryLinkMultiplexRoller
+  Namespace: ProcessNet.Chain
+  Type: interface
+  File: Python/Chain/IChainGeometryLinkMultiplexRoller.html
+  Inheritance: DispatchBaseClass
+
+[53] IR2R2DBodyRoller
+  Namespace: ProcessNet.R2R2D
+  Type: interface
+  File: Python/R2R2D/IR2R2DBodyRoller.html
+  Inheritance: DispatchBaseClass
+
+[54] IChartStyleAxisTitle
+  Namespace: ProcessNet.Post
+  Type: interface
+  File: Python/Post/IChartStyleAxisTitle.html
+  Inheritance: DispatchBaseClass
+
+[55] ITrackLMGrouserToSphereContactProperty
+  Namespace: ProcessNet.TrackLM
+  Type: interface
+  File: Python/TrackLM/ITrackLMGrouserToSphereContactProperty.html
+  Inheritance: DispatchBaseClass
+
+[56] ITrackLMBody
+  Namespace: ProcessNet.TrackLM
+  Type: interface
+  File: Python/TrackLM/ITrackLMBody.html
+  Inheritance: DispatchBaseClass
+
+[57] IContactGeoCurveToSurface
+  Namespace: ProcessNet.ProcessNet
+  Type: interface
+  File: Python/Professional/IContactGeoCurveToSurface.html
+  Inheritance: DispatchBaseClass
+
+[58] IRFlexModalLoadCaseCollection
+  Namespace: ProcessNet.RFlex
+  Type: interface
+  File: Python/RFlex/IRFlexModalLoadCaseCollection.html
+  Inheritance: DispatchBaseClass
+
+[59] IContourBandOption
+  Namespace: ProcessNet.Flexible
+  Type: interface
+  File: Python/Flexible/IContourBandOption.html
+  Inheritance: DispatchBaseClass
+
+[60] ResultExportType
+  Namespace: ProcessNet.ProcessNet
+  Type: enum
+  File: Python/Professional/ResultExportType.html
+  Inheritance: IntEnum
+
+[61] BNPBCOrienationType
+  Namespace: ProcessNet.BNP
+  Type: enum
+  File: Python/BNP/BNPBCOrienationType.html
+  Inheritance: IntEnum
+
+[62] ObjectiveGoalType
+  Namespace: ProcessNet.AutoDesign
+  Type: enum
+  File: Python/AutoDesign/ObjectiveGoalType.html
+  Inheritance: IntEnum
+
+[63] MotionType
+  Namespace: ProcessNet.ProcessNet
+  Type: enum
+  File: Python/Professional/MotionType.html
+  Inheritance: IntEnum
+
+[64] ThermalLoadType
+  Namespace: ProcessNet.FFlex
+  Type: enum
+  File: Python/FFlex/ThermalLoadType.html
+  Inheritance: IntEnum
+
+[65] UnitTime
+  Namespace: ProcessNet.ProcessNet
+  Type: enum
+  File: Python/Professional/UnitTime.html
+  Inheritance: IntEnum
+
+[66] ContactParameterType
+  Namespace: ProcessNet.MTT2D
+  Type: enum
+  File: Python/MTT2D/ContactParameterType.html
+  Inheritance: IntEnum
+
+[67] BNPContactDirectionType
+  Namespace: ProcessNet.BNP
+  Type: enum
+  File: Python/BNP/BNPContactDirectionType.html
+  Inheritance: IntEnum
+
+[68] RFISolverType
+  Namespace: ProcessNet.FlexInterface
+  Type: enum
+  File: Python/FlexInterface/RFISolverType.html
+  Inheritance: IntEnum
+
+[69] ChainInOutType
+  Namespace: ProcessNet.Chain
+  Type: enum
+  File: Python/Chain/ChainInOutType.html
+  Inheritance: IntEnum
+
+[70] MTT2DExample
+  Namespace: ProcessNet
+  Type: example
+  File: Python/recurdynexample.MTT2DExample.MTT2DExample.html
+  Inheritance: object
+
+[71] FFlexExample
+  Namespace: ProcessNet
+  Type: example
+  File: Python/recurdynexample.FFlexExample.FFlexExample.html
+  Inheritance: object
+
+[72] PostExample
+  Namespace: ProcessNet
+  Type: example
+  File: Python/recurdynexample.PostExample.PostExample.html
+  Inheritance: object
+
+[73] MMSExample
+  Namespace: ProcessNet
+  Type: example
+  File: Python/recurdynexample.MMSExample.MMSExample.html
+  Inheritance: object
+
+[74] CoreExample
+  Namespace: ProcessNet
+  Type: example
+  File: Python/recurdynexample.CoreExample.CoreExample.html
+  Inheritance: object
+
+[75] R2R2DExample
+  Namespace: ProcessNet
+  Type: example
+  File: Python/recurdynexample.R2R2DExample.R2R2DExample.html
+  Inheritance: object
+
+[76] TireExample
+  Namespace: ProcessNet
+  Type: example
+  File: Python/recurdynexample.TireExample.TireExample.html
+  Inheritance: object
+
+[77] ChartExample
+  Namespace: ProcessNet
+  Type: example
+  File: Python/recurdynexample.ChartExample.ChartExample.html
+  Inheritance: object
+
+[78] FlexibleExample
+  Namespace: ProcessNet
+  Type: example
+  File: Python/recurdynexample.FlexibleExample.FlexibleExample.html
+  Inheritance: object
+
+[79] ControlExample
+  Namespace: ProcessNet
+  Type: example
+  File: Python/recurdynexample.ControlExample.ControlExample.html
+  Inheritance: object
+
+[80] _SeriesValueInfo
+  Namespace: ProcessNet.Post
+  Type: class
+  File: Python/Post/_SeriesValueInfo.html
+  Inheritance: DispatchBaseClass
+
+[81] IeTemplate
+  Namespace: ProcessNet.ProcessNet
+  Type: class
+  File: Python/Professional/IeTemplate.html
+  Inheritance: DispatchBaseClass
+
+[82] LocalizedDescriptionAttribute
+  Namespace: ProcessNet.Post
+  Type: class
+  File: Python/Post/LocalizedDescriptionAttribute.html
+  Inheritance: CoClassBaseClass
+
+[83] PostApplication
+  Namespace: ProcessNet.Post
+  Type: class
+  File: Python/Post/PostApplication.html
+  Inheritance: CoClassBaseClass
+
+[84] SeriesValueInfo
+  Namespace: ProcessNet.Post
+  Type: class
+  File: Python/Post/SeriesValueInfo.html
+  Inheritance: CoClassBaseClass
+
+[85] _Object
+  Namespace: ProcessNet.Post
+  Type: class
+  File: Python/Post/_Object.html
+  Inheritance: DispatchBaseClass
+
+[86] _LocalizedDescriptionAttribute
+  Namespace: ProcessNet.Post
+  Type: class
+  File: Python/Post/_LocalizedDescriptionAttribute.html
+  Inheritance: DispatchBaseClass

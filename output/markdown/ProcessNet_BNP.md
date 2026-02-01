@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.BNP
 
-**Methods:** 199
+**Methods:** 316
 
 **Examples:** 0
 
@@ -191,6 +191,70 @@ Bases:DispatchBaseClassBNP AssemblyPropertiesBNPBodyBeltCollectionBelt body coll
 ### AddAllOutputBelt
 
 ```
+AddAllOutputBelt()
+```
+
+Add all the belt body to output list
+
+### AddOutputBelt
+
+```
+AddOutputBelt()
+```
+
+Add a belt body to output list
+
+### AddPassingBody
+
+```
+AddPassingBody()
+```
+
+Add a passing body
+
+### DeletePassingBody
+
+```
+DeletePassingBody()
+```
+
+Delete a passing body
+
+### GetOutputBeltList
+
+```
+GetOutputBeltList()
+```
+
+BNP assembly output list
+
+### RemoveAllOutputBelt
+
+```
+RemoveAllOutputBelt()
+```
+
+Remove all the belt body from output list
+
+### RemoveOutputBelt
+
+```
+RemoveOutputBelt()
+```
+
+Remove a belt body from output list
+
+### UpdateBeltInitialVelocity
+
+```
+UpdateBeltInitialVelocity()
+```
+
+Update initial velocity of belts
+
+### AddAllOutputBelt
+
+```
 IBNPAssembly2D.AddAllOutputBelt()
 ```
 
@@ -260,6 +324,70 @@ classIBNPAssembly2D(oobj=None)
 
 Bases:DispatchBaseClassBNP 2D AssemblyPropertiesBNPBodyBeltCollectionBelt body collectionBushingForceCollectionBushing force collectionBusingForceParameter2D busing force parameterCommentCommentFullNameFullName such asBody1.Marker1@Model1InitialLongitudinalVelocityInitial longitudinal velocityNameNameNormalDirectionGlobal Normal DirectionNumberOfSegmentNUmber of segmentOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interf
 
+### AddAllOutputBelt
+
+```
+AddAllOutputBelt()
+```
+
+Add all the belt body to output list
+
+### AddOutputBelt
+
+```
+AddOutputBelt()
+```
+
+Add a belt body to output list
+
+### AddPassingBody
+
+```
+AddPassingBody()
+```
+
+Add a passing body
+
+### DeletePassingBody
+
+```
+DeletePassingBody()
+```
+
+Delete a passing body
+
+### GetOutputBeltList
+
+```
+GetOutputBeltList()
+```
+
+BNP assembly output list
+
+### RemoveAllOutputBelt
+
+```
+RemoveAllOutputBelt()
+```
+
+Remove all the belt body from output list
+
+### RemoveOutputBelt
+
+```
+RemoveOutputBelt()
+```
+
+Remove a belt body from output list
+
+### UpdateBeltInitialVelocity
+
+```
+UpdateBeltInitialVelocity()
+```
+
+Update initial velocity of belts
+
 ### classIBNPAssembly2DBushingForceParameter
 
 ```
@@ -283,132 +411,4 @@ classIBNPAssembly2DCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClass2D Belt assembly collectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### Item
-
-```
-IBNPAssemblyCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classIBNPAssemblyCollection
-
-```
-classIBNPAssemblyCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassBelt and pulley assembly collectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### Preload
-
-```
-IBNPAssemblyConnectingForceParameter.Preload(Index)
-```
-
-Preload force and torque
-
-### ReferenceLength
-
-```
-IBNPAssemblyConnectingForceParameter.ReferenceLength(Index)
-```
-
-Six reference length
-
-### StiffnessMatrix
-
-```
-IBNPAssemblyConnectingForceParameter.StiffnessMatrix(i,j)
-```
-
-Matrix of stiffness coefficients
-
-### ViscousDampingMatrix
-
-```
-IBNPAssemblyConnectingForceParameter.ViscousDampingMatrix(i,j)
-```
-
-Viscous damping matrix
-
-### classIBNPAssemblyConnectingForceParameter
-
-```
-classIBNPAssemblyConnectingForceParameter(oobj=None)
-```
-
-Bases:DispatchBaseClassBNP assembly connecting force parameterPropertiesUseDampingMatrixUse viscous damping matrixViscousDampingRatioViscous damping coefficientMethodsPreloadPreload force and torqueReferenceLengthSix reference lengthStiffnessMatrixMatrix of stiffness coefficientsViscousDampingMatrixViscous damping matrix
-
-### UpdateAreaProperties
-
-```
-IBNPBeltBeamMaterialProperty.UpdateAreaProperties()
-```
-
-Update Area Properties
-
-### classIBNPBeltBeamMaterialProperty
-
-```
-classIBNPBeltBeamMaterialProperty(oobj=None)
-```
-
-Bases:DispatchBaseClassBeam belt material propertyPropertiesAsyAsyAszAszCYStress Recovery Points CYCZStress Recovery Points CZCrossSectionAreaCross section areaDYStress Recovery Points DYDZStress Recovery Points DZDampingRatioDamping ratioDensityDensityEYStress Recovery Points EYEZStress Recovery Points EZFYStress Recovery Points FYFZStress Recovery Points FZIxxMoment of area, IxxIyyMoment of area, IyyIzzMoment of area, IzzMassTypeMassTypePoissonsRatioPoisson's ratioShearModulusShere ModulusTota
-
-### FileExport
-
-```
-IBNPBeltClone.FileExport(strFile,OverWrite)
-```
-
-Export File
-
-### FileImport
-
-```
-IBNPBeltClone.FileImport(strFile)
-```
-
-Import File
-
-### InitialBodyGraphicFlag
-
-```
-IBNPBeltClone.InitialBodyGraphicFlag()
-```
-
-Initial body graphic flag
-
-### UpdateGeometry
-
-```
-IBNPBeltClone.UpdateGeometry()
-```
-
-Update geometry
-
-### classIBNPBeltClone
-
-```
-classIBNPBeltClone(oobj=None)
-```
-
-Bases:DispatchBaseClassBelt clonePropertiesActiveActiveCenterMarkerCenter markerCommentCommentDensityDensityFullNameFullName such asBody1.Marker1@Model1GraphicGraphicIxxIxxIxyIxyIyyIyyIyzIyzIzxIzxIzzIzzMassMassMaterialMaterialMaterialInputMaterial inputMaterialUserUser MaterialNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser sup
-
-### Item
-
-```
-IBNPBeltCloneCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classIBNPBeltCloneCollection
-
-```
-classIBNPBeltCloneCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassBNP belt clone collectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
 

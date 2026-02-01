@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.TrackLM
 
-**Methods:** 99
+**Methods:** 156
 
 **Examples:** 0
 
@@ -148,6 +148,102 @@ classITrackLMAssembly(oobj=None)
 
 Bases:DispatchBaseClassTrackLM AssemblyPropertiesBushingForceCollectionBushing force collectionBushingForceParameterBushing force parameterCommentCommentContactParameterContact ground track link shoeFullNameFullName such asBody1.Marker1@Model1GrouserContactCollectionGrouser contact collectionGrouserContactPropertyGrouser contact propertyGrouserToSphereContactGrouser to sphere contact PropertyLinkInitialVelocityXAxisLink initial velocity x-axisLinkNumbersLink numbersNameNameOwnerOwner returns own
 
+### AddAllOutputLink
+
+```
+AddAllOutputLink()
+```
+
+Add all the link body to output list
+
+### AddOutputLink
+
+```
+AddOutputLink()
+```
+
+Add a link body to output list
+
+### AddPassingBody
+
+```
+AddPassingBody()
+```
+
+Add a passing body
+
+### AddPassingBody2
+
+```
+AddPassingBody2()
+```
+
+Add a passing body with ITrackLMBody
+
+### CreateGrouserContact
+
+```
+CreateGrouserContact()
+```
+
+Create a grouser contact
+
+### DeleteGrouserContact
+
+```
+DeleteGrouserContact()
+```
+
+Delete a grouser contact
+
+### DeletePassingBody
+
+```
+DeletePassingBody()
+```
+
+Delete a passing body
+
+### DeletePassingBody2
+
+```
+DeletePassingBody2()
+```
+
+Delete a passing body with ITrackLMBody
+
+### GetOutputLinkList
+
+```
+GetOutputLinkList()
+```
+
+TrackLM assembly output list
+
+### RemoveAllOutputLink
+
+```
+RemoveAllOutputLink()
+```
+
+Remove all the link body from output list
+
+### RemoveOutputLink
+
+```
+RemoveOutputLink()
+```
+
+Remove a link body from output list
+
+### UpdateLinkInitialVelocity
+
+```
+UpdateLinkInitialVelocity()
+```
+
+Update initial velocity of links
+
 ### Export
 
 ```
@@ -172,6 +268,22 @@ classITrackLMAssemblyBushingForceParameter(oobj=None)
 
 Bases:DispatchBaseClassTrackLM Assembly Bushing Force ParameterPropertiesRotationDampingCoefficientXRotation damping coefficient XRotationDampingCoefficientYRotation damping coefficient YRotationDampingCoefficientZRotation damping coefficient ZRotationDampingExponentXRotation damping exponent XRotationDampingExponentYRotation damping exponent YRotationDampingExponentZRotation damping exponent ZRotationDampingSplineXRotation damping spline XRotationDampingSplineYRotation damping spline YRotationD
 
+### Export
+
+```
+Export()
+```
+
+Export bushing force parameter
+
+### Import
+
+```
+Import()
+```
+
+Import bushing force parameter
+
 ### Item
 
 ```
@@ -187,6 +299,14 @@ classITrackLMAssemblyCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM Assembly CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### Export
 
@@ -220,6 +340,30 @@ classITrackLMAssemblyContactGroundTrackLinkShoe(oobj=None)
 
 Bases:DispatchBaseClassTrackLM Assembly Contact Ground TrackLink ShoePropertiesCohesionCohesion (c)DampingCoefficientThe viscous damping coefficient for the contact normal force.DampingExponentThe damping exponent for a non-linear contact normal forceDampingSplineDamping splineExponentialNumberExponential number (n)FrictionFrictionFrictionCoefficientThe friction coefficient for the contact normal force.FrictionSplineThe spline which shows relative velocity to the friction coefficient or the fric
 
+### Export
+
+```
+Export()
+```
+
+Export ground parameter
+
+### Import
+
+```
+Import()
+```
+
+Import ground parameter
+
+### SoftGroundType
+
+```
+SoftGroundType()
+```
+
+Soft ground type
+
 ### classITrackLMAssemblyGrouserContact
 
 ```
@@ -244,6 +388,14 @@ classITrackLMAssemblyGrouserContactCollection(oobj=None)
 
 Bases:DispatchBaseClassTrackLM Assembly Grouser Contact CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
 
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
+
 ### AddGrouserToSphereContact
 
 ```
@@ -259,156 +411,4 @@ classITrackLMAssemblyGrouserToSphereContact(oobj=None)
 ```
 
 Bases:DispatchBaseClassTrackLM grouser to sphere contact propertyPropertiesContactPropertyGrouser to sphere contact propertyGeometrySphereCollectionSphere geometry collection of grouser to sphere contactMaximumPenetrationMaximum penetration.MethodsAddGrouserToSphereContactAdd a grouser to sphere contact
-
-### classITrackLMBody
-
-```
-classITrackLMBody(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLM bodyPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
-
-### Item
-
-```
-ITrackLMBodyCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classITrackLMBodyCollection
-
-```
-classITrackLMBodyCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLM roller guard body collectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### classITrackLMBodyFlangeCenter
-
-```
-classITrackLMBodyFlangeCenter(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLM flange centerPropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
-
-### classITrackLMBodyFlangeDouble
-
-```
-classITrackLMBodyFlangeDouble(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLM flange doublePropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
-
-### classITrackLMBodyFlangeFlat
-
-```
-classITrackLMBodyFlangeFlat(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLM flange flatPropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
-
-### classITrackLMBodyFlangeSingle
-
-```
-classITrackLMBodyFlangeSingle(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLM flange singlePropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
-
-### CreateMarker
-
-```
-ITrackLMBodyLink.CreateMarker(strName,pRefFrame)
-```
-
-Creates a marker
-
-### UpdateGeometry
-
-```
-ITrackLMBodyLink.UpdateGeometry()
-```
-
-Update geometry
-
-### classITrackLMBodyLink
-
-```
-classITrackLMBodyLink(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLM Body LinkPropertiesCommentCommentFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryGraphicGraphicLinkGrouserProfileLink grouser profileLinkShapeProfileLink shape profileNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUseBodyGraphicUse graphic of clone boyUseLinkShapeUse link sha
-
-### Item
-
-```
-ITrackLMBodyLinkCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classITrackLMBodyLinkCollection
-
-```
-classITrackLMBodyLinkCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLM Body Link CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### classITrackLMBodyRollerGuard
-
-```
-classITrackLMBodyRollerGuard(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLM Body Roller GuardPropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
-
-### UpdateProperties
-
-```
-ITrackLMBodySprocket.UpdateProperties()
-```
-
-Update Properties
-
-### classITrackLMBodySprocket
-
-```
-classITrackLMBodySprocket(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLMBodySprocketPropertiesCommentCommentContactPropertyContact PropertyContactSearchContactSearchTypeCreateContactOutputFileCreate contact output fileFullNameFullName such asBody1.Marker1@Model1GeneralBodyGeneralBodyGeometryGeometryNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceToothProfileToothProfileUserDataUser
-
-### classITrackLMContactFriction
-
-```
-classITrackLMContactFriction(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLM contact frictionPropertiesDynamicThresholdVelocityDynamic threshold velocityStaticFrictionCoefficientStatic friction coefficientStaticThresholdVelocityStatic threshold velocity
-
-### classITrackLMContactProperty
-
-```
-classITrackLMContactProperty(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLM contact propertyPropertiesDampingCoefficientThe viscous damping coefficient for the contact normal force.DampingExponentThe damping exponent for a non-linear contact normal forceDampingSplineDamping splineFrictionFrictionFrictionCoefficientThe friction coefficient for the contact normal force.FrictionSplineThe spline which shows relative velocity to the friction coefficient or the friction force.FrictionTypeFriction typeIndentationExponentThe indentation exponent y
-
-### classITrackLMContactSearch
-
-```
-classITrackLMContactSearch(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLM flange contact searchPropertiesTypeSearch type of the flange.UseUserBoundaryForPartialSearchUse the user boundary of the partial search.UserBoundaryForPartialSearchUser boundary of the partial search.
-
-### classITrackLMGeometryFlangeCenter
-
-```
-classITrackLMGeometryFlangeCenter(oobj=None)
-```
-
-Bases:DispatchBaseClassTrackLM flange center geometryPropertiesInnerFlangeRadiusInner flange radius.InnerFlangeWidthInner flange width.TotalWidthTotal width.WheelRadiusWheel radius.
 

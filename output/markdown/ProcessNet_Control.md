@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.Control
 
-**Methods:** 44
+**Methods:** 67
 
 **Examples:** 0
 
@@ -92,6 +92,14 @@ classIControlCoSimFMI(oobj=None)
 
 Bases:DispatchBaseClassControl CoSim FMIPropertiesActiveConnectionActive ConnectionFMUFileNameFMU File NameInterfaceTimeStepInterface Time StepInterfaceTimeStepUnitInterface Time Step UnitInterfaceVersionInterface VersionModelFileNameModel File NamePlantFileNamePlant File NameTypeFMI TypeUseFollowingInterfaceTimeOfHostUse Following the Interface Time of HostUseFollowingInterfaceTimeOfMasterUseFollowingInterfaceTimeOfMaster is obsolete propertyWaitingTimeWaiting TimeMethodsExportFMUFileExport a F
 
+### ExportFMUFile
+
+```
+ExportFMUFile()
+```
+
+Export a FMU File
+
 ### classIControlCoSimGeneral
 
 ```
@@ -156,6 +164,38 @@ classIControlCoSimSimulink(oobj=None)
 
 Bases:DispatchBaseClassControl CoSim SimulinkPropertiesHostProgramHost ProgramInterfaceVersionInterfaceVersion is obsoleted.MFilePlantBlockM-File to Create Plant BlockMFileSimulinkModelM-File to Run Simulink ModelMatlabProgramPathNameMatlab Program Path and NameOutputFileNameOutput File NamePlantFileNamePlant File NameSamplingPeriodSampling PeriodSimulinkModelPathNameSimulink Model Path and NameUseFollowingInterfaceTimeOfHostUse Following the Interface Time of HostUseFollowingInterfaceTimeOfMast
 
+### ExportMFileToCreatePlantBlock
+
+```
+ExportMFileToCreatePlantBlock()
+```
+
+Obsolete Function
+
+### ExportMFileToCreatePlantBlock2
+
+```
+ExportMFileToCreatePlantBlock2()
+```
+
+Export M-File to create Plant Block
+
+### ExportMFileToRunSimulinkModel
+
+```
+ExportMFileToRunSimulinkModel()
+```
+
+Obsolete Function
+
+### ExportMFileToRunSimulinkModel2
+
+```
+ExportMFileToRunSimulinkModel2()
+```
+
+Export M-File to run Simulink Model
+
 ### AddGeneralPlantInput
 
 ```
@@ -196,6 +236,38 @@ classIControlGeneralCoSim(oobj=None)
 
 Bases:DispatchBaseClassGeneral CoSimPropertiesActiveUse FlagCoSimGeneralPlantInputCollectionCoSimGeneralPlantOutputCollectionCoSimTypeData TypeCommentCommentFMIFMIFullNameFullName such asBody1.Marker1@Model1NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceRDExternalRDExternalSimulinkSimulinkUserDataUser supplied dataMethodsAddGeneralPlantInp
 
+### AddGeneralPlantInput
+
+```
+AddGeneralPlantInput()
+```
+
+Add a General Plant Input
+
+### AddGeneralPlantOutput
+
+```
+AddGeneralPlantOutput()
+```
+
+Add a General Plant Output
+
+### DeleteGeneralPlantInput
+
+```
+DeleteGeneralPlantInput()
+```
+
+Delete a General Plant Input
+
+### DeleteGeneralPlantOutput
+
+```
+DeleteGeneralPlantOutput()
+```
+
+Delete a General Plant Output
+
 ### Item
 
 ```
@@ -211,6 +283,14 @@ classIControlGeneralCoSimCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassControl General CoSim CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### CreateGeneralCoSim
 
@@ -260,6 +340,46 @@ classIControlGeneralToolkit(oobj=None)
 
 Bases:DispatchBaseClassControl Gerneral ToolkitPropertiesCommentCommentControlGeneralCoSimCollectionControlGeneralPlantInputCollectionControlGeneralPlantOutputCollectionFullNameFullName such asBody1.Marker1@Model1NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUseCoSimInfoCheck whether the GCoSim information exists or not.UserDataUser suppl
 
+### CreateGeneralCoSim
+
+```
+CreateGeneralCoSim()
+```
+
+Create a General CoSim
+
+### CreateGeneralPlantInput
+
+```
+CreateGeneralPlantInput()
+```
+
+CreateGeneralPlantInput is obsoleted.
+
+### CreateGeneralPlantOutput
+
+```
+CreateGeneralPlantOutput()
+```
+
+CreateGeneralPlantOutput is obsoleted.
+
+### DeleteGeneralPlantInput
+
+```
+DeleteGeneralPlantInput()
+```
+
+DeleteGeneralPlantInput is obsoleted.
+
+### DeleteGeneralPlantOutput
+
+```
+DeleteGeneralPlantOutput()
+```
+
+DeleteGeneralPlantOutput is obsoleted.
+
 ### classIControlPlantInput
 
 ```
@@ -284,83 +404,11 @@ classIControlPlantInputCollection(oobj=None)
 
 Bases:DispatchBaseClassControlPlantInputCollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
 
-### classIControlPlantOutput
-
-```
-classIControlPlantOutput(oobj=None)
-```
-
-Bases:DispatchBaseClassPlant OutputPropertiesActiveUse FlagArgumentsArguments listCommentCommentFullNameFullName such asBody1.Marker1@Model1InitialValueInitial ValueNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceTextTextUserDataUser supplied data
-
 ### Item
 
 ```
-IControlPlantOutputCollection.Item(var)
+Item()
 ```
 
 Returns a specific item.
-
-### classIControlPlantOutputCollection
-
-```
-classIControlPlantOutputCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassControlPlantOutputCollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### CreatePlantInput
-
-```
-IControlToolkit.CreatePlantInput(strName)
-```
-
-Create a Plant Input
-
-### CreatePlantOutput
-
-```
-IControlToolkit.CreatePlantOutput(strName,strExpression)
-```
-
-Create a Plant Output
-
-### CreatePlantOutputWithArguments
-
-```
-IControlToolkit.CreatePlantOutputWithArguments(strName,strExpression,strArgument)
-```
-
-Create a Plant Output with Arguments
-
-### DeleteCoSimInfo
-
-```
-IControlToolkit.DeleteCoSimInfo()
-```
-
-IControlToolkit.DeleteCoSimInfo is obsoleted.
-
-### DeletePlantInput
-
-```
-IControlToolkit.DeletePlantInput(pVal)
-```
-
-Delete a Plant Input
-
-### DeletePlantOutput
-
-```
-IControlToolkit.DeletePlantOutput(pVal)
-```
-
-Delete a Plant Output
-
-### classIControlToolkit
-
-```
-classIControlToolkit(oobj=None)
-```
-
-Bases:DispatchBaseClassControl ToolkitPropertiesAMESimIControlToolkit.AMESim is obsoleted.CoSimTypeIControlToolkit.CoSimType is obsoleted.CommentCommentControlPlantInputCollectionControlPlantOutputCollectionFMIIControlToolkit.FMI is obsoleted.FullNameFullName such asBody1.Marker1@Model1GeneralIControlToolkit.General is obsoleted.NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem r
 

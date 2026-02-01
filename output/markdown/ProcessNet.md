@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet
 
-**Methods:** 1126
+**Methods:** 2244
 
 **Examples:** 887
 

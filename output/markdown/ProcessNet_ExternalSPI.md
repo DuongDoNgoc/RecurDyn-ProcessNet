@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.ExternalSPI
 
-**Methods:** 45
+**Methods:** 75
 
 **Examples:** 0
 
@@ -124,6 +124,110 @@ classIExternalSPIToolkit(oobj=None)
 
 Bases:DispatchBaseClassExternalSPI ToolkitPropertiesCommentCommentConnectCurrent program's Switch of Co-SimulationContourParticleContourWallFullNameFullName such asBody1.Marker1@Model1HideParticleSetsIf true, RecurDyn hide all particle sets.MassCenterCollectionMassCenter CollectionNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceParticlePost
 
+### CreateMassCenter
+
+```
+CreateMassCenter()
+```
+
+Creates a MassCenter
+
+### CreateParticleSensorBox
+
+```
+CreateParticleSensorBox()
+```
+
+Creates a box ParticleSensor
+
+### CreateParticleSensorSphere
+
+```
+CreateParticleSensorSphere()
+```
+
+Creates a sphere ParticleSensor
+
+### CreateProfile2D
+
+```
+CreateProfile2D()
+```
+
+Creates a 2D profile
+
+### CreateTrace
+
+```
+CreateTrace()
+```
+
+Creates a Trace
+
+### CreateWall
+
+```
+CreateWall()
+```
+
+Creates a wall
+
+### ExportParticlePostData
+
+```
+ExportParticlePostData()
+```
+
+Export Particle Post Data
+
+### ExportWallFile
+
+```
+ExportWallFile()
+```
+
+Export wall file with target folder
+
+### ExportWallPostData
+
+```
+ExportWallPostData()
+```
+
+Export Wall Post Data
+
+### FluidDisplay
+
+```
+FluidDisplay()
+```
+
+Fluid Display
+
+### GetClipMinMaxValue
+
+```
+GetClipMinMaxValue()
+```
+
+Get Clip Min Max Value of target Data name
+
+### SetClipMinMaxValue
+
+```
+SetClipMinMaxValue()
+```
+
+Set Clip Min Max Value of target Data name
+
+### UpdatePostData
+
+```
+UpdatePostData()
+```
+
+Update post data
+
 ### Item
 
 ```
@@ -140,6 +244,14 @@ classIMassCenterCollection(oobj=None)
 
 Bases:DispatchBaseClassMass Center CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
 
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
+
 ### AddParticleSet
 
 ```
@@ -155,6 +267,14 @@ classIMassCenterExternal(oobj=None)
 ```
 
 Bases:DispatchBaseClassMass CenterPropertiesColorColor of the Mass CenterCommentCommentFullNameFullName such asBody1.Marker1@Model1NameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied dataVisibleVisible Flag of the Mass CenterWidthWidth of the Mass CenterMethodsAddParticleSetAdd a particle set and define its density
+
+### AddParticleSet
+
+```
+AddParticleSet()
+```
+
+Add a particle set and define its density
 
 ### Create
 
@@ -180,6 +300,22 @@ classIParticleFluidDisplay(oobj=None)
 
 Bases:DispatchBaseClassFluid DisplayPropertiesAlphaAlpah ParameterCellSizeCell sizeDirectoryDirectoryDrawLineDraw LineEndFrameEnd FrameShowShow Fulid DisplySmoothRenderingVertex NormalStartFrameStart FrameThresholdThreshold ValueUseDirectoryUse DirectoryMethodsCreateCreate Fluid DataImportImport Fluid Data
 
+### Create
+
+```
+Create()
+```
+
+Create Fluid Data
+
+### Import
+
+```
+Import()
+```
+
+Import Fluid Data
+
 ### Item
 
 ```
@@ -195,6 +331,14 @@ classIParticleSensorCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassParticle Sensor CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### HidePlotDialog
 
@@ -223,6 +367,22 @@ Bases:DispatchBaseClassParticle SensorPropertiesColorColorCommentCommentFullName
 ### HidePlotDialog
 
 ```
+HidePlotDialog()
+```
+
+Hide the plot dialog
+
+### ShowPlotDialog
+
+```
+ShowPlotDialog()
+```
+
+Show the plot dialog
+
+### HidePlotDialog
+
+```
 IParticleSensorExternalBox.HidePlotDialog()
 ```
 
@@ -247,128 +407,8 @@ Bases:DispatchBaseClassParticle SensorPropertiesColorColorCommentCommentDepthDep
 ### HidePlotDialog
 
 ```
-IParticleSensorExternalSphere.HidePlotDialog()
+HidePlotDialog()
 ```
 
 Hide the plot dialog
-
-### ShowPlotDialog
-
-```
-IParticleSensorExternalSphere.ShowPlotDialog()
-```
-
-Show the plot dialog
-
-### classIParticleSensorExternalSphere
-
-```
-classIParticleSensorExternalSphere(oobj=None)
-```
-
-Bases:DispatchBaseClassParticle SensorPropertiesColorColorCommentCommentFullNameFullName such asBody1.Marker1@Model1GroupSequenceSequence of the Particle GroupNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfacePositionSensor PositionRadiusRadius of sphere sensorReferenceBodyReference BodyUserDataUser supplied dataVisibleVisible FlagMethodsHide
-
-### classIParticleSetExternal
-
-```
-classIParticleSetExternal(oobj=None)
-```
-
-Bases:DispatchBaseClassParticleSetExternalPropertiesGraphicMaterialGraphic MaterialNameName
-
-### Item
-
-```
-IParticleSetExternalCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classIParticleSetExternalCollection
-
-```
-classIParticleSetExternalCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassParticleSetExternal CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### Item
-
-```
-IProfile2DCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classIProfile2DCollection
-
-```
-classIProfile2DCollection(oobj=None)
-```
-
-Bases:DispatchBaseClass2D Profile CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### HidePlotDialog
-
-```
-IProfile2DExternal.HidePlotDialog()
-```
-
-Hide the plot dialog
-
-### ShowPlotDialog
-
-```
-IProfile2DExternal.ShowPlotDialog()
-```
-
-Show the plot dialog
-
-### classIProfile2DExternal
-
-```
-classIProfile2DExternal(oobj=None)
-```
-
-Bases:DispatchBaseClass2D ProfilePropertiesColorColorCommentCommentDivisionDivision of the 2D ProfileFullNameFullName such asBody1.Marker1@Model1GroupSequenceSequence of the Particle GroupHalfdepthHalfdepth of the 2D ProfileLengthReference length of the 2D ProfileNameNameNormalDirectionNormal direction of the 2D profileOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISub
-
-### Item
-
-```
-ITraceCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classITraceCollection
-
-```
-classITraceCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassTrace CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### classITraceExternal
-
-```
-classITraceExternal(oobj=None)
-```
-
-Bases:DispatchBaseClassTracePropertiesColorColor of the Trace LineCommentCommentFullNameFullName such asBody1.Marker1@Model1GroupSequenceSequence of the Particle SetNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceParticleIDID of the ParticleUserDataUser supplied dataVisibleVisible Flag of the Trace LineWidthWidth of the Trace Line
-
-### Item
-
-```
-IWallCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classIWallCollection
-
-```
-classIWallCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassWall CollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
 

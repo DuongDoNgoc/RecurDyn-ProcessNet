@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.MTT2D
 
-**Methods:** 131
+**Methods:** 220
 
 **Examples:** 0
 
@@ -84,6 +84,38 @@ classIMTT2DAssembly(oobj=None)
 
 Bases:DispatchBaseClassMTT2D assemblyPropertiesBufferRadiusFactorBuffer radius factorCommentCommentFullNameFullName such asBody1.Marker1@Model1MaximumNoOfSheetSegmentsMaximum number of sheet's segmentsMaximumStepsizeFactorMaximum stepsize factorNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfacePenetrationParameterPenetration parameterReferenc
 
+### GetContactedGeometry
+
+```
+GetContactedGeometry()
+```
+
+Get a contacted geometry
+
+### GetContactedSheet
+
+```
+GetContactedSheet()
+```
+
+Get a contacted sheet
+
+### SetContactedGeometry
+
+```
+SetContactedGeometry()
+```
+
+Set a contacted geometry
+
+### SetContactedSheet
+
+```
+SetContactedSheet()
+```
+
+Set a contacted sheet
+
 ### classIMTT2DContactProperty
 
 ```
@@ -159,6 +191,14 @@ Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collect
 ### Item
 
 ```
+Item()
+```
+
+Returns a specific item.
+
+### Item
+
+```
 IMTT2DFixedRollerGroupCollection.Item(var)
 ```
 
@@ -171,6 +211,14 @@ classIMTT2DFixedRollerGroupCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### classIMTT2DFlexibleRollerProperty
 
@@ -204,6 +252,22 @@ classIMTT2DForceNodal(oobj=None)
 
 Bases:DispatchBaseClassMTT2D nodal forcePropertiesActiveActiveBaseBodyBase BodyCommentCommentFullNameFullName such asBody1.Marker1@Model1LayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied dataUserSubroutineUser subroutineMethodsGetAppliedBodySpecifies whether nodal force is applied to a body.SetAppl
 
+### GetAppliedBody
+
+```
+GetAppliedBody()
+```
+
+Specifies whether nodal force is applied to a body.
+
+### SetAppliedBody
+
+```
+SetAppliedBody()
+```
+
+Applies nodal force to a body
+
 ### Item
 
 ```
@@ -219,6 +283,14 @@ classIMTT2DForceNodalCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassIForceNodalCollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### CopyActionToBase
 
@@ -247,6 +319,22 @@ Bases:DispatchBaseClassMTT2D spring forcePropertiesActionMarkerAction markerActi
 ### CopyActionToBase
 
 ```
+CopyActionToBase()
+```
+
+Copy action to base
+
+### CopyBaseToAction
+
+```
+CopyBaseToAction()
+```
+
+Copy base to action
+
+### CopyActionToBase
+
+```
 IMTT2DForceSpringNip.CopyActionToBase(Type)
 ```
 
@@ -267,6 +355,22 @@ classIMTT2DForceSpringNip(oobj=None)
 ```
 
 Bases:DispatchBaseClassMTT2D nip spring forcePropertiesActionMarkerAction markerActiveActiveBaseBodyBase bodyBaseMarkerBase markerBasePointBase pointCommentCommentDampingDampingForceDisplayForce displayForceDisplayColorForce display colorForceDisplayUseForce display useFreeLengthThe free length of the springFullNameFullName such asBody1.Marker1@Model1LayerNameLayer nameLayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerB
+
+### CopyActionToBase
+
+```
+CopyActionToBase()
+```
+
+Copy action to base
+
+### CopyBaseToAction
+
+```
+CopyBaseToAction()
+```
+
+Copy base to action
 
 ### CopyActionToBase
 
@@ -292,123 +396,19 @@ classIMTT2DForceSpringTSD(oobj=None)
 
 Bases:DispatchBaseClassMTT2D TSD spring forcePropertiesActionMarkerAction markerActionPointAction pointActiveActiveBaseBodyBase bodyBaseMarkerBase markerCommentCommentDampingDampingForceDisplayForce displayForceDisplayColorForce display colorForceDisplayUseForce display useFreeLengthThe free length of the springFullNameFullName such asBody1.Marker1@Model1LayerNameLayer nameLayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOw
 
-### SetLayerNumber
+### CopyActionToBase
 
 ```
-IMTT2DGroupFixedRoller.SetLayerNumber(iVal)
+CopyActionToBase()
 ```
 
-Set layer Number
+Copy action to base
 
-### UpdateActiveFlagOfAllEntities
-
-```
-IMTT2DGroupFixedRoller.UpdateActiveFlagOfAllEntities(Val)
-```
-
-Update active flag of all entities
-
-### UpdateAllProperties
+### CopyBaseToAction
 
 ```
-IMTT2DGroupFixedRoller.UpdateAllProperties()
+CopyBaseToAction()
 ```
 
-Update all properties
-
-### UpdateNonGeometricProperties
-
-```
-IMTT2DGroupFixedRoller.UpdateNonGeometricProperties()
-```
-
-Update non-geometric properties
-
-### classIMTT2DGroupFixedRoller
-
-```
-classIMTT2DGroupFixedRoller(oobj=None)
-```
-
-Bases:DispatchBaseClassMTT2D fixed roller groupPropertiesActiveActiveBaseBodyThe base body of the revolute jointCenterPointThe center point of the fixed roller bodyCommentCommentContactPointsThe number of max contact pointsContactPropertyToSheetThe parameters of contact forces applied between sheet and fixed rollerEachRenderModeRendering modeForceDisplayForce displayFullNameFullName such asBody1.Marker1@Model1InertiaIzz, the mass moment of inertia in the z-axis of the rollerLayerNumberLayer numb
-
-### SetLayerNumber
-
-```
-IMTT2DGroupFixedRollerShell.SetLayerNumber(iVal)
-```
-
-Set layer Number
-
-### UpdateActiveFlagOfAllEntities
-
-```
-IMTT2DGroupFixedRollerShell.UpdateActiveFlagOfAllEntities(Val)
-```
-
-Update active flag of all entities
-
-### UpdateAllProperties
-
-```
-IMTT2DGroupFixedRollerShell.UpdateAllProperties()
-```
-
-Update all properties
-
-### UpdateNonGeometricProperties
-
-```
-IMTT2DGroupFixedRollerShell.UpdateNonGeometricProperties()
-```
-
-Update non-geometric properties
-
-### classIMTT2DGroupFixedRollerShell
-
-```
-classIMTT2DGroupFixedRollerShell(oobj=None)
-```
-
-Bases:DispatchBaseClassMTT2D fixed shell roller groupPropertiesActiveActiveBaseBodyThe base body of the revolute jointCenterPointThe center point of the fixed roller bodyCommentCommentContactPointsThe number of max contact pointsContactPropertyToSheetThe parameters of contact forces applied between sheet and fixed rollerEachRenderModeRendering modeFlexBodyFlex body editFlexibleRollerPropertyFlexible roller propertyForceDisplayForce displayFullNameFullName such asBody1.Marker1@Model1LayerNumberLa
-
-### SetLayerNumber
-
-```
-IMTT2DGroupGuideBody.SetLayerNumber(iVal)
-```
-
-Set layer Number
-
-### SetSecondParametricPoint
-
-```
-IMTT2DGroupGuideBody.SetSecondParametricPoint(pVal)
-```
-
-Set second point
-
-### SetSecondPoint
-
-```
-IMTT2DGroupGuideBody.SetSecondPoint(dX,dY,dZ)
-```
-
-Set second point
-
-### SetStartParametricPoint
-
-```
-IMTT2DGroupGuideBody.SetStartParametricPoint(pVal)
-```
-
-Set start point
-
-### SetStartPoint
-
-```
-IMTT2DGroupGuideBody.SetStartPoint(dX,dY,dZ)
-```
-
-Set start point
+Copy base to action
 

@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.Durability
 
-**Methods:** 65
+**Methods:** 83
 
 **Examples:** 0
 
@@ -132,6 +132,30 @@ classIDurabilityContour(oobj=None)
 
 Bases:DispatchBaseClassDurability ContourPropertiesBandOptionGet Contour Band OptionMinMaxOptionGet Contour MinMax OptionOptionTypeContour Option TypeProbeOptionGet Contour Probe OptionRecoveryTypeContour Recovery TypeStyleOptionGet Contour Style OptionTimeHistoryIndexTimeHistory IndexViewTypeContour View TypeMethodsContourViewContour ViewExportContourDataExport Contour DataExportContourDataWithNodeSetExport Contour Data with Nodeset
 
+### ContourView
+
+```
+ContourView()
+```
+
+Contour View
+
+### ExportContourData
+
+```
+ExportContourData()
+```
+
+Export Contour Data
+
+### ExportContourDataWithNodeSet
+
+```
+ExportContourDataWithNodeSet()
+```
+
+Export Contour Data with Nodeset
+
 ### classIDurabilityContourBandOption
 
 ```
@@ -156,6 +180,14 @@ classIDurabilityContourMinMaxOption(oobj=None)
 
 Bases:DispatchBaseClassDurability Contour MinMax OptionPropertiesEnableLogScaleEnable Log ScaleMaxMax ValueMinMin ValueMinMaxTypeContour Min Max TypeShowMinMaxShow Min MaxUserDefinedMaxUser Defined Max ValueUserDefinedMinUser Defined Min ValueMethodsCalculationMin Max Calculation
 
+### Calculation
+
+```
+Calculation()
+```
+
+Min Max Calculation
+
 ### Clear
 
 ```
@@ -179,6 +211,22 @@ classIDurabilityContourProbeOption(oobj=None)
 ```
 
 Bases:DispatchBaseClassDurability Contour Probe OptionPropertiesShowProbeResultShow Probe ResultMethodsClearClear Probe DataSelectSelect Probe Data
+
+### Clear
+
+```
+Clear()
+```
+
+Clear Probe Data
+
+### Select
+
+```
+Select()
+```
+
+Select Probe Data
 
 ### classIDurabilityContourStyleOption
 
@@ -244,6 +292,54 @@ classIDurabilityFatigueEvaluation(oobj=None)
 
 Bases:DispatchBaseClassDurability Fatigue EvaluationPropertiesAxialModeAxial ModeElementPatchSetElement/ Patch SetLifeCriteriaLife CriteriaMaterialGet fatigue MaterialOccurrenceOccurrencePlotOriginalHistoryGet Plot Original HistoryPreStressFilePre-Stress fileRainFlowGet Rainflow CountingResultGet fatigue Evaluation ResultSafetyFactorGet fatigue Evaluation Safety FactorSpecificAngleCalculationOptionGet Specific Angle Calculation OptionSpecificAngleCalculationResultGet Specific Angle Calculation R
 
+### Calculation
+
+```
+Calculation()
+```
+
+Calculation Fatigue
+
+### ClearTimeHistory
+
+```
+ClearTimeHistory()
+```
+
+Clear Time History List
+
+### CreateTimeHistory
+
+```
+CreateTimeHistory()
+```
+
+Create Time History
+
+### Import
+
+```
+Import()
+```
+
+Import Previous Fatigue Results
+
+### PlotHistory
+
+```
+PlotHistory()
+```
+
+Plot Original History in Fatigue Tool
+
+### RainFlowCounting
+
+```
+RainFlowCounting()
+```
+
+RainFlow Counting in Fatigue Tool
+
 ### classIDurabilityFatigueEvaluationSafetyFactor
 
 ```
@@ -300,115 +396,19 @@ classIDurabilityFatigueMaterialUserDefined(oobj=None)
 
 Bases:DispatchBaseClassDurability Fatigue Evaluation - User Defined MaterialPropertiesAmplitudeAmplitudeCycleToFailureCycle to FailureInterpolationTypeUser Defined Interpolation TypeStrengthCoefficientStrength CoefficientUltimateStrengthUltimate StrengthYieldStressYield StressMethodsExportExport methodImportImport method
 
-### MeanStressList
+### Export
 
 ```
-IDurabilityFatigueResult.MeanStressList(timeHist)
+Export()
 ```
 
-Mean stress list
+Export method
 
-### StressAmplitudeList
-
-```
-IDurabilityFatigueResult.StressAmplitudeList(timeHist)
-```
-
-Stress amplitude list
-
-### classIDurabilityFatigueResult
+### Import
 
 ```
-classIDurabilityFatigueResult(oobj=None)
+Import()
 ```
 
-Bases:DispatchBaseClassDurability Fatigue Evaluation - ResultPropertiesDamageDamageDamageListDamage listFaceNodeIDsFace Node IDsFaceNodeIDsListFace Node IDs listLifeLifeLifeListLife listSafetyFactorSafety FactorSafetyFactorListSafety Factor listTimeHistoryNameListTimeHistory Name listMethodsMeanStressListMean stress listStressAmplitudeListStress amplitude list
-
-### classIDurabilityPlotOriginalHistory
-
-```
-classIDurabilityPlotOriginalHistory(oobj=None)
-```
-
-Bases:DispatchBaseClassDurability Fatigue Evaluation - Plot Original HistoryPropertiesAngleTypeAngle TypeLocationTypeLocationTypeTimeHistoryNameTimeHistory NameUserDefinedAngleUser Defined Angle (Degree)UserDefinedPatchIndexUser Defined Patch Index
-
-### Execute
-
-```
-IDurabilityPreStress.Execute()
-```
-
-Execute method
-
-### classIDurabilityPreStress
-
-```
-classIDurabilityPreStress(oobj=None)
-```
-
-Bases:DispatchBaseClassDurability Pre-StressPropertiesElementPatchSetElement/ Patch SetInputFileInput CSV fileReferenceMarkerReference markerResultFileResult DNSRD fileMethodsExecuteExecute method
-
-### classIDurabilityPreference
-
-```
-classIDurabilityPreference(oobj=None)
-```
-
-Bases:DispatchBaseClassDurability PreferencePropertiesConvergenceControlGet Preference Convergence ControlFatigueInfluencingFactorsGet Preference Fatigue Influencing FactorsMaterialGet Preference MaterialRainFlowCountingGet Preference Rainflow Counting
-
-### classIDurabilityPreferenceConvergenceControl
-
-```
-classIDurabilityPreferenceConvergenceControl(oobj=None)
-```
-
-Bases:DispatchBaseClassDurability Preference - Convergence ControlPropertiesAbsoluteErrorAbsolute ErrorInitialValueInital ValueMaxNumberIterationMax Number Iteration
-
-### classIDurabilityPreferenceFatigueInfluencingFactors
-
-```
-classIDurabilityPreferenceFatigueInfluencingFactors(oobj=None)
-```
-
-Bases:DispatchBaseClassDurability Preference - Fatigue Influencing FactorsPropertiesLoadFactorLoad FactorNotchFactorAmpNotch Factor AmpOtherFactorOther FactorScaleFactorScale FactorSizeFactorSize FactorSurfaceFactorSurface FactorSurfaceFactorTypeSurface Factor type
-
-### classIDurabilityPreferenceMaterial
-
-```
-classIDurabilityPreferenceMaterial(oobj=None)
-```
-
-Bases:DispatchBaseClassDurability Preference - MaterialPropertiesLibraryPathMaterial Library Path
-
-### classIDurabilityPreferenceRainflowCounting
-
-```
-classIDurabilityPreferenceRainflowCounting(oobj=None)
-```
-
-Bases:DispatchBaseClassDurability Preference - RainFlow CountingPropertiesNumberRangesNumber RangesPeakValleyPeak Valley
-
-### classIDurabilityRainflowCounting
-
-```
-classIDurabilityRainflowCounting(oobj=None)
-```
-
-Bases:DispatchBaseClassDurability Fatigue Evaluation - Rainflow CountingPropertiesAngleTypeAngle TypeLocationTypeLocationTypeTimeHistoryNameTimeHistory NameUserDefinedAngleUser Defined Angle (Degree)UserDefinedPatchIndexUser Defined Patch Index
-
-### classIDurabilitySpecificAngleCalculationOption
-
-```
-classIDurabilitySpecificAngleCalculationOption(oobj=None)
-```
-
-Bases:DispatchBaseClassDurability Fatigue Evaluation - Specific Angle Calculation OptionPropertiesAngleTypeAngle TypeLocationTypePatch Location TypeTimeHistoryNameTimeHistory NameUserDefinedAngleUser Defined Angle (Degree)UserDefinedPatchIndexUser Defined Patch Index
-
-### classIDurabilitySpecificAngleCalculationResult
-
-```
-classIDurabilitySpecificAngleCalculationResult(oobj=None)
-```
-
-Bases:DispatchBaseClassDurability Fatigue Evaluation - Specific Angle Calculation ResultPropertiesDamageDamageLifeLifeSafetyFactorSafety Factor
+Import method
 

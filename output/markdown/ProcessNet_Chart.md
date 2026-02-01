@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.Chart
 
-**Methods:** 57
+**Methods:** 88
 
 **Examples:** 0
 
@@ -292,123 +292,123 @@ classIChart(oobj=None)
 
 Bases:DispatchBaseClassPropertiesAxisXAssigns properties specifically to the primary X axis.AxisYAssigns properties specifically to the primary Y axis of the chart.AxisY2Assigns properties specifically to the secondary Y axis of the chart.BackColorthe background color of the chart.BackgroundImagethe fulll path of background image.GalleryTypethe gallery type of the chart.InsideColorthe inside color of the chart.LegendBoxAllows you to acces the legend box of the chart.SeriesCountthe number of seri
 
-### classIChartFont
+### DeleteSeries
 
 ```
-classIChartFont(oobj=None)
+DeleteSeries()
 ```
 
-Bases:DispatchBaseClassIFontPropertiesBoldthe flag of bold typeItalicthe flag of Italic typeNamethe name of the fontSizethe size of the fontStrikethroughthe flag of Italic typeUnderlinethe flag of Italic type
+Delete series with the index
 
-### SetX
-
-```
-IDataValue.SetX(ISeries,IPoint,arg2)
-```
-
-Allows you to set X-Values for specific point of XY plots.
-
-### SetY
+### Get3D
 
 ```
-IDataValue.SetY(ISeries,IPoint,arg2)
+Get3D()
 ```
 
-Allows you to access the Y coordinates of the data points
+Return the 3D setting of the chart.
 
-### X
-
-```
-IDataValue.X(ISeries,IPoint)
-```
-
-Allows you to set X-Values for specific point of XY plots.
-
-### Y
+### GetAddtionalYAxis
 
 ```
-IDataValue.Y(ISeries,IPoint)
+GetAddtionalYAxis()
 ```
 
-Allows you to access the Y coordinates of the data points
+Returns a additional y axis.
 
-### classIDataValue
-
-```
-classIDataValue(oobj=None)
-```
-
-Bases:DispatchBaseClassPropertiesPointsCountthe number of data points per series in a chart.SeriesCountthe number of series allocated for the chart.MethodsSetXAllows you to set X-Values for specific point of XY plots.SetYAllows you to access the Y coordinates of the data pointsXAllows you to set X-Values for specific point of XY plots.YAllows you to access the Y coordinates of the data points
-
-### classIGrid
+### GetAngleX
 
 ```
-classIGrid(oobj=None)
+GetAngleX()
 ```
 
-Bases:DispatchBaseClassPropertiesMajorProvides access to the GridLine to customize the Mayor Grid.MinorProvides access to the GridLine to customize the Minor Grid.
+Return the degree of the view angle X
 
-### classIGridLine
-
-```
-classIGridLine(oobj=None)
-```
-
-Bases:DispatchBaseClassPropertiesColorthe line color for a selected line.Stylethe line style for a selected line.Visiblea value indicating whether the grid line for the selected Gridline will be visible.Widththe line width for a selected line.
-
-### classILegendBox
+### GetAngleY
 
 ```
-classILegendBox(oobj=None)
+GetAngleY()
 ```
 
-Bases:DispatchBaseClassPropertiesAlignmentAllows you to align the content for the legend box.BackColorAllows you to set the background color for the selected legend box.DockedPositionSet the docked position of the legend box.TextColorthe color used for the text in the legend boxTextFontthe font of the legendVisiblea value indicating the legend box object should be shown or not.
+Return the degree of the view angle Y
 
-### classILine
-
-```
-classILine(oobj=None)
-```
-
-Bases:DispatchBaseClassPropertiesColorthe line color for a selected line.Stylethe line style for a selected line.Widththe line width for a selected line.
-
-### classIPane
+### GetAxisY
 
 ```
-classIPane(oobj=None)
+GetAxisY()
 ```
 
-Bases:DispatchBaseClassPropertiesBackColorthe inside color for the selected pane.Titlethe Title object for a selected chart pane.
+Returns a indexed y axis.
 
-### classIPoint
-
-```
-classIPoint(oobj=None)
-```
-
-Bases:DispatchBaseClass
-
-### classIPointLabel
+### GetCluster
 
 ```
-classIPointLabel(oobj=None)
+GetCluster()
 ```
 
-Bases:DispatchBaseClassPropertiesAlignmentthe vertical alignment for the point label.Visiblea value indicating if point label should be displayed or not.
+Return cluster setting of the chart.
 
-### classISeries
-
-```
-classISeries(oobj=None)
-```
-
-Bases:DispatchBaseClassPropertiesColora Color for the selected series.GalleryTypea gallery type for a particular series.LineStylethe line style of the seriesLineWidththe line width of the seriesMarkerShapethe type used to paint markers for the selected item.MarkerSizea value controlling the size of the markers for the selected item.Texta value for labeling the series.Visiblea value allowing you to show or hide the series.YAxisGets or Sets AxisY the series is connected to.
-
-### classITitle
+### GetLineStyle
 
 ```
-classITitle(oobj=None)
+GetLineStyle()
 ```
 
-Bases:DispatchBaseClassPropertiesAlignmentAllows you to set the alignment of the specified title.BackColorthe color background of the specified title.Textthe text for the selected title.TextColorthe color of text for the specified title.TextFontthe font of the title text
+Get the Line Style of the Chart
+
+### GetLineWidth
+
+```
+GetLineWidth()
+```
+
+Get the line width of chart
+
+### GetPane
+
+```
+GetPane()
+```
+
+Returns a indexed pane.
+
+### GetPlotDataWithSeriesIndex
+
+```
+GetPlotDataWithSeriesIndex()
+```
+
+Get plot data with sereis index
+
+### GetPlotDataXWithSeriesIndex
+
+```
+GetPlotDataXWithSeriesIndex()
+```
+
+Get plot data X with sereis index
+
+### GetSeries
+
+```
+GetSeries()
+```
+
+Returns a indexed series attribute.
+
+### GetView3D
+
+```
+GetView3D()
+```
+
+Return the 3D View setting of the chart.
+
+### GetView3DDepth
+
+```
+GetView3DDepth()
+```
+
+Get the depth of the series in 3D Chart
 

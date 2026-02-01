@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.Flexible
 
-**Methods:** 106
+**Methods:** 141
 
 **Examples:** 0
 
@@ -236,6 +236,78 @@ classIContour(oobj=None)
 
 Bases:DispatchBaseClassContourPropertiesBandOptionBandOption is obsolete function.BandOption2Get Contour Band OptionDataExportGet Contour Data ExportDataTraceCollectionContains Contour Data TraceEnableViewEnable View FlagMinMaxOptionMinMaxOption is obsolete function.MinMaxOption2Get Contour MinMax OptionPartSelectionCollectionContains Contour Part SelectionReferenceNodeCollectionContains Contour Reference NodeStyleOptionStyleOption is obsolete function.StyleOption2Get Contour Style OptionTypeOpt
 
+### AddDataTrace
+
+```
+AddDataTrace()
+```
+
+Add DataTrace
+
+### AddPartSelction
+
+```
+AddPartSelction()
+```
+
+Add Part Selection
+
+### CloseContourDialog
+
+```
+CloseContourDialog()
+```
+
+Close Contour Dialog
+
+### DeleteDataTrace
+
+```
+DeleteDataTrace()
+```
+
+Delete DataTrace
+
+### DeleteDataTracebyIndex
+
+```
+DeleteDataTracebyIndex()
+```
+
+Delete DataTrace
+
+### DeletePartSelction
+
+```
+DeletePartSelction()
+```
+
+Delete Part Selection
+
+### DeletePartSelctionbyIndex
+
+```
+DeletePartSelctionbyIndex()
+```
+
+Delete Part Selection
+
+### OpenContourDialog
+
+```
+OpenContourDialog()
+```
+
+Open Contour Dialog
+
+### UpdateLegend
+
+```
+UpdateLegend()
+```
+
+Contour Setting Done
+
 ### classIContourBandOption
 
 ```
@@ -267,6 +339,22 @@ classIContourBandOption2(oobj=None)
 ```
 
 Bases:DispatchBaseClassContour Band Option2PropertiesBandLevelBand LevelColorSetTypeContour Color Set TypeCustomizeBandColorsCustomize Band ColorsCustomizeBandEnableLogScaleCustomize Band Log ScaleCustomizeBandValuesCustomize Band ValuesEnableLogScaleLog ScaleMaxColorMax ColorMinColorMin ColorUseCustomizeBandOptionCustomize Band OptionMethodsSetCustomizeBandValuesColorsSet Customize Band Option Values and ColorsUpdateCustomizeBandValuesWithLogScaleUpdate Customize Band Values with Log Scale
+
+### SetCustomizeBandValuesColors
+
+```
+SetCustomizeBandValuesColors()
+```
+
+Set Customize Band Option Values and Colors
+
+### UpdateCustomizeBandValuesWithLogScale
+
+```
+UpdateCustomizeBandValuesWithLogScale()
+```
+
+Update Customize Band Values with Log Scale
 
 ### Export
 
@@ -300,115 +388,27 @@ classIContourDataExport(oobj=None)
 
 Bases:DispatchBaseClassContour Data ExportPropertiesBodyExport BodySelectFramesSelect FramesSelectNodesSelect NodesSelectTypeSelect TypeSignificantDigitsSignificant digitsTypeTypeUseScientificNotationExport data with scientific notation flagMethodsExportExport Contour DataSelectFramesWithRangeSelect FramesSelectNodesWithRangeSelect Nodes
 
-### classIContourDataTrace
+### Export
 
 ```
-classIContourDataTrace(oobj=None)
+Export()
 ```
 
-Bases:DispatchBaseClassContour Data TracePropertiesBodyBodyNodeIDReference Node IDSelectSelection
+Export Contour Data
 
-### Item
-
-```
-IContourDataTraceCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classIContourDataTraceCollection
+### SelectFramesWithRange
 
 ```
-classIContourDataTraceCollection(oobj=None)
+SelectFramesWithRange()
 ```
 
-Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+Select Frames
 
-### Calculation
-
-```
-IContourMinMaxOption.Calculation()
-```
-
-MinMaxCalculation is obsolete function
-
-### classIContourMinMaxOption
+### SelectNodesWithRange
 
 ```
-classIContourMinMaxOption(oobj=None)
+SelectNodesWithRange()
 ```
 
-Bases:DispatchBaseClassIContourMinMaxOption is obsolete function. Use IContourMinMaxOption2.PropertiesEnableLogScaleLogScale is obsolete functionMaxMaxValue is obsolete functionMinMinValue is obsolete functionShowMaxShowMax is obsolete functionShowMinShowMin is obsolete functionShowMinMaxShowMinMax is obsolete functionTypeMinMaxType is obsolete functionUserDefinedMaxUserDefinedMaxValue is obsolete functionUserDefinedMaxColorUserDefinedMaxColor is obsolete functionUserDefinedMinUserDefinedMinValu
-
-### Calculation
-
-```
-IContourMinMaxOption2.Calculation()
-```
-
-Min Max Calculation
-
-### classIContourMinMaxOption2
-
-```
-classIContourMinMaxOption2(oobj=None)
-```
-
-Bases:DispatchBaseClassContour MinMax Option2PropertiesMaxMax ValueMinMin ValueShowMaxShow MaxShowMinShow MinTypeMin Max TypeUserDefinedMaxUser Defined Max ValueUserDefinedMinUser Defined Min ValueMethodsCalculationMin Max Calculation
-
-### classIContourPartSelection
-
-```
-classIContourPartSelection(oobj=None)
-```
-
-Bases:DispatchBaseClassContour Part SelectionPropertiesBodyBodyElementSetElement SetSelectSelection
-
-### Item
-
-```
-IContourPartSelectionCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classIContourPartSelectionCollection
-
-```
-classIContourPartSelectionCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### classIContourReferenceNode
-
-```
-classIContourReferenceNode(oobj=None)
-```
-
-Bases:DispatchBaseClassContour Reference NodePropertiesBodyBodyMarkerreference markerNodeIDReference Node IDOrientationReferenceMarkerOrientationReferenceMarker is obsolete functionReferenceTypeReference TypeSelectSelectionUseOrientationReferenceMarkerUseOrientationReferenceMarker is obsolete function
-
-### Item
-
-```
-IContourReferenceNodeCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classIContourReferenceNodeCollection
-
-```
-classIContourReferenceNodeCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassIConourReferenceNodeCollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### classIContourStyleOption
-
-```
-classIContourStyleOption(oobj=None)
-```
-
-Bases:DispatchBaseClassIContourStyleOption is obsolete interface. Use IContourStyleOption2.PropertiesColorTypeColorType is obsolete functionExceedMaxColorExceedMaxColor is obsolete functionGrayScaleColorGrayScaleColor is obsolete functionLessThanMinColorLessthanMinColor is obsolete functionMeshLinesColorMeshLinesColor is obsolete functionShowMeshLinesShowMeshLines is obsolete functionSpectrumMaxColorSpectrumMaxColor is obsolete functionSpectrumMinColorSpectrumMinColor is obsolete functionStyleCo
+Select Nodes
 

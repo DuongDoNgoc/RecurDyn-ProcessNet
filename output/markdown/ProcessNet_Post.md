@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.Post
 
-**Methods:** 482
+**Methods:** 747
 
 **Examples:** 0
 
@@ -356,57 +356,59 @@ classIAnalysisFunctions(oobj=None)
 
 Bases:DispatchBaseClassDefines interface for the AnalysisFunctions.MethodsFFTMagnitudeExecutes the FFT (Magnitude) analyis function.FFTPSDExecutes the FFT (Power Spectral Density) analyis function.FFTPhaseExecutes the FFT (Phase) analyis function.FilterButterWorthExecutes the Filter (Butter Worth) analyis function.FilterTransferFunctionExecutes the Filter (Transfer Function) analyis function.SimpleMathAbsolutexecutes the function to calculate the absolute value of each data.SimpleMathDivideExecu
 
-### Pause
+### FFTMagnitude
 
 ```
-IAnimation.Pause()
+FFTMagnitude()
 ```
 
-Pauses the animation.
+Executes the FFT (Magnitude) analyis function.
 
-### Play
-
-```
-IAnimation.Play()
-```
-
-Plays the animation.
-
-### PrepareAnimation
+### FFTPSD
 
 ```
-IAnimation.PrepareAnimation()
+FFTPSD()
 ```
 
-Prepares the animation.
+Executes the FFT (Power Spectral Density) analyis function.
 
-### Stop
-
-```
-IAnimation.Stop()
-```
-
-Stops the animation.
-
-### UpdateMaxFrame
+### FFTPhase
 
 ```
-IAnimation.UpdateMaxFrame()
+FFTPhase()
 ```
 
-Updates the maximum frame from all child documents that supports an animation.
+Executes the FFT (Phase) analyis function.
 
-### UpdateView
-
-```
-IAnimation.UpdateView()
-```
-
-### classIAnimation
+### FilterButterWorth
 
 ```
-classIAnimation(oobj=None)
+FilterButterWorth()
 ```
 
-Bases:DispatchBaseClassDefines interface for the AnimationOperation. This Operation provides the animation control.PropertiesCurrentFrameGets or sets the current frame.DelayGets or sets the animation delay.EndFrameGets or sets the end frame.FrameStepGets or sets the frame step.MaxFrameGets the maximum frame.ModelGets the model related to this Operation.ParentControlGets the parent control.PlayTypeGets or sets the animation play type.StartFrameGets or sets the start frame.StatusGets or sets the a
+Executes the Filter (Butter Worth) analyis function.
+
+### FilterTransferFunction
+
+```
+FilterTransferFunction()
+```
+
+Executes the Filter (Transfer Function) analyis function.
+
+### SimpleMathAbsolute
+
+```
+SimpleMathAbsolute()
+```
+
+xecutes the function to calculate the absolute value of each data.
+
+### SimpleMathDivide
+
+```
+SimpleMathDivide()
+```
+
+Executes the function to find the division of two curve data.
 

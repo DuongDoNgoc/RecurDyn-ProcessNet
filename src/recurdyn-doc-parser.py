@@ -480,6 +480,64 @@ class ProcessNetDocParser:
 
         return signature
 
+    def extract_autosummary_members(self, soup: BeautifulSoup) -> dict:
+        """
+        Extract methods and properties from autosummary tables with rubric headers.
+        This is the pattern used in class definition pages (e.g., IForceTire.html).
+
+        Returns:
+            dict with 'methods' and 'properties' lists
+        """
+        results = {'methods': [], 'properties': []}
+
+        # Find all rubric paragraphs
+        for rubric in soup.find_all('p', class_='rubric'):
+            rubric_text = rubric.get_text(strip=True).lower()
+
+            # Find next sibling table with 'autosummary' class
+            table = rubric.find_next('table')
+            if not table or 'autosummary' not in ' '.join(table.get('class', [])):
+                continue
+
+            # Parse table rows
+            tbody = table.find('tbody')
+            if not tbody:
+                continue
+
+            for row in tbody.find_all('tr'):
+                cells = row.find_all('td')
+                if len(cells) >= 2:
+                    # First cell contains member name (in <code> tag)
+                    name_cell = cells[0]
+                    code_tag = name_cell.find('code')
+                    if code_tag:
+                        name = code_tag.get_text(strip=True)
+                    else:
+                        name = name_cell.get_text(strip=True)
+
+                    # Second cell contains description (in <p> tag)
+                    desc_cell = cells[1]
+                    p_tag = desc_cell.find('p')
+                    if p_tag:
+                        description = p_tag.get_text(strip=True)
+                    else:
+                        description = desc_cell.get_text(strip=True)
+
+                    # Categorize based on rubric text
+                    if 'method' in rubric_text or 'function' in rubric_text:
+                        results['methods'].append(Method(
+                            name=name,
+                            description=(description or "")[:500],
+                            signature=f"{name}()"
+                        ))
+                    elif 'propert' in rubric_text or 'attribute' in rubric_text:
+                        results['properties'].append(Property(
+                            name=name,
+                            description=(description or "")[:500]
+                        ))
+
+        return results
+
     def extract_sphinx_properties(self, soup: BeautifulSoup) -> list:
         """
         Extract property definitions from Sphinx-formatted documentation.
@@ -761,6 +819,11 @@ class ProcessNetDocParser:
         result['properties'] = self.extract_sphinx_properties(soup)
         result['methods'] = self.extract_method_signatures(soup)
 
+        # ENHANCEMENT: Extract members from autosummary tables (class definition pages)
+        autosummary_members = self.extract_autosummary_members(soup)
+        result['properties'].extend(autosummary_members['properties'])
+        result['methods'].extend(autosummary_members['methods'])
+
         # Extract code examples
         result['examples'] = self.extract_code_blocks(soup, rel_path)
 
@@ -779,6 +842,78 @@ class ProcessNetDocParser:
             cls.source_file = rel_path
 
         return result
+
+    def _extract_class_name_from_filename(self, file_path: Path) -> Optional[str]:
+        """
+        Extract class name from filename using naming convention.
+        Examples:
+          IApplication_Save.html -> IApplication
+          IBody_GetMass.html -> IBody
+          CoreExample.html -> CoreExample
+        """
+        filename = file_path.stem  # Remove .html extension
+
+        # Check for underscore pattern: ClassName_MemberName
+        if '_' in filename:
+            parts = filename.split('_')
+            if len(parts) >= 2:
+                return parts[0]
+
+        # If no underscore, the filename itself might be the class name
+        return filename
+
+    def _associate_members_with_classes(self, ns_data: dict, file_path: Path, content: dict):
+        """
+        Associate methods and properties with their parent classes based on filename.
+        This fixes the bug where all members were stored at namespace level.
+        """
+        class_name = self._extract_class_name_from_filename(file_path)
+        if not class_name:
+            return
+
+        # Find the class in namespace
+        target_class = None
+        for cls in ns_data['classes']:
+            if cls['name'].lower() == class_name.lower():
+                target_class = cls
+                break
+
+        # If class not found and we have methods/properties, try to create it
+        if not target_class and (content['methods'] or content['properties']):
+            # Create minimal class entry
+            target_class = {
+                'name': class_name,
+                'description': f'Class {class_name}',
+                'inheritance': '',
+                'methods': [],
+                'properties': [],
+                'source_file': str(file_path.relative_to(self.input_path))
+            }
+            ns_data['classes'].append(target_class)
+
+            # Add to class index
+            class_lower = class_name.lower()
+            namespace = [k for k, v in self.knowledge_base['namespaces'].items() if v is ns_data][0]
+            if class_lower not in self.knowledge_base['class_index']:
+                self.knowledge_base['class_index'][class_lower] = []
+            if namespace not in self.knowledge_base['class_index'][class_lower]:
+                self.knowledge_base['class_index'][class_lower].append(namespace)
+
+        # Associate methods with class
+        if target_class and content['methods']:
+            for method in content['methods']:
+                method_dict = asdict(method)
+                # Check if not already in class methods
+                if not any(m['name'] == method_dict['name'] for m in target_class['methods']):
+                    target_class['methods'].append(method_dict)
+
+        # Associate properties with class
+        if target_class and content['properties']:
+            for prop in content['properties']:
+                prop_dict = asdict(prop)
+                # Check if not already in class properties
+                if not any(p['name'] == prop_dict['name'] for p in target_class['properties']):
+                    target_class['properties'].append(prop_dict)
 
     def build_knowledge_base(self):
         """Build the complete knowledge base from all files."""
@@ -800,7 +935,8 @@ class ProcessNetDocParser:
 
         for idx, file_path in enumerate(files, 1):
             progress = (idx / len(files)) * 100
-            logger.info(f"[{progress:5.1f}%] ({idx}/{len(files)}) {file_path.name}")
+            if idx % 100 == 0 or idx == len(files):
+                logger.info(f"[{progress:5.1f}%] ({idx}/{len(files)}) {file_path.name}")
 
             try:
                 content = self.parse_html_file(file_path)
@@ -823,17 +959,37 @@ class ProcessNetDocParser:
                 if content['classes']:
                     for cls in content['classes']:
                         cls_dict = asdict(cls)
-                        ns_data['classes'].append(cls_dict)
+                        # Check if class already exists
+                        existing = any(c['name'] == cls_dict['name'] for c in ns_data['classes'])
+                        if not existing:
+                            ns_data['classes'].append(cls_dict)
 
-                        # Add to class index
-                        class_lower = cls.name.lower()
-                        if class_lower not in self.knowledge_base['class_index']:
-                            self.knowledge_base['class_index'][class_lower] = []
-                        if namespace not in self.knowledge_base['class_index'][class_lower]:
-                            self.knowledge_base['class_index'][class_lower].append(namespace)
-                        self.stats['classes_extracted'] += 1
+                            # Add to class index
+                            class_lower = cls.name.lower()
+                            if class_lower not in self.knowledge_base['class_index']:
+                                self.knowledge_base['class_index'][class_lower] = []
+                            if namespace not in self.knowledge_base['class_index'][class_lower]:
+                                self.knowledge_base['class_index'][class_lower].append(namespace)
+                            self.stats['classes_extracted'] += 1
 
-                # Add properties to namespace
+                # FIX: Associate methods/properties with classes based on filename
+                self._associate_members_with_classes(ns_data, file_path, content)
+
+                # Still add to standalone methods for backward compatibility
+                if content['methods']:
+                    for method in content['methods']:
+                        method_dict = asdict(method)
+                        ns_data['standalone_methods'].append(method_dict)
+
+                        # Add to method index
+                        method_lower = method.name.lower()
+                        if method_lower not in self.knowledge_base['method_index']:
+                            self.knowledge_base['method_index'][method_lower] = []
+                        if namespace not in self.knowledge_base['method_index'][method_lower]:
+                            self.knowledge_base['method_index'][method_lower].append(namespace)
+                        self.stats['methods_extracted'] += 1
+
+                # Add properties to namespace (backward compatibility)
                 if content['properties']:
                     # Initialize properties list if not exists
                     if 'properties' not in ns_data:
@@ -850,20 +1006,6 @@ class ProcessNetDocParser:
                         ex_dict = asdict(ex)
                         ns_data['examples'].append(ex_dict)
                         self.stats['examples_extracted'] += 1
-
-                # Add methods to namespace
-                if content['methods']:
-                    for method in content['methods']:
-                        method_dict = asdict(method)
-                        ns_data['standalone_methods'].append(method_dict)
-
-                        # Add to method index
-                        method_lower = method.name.lower()
-                        if method_lower not in self.knowledge_base['method_index']:
-                            self.knowledge_base['method_index'][method_lower] = []
-                        if namespace not in self.knowledge_base['method_index'][method_lower]:
-                            self.knowledge_base['method_index'][method_lower].append(namespace)
-                        self.stats['methods_extracted'] += 1
 
                 # Track interfaces
                 for iface in content['interfaces_referenced']:

@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.ToolkitCommon
 
-**Methods:** 20
+**Methods:** 31
 
 **Examples:** 0
 
@@ -52,6 +52,30 @@ classIContactTrackToSurfaceProperty(oobj=None)
 
 Bases:DispatchBaseClassTrack assembly to surface contact propertyPropertiesCohesionCohesion (c)DampingCoefficientThe viscous damping coefficient for the contact normal force.DampingExponentThe damping exponent for a non-linear contact normal forceDampingSplineDamping splineExponentialNumberExponential number (n)FrictionFrictionFrictionCoefficientThe friction coefficient for the contact normal force.FrictionSplineThe spline which shows relative velocity to the friction coefficient or the friction
 
+### Export
+
+```
+Export()
+```
+
+Export is obsolete function
+
+### Import
+
+```
+Import()
+```
+
+Import is obsolete function
+
+### SoftGroundType
+
+```
+SoftGroundType()
+```
+
+Soft ground type
+
 ### CopyActionToBase
 
 ```
@@ -75,6 +99,22 @@ classIForceConnectorBushing(oobj=None)
 ```
 
 Bases:DispatchBaseClassBushing forcePropertiesActionMarkerAction markerActiveActiveBaseMarkerBase markerCommentCommentForceDisplayForce displayForceDisplayColorForce display colorForceDisplayUseForce display useFullNameFullName such asBody1.Marker1@Model1LayerNameLayer nameLayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interf
+
+### CopyActionToBase
+
+```
+CopyActionToBase()
+```
+
+Copy action to base
+
+### CopyBaseToAction
+
+```
+CopyBaseToAction()
+```
+
+Copy base to action
 
 ### CopyActionToBase
 
@@ -103,6 +143,22 @@ Bases:DispatchBaseClassConnector fixed forcePropertiesActionMarkerAction markerA
 ### CopyActionToBase
 
 ```
+CopyActionToBase()
+```
+
+Copy action to base
+
+### CopyBaseToAction
+
+```
+CopyBaseToAction()
+```
+
+Copy base to action
+
+### CopyActionToBase
+
+```
 IForceConnectorRevolute.CopyActionToBase(Type)
 ```
 
@@ -127,6 +183,22 @@ Bases:DispatchBaseClassConnector revolute forcePropertiesActionMarkerAction mark
 ### CopyActionToBase
 
 ```
+CopyActionToBase()
+```
+
+Copy action to base
+
+### CopyBaseToAction
+
+```
+CopyBaseToAction()
+```
+
+Copy base to action
+
+### CopyActionToBase
+
+```
 IForceConnectorSpring.CopyActionToBase(Type)
 ```
 
@@ -147,6 +219,22 @@ classIForceConnectorSpring(oobj=None)
 ```
 
 Bases:DispatchBaseClassConnector Spring forcePropertiesActionMarkerAction markerActiveActiveBaseMarkerBase markerCommentCommentDampingDampingForceDisplayForce displayForceDisplayColorForce display colorForceDisplayUseForce display useFreeLengthThe free length of the springFullNameFullName such asBody1.Marker1@Model1LayerNameLayer nameLayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOw
+
+### CopyActionToBase
+
+```
+CopyActionToBase()
+```
+
+Copy action to base
+
+### CopyBaseToAction
+
+```
+CopyBaseToAction()
+```
+
+Copy base to action
 
 ### classIToolkitContactFriction
 

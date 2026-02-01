@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.MTT3D
 
-**Methods:** 119
+**Methods:** 191
 
 **Examples:** 0
 
@@ -76,6 +76,38 @@ classIMTT3DAssembly(oobj=None)
 
 Bases:DispatchBaseClassMTT3D assemblyPropertiesBufferRadiusFactorBuffer radius factorCommentCommentFullNameFullName such asBody1.Marker1@Model1MaximumNoOfSheetElementsMaximum number of sheet's elementsMaximumStepsizeFactorMaximum stepsize factorNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfacePenetrationParameterPenetration parameterReferenc
 
+### GetContactedGeometry
+
+```
+GetContactedGeometry()
+```
+
+Get a contacted geometry
+
+### GetContactedSheet
+
+```
+GetContactedSheet()
+```
+
+Get a contacted sheet
+
+### SetContactedGeometry
+
+```
+SetContactedGeometry()
+```
+
+Set a contacted geometry
+
+### SetContactedSheet
+
+```
+SetContactedSheet()
+```
+
+Set a contacted sheet
+
 ### classIMTT3DContact
 
 ```
@@ -99,6 +131,14 @@ classIMTT3DContactCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### classIMTT3DContactProperty
 
@@ -204,6 +244,38 @@ classIMTT3DCrownRollerProfile(oobj=None)
 
 Bases:DispatchBaseClassMTT3D crown roller informationPropertiesProfileCollectionProfile CollectionMethodsAddAdd dataClearClear dataExportExport a fileImportImport a file
 
+### Add
+
+```
+Add()
+```
+
+Add data
+
+### Clear
+
+```
+Clear()
+```
+
+Clear data
+
+### Export
+
+```
+Export()
+```
+
+Export a file
+
+### Import
+
+```
+Import()
+```
+
+Import a file
+
 ### Item
 
 ```
@@ -219,6 +291,14 @@ classIMTT3DFixedRollerGroupCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### GetAppliedBody
 
@@ -252,6 +332,30 @@ classIMTT3DForceNodal(oobj=None)
 
 Bases:DispatchBaseClassMTT3D nodal forcePropertiesActiveActiveBaseBodyBase BodyCommentCommentFullNameFullName such asBody1.Marker1@Model1LayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceReportNodeIDsReport node IDsUseReportNodesUse report nNodesUserDataUser supplied dataUserSubroutineUser subroutineMethodsGetAppliedBod
 
+### GetAppliedBody
+
+```
+GetAppliedBody()
+```
+
+Specifies whether nodal force is applied to a node
+
+### SetAppliedBody
+
+```
+SetAppliedBody()
+```
+
+Applies nodal force to a node
+
+### SetAppliedBodyAll
+
+```
+SetAppliedBodyAll()
+```
+
+Applies nodal force to all nodes
+
 ### Item
 
 ```
@@ -267,6 +371,14 @@ classIMTT3DForceNodalCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassIForceNodalCollectionPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### CopyActionToBase
 
@@ -295,120 +407,8 @@ Bases:DispatchBaseClassMTT3D spring forcePropertiesActionMarkerAction markerActi
 ### CopyActionToBase
 
 ```
-IMTT3DForceSpringNip.CopyActionToBase(Type)
+CopyActionToBase()
 ```
 
 Copy action to base
-
-### CopyBaseToAction
-
-```
-IMTT3DForceSpringNip.CopyBaseToAction(Type)
-```
-
-Copy base to action
-
-### classIMTT3DForceSpringNip
-
-```
-classIMTT3DForceSpringNip(oobj=None)
-```
-
-Bases:DispatchBaseClassMTT3D nip spring forcePropertiesActionMarkerAction markerActiveActiveBaseBodyBase bodyBaseMarkerBase markerBasePointBase pointCommentCommentDampingDampingForceDisplayForce displayForceDisplayColorForce display colorForceDisplayUseForce display useFreeLengthThe free length of the springFullNameFullName such asBody1.Marker1@Model1LayerNameLayer nameLayerNumberLayer numberNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerB
-
-### SetLayerNumber
-
-```
-IMTT3DGroupFixedRoller.SetLayerNumber(iVal)
-```
-
-Set layer Number
-
-### UpdateActiveFlagOfAllEntities
-
-```
-IMTT3DGroupFixedRoller.UpdateActiveFlagOfAllEntities(Val)
-```
-
-Update active flag of all entities
-
-### UpdateAllProperties
-
-```
-IMTT3DGroupFixedRoller.UpdateAllProperties()
-```
-
-Update all properties
-
-### classIMTT3DGroupFixedRoller
-
-```
-classIMTT3DGroupFixedRoller(oobj=None)
-```
-
-Bases:DispatchBaseClassMTT3D fixed roller groupPropertiesActiveActiveBaseBodyThe base body of the revolute jointCenterPointThe center point of the fixed roller bodyCenterPoint2The center point of the fixed roller bodyCommentCommentContactPointsThe number of max contact pointsContactPropertyToSheetThe parameters of contact forces applied between sheet and fixed rollerCrownRollerProfileCrownRoller ProfileDepthThe depth of the fixed rollerDepthDirectionThe depth direction at the center point of fix
-
-### SetLayerNumber
-
-```
-IMTT3DGroupMovableRoller.SetLayerNumber(iVal)
-```
-
-Set layer Number
-
-### UpdateActiveFlagOfAllEntities
-
-```
-IMTT3DGroupMovableRoller.UpdateActiveFlagOfAllEntities(Val)
-```
-
-Update active flag of all entities
-
-### UpdateAllProperties
-
-```
-IMTT3DGroupMovableRoller.UpdateAllProperties()
-```
-
-Update all properties
-
-### UpdateNonGeometricProperties
-
-```
-IMTT3DGroupMovableRoller.UpdateNonGeometricProperties()
-```
-
-Update non-geometric properties
-
-### classIMTT3DGroupMovableRoller
-
-```
-classIMTT3DGroupMovableRoller(oobj=None)
-```
-
-Bases:DispatchBaseClassMTT3D movable roller groupPropertiesActiveActiveBaseBodyThe base body of the revolute jointCenterPointThe center point of the movable roller bodyCenterPoint2The center point of the movable roller bodyCommentCommentContactPointsToRollerThe number of max contact points to rollerContactPointsToSheetThe number of max contact points to sheetContactPropertyToFixedRollerThe parameters of contact forces applied between fixed roller and movable rollerContactPropertyToSheetThe param
-
-### UpdateAllProperties
-
-```
-IMTT3DGuide.UpdateAllProperties()
-```
-
-Update All Properties
-
-### classIMTT3DGuide
-
-```
-classIMTT3DGuide(oobj=None)
-```
-
-Bases:DispatchBaseClassMTT3D guidePropertiesActiveActiveCommentCommentContactPointsThe number of max contact pointsForceDisplayForce displayFullNameFullName such asBody1.Marker1@Model1GraphicGraphicLayerNumberLayer numberMotherBodyThe mother body of guideNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceSpecialContactPointsSpecial Number of m
-
-### UpdateAllProperties
-
-```
-IMTT3DGuideArc.UpdateAllProperties()
-```
-
-Update All Properties
 

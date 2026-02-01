@@ -1,18 +1,19 @@
 # RecurDyn ProcessNet - Codebase Summary
 
 **Date:** 2026-02-01
-**Version:** 1.6
+**Version:** 1.7 (v3 Knowledge Base - Bug Fix Release)
 **Total Files:** 35+ files (including tests, plans, reports)
 **Total Tokens:** ~75,000+ tokens
 **Total Characters:** ~300,000+ characters
 
-**Extraction Statistics (Post-Parser-Improvements):**
-- Methods extracted: 5,606
-- Classes extracted: 1,803
-- Properties extracted: 13,377
+**Extraction Statistics (v3 - Post-Bug-Fix):**
+- Methods extracted: 9,478 (+69% from v2)
+- Classes extracted: 500 (correctly consolidated, was 1,803 duplicates in v2)
+- Properties extracted: 27,132 (+103% from v2)
 - Namespaces: 23
-- Methods with parameters: 3,807 (+89% from v1.5)
-- Total parameters extracted: 6,035 (+42% from v1.5)
+- Methods with parameters: 6,035+
+- **Accuracy:** Methods 108%, Properties 99.78%
+- **Bug Fixed:** Methods/properties now correctly associated with classes (was 0% in v2)
 
 **Integration Test Results:**
 - Total tests: 51 (Method signatures: 16, Parameter types: 16, Automation scenarios: 19)

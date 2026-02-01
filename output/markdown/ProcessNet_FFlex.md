@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.FFlex
 
-**Methods:** 401
+**Methods:** 648
 
 **Examples:** 0
 
@@ -124,6 +124,14 @@ classIAssistConstraint(oobj=None)
 
 Bases:DispatchBaseClassConstraint to assist modelingPropertiesGeometryNameFace geometries' nameNameContraint's nameUseFDRUse FDRUseSelectionUse selectionMethodsSetGeometriesSet face geometries
 
+### SetGeometries
+
+```
+SetGeometries()
+```
+
+Set face geometries
+
 ### Item
 
 ```
@@ -139,6 +147,14 @@ classIAssistConstraintCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### classIAssistPrePatchSet
 
@@ -164,6 +180,14 @@ classIAssistPrePatchSetCollection(oobj=None)
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
 
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
+
 ### classIAssistPreSet
 
 ```
@@ -188,6 +212,14 @@ classIAssistPreSetCollection(oobj=None)
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
 
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
+
 ### classIAssistSurfaceConstraint
 
 ```
@@ -211,6 +243,14 @@ classIAssistSurfaceConstraintCollection(oobj=None)
 ```
 
 Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
+
+### Item
+
+```
+Item()
+```
+
+Returns a specific item.
 
 ### GetAnimationScalingRotationalFactor
 
@@ -251,6 +291,38 @@ classIFFlexAnimationDataScaling(oobj=None)
 ```
 
 Bases:DispatchBaseClassFFlex Animation ScalingPropertiesReferenceNodeReferenceNode is obsolete property.UseAnimationScalingUseAnimationScaling is obsolete property.MethodsGetAnimationScalingRotationalFactorGetAnimationScalingRotationalFactor is obsolete function.GetAnimationScalingTranslationalFactorGetAnimationScalingTranslationalFactor is obsolete function.SetAnimationScalingRotationalFactorSetAnimationScalingRotationalFactor is obsolete function.SetAnimationScalingTranslationalFactorSetAnimat
+
+### GetAnimationScalingRotationalFactor
+
+```
+GetAnimationScalingRotationalFactor()
+```
+
+GetAnimationScalingRotationalFactor is obsolete function.
+
+### GetAnimationScalingTranslationalFactor
+
+```
+GetAnimationScalingTranslationalFactor()
+```
+
+GetAnimationScalingTranslationalFactor is obsolete function.
+
+### SetAnimationScalingRotationalFactor
+
+```
+SetAnimationScalingRotationalFactor()
+```
+
+SetAnimationScalingRotationalFactor is obsolete function.
+
+### SetAnimationScalingTranslationalFactor
+
+```
+SetAnimationScalingTranslationalFactor()
+```
+
+SetAnimationScalingTranslationalFactor is obsolete function.
 
 ### ChangeElementID
 
@@ -339,76 +411,4 @@ IFFlexBody.CreateFFlexMaterialArrudaBoyceRubber(strName)
 ```
 
 Create a fflex arruda boyce rubber material
-
-### CreateFFlexMaterialIsotropic
-
-```
-IFFlexBody.CreateFFlexMaterialIsotropic(strName)
-```
-
-Create a fflex isotropic material
-
-### CreateFFlexMaterialMooneyRivlin
-
-```
-IFFlexBody.CreateFFlexMaterialMooneyRivlin(strName)
-```
-
-Create a fflex mooney-rivlin material
-
-### CreateFFlexMaterialMooneyRivlinRubber
-
-```
-IFFlexBody.CreateFFlexMaterialMooneyRivlinRubber(strName)
-```
-
-Create a fflex mooney-rivlin  rubber material
-
-### CreateFFlexMaterialNeoHooke
-
-```
-IFFlexBody.CreateFFlexMaterialNeoHooke(strName)
-```
-
-Create a fflex neo hooke material
-
-### CreateFFlexMaterialNeoHookeRubber
-
-```
-IFFlexBody.CreateFFlexMaterialNeoHookeRubber(strName)
-```
-
-Create a fflex neo hooke rubber material
-
-### CreateFFlexMaterialOgden
-
-```
-IFFlexBody.CreateFFlexMaterialOgden(strName)
-```
-
-Create a fflex ogden material
-
-### CreateFFlexMaterialOgdenRubber
-
-```
-IFFlexBody.CreateFFlexMaterialOgdenRubber(strName)
-```
-
-Create a fflex ogden rubber material
-
-### CreateFFlexMaterialOrthotropic
-
-```
-IFFlexBody.CreateFFlexMaterialOrthotropic(strName)
-```
-
-Create a fflex orthotropic material
-
-### CreateFFlexMaterialOrthotropic2D
-
-```
-IFFlexBody.CreateFFlexMaterialOrthotropic2D(strName)
-```
-
-Create a fflex orthotropic2 material
 

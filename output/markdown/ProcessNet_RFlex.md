@@ -6,7 +6,7 @@
 
 **Full Name:** FunctionBay.RecurDyn.ProcessNet.RFlex
 
-**Methods:** 158
+**Methods:** 248
 
 **Examples:** 0
 
@@ -123,6 +123,54 @@ classIRFlexAnimationDataScaling(oobj=None)
 ```
 
 Bases:DispatchBaseClassRFlex Animation ScalingPropertiesAnimationScalingRefMarkerAnimationScalingRefMarker is obsolete property.AnimationScalingTypeAnimationScalingType is obsolete property.ReferenceNodeReferenceNode is obsolete property.UseAnimationScalingUseAnimationScaling is obsolete property.MethodsGetAnimationScalingModeShapeFactorGSetAnimationScalingModeShapeFactor is obsolete function.GetAnimationScalingRotationalFactorGetAnimationScalingRotationalFactor is obsolete function.GetAnimation
+
+### GetAnimationScalingModeShapeFactor
+
+```
+GetAnimationScalingModeShapeFactor()
+```
+
+GSetAnimationScalingModeShapeFactor is obsolete function.
+
+### GetAnimationScalingRotationalFactor
+
+```
+GetAnimationScalingRotationalFactor()
+```
+
+GetAnimationScalingRotationalFactor is obsolete function.
+
+### GetAnimationScalingTranslationalFactor
+
+```
+GetAnimationScalingTranslationalFactor()
+```
+
+GetAnimationScalingTranslationalFactor is obsolete function.
+
+### SetAnimationScalingModeShapeFactor
+
+```
+SetAnimationScalingModeShapeFactor()
+```
+
+SetAnimationScalingModeShapeFactor is obsolete function.
+
+### SetAnimationScalingRotationalFactor
+
+```
+SetAnimationScalingRotationalFactor()
+```
+
+SetAnimationScalingRotationalFactor is obsolete function.
+
+### SetAnimationScalingTranslationalFactor
+
+```
+SetAnimationScalingTranslationalFactor()
+```
+
+SetAnimationScalingTranslationalFactor is obsolete function.
 
 ### CreateElementSet
 
@@ -356,59 +404,11 @@ classIRFlexBody(oobj=None)
 
 Bases:DispatchBaseClassFunctionBay Internal Use OnlyPropertiesActiveActiveAnimationDataScalingAnimationDataScaling is obsolete property.AnimationScalingAnimationScalingCommentCommentDisplaySettingGet Display SettingExportSetDataGet Export Set DataExportShellFormatDataGet Export Shell Format DataFullNameFullName such asBody1.Marker1@Model1GraphicGraphicInitialRotationalVelocityXInitial rotational velocity XInitialRotationalVelocityYInitial rotational velocity YInitialRotationalVelocityZInitial ro
 
-### Item
+### CreateElementSet
 
 ```
-IRFlexBodyCollection.Item(var)
+CreateElementSet()
 ```
 
-Returns a specific item.
-
-### classIRFlexBodyCollection
-
-```
-classIRFlexBodyCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### classIRFlexBodyImportOption
-
-```
-classIRFlexBodyImportOption(oobj=None)
-```
-
-Bases:DispatchBaseClassRFlexBody import optionPropertiesUseInternalNodesUseInternalNodes is obsolete functionUseNodalResidualUseNodalResidual is obsolete functionUseUserDefinedRigidBodyFrequencyUse user defined rigid body frequencyUserDefinedRigidBodyFrequencyUser defined rigid body frequency
-
-### classIRFlexElement
-
-```
-classIRFlexElement(oobj=None)
-```
-
-Bases:DispatchBaseClassRFlex ElementPropertiesCommentCommentElementTypeElement typeFullNameFullName such asBody1.Marker1@Model1IDIDNameNameOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
-
-### Item
-
-```
-IRFlexElementCollection.Item(var)
-```
-
-Returns a specific item.
-
-### classIRFlexElementCollection
-
-```
-classIRFlexElementCollection(oobj=None)
-```
-
-Bases:DispatchBaseClassPropertiesCountReturns the number of items in the collection.MethodsItemReturns a specific item.
-
-### classIRFlexElementSet
-
-```
-classIRFlexElementSet(oobj=None)
-```
-
-Bases:DispatchBaseClassPropertiesColorElement set colorCommentCommentElementCollectionElement CollectionFullNameFullName such asBody1.Marker1@Model1NameNameNodeCollectionNode Collection of Element setOwnerOwner returns owning IGeneric interface, use Owner for IRFlexBody, IFFlexBodyOwnerBodyOwnerBody returns owning IBody interfaceOwnerSubSystemOwnerSubSystem returns owning ISubSubSystem interfaceUserDataUser supplied data
+Create a element set
 
