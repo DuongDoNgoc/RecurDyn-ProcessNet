@@ -350,6 +350,12 @@ class ProcessNetDocParser:
                                         rf'\*\*{re.escape(param.name)}\*\*\s*[:\-]\s*([^\-\n*]+?)(?:\n|\*|$)',
                                         str(dd)
                                     )
+                                    # Fallback: Try HTML <strong> format
+                                    if not param_match:
+                                        param_match = re.search(
+                                            rf'<strong>{re.escape(param.name)}</strong>\s*[:\-]\s*([^\-<]+?)(?:<|$)',
+                                            str(dd)
+                                        )
                                     if param_match:
                                         extracted_type = param_match.group(1).strip()
                                         if not param.type and extracted_type:
@@ -416,10 +422,11 @@ class ProcessNetDocParser:
         if dd_element:
             field_list = dd_element.find('dl', class_='field-list')
             if field_list:
-                # Look for various return type field names
+                # Look for various return type field names (case-insensitive)
                 for dt in field_list.find_all('dt'):
                     dt_text = dt.get_text(strip=True)
-                    if any(keyword in dt_text for keyword in ['Return Type', 'Type', 'Returns', 'rtype']):
+                    dt_text_lower = dt_text.lower()
+                    if any(keyword.lower() in dt_text_lower for keyword in ['Return Type', 'Type', 'Returns', 'rtype']):
                         dd = dt.find_next_sibling('dd')
                         if dd:
                             if 'Return' in dt_text or 'rtype' in dt_text:

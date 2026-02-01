@@ -77,6 +77,7 @@ class ProcessNetValidator:
         'double': r'double|float|Double|decimal|number',
         'boolean': r'bool|boolean|Bool',
         'void': r'void|None|null',
+        'list': r'list|array|List|Array',
     }
 
     # Known method signatures for key workflows
@@ -240,16 +241,28 @@ class ProcessNetValidator:
         return report
 
     def get_sample_methods_for_validation(self, count: int = 50) -> List[Dict]:
-        """Get sample methods across all namespaces for validation."""
+        """Get sample methods across all namespaces for validation.
+        Samples methods that have actual signatures (not class definitions).
+        """
         samples = []
+        all_methods = []
 
+        # Collect all methods first
         for ns_name, ns_data in self.kb.get('namespaces', {}).items():
             methods = ns_data.get('standalone_methods', [])
-            for method in methods[:5]:  # Take 5 from each namespace
+            for method in methods:
                 method['namespace'] = ns_name
-                samples.append(method)
-                if len(samples) >= count:
-                    return samples
+                all_methods.append(method)
+
+        # Filter out class-like definitions (starting with 'class' or ending with 'Type')
+        real_methods = [m for m in all_methods if not m['name'].startswith('class') and not m['name'].endswith('Type')]
+
+        # Sample from real methods, or all if not enough
+        import random
+        random.seed(42)  # For reproducibility
+        sample_size = min(count, len(real_methods)) if real_methods else min(count, len(all_methods))
+        population = real_methods if real_methods else all_methods
+        samples = random.sample(population, sample_size)
 
         return samples
 
