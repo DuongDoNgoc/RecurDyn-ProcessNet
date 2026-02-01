@@ -1,7 +1,7 @@
 ---
 title: "Fix Knowledge Base Extraction Quality Issues - v6"
 description: "Fix method/class association, enum extraction, and validation gaps"
-status: pending
+status: completed
 priority: P0
 effort: 4h
 branch: master
@@ -68,7 +68,7 @@ Enum members are in a different pattern: `<table class="docutils">` with name/va
 | 01 | Fix method/property subfolder detection | completed |
 | 02 | Add enum member table extraction | completed |
 | 03 | Add relationship validation tests | completed |
-| 04 | Re-extract and spot check verification | pending |
+| 04 | Re-extract and spot check verification | completed |
 
 ## Success Criteria
 

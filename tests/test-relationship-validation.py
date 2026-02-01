@@ -19,7 +19,7 @@ from typing import Dict, List
 
 # Knowledge base paths
 KB_V5_PATH = Path(__file__).parent.parent / "output" / "processnet-knowledge-v5.json"
-KB_PATH = Path(__file__).parent.parent / "output" / "processnet-knowledge.json"
+KB_PATH = Path(__file__).parent.parent / "output" / "processnet-knowledge-v6.json"
 
 # Known problematic files from v5 spot checks
 KNOWN_PROBLEMATIC_FILES = [
