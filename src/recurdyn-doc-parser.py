@@ -1244,18 +1244,39 @@ class ProcessNetDocParser:
                 # Overview
                 f.write("## Overview\n\n")
                 f.write(f"**Full Name:** {ns_data.get('full_name', ns_name)}\n\n")
-                f.write(f"**Methods:** {len(ns_data.get('standalone_methods', []))}\n\n")
+
+                # Count methods from all classes
+                classes = ns_data.get('classes', [])
+                total_methods = sum(len(cls.get('methods', [])) for cls in classes)
+
+                f.write(f"**Classes:** {len(classes)}\n\n")
+                f.write(f"**Methods:** {total_methods}\n\n")
                 f.write(f"**Examples:** {len(ns_data.get('examples', []))}\n\n")
 
-                # Methods
-                if ns_data.get('standalone_methods'):
-                    f.write("## Methods\n\n")
-                    for method in ns_data['standalone_methods'][:50]:  # Limit for readability
-                        f.write(f"### {method['name']}\n\n")
-                        if method.get('signature'):
-                            f.write(f"```\n{method['signature']}\n```\n\n")
-                        if method.get('description'):
-                            f.write(f"{method['description']}\n\n")
+                # Classes section with methods grouped by class
+                if classes:
+                    f.write("## Classes\n\n")
+                    for cls in classes:
+                        cls_name = cls.get('name', 'Unknown')
+                        f.write(f"### {cls_name}\n\n")
+
+                        if cls.get('description'):
+                            f.write(f"{cls['description']}\n\n")
+
+                        # Show methods for this class
+                        methods = cls.get('methods', [])
+                        if methods:
+                            f.write(f"**Methods ({len(methods)}):**\n\n")
+                            for method in methods[:10]:  # Limit 10 methods per class
+                                method_name = method.get('name', 'Unknown')
+                                f.write(f"#### {method_name}\n\n")
+                                if method.get('signature'):
+                                    f.write(f"```\n{method['signature']}\n```\n\n")
+                                if method.get('description'):
+                                    f.write(f"{method['description'][:300]}\n\n")
+
+                            if len(methods) > 10:
+                                f.write(f"*... and {len(methods) - 10} more methods*\n\n")
 
                 # Examples
                 if ns_data.get('examples'):

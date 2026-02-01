@@ -61,7 +61,16 @@ class ProcessNetKnowledge:
 
     def _build_indices(self):
         """Build in-memory search indices."""
+        # Build method names from classes if method_index is empty
         self._method_names = list(self.kb.get('method_index', {}).keys())
+        if not self._method_names:
+            for ns_data in self.kb.get('namespaces', {}).values():
+                for cls in ns_data.get('classes', []):
+                    for method in cls.get('methods', []):
+                        name = method.get('name', '').lower()
+                        if name and name not in self._method_names:
+                            self._method_names.append(name)
+
         self._interface_names = list(self.kb.get('interface_index', {}).keys())
 
         # Extract method names from examples
@@ -74,6 +83,18 @@ class ProcessNetKnowledge:
                     m_lower = m.lower()
                     if m_lower not in self._method_names:
                         self._method_names.append(m_lower)
+
+    def _get_all_methods_from_classes(self, ns_data: dict) -> list:
+        """Aggregate methods from all classes in a namespace."""
+        all_methods = []
+        for cls in ns_data.get('classes', []):
+            cls_name = cls.get('name', '')
+            for method in cls.get('methods', []):
+                # Add class context to method
+                method_with_class = dict(method)
+                method_with_class['parent_class'] = cls_name
+                all_methods.append(method_with_class)
+        return all_methods
 
     def find_method(self, method_name: str, namespace: Optional[str] = None) -> list:
         """
@@ -98,7 +119,8 @@ class ProcessNetKnowledge:
 
                 # Find the method in namespace data
                 ns_data = self.kb['namespaces'].get(ns, {})
-                for method in ns_data.get('standalone_methods', []):
+                all_methods = self._get_all_methods_from_classes(ns_data)
+                for method in all_methods:
                     if method['name'].lower() == method_lower:
                         results.append(SearchResult(
                             name=method['name'],
@@ -232,7 +254,8 @@ class ProcessNetKnowledge:
 
         for ns_name, ns_data in self.kb.get('namespaces', {}).items():
             # Search in methods
-            for method in ns_data.get('standalone_methods', []):
+            all_methods = self._get_all_methods_from_classes(ns_data)
+            for method in all_methods:
                 desc = method.get('description', '').lower()
                 if all(kw in desc for kw in keyword_list):
                     results.append(SearchResult(
@@ -275,7 +298,7 @@ class ProcessNetKnowledge:
             'full_name': ns_data.get('full_name', namespace),
             'description': ns_data.get('description', ''),
             'classes': [c['name'] for c in ns_data.get('classes', [])],
-            'methods': [m['name'] for m in ns_data.get('standalone_methods', [])],
+            'methods': [m['name'] for m in self._get_all_methods_from_classes(ns_data)],
             'examples_count': len(ns_data.get('examples', [])),
             'files': ns_data.get('files', [])
         }
@@ -317,7 +340,7 @@ class ProcessNetKnowledge:
     def get_statistics(self) -> dict:
         """Get knowledge base statistics."""
         total_methods = sum(
-            len(ns.get('standalone_methods', []))
+            len(self._get_all_methods_from_classes(ns))
             for ns in self.kb.get('namespaces', {}).values()
         )
         total_examples = sum(
