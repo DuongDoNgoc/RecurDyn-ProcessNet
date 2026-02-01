@@ -47,7 +47,7 @@ ProcessNetKnowledge = _qi_module.ProcessNetKnowledge
 
 class APIConfig:
     """API server configuration."""
-    DEFAULT_KB_PATH = "output/processnet-knowledge-v5.json"
+    DEFAULT_KB_PATH = "output/processnet-knowledge-v6.json"
     DEFAULT_HOST = "127.0.0.1"
     DEFAULT_PORT = 8000
 
