@@ -1,8 +1,9 @@
 # RecurDyn ProcessNet - Usage Guidelines
 
-**Version:** 1.0
+**Version:** 2.0 (v6 Knowledge Base)
 **Last Updated:** 2026-02-01
-**Project Status:** Production Ready (100% Complete)
+**Project Status:** Production Ready (Python API Only)
+**Scope:** Python API extraction complete. C#/VB API not included.
 
 ## Table of Contents
 
@@ -388,7 +389,7 @@ python src/processnet-query-interface.py --search "save" --json
 from processnet_query_interface import ProcessNetKnowledge
 
 # Load knowledge base
-kb = ProcessNetKnowledge("output/processnet_knowledge.json")
+kb = ProcessNetKnowledge("output/processnet-knowledge-v6.json")
 
 # Exact method lookup
 methods = kb.find_method("CreateArc")
@@ -650,7 +651,7 @@ def test_table_method_extraction():
 from processnet_query_interface import ProcessNetKnowledge
 
 # Load knowledge base
-kb = ProcessNetKnowledge("output/processnet_knowledge.json")
+kb = ProcessNetKnowledge("output/processnet-knowledge-v6.json")
 
 # Find model loading methods
 load_methods = kb.search_method_fuzzy("load", limit=5)
@@ -797,7 +798,7 @@ netstat -tuln | grep 8000
 python src/processnet-api-server.py --port 8080
 
 # Check knowledge base file
-ls -lh output/processnet_knowledge.json
+ls -lh output/processnet-knowledge-v6.json
 
 # Verify dependencies
 pip install --upgrade fastapi uvicorn
