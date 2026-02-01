@@ -1,7 +1,7 @@
 ---
 title: "CHM Extraction and API Documentation Processing"
 description: "Extract ProcessNetHelp.chm and enhance parser for API documentation patterns"
-status: in-progress
+status: completed
 priority: P1
 effort: 8h
 branch: master
@@ -38,8 +38,8 @@ Target state:
 | [Phase 02](phase-02-file-transfer-to-wsl.md) | **done** (2026-01-31) | Transfer extracted files to WSL |
 | [Phase 03](phase-03-html-structure-analysis.md) | **done** (2026-01-31) | Analyze HTML structure from extracted files |
 | [Phase 04](phase-04-parser-enhancement-for-api-docs.md) | **done** (2026-02-01) | Update parser for API doc patterns |
-| [Phase 05](phase-05-run-enhanced-parser-on-api-docs.md) | pending | Run enhanced parser on API documentation |
-| [Phase 06](phase-06-validation-and-verification.md) | pending | Verify extraction quality and query interface |
+| [Phase 05](phase-05-run-enhanced-parser-on-api-docs.md) | **done** (2026-02-01) | Run enhanced parser on API documentation |
+| [Phase 06](phase-06-validation-and-verification.md) | **done** (2026-02-01) | Verify extraction quality and query interface |
 
 ## Key Dependencies
 
