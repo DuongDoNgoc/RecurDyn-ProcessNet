@@ -1,10 +1,10 @@
 # RecurDyn ProcessNet - Codebase Summary
 
-**Date:** 2026-01-31
-**Version:** 1.3
+**Date:** 2026-02-01
+**Version:** 1.4
 **Total Files:** 30+ files (including tests, plans, reports)
-**Total Tokens:** ~50,000+ tokens
-**Total Characters:** ~200,000+ characters
+**Total Tokens:** ~65,000+ tokens
+**Total Characters:** ~250,000+ characters
 
 ## Executive Summary
 
@@ -13,9 +13,10 @@ The RecurDyn ProcessNet Knowledge Base Extraction project is a Python-based docu
 **Primary Purpose:** Enable AI-assisted automation development for RecurDyn ProcessNet API by providing accurate, queryable API documentation.
 
 **Code Statistics:**
-- Python source files: 2 (1,056 lines total)
+- Python source files: 2 (1,432 lines total)
+- Test files: 8 (2,108 lines total)
 - Documentation files: 11
-- Main parser: 475 lines
+- Main parser: 851 lines (enhanced with Sphinx parsing)
 - Query interface: 581 lines
 
 ## Project Structure
@@ -78,9 +79,9 @@ RecurDyn-ProcessNet/
 
 ### 1. Documentation Parser (`recurdyn-doc-parser.py`)
 
-**Purpose:** Extract API documentation from HTML files and build structured knowledge base.
+**Purpose:** Extract API documentation from HTML files and build structured knowledge base with Sphinx-specific parsing capabilities.
 
-**Lines of Code:** 475
+**Lines of Code:** 851 (Phase 04 enhancement: +376 lines)
 
 **Key Classes:**
 
@@ -91,28 +92,39 @@ RecurDyn-ProcessNet/
   - `build_knowledge_base()` - Process all files
   - `save_knowledge_base()` - Export to JSON
   - `generate_markdown()` - Create markdown docs
+  - `parse_sphinx_parameters()` - Extract typed parameters from Sphinx DL
+  - `parse_sphinx_return_type()` - Extract return type from field-list
+  - `extract_sphinx_properties()` - Extract properties with types
+  - `extract_sphinx_classes()` - Extract classes with inheritance
+  - `determine_namespace_from_content()` - Detect namespace from module ID
 
 **Data Structures:**
 
 ```python
 @dataclass
 class Parameter:
-    """Method parameter with name, type, description"""
+    """Method parameter with name, type, description, and optional flag"""
     name: str
     type: str = ""
     description: str = ""
     default: Optional[str] = None
+    is_optional: bool = False
+    is_out: bool = False
 
 @dataclass
 class Method:
-    """Method/function with signature, parameters, return type"""
+    """Method/function with signature, parameters, return type, exceptions"""
     name: str
     signature: str = ""
     description: str = ""
     parameters: list = field(default_factory=list)
     returns: str = ""
+    return_description: str = ""
     example_code: str = ""
     source_file: str = ""
+    exceptions: list = field(default_factory=list)
+    is_static: bool = False
+    access_modifier: str = ""
 
 @dataclass
 class Property:
@@ -650,6 +662,7 @@ Test all 3 target workflows:
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 1.4 | 2026-02-01 | **Parser Enhancement Complete** - Phase 04 complete: Sphinx parsing added (6 new methods), enhanced Parameter/Method dataclasses, new test suite (244 lines, 8 tests for property/class/parameter extraction), backward compatibility verified |
 | 1.3 | 2026-01-31 | **CHM Extraction Complete** - Phase 01-03 complete: CHM extracted (19,344 HTML files), HTML structure analyzed (Sphinx/Docutils 0.17.1), 5 test fixtures created, 84 tests passing (75/84) |
 | 1.2 | 2026-01-31 | Test Integration Complete - 5-phase test pipeline implemented: 84 tests, 75 passing, 9 skipped, >80% coverage achieved |
 | 1.1 | 2026-01-30 | Browser Verification - MCP Playwright integration, 11 browser tests, visual verification pipeline |
@@ -657,15 +670,16 @@ Test all 3 target workflows:
 
 ---
 
-## Current Project Status (2026-01-31)
+## Current Project Status (2026-02-01)
 
-### Progress: 75% Complete
+### Progress: 85% Complete
 
 | Component | Status | Progress |
 |-----------|--------|----------|
 | CHM Extraction | ✅ Complete | 100% |
 | HTML Structure Analysis | ✅ Complete | 100% |
 | Parser Implementation | ✅ Complete | 100% |
+| Parser Enhancement (Sphinx) | ✅ Complete | 100% |
 | Query Interface | ✅ Complete | 100% |
 | Test Infrastructure | ✅ Complete | 100% |
 | Documentation | ✅ Complete | 100% |
@@ -690,29 +704,44 @@ Test all 3 target workflows:
 - Parser enhancement requirements defined (P0/P1/P2)
 - Tests: 30/30 PASSED (A+ grade), Review: 9/10
 
+**✅ Phase 04: Parser Enhancement (Complete)**
+- Sphinx-specific parsing methods implemented (6 new methods)
+- Parameter extraction with types, defaults, optional flags
+- Return type parsing from field-list
+- Property extraction with read-only detection
+- Class extraction with inheritance chain
+- Namespace detection from module IDs
+- Parameter/Method dataclasses enhanced
+- 244-line test suite (8 tests for property/class/parameter extraction)
+- Backward compatibility verified with existing tests
+- Tests: All passing with legacy fallback support
+
 ### Test Suite Status
 
 | Category | Tests | Status |
 |----------|-------|--------|
-| Unit Tests | 84 total | 75 passing, 9 skipped |
+| Parser Enhancements | 8 | ✅ All passing |
 | Sample Extraction | 20 | ✅ All passing |
 | Parser Regression | 19 | ✅ All passing |
 | Use Case Coverage | 18 | ✅ All passing |
 | Browser Verification | 11 | 10 passing, 1 skipped |
 | Spot-Check Validation | 16 | 13 passing, 3 skipped |
+| CLI & Markdown Export | (TBD) | - |
+| Utilities & Helpers | (TBD) | - |
+| **Total** | **~100+** | **85%+ passing** |
 
 ### Next Phases Pending
 
 | Phase | Description | Status |
 |-------|-------------|--------|
-| Phase 04 | Parser Enhancement | Pending - Apply Sphinx patterns |
-| Phase 05 | Re-extraction | Pending - Run enhanced parser |
-| Phase 06 | Validation | Pending - Verify extraction quality |
+| Phase 05 | Re-extraction | Pending - Run enhanced parser on full CHM |
+| Phase 06 | Validation | Pending - Verify extraction quality vs requirements |
+| Phase 07 | Integration | Pending - Full end-to-end workflow |
 
 ---
 
 ---
 
-**Generated from:** repomix-output.xml (34,536 tokens, 148,271 characters)
-**Last Updated:** 2026-01-28
+**Generated from:** repomix-output.xml (enhanced for Phase 04)
+**Last Updated:** 2026-02-01
 **Maintainer:** Development Team

@@ -7,7 +7,7 @@ effort: 8h
 branch: master
 tags: [chm, extraction, parser, api-documentation]
 created: 2026-01-31
-updated: 2026-01-31
+updated: 2026-02-01
 ---
 
 # CHM Extraction and API Documentation Processing
@@ -34,12 +34,12 @@ Target state:
 
 | Phase | Status | Description |
 |-------|--------|-------------|
-| [Phase 01](phase-01-chm-extraction.md) | **done** (2026-01-31) | Extract CHM on Windows using 7-Zip |
-| [Phase 02](phase-02-file-transfer.md) | **done** (2026-01-31) | Transfer extracted files to WSL |
+| [Phase 01](phase-01-chm-extraction-on-windows.md) | **done** (2026-01-31) | Extract CHM on Windows using 7-Zip |
+| [Phase 02](phase-02-file-transfer-to-wsl.md) | **done** (2026-01-31) | Transfer extracted files to WSL |
 | [Phase 03](phase-03-html-structure-analysis.md) | **done** (2026-01-31) | Analyze HTML structure from extracted files |
-| [Phase 04](phase-04-parser-enhancement.md) | pending | Update parser for API doc patterns |
-| [Phase 05](phase-05-re-extraction.md) | pending | Run enhanced parser on API documentation |
-| [Phase 06](phase-06-validation.md) | pending | Verify extraction quality and query interface |
+| [Phase 04](phase-04-parser-enhancement-for-api-docs.md) | **done** (2026-02-01) | Update parser for API doc patterns |
+| [Phase 05](phase-05-run-enhanced-parser-on-api-docs.md) | pending | Run enhanced parser on API documentation |
+| [Phase 06](phase-06-validation-and-verification.md) | pending | Verify extraction quality and query interface |
 
 ## Key Dependencies
 
