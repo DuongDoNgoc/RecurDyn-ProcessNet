@@ -10,3 +10,12 @@ rapidfuzz>=3.0.0
 
 # Encoding Detection
 chardet>=5.0.0
+
+# REST API Server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic-settings>=2.0.0
+
+# Testing
+httpx>=0.25.0
+pytest-cov>=4.1.0

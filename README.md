@@ -52,8 +52,9 @@ RecurDyn-ProcessNet/
 │   ├── RecurDynHelp/               # Sphinx HTML documentation
 │   └── Tutorial/                   # Tutorial HTML files
 ├── src/                            # Source code
-│   ├── recurdyn-doc-parser.py      # HTML/CHM parser (475 lines)
-│   └── processnet-query-interface.py # Query interface (581 lines)
+│   ├── recurdyn-doc-parser.py      # HTML/CHM parser
+│   ├── processnet-query-interface.py # Query CLI interface
+│   └── processnet-api-server.py    # REST API server
 ├── output/                         # Generated outputs
 │   ├── extracted_chm/              # Extracted CHM contents
 │   ├── processnet_knowledge.json   # Main knowledge base
@@ -81,12 +82,14 @@ RecurDyn-ProcessNet/
 - **Description Search**: Full-text search in method descriptions
 - **Namespace Exploration**: Browse by namespace hierarchy
 - **Code Example Finder**: Search and retrieve code examples
+- **REST API Server**: HTTP endpoints for automation workflows
 
 ### Output Formats
 
 - **JSON Knowledge Base**: Complete API reference with indices
 - **Markdown Documentation**: Human-readable reference docs
 - **Interactive CLI**: Real-time query interface
+- **REST API**: HTTP server for programmatic access
 
 ## Target Use Cases
 
@@ -173,6 +176,8 @@ python src/recurdyn-doc-parser.py \
 
 ### Query Phase
 
+#### CLI Interface
+
 ```bash
 # Interactive mode
 python src/processnet-query-interface.py
@@ -185,6 +190,69 @@ python src/processnet-query-interface.py
 #   namespaces         - List all namespaces
 #   examples [keyword] - Find code examples
 #   stats              - Show statistics
+```
+
+#### REST API Server
+
+```bash
+# Start the API server
+python src/processnet-api-server.py --port 8000
+
+# Or with custom knowledge base path
+python src/processnet-api-server.py --kb output/processnet-knowledge.json --port 8080
+
+# API Documentation available at:
+#   http://localhost:8000/docs    - Swagger UI
+#   http://localhost:8000/redoc   - ReDoc
+```
+
+**API Endpoints:**
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/health` | Health check |
+| GET | `/api/stats` | Knowledge base statistics |
+| GET | `/api/namespaces` | List all namespaces |
+| GET | `/api/namespaces/{name}` | Get namespace details |
+| GET | `/api/search?q={query}` | Fuzzy search methods |
+| GET | `/api/find/{name}` | Exact method lookup |
+| GET | `/api/examples?keyword={kw}` | Find code examples |
+
+**Example API Requests:**
+
+```bash
+# Search for methods
+curl "http://localhost:8000/api/search?q=save&limit=10"
+
+# Find exact method
+curl "http://localhost:8000/api/find/SaveModel"
+
+# Get namespace contents
+curl "http://localhost:8000/api/namespaces/ProcessNet.Model"
+
+# Get statistics
+curl "http://localhost:8000/api/stats"
+```
+
+**Python Client Example:**
+
+```python
+import requests
+
+API_BASE = "http://localhost:8000/api"
+
+# Search for save-related methods
+response = requests.get(f"{API_BASE}/search", params={"q": "save", "limit": 10})
+methods = response.json()["results"]
+
+# Get namespace info
+ns = requests.get(f"{API_BASE}/namespaces/ProcessNet.Geometry").json()
+print(f"Classes: {len(ns['classes'])}")
+
+# Find specific method
+method = requests.get(f"{API_BASE}/find/SaveNewModel").json()
+if method["count"] > 0:
+    print(f"Found: {method['results'][0]['signature']}")
 ```
 
 ### Verification Workflow
