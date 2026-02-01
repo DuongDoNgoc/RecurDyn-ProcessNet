@@ -869,12 +869,54 @@ class ProcessNetDocParser:
         # If no underscore, the filename itself might be the class name
         return filename
 
-    def _associate_members_with_classes(self, ns_data: dict, file_path: Path, content: dict):
+    def _is_member_file(self, file_path: Path) -> bool:
+        """
+        Detect if file is a member (method/property) file based on path.
+        Returns True if path contains Methods or Properties subfolder.
+
+        Examples:
+          Python/Professional/IApplication/Methods/IApplication_Save.html -> True
+          Python/Professional/IApplication.html -> False
+        """
+        parts = file_path.parts
+        return 'Methods' in parts or 'Properties' in parts
+
+    def _extract_parent_class_from_path(self, file_path: Path) -> Optional[str]:
+        """
+        Extract parent class name from directory structure for member files.
+
+        Examples:
+          Python/Professional/IApplication/Methods/IApplication_Save.html -> IApplication
+          Python/Professional/IBody/Properties/IBody_Mass.html -> IBody
+        """
+        parts = file_path.parts
+
+        # Find Methods or Properties folder
+        for i, part in enumerate(parts):
+            if part in ('Methods', 'Properties'):
+                # Parent class is the folder before Methods/Properties
+                if i > 0:
+                    return parts[i - 1]
+
+        return None
+
+    def _associate_members_with_classes(self, ns_data: dict, file_path: Path, content: dict, is_member_file: bool = False):
         """
         Associate methods and properties with their parent classes based on filename.
         This fixes the bug where all members were stored at namespace level.
+
+        Args:
+            ns_data: Namespace data dictionary
+            file_path: Path to the HTML file
+            content: Parsed content from the file
+            is_member_file: True if file is in /Methods/ or /Properties/ subfolder
         """
-        class_name = self._extract_class_name_from_filename(file_path)
+        # Determine parent class name
+        if is_member_file:
+            class_name = self._extract_parent_class_from_path(file_path)
+        else:
+            class_name = self._extract_class_name_from_filename(file_path)
+
         if not class_name:
             return
 
@@ -885,26 +927,44 @@ class ProcessNetDocParser:
                 target_class = cls
                 break
 
-        # If class not found and we have methods/properties, try to create it
+        # CRITICAL FIX: Only create class entry if NOT a member file
         if not target_class and (content['methods'] or content['properties']):
-            # Create minimal class entry
-            target_class = {
-                'name': class_name,
-                'description': f'Class {class_name}',
-                'inheritance': '',
-                'methods': [],
-                'properties': [],
-                'source_file': str(file_path.relative_to(self.input_path))
-            }
-            ns_data['classes'].append(target_class)
+            if is_member_file:
+                # Member file without parent class - log as orphan
+                logger.warning(
+                    f"Orphaned member file: {file_path.name} - "
+                    f"Parent class '{class_name}' not found. "
+                    f"Methods: {len(content['methods'])}, Properties: {len(content['properties'])}"
+                )
+                # Collect orphans for manual review
+                if 'orphaned_members' not in ns_data:
+                    ns_data['orphaned_members'] = []
+                ns_data['orphaned_members'].append({
+                    'file': str(file_path.relative_to(self.input_path)),
+                    'parent_class': class_name,
+                    'methods': [m.name for m in content['methods']],
+                    'properties': [p.name for p in content['properties']]
+                })
+                return
+            else:
+                # Regular class file - create class entry
+                target_class = {
+                    'name': class_name,
+                    'description': f'Class {class_name}',
+                    'inheritance': '',
+                    'methods': [],
+                    'properties': [],
+                    'source_file': str(file_path.relative_to(self.input_path))
+                }
+                ns_data['classes'].append(target_class)
 
-            # Add to class index
-            class_lower = class_name.lower()
-            namespace = [k for k, v in self.knowledge_base['namespaces'].items() if v is ns_data][0]
-            if class_lower not in self.knowledge_base['class_index']:
-                self.knowledge_base['class_index'][class_lower] = []
-            if namespace not in self.knowledge_base['class_index'][class_lower]:
-                self.knowledge_base['class_index'][class_lower].append(namespace)
+                # Add to class index
+                class_lower = class_name.lower()
+                namespace = [k for k, v in self.knowledge_base['namespaces'].items() if v is ns_data][0]
+                if class_lower not in self.knowledge_base['class_index']:
+                    self.knowledge_base['class_index'][class_lower] = []
+                if namespace not in self.knowledge_base['class_index'][class_lower]:
+                    self.knowledge_base['class_index'][class_lower].append(namespace)
 
         # Associate methods with class
         if target_class and content['methods']:
@@ -930,6 +990,11 @@ class ProcessNetDocParser:
         files = self.discover_files()
         logger.info(f"Found {len(files)} HTML files")
 
+        # Sort files by path depth - process class definition files (shallow) before member files (deep)
+        # This ensures parent classes exist before we try to associate members
+        files.sort(key=lambda p: len(p.parts))
+        logger.info("Files sorted by path depth (class files first, then member files)")
+
         # Initialize ProcessNet namespace
         self.knowledge_base['namespaces']['ProcessNet'] = {
             'full_name': 'FunctionBay.RecurDyn.ProcessNet',
@@ -939,6 +1004,10 @@ class ProcessNetDocParser:
             'examples': [],
             'files': []
         }
+
+        # Track member file statistics
+        member_files_processed = 0
+        orphaned_members_count = 0
 
         for idx, file_path in enumerate(files, 1):
             progress = (idx / len(files)) * 100
@@ -979,16 +1048,24 @@ class ProcessNetDocParser:
                                 self.knowledge_base['class_index'][class_lower].append(namespace)
                             self.stats['classes_extracted'] += 1
 
-                # FIX: Associate methods/properties with classes based on filename
-                self._associate_members_with_classes(ns_data, file_path, content)
+                # Detect if this is a member file (in /Methods/ or /Properties/ subfolder)
+                is_member_file = self._is_member_file(file_path)
+                if is_member_file:
+                    member_files_processed += 1
 
-                # Still add to standalone methods for backward compatibility
+                # Associate methods/properties with classes based on filename
+                self._associate_members_with_classes(ns_data, file_path, content, is_member_file)
+
+                # Track orphaned members (member files without parent class)
+                if 'orphaned_members' in ns_data:
+                    orphaned_members_count = len(ns_data['orphaned_members'])
+
+                # REMOVED: standalone_methods[] population (as per validation decision)
+                # Member files should NOT be added to standalone_methods
+                # Only track methods for indexing purposes
                 if content['methods']:
                     for method in content['methods']:
-                        method_dict = asdict(method)
-                        ns_data['standalone_methods'].append(method_dict)
-
-                        # Add to method index
+                        # Add to method index for search purposes
                         method_lower = method.name.lower()
                         if method_lower not in self.knowledge_base['method_index']:
                             self.knowledge_base['method_index'][method_lower] = []
@@ -1044,6 +1121,8 @@ class ProcessNetDocParser:
         logger.info("Extraction Summary:")
         logger.info(f"  Files processed: {self.stats['files_processed']}")
         logger.info(f"  Files failed: {self.stats['files_failed']}")
+        logger.info(f"  Member files processed: {member_files_processed}")
+        logger.info(f"  Orphaned members: {orphaned_members_count}")
         logger.info(f"  Classes extracted: {self.stats['classes_extracted']}")
         logger.info(f"  Methods extracted: {self.stats['methods_extracted']}")
         logger.info(f"  Properties extracted: {self.stats['properties_extracted']}")
