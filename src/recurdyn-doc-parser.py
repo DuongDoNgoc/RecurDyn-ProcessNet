@@ -602,6 +602,82 @@ class ProcessNetDocParser:
 
         return properties
 
+    def _is_enum_class(self, inheritance: str) -> bool:
+        """
+        Check if a class is an enum based on its inheritance.
+        Only returns True for classes inheriting from IntEnum.
+
+        Args:
+            inheritance: The inheritance string extracted from class definition
+
+        Returns:
+            True if the class inherits from IntEnum
+        """
+        return 'IntEnum' in inheritance
+
+    def extract_enum_members(self, dd_element) -> list:
+        """
+        Extract enum member values from autosummary tables.
+
+        Enum members are in tables after a "Members" rubric paragraph.
+        Each row contains member name and value description.
+
+        Args:
+            dd_element: The dd element containing the enum definition
+
+        Returns:
+            List of Property objects representing enum members
+        """
+        members = []
+
+        if not dd_element:
+            return members
+
+        # Find "Members" rubric within the enum dd element
+        rubric = dd_element.find('p', class_='rubric')
+        if not rubric or 'member' not in rubric.get_text().lower():
+            return members
+
+        # Find the autosummary table after the rubric
+        table = rubric.find_next('table')
+        if not table:
+            return members
+
+        # Parse table rows
+        tbody = table.find('tbody')
+        if not tbody:
+            return members
+
+        for row in tbody.find_all('tr'):
+            cells = row.find_all('td')
+            if len(cells) >= 2:
+                # Extract member name from code tag
+                name_cell = cells[0]
+                code_tag = name_cell.find('code')
+                if code_tag:
+                    member_name = code_tag.get_text(strip=True)
+                else:
+                    member_name = name_cell.get_text(strip=True)
+
+                # Extract value from description (e.g., "Constant value is 1.")
+                desc_cell = cells[1]
+                description = desc_cell.get_text(strip=True)
+
+                # Parse numeric value from description
+                value = None
+                value_match = re.search(r'(?:Constant\s+)?value\s+is\s+(-?\d+)', description, re.IGNORECASE)
+                if value_match:
+                    value = value_match.group(1)
+
+                members.append(Property(
+                    name=member_name,
+                    type='int',
+                    description=f"Value: {value}. {description}" if value else description[:500],
+                    read_only=True
+                ))
+
+        return members
+
     def extract_sphinx_classes(self, soup: BeautifulSoup) -> list:
         """
         Extract class definitions from Sphinx-formatted documentation.
@@ -661,11 +737,20 @@ class ProcessNetDocParser:
                                     if len(paragraphs) > 1:
                                         description = paragraphs[1].get_text(strip=True)
 
-                            classes.append(ClassDef(
+                            # Create class definition
+                            class_def = ClassDef(
                                 name=class_name,
                                 description=(description or "")[:500],
                                 inheritance=inheritance
-                            ))
+                            )
+
+                            # If it's an enum (IntEnum), extract enum members as properties
+                            if self._is_enum_class(inheritance):
+                                enum_members = self.extract_enum_members(dd)
+                                for member in enum_members:
+                                    class_def.properties.append(member)
+
+                            classes.append(class_def)
 
         return classes
 

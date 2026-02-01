@@ -66,7 +66,7 @@ Enum members are in a different pattern: `<table class="docutils">` with name/va
 | Phase | Description | Status |
 |-------|-------------|--------|
 | 01 | Fix method/property subfolder detection | completed |
-| 02 | Add enum member table extraction | pending |
+| 02 | Add enum member table extraction | completed |
 | 03 | Add relationship validation tests | pending |
 | 04 | Re-extract and spot check verification | pending |
 
