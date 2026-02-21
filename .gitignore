@@ -75,7 +75,7 @@ Thumbs.db
 *.bak
 
 # Source data (large files)
-knowledge/
+# knowledge/
 
 # Generated output
-output/
+# output/
