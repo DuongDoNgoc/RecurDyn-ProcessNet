@@ -334,6 +334,13 @@ class ChmApiExtractor:
         if not help_id:
             return None
 
+        # Skip member listing pages (Properties.T:, Methods.T:, Fields.T:, Events.T:, etc.)
+        # These are supplementary documentation pages, not actual API entities
+        member_list_prefixes = ('Properties.', 'Methods.', 'Fields.', 'Events.', 'Operators.', 'Constructors.')
+        if any(help_id.startswith(prefix) for prefix in member_list_prefixes):
+            logger.debug(f"Skipping member listing page: {help_id}")
+            return None
+
         # Determine entity type from help_id prefix
         entity_type = self.determine_entity_type(help_id)
 
