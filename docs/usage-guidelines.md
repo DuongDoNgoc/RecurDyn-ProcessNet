@@ -1,9 +1,9 @@
 # RecurDyn ProcessNet - Usage Guidelines
 
-**Version:** 2.0 (v6 Knowledge Base)
-**Last Updated:** 2026-02-01
-**Project Status:** Production Ready (Python API Only)
-**Scope:** Python API extraction complete. C#/VB API not included.
+**Version:** 3.0 (v7 Knowledge Base)
+**Last Updated:** 2026-02-21
+**Project Status:** Production Ready (Python/C#/VB/User Guides)
+**Scope:** Python API, C#/VB API, and User Guides extraction complete.
 
 ## Table of Contents
 
@@ -121,11 +121,19 @@ GET /api/stats
 **Response:**
 ```json
 {
-  "total_namespaces": 23,
-  "total_classes": 1803,
-  "total_methods": 5606,
-  "total_properties": 13377,
-  "total_parameters": 6035
+  "total_items": 26106,
+  "python_api": {
+    "classes": 1808,
+    "methods": 4367,
+    "namespaces": 23
+  },
+  "csharp_vb_api": {
+    "members": 21274
+  },
+  "user_guides": {
+    "documents": 7,
+    "sections": 16
+  }
 }
 ```
 
