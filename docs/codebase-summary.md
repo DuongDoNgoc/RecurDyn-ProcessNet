@@ -1,20 +1,19 @@
 # RecurDyn ProcessNet - Codebase Summary
 
-**Date:** 2026-02-01
-**Version:** 2.0 (v6 Knowledge Base - Complete Python API Extraction)
-**Total Files:** 40+ files (including tests, plans, reports)
-**Total Tokens:** ~85,000+ tokens
-**Total Characters:** ~350,000+ characters
+**Date:** 2026-02-21
+**Version:** 3.0 (v7 Knowledge Base - Unified Python/C#/VB/User Guides)
+**Total Files:** 50+ files (including tests, plans, reports)
+**Total Tokens:** ~120,000+ tokens
+**Total Characters:** ~500,000+ characters
 
-**Extraction Statistics (v6 - Final):**
+**Extraction Statistics (v7 - Final):**
+- Total searchable items: 26,106
+- Python API: 1,808 classes, 4,367 methods, 23 namespaces
+- C#/VB API: 21,274 members
+- User Guides: 7 documents, 16 sections
 - HTML files processed: 40,625 (100% coverage)
-- Classes extracted: 1,830
-- Methods extracted: 6,773 (100% member association)
-- Properties extracted: 15,545 (100% member association)
-- Enumerations extracted: 448
-- Namespaces: 23
-- **Scope:** Python API only (C#/VB not extracted)
-- **Accuracy:** 100% member-to-class association
+- **Scope:** Unified Python + C#/VB + User Guides
+- **Accuracy:** 100% member-to-class association (Python)
 
 **Test Results (Final):**
 - Total tests: 214
