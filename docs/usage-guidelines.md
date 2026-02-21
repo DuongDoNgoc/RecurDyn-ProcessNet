@@ -397,7 +397,7 @@ python src/processnet-query-interface.py --search "save" --json
 from processnet_query_interface import ProcessNetKnowledge
 
 # Load knowledge base
-kb = ProcessNetKnowledge("output/processnet-knowledge-v6.json")
+kb = ProcessNetKnowledge("output/processnet-knowledge-v7.json")
 
 # Exact method lookup
 methods = kb.find_method("CreateArc")
@@ -659,7 +659,7 @@ def test_table_method_extraction():
 from processnet_query_interface import ProcessNetKnowledge
 
 # Load knowledge base
-kb = ProcessNetKnowledge("output/processnet-knowledge-v6.json")
+kb = ProcessNetKnowledge("output/processnet-knowledge-v7.json")
 
 # Find model loading methods
 load_methods = kb.search_method_fuzzy("load", limit=5)
@@ -806,7 +806,7 @@ netstat -tuln | grep 8000
 python src/processnet-api-server.py --port 8080
 
 # Check knowledge base file
-ls -lh output/processnet-knowledge-v6.json
+ls -lh output/processnet-knowledge-v7.json
 
 # Verify dependencies
 pip install --upgrade fastapi uvicorn
