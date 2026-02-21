@@ -4,7 +4,7 @@
 
 - **Plan:** [v7 KB: C#/VB API + User Guide Extraction](plan.md)
 - **Date:** 2026-02-01
-- **Status:** Pending
+- **Status:** Completed (2026-02-21)
 - **Effort:** 1.5h
 - **Dependencies:** Phase 1, Phase 2, Phase 3
 
@@ -356,17 +356,17 @@ def validate_structure(self) -> bool:
 
 ## Todo List
 
-- [ ] Create `src/kb-consolidator-v7-merger.py`
-- [ ] Implement `load_python_kb()` v6 loader
-- [ ] Implement `load_csharp_vb_kb()` Phase 1 loader
-- [ ] Implement `load_userguide_kb()` Phase 2-3 loader
-- [ ] Implement `_build_metadata()` statistics
-- [ ] Implement `build_unified_index()` cross-API index
-- [ ] Implement `merge_all()` combiner
-- [ ] Implement `validate_structure()` verifier
-- [ ] Implement `save_v7_kb()` writer
-- [ ] Test with all three input files
-- [ ] Verify query interface compatibility
+- [x] Create `src/kb-consolidator-v7-merger.py`
+- [x] Implement `load_python_kb()` v6 loader
+- [x] Implement `load_csharp_vb_kb()` Phase 1 loader
+- [x] Implement `load_userguide_kb()` Phase 2-3 loader
+- [x] Implement `_build_metadata()` statistics
+- [x] Implement `build_unified_index()` cross-API index
+- [x] Implement `merge_all()` combiner
+- [x] Implement `validate_structure()` verifier
+- [x] Implement `save_v7_kb()` writer
+- [x] Test with all three input files
+- [x] Verify query interface compatibility
 
 ## Success Criteria
 

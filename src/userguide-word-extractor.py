@@ -55,12 +55,20 @@ class UserGuide:
 class MSOHTMLCleaner:
     """Cleans Microsoft Office HTML markup from Word exports."""
 
+    # Max input size for regex processing (10 MB) - prevents catastrophic backtracking
+    MAX_REGEX_INPUT_SIZE = 10 * 1024 * 1024
+
     @staticmethod
     def strip_mso_markup(html: str) -> str:
         """Remove all Microsoft Office markup from HTML.
 
         Minimal cleaning to preserve structure while removing MSO artifacts.
         """
+        # Guard against catastrophic regex backtracking on oversized input
+        if len(html) > MsoHtmlCleaner.MAX_REGEX_INPUT_SIZE:
+            logger.warning(f"HTML too large for regex cleanup ({len(html) / 1024 / 1024:.1f} MB), truncating")
+            html = html[:MsoHtmlCleaner.MAX_REGEX_INPUT_SIZE]
+
         # Remove conditional comments - simpler approach
         html = re.sub(r'<!\[if [^\]]*\]>.*?<!\[endif\]>', '', html, flags=re.DOTALL)
 
@@ -93,6 +101,14 @@ class MSOHTMLCleaner:
 class UserGuideWordExtractor:
     """Extractor for Word HTML user guide files."""
 
+    @staticmethod
+    def _truncate(text: str, limit: int, context: str = "") -> str:
+        """Truncate text with logging when content is cut."""
+        if text and len(text) > limit:
+            logger.debug(f"Truncated {len(text)} -> {limit} chars{f' for {context}' if context else ''}")
+            return text[:limit]
+        return text or ""
+
     # Heading tags to track
     HEADING_TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
 
@@ -123,16 +139,33 @@ class UserGuideWordExtractor:
 
                 # Handle KS_C_5601-1987 Korean encoding
                 if encoding and 'ks' in encoding.lower():
-                    return 'euc-kr'  # Korean encoding
+                    encoding = 'euc-kr'
+                else:
+                    encoding = encoding or 'utf-8'
 
-                return encoding or 'utf-8'
+                # Validate codec exists before returning
+                import codecs
+                try:
+                    codecs.lookup(encoding)
+                except LookupError:
+                    logger.warning(f"Unknown codec '{encoding}' for {file_path.name}, falling back to utf-8")
+                    encoding = 'utf-8'
+
+                return encoding
         except Exception as e:
             logger.warning(f"Encoding detection failed for {file_path}: {e}")
             return 'utf-8'
 
+    # Max file size to read (100 MB) - skip files larger than this
+    MAX_FILE_SIZE = 100 * 1024 * 1024
+
     def read_html_file(self, file_path: Path) -> Optional[str]:
-        """Read HTML file with proper encoding handling."""
+        """Read HTML file with proper encoding handling and size check."""
         try:
+            file_size = file_path.stat().st_size
+            if file_size > self.MAX_FILE_SIZE:
+                logger.warning(f"Skipping oversized file ({file_size / 1024 / 1024:.1f} MB): {file_path.name}")
+                return None
             encoding = self.detect_encoding(file_path)
             with open(file_path, 'r', encoding=encoding, errors='replace') as f:
                 content = f.read()
@@ -238,7 +271,7 @@ class UserGuideWordExtractor:
                 section = GuideSection(
                     title=title,
                     level=level,
-                    content=content[:3000],  # Limit content length
+                    content=self._truncate(content, 3000, f"section '{title}'"),
                     images=images,
                     source_file=source_file,
                     section_id=self.generate_section_id(title)

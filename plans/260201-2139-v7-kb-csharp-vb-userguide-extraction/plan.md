@@ -1,7 +1,7 @@
 ---
 title: "v7 KB: C#/VB API + User Guide Extraction"
 description: "Extend knowledge base with C#/VB API from CHM and User Guide tutorials"
-status: pending
+status: completed
 priority: P1
 effort: 8h
 branch: master
@@ -125,9 +125,12 @@ output/
 ### Action Items
 
 - [x] Enum members → nested in parent (already in Phase 1 schema)
-- [ ] Update Phase 1 to preserve full metadata (assembly, version, help ID, F1)
-- [ ] Update Phase 2 to include image references from .files/ directories
-- [ ] Confirm Phase 1-3 can run in parallel in plan.md dependencies
+- [x] Update Phase 1 to preserve full metadata (assembly, version, help ID, F1)
+- [x] Update Phase 2 to include image references from .files/ directories
+- [x] Confirm Phase 1-3 can run in parallel in plan.md dependencies
+- [x] Complete Phase 1: C#/VB API extraction (21,274 files, 21,723 members)
+- [x] Complete Phase 4: Merge all sources into v7 unified KB
+- [x] Generate v7 output at output/processnet-knowledge-v7.json (47.45 MB)
 
 ### Resolved Questions
 

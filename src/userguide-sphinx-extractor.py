@@ -59,6 +59,14 @@ class ToctreeEntry:
 class SphinxUserGuideExtractor:
     """Extractor for Sphinx ReadTheDocs user guide documentation."""
 
+    @staticmethod
+    def _truncate(text: str, limit: int, context: str = "") -> str:
+        """Truncate text with logging when content is cut."""
+        if text and len(text) > limit:
+            logger.debug(f"Truncated {len(text)} -> {limit} chars{f' for {context}' if context else ''}")
+            return text[:limit] + "..."
+        return text or ""
+
     # Patterns for section number extraction
     SECTION_NUMBER_PATTERN = re.compile(r'^([\d.]+)\.\s*(.+)$')
     SECTION_NUMBER_SPAN = re.compile(r'<span class="section-number">([^<]+)</span>')
@@ -106,9 +114,16 @@ class SphinxUserGuideExtractor:
             logger.warning(f"Encoding detection failed for {file_path}: {e}, using UTF-8")
             return 'utf-8'
 
+    # Max file size to read (100 MB) - skip files larger than this
+    MAX_FILE_SIZE = 100 * 1024 * 1024
+
     def read_html_file(self, file_path: Path) -> Optional[BeautifulSoup]:
-        """Read and parse HTML file with encoding detection."""
+        """Read and parse HTML file with encoding detection and size check."""
         try:
+            file_size = file_path.stat().st_size
+            if file_size > self.MAX_FILE_SIZE:
+                logger.warning(f"Skipping oversized file ({file_size / 1024 / 1024:.1f} MB): {file_path.name}")
+                return None
             encoding = self.detect_encoding(file_path)
             with open(file_path, 'r', encoding=encoding, errors='replace') as f:
                 content = f.read()
@@ -336,8 +351,7 @@ class SphinxUserGuideExtractor:
             content = re.sub(r'\s+', ' ', content).strip()
 
             # Limit content length
-            if len(content) > 10000:
-                content = content[:10000] + "..."
+            content = self._truncate(content, 10000, f"section '{title}'")
 
             # Create section
             section = SphinxSection(
@@ -372,7 +386,11 @@ class SphinxUserGuideExtractor:
             self.stats['files_failed'] += 1
             return
 
-        rel_path = str(file_path.relative_to(self.input_path))
+        try:
+            rel_path = str(file_path.relative_to(self.input_path))
+        except ValueError:
+            logger.warning(f"File outside input directory, using filename: {file_path.name}")
+            rel_path = file_path.name
 
         try:
             # Extract sections
