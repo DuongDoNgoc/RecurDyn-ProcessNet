@@ -61,6 +61,14 @@ class ChmApiMember:
 class ChmApiExtractor:
     """Extractor for CHM C#/VB API documentation."""
 
+    @staticmethod
+    def _truncate(text: str, limit: int, context: str = "") -> str:
+        """Truncate text with logging when content is cut."""
+        if text and len(text) > limit:
+            logger.debug(f"Truncated {len(text)} -> {limit} chars{f' for {context}' if context else ''}")
+            return text[:limit]
+        return text or ""
+
     # Entity type prefixes in Microsoft.Help.Id
     ENTITY_PREFIXES = {
         'T:': 'class',  # Type (class, interface, enum)
@@ -124,6 +132,14 @@ class ChmApiExtractor:
 
         return sorted(all_files)
 
+    def _safe_relative_path(self, file_path: Path) -> str:
+        """Get relative path safely, falling back to filename if outside input dir."""
+        try:
+            return str(file_path.relative_to(self.input_path))
+        except ValueError:
+            logger.warning(f"File outside input directory: {file_path.name}")
+            return file_path.name
+
     def detect_encoding(self, file_path: Path) -> str:
         """Detect file encoding."""
         try:
@@ -134,9 +150,16 @@ class ChmApiExtractor:
         except Exception:
             return 'utf-8'
 
+    # Max file size to read (100 MB) - skip files larger than this
+    MAX_FILE_SIZE = 100 * 1024 * 1024
+
     def read_html_file(self, file_path: Path) -> Optional[BeautifulSoup]:
-        """Read and parse HTML file with encoding detection."""
+        """Read and parse HTML file with encoding detection and size check."""
         try:
+            file_size = file_path.stat().st_size
+            if file_size > self.MAX_FILE_SIZE:
+                logger.warning(f"Skipping oversized file ({file_size / 1024 / 1024:.1f} MB): {file_path.name}")
+                return None
             encoding = self.detect_encoding(file_path)
             with open(file_path, 'r', encoding=encoding, errors='replace') as f:
                 content = f.read()
@@ -254,7 +277,7 @@ class ChmApiExtractor:
                 members.append({
                     'name': member_name,
                     'value': value,
-                    'description': description[:500] if description else ""
+                    'description': self._truncate(description, 500, member_name)
                 })
 
         return members
@@ -309,6 +332,13 @@ class ChmApiExtractor:
 
         # Skip files without essential metadata
         if not help_id:
+            return None
+
+        # Skip member listing pages (Properties.T:, Methods.T:, Fields.T:, Events.T:, etc.)
+        # These are supplementary documentation pages, not actual API entities
+        member_list_prefixes = ('Properties.', 'Methods.', 'Fields.', 'Events.', 'Operators.', 'Constructors.')
+        if any(help_id.startswith(prefix) for prefix in member_list_prefixes):
+            logger.debug(f"Skipping member listing page: {help_id}")
             return None
 
         # Determine entity type from help_id prefix
@@ -395,12 +425,12 @@ class ChmApiExtractor:
             namespace=namespace,
             full_name=full_name,
             help_id=help_id,
-            description=description[:1000] if description else "",
-            syntax_csharp=syntax_csharp[:2000] if syntax_csharp else "",
-            syntax_vb=syntax_vb[:2000] if syntax_vb else "",
+            description=self._truncate(description, 1000, full_name),
+            syntax_csharp=self._truncate(syntax_csharp, 2000, f"{full_name} C#"),
+            syntax_vb=self._truncate(syntax_vb, 2000, f"{full_name} VB"),
             assembly=assembly,
             assembly_version=assembly_version,
-            source_file=str(file_path.relative_to(self.input_path))
+            source_file=self._safe_relative_path(file_path)
         )
 
         # Extract enum members if this is an enum
@@ -428,7 +458,7 @@ class ChmApiExtractor:
                             member.members.append({
                                 'name': prop_name,
                                 'type': 'property',
-                                'description': cells[2].get_text(strip=True)[:500] if len(cells) >= 3 else ""
+                                'description': self._truncate(cells[2].get_text(strip=True), 500) if len(cells) >= 3 else ""
                             })
 
             if method_table:
@@ -441,7 +471,7 @@ class ChmApiExtractor:
                             member.members.append({
                                 'name': method_name,
                                 'type': 'method',
-                                'description': cells[2].get_text(strip=True)[:500] if len(cells) >= 3 else ""
+                                'description': self._truncate(cells[2].get_text(strip=True), 500) if len(cells) >= 3 else ""
                             })
 
         # Update statistics

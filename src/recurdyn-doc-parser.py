@@ -170,9 +170,24 @@ class ProcessNetDocParser:
             result = chardet.detect(raw_data)
             return result.get('encoding', 'utf-8') or 'utf-8'
 
-    def read_html_file(self, file_path: Path) -> Optional[BeautifulSoup]:
-        """Read and parse HTML file with encoding detection."""
+    # Max file size to read (100 MB) - skip files larger than this
+    MAX_FILE_SIZE = 100 * 1024 * 1024
+
+    def _safe_relative_path(self, file_path: Path) -> str:
+        """Get relative path safely, falling back to filename if outside input dir."""
         try:
+            return str(file_path.relative_to(self.input_path))
+        except ValueError:
+            logger.warning(f"File outside input directory: {file_path.name}")
+            return file_path.name
+
+    def read_html_file(self, file_path: Path) -> Optional[BeautifulSoup]:
+        """Read and parse HTML file with encoding detection and size check."""
+        try:
+            file_size = file_path.stat().st_size
+            if file_size > self.MAX_FILE_SIZE:
+                logger.warning(f"Skipping oversized file ({file_size / 1024 / 1024:.1f} MB): {file_path.name}")
+                return None
             encoding = self.detect_encoding(file_path)
             with open(file_path, 'r', encoding=encoding, errors='replace') as f:
                 content = f.read()
@@ -898,7 +913,7 @@ class ProcessNetDocParser:
         if not soup:
             return result
 
-        rel_path = str(file_path.relative_to(self.input_path))
+        rel_path = self._safe_relative_path(file_path)
 
         # Extract title
         result['title'] = self.extract_title(soup)
@@ -1025,7 +1040,7 @@ class ProcessNetDocParser:
                 if 'orphaned_members' not in ns_data:
                     ns_data['orphaned_members'] = []
                 ns_data['orphaned_members'].append({
-                    'file': str(file_path.relative_to(self.input_path)),
+                    'file': self._safe_relative_path(file_path),
                     'parent_class': class_name,
                     'methods': [m.name for m in content['methods']],
                     'properties': [p.name for p in content['properties']]
@@ -1039,7 +1054,7 @@ class ProcessNetDocParser:
                     'inheritance': '',
                     'methods': [],
                     'properties': [],
-                    'source_file': str(file_path.relative_to(self.input_path))
+                    'source_file': self._safe_relative_path(file_path)
                 }
                 ns_data['classes'].append(target_class)
 
@@ -1185,7 +1200,7 @@ class ProcessNetDocParser:
                         self.knowledge_base['interface_index'][iface_lower].append(namespace)
 
                 # Add file to namespace
-                rel_path = str(file_path.relative_to(self.input_path))
+                rel_path = self._safe_relative_path(file_path)
                 if rel_path not in ns_data['files']:
                     ns_data['files'].append(rel_path)
 

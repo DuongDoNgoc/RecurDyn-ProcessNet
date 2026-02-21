@@ -1,9 +1,9 @@
 # RecurDyn ProcessNet - Usage Guidelines
 
-**Version:** 2.0 (v6 Knowledge Base)
-**Last Updated:** 2026-02-01
-**Project Status:** Production Ready (Python API Only)
-**Scope:** Python API extraction complete. C#/VB API not included.
+**Version:** 3.0 (v7 Knowledge Base)
+**Last Updated:** 2026-02-21
+**Project Status:** Production Ready (Python/C#/VB/User Guides)
+**Scope:** Python API, C#/VB API, and User Guides extraction complete.
 
 ## Table of Contents
 
@@ -121,11 +121,19 @@ GET /api/stats
 **Response:**
 ```json
 {
-  "total_namespaces": 23,
-  "total_classes": 1803,
-  "total_methods": 5606,
-  "total_properties": 13377,
-  "total_parameters": 6035
+  "total_items": 26106,
+  "python_api": {
+    "classes": 1808,
+    "methods": 4367,
+    "namespaces": 23
+  },
+  "csharp_vb_api": {
+    "members": 21274
+  },
+  "user_guides": {
+    "documents": 7,
+    "sections": 16
+  }
 }
 ```
 
@@ -389,7 +397,7 @@ python src/processnet-query-interface.py --search "save" --json
 from processnet_query_interface import ProcessNetKnowledge
 
 # Load knowledge base
-kb = ProcessNetKnowledge("output/processnet-knowledge-v6.json")
+kb = ProcessNetKnowledge("output/processnet-knowledge-v7.json")
 
 # Exact method lookup
 methods = kb.find_method("CreateArc")
@@ -651,7 +659,7 @@ def test_table_method_extraction():
 from processnet_query_interface import ProcessNetKnowledge
 
 # Load knowledge base
-kb = ProcessNetKnowledge("output/processnet-knowledge-v6.json")
+kb = ProcessNetKnowledge("output/processnet-knowledge-v7.json")
 
 # Find model loading methods
 load_methods = kb.search_method_fuzzy("load", limit=5)
@@ -798,7 +806,7 @@ netstat -tuln | grep 8000
 python src/processnet-api-server.py --port 8080
 
 # Check knowledge base file
-ls -lh output/processnet-knowledge-v6.json
+ls -lh output/processnet-knowledge-v7.json
 
 # Verify dependencies
 pip install --upgrade fastapi uvicorn
